@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Evaluación - Evaluadores</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row col-md-8 offset-md-1 scroll" id="tablePublicacionEvaluadores">
+        <div class="row">
+          <div class="col-md-6 titletab">EVALUADORES</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                                 
+            <button type="button" class="btn btn-primaryiris" onclick="CrearPublicacionEvaluador()">Agregar Evaluador</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tablePUBEVAL_Evaluadores">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPUBEVAL_Evaluadores" >
+              <thead>
+                <tr>                            
+                  <th>Nombre</th>
+                  <th>Estado</th>
+                  <th>Acta Designación</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row ocultar col-md-12 scroll" id="dvCrearPUBEVAL_Evaluadores">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvCrearPUBEVAL_Evaluadores">Datos Evaluador</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formPUBEVAL_Evaluadores" novalidate>
+              <div class="form-group row mb-2">
+                <span id="spanPUBEVAL_EvaluadoresIdPublicacion" class="ocultar" ></span>
+                <span id="spanPUBEVAL_EvaluadoresIdEvaluador" class="ocultar" ></span>
+                <span id="spanPUBEVAL_EvaluadoresIdPersona" class="ocultar" ></span>
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Evaluador</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionIdEvaluador" required></select>    
+                        <div class="invalid-feedback">
+                            Evaluador es un campo obligatorio
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Estado</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionIdEstadoEvaluador" required></select>    
+                        <div class="invalid-feedback">
+                            Estado es un campo obligatorio
+                        </div>
+                    </div>
+                </div>    
+                <div class="col-md-2">
+                    <label class="form-label-iris" for="dtPublicacionEvaluadorfecdesigcomite">Fecha Designación</label>                                
+                    <input type="date" class="form-control iris" id="dtPublicacionEvaluadorfecdesigcomite" data-span="spandtPublicacionEvaluadorfecdesigcomite" />
+                    <div class="invalid-feedback">
+                        Fecha Designación es un campo obligatorio
+                    </div>
+                    <div id="spandtPublicacionEvaluadorfecdesigcomite" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales
+                    </div>       
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label-iris" for="txtPublicacionEvaluadoractadesigcomite">Acta Designación</label>
+                    <input type="text" class="form-control iris" id="txtPublicacionEvaluadoractadesigcomite" maxlength="50" placeholder="Acta Designación" data-span="spantxtPublicacionEvaluadoractadesigcomite"/>
+                    <div id="spantxtPublicacionEvaluadoractadesigcomite" class="color-required ocultar">
+                        No se acepta el ingreso de caracteres especiales o palabras restringidas
+                    </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaPublicacionEvaluadoresDesdeCrearEvaluador()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Evaluador" onclick="ValidatePostUpdatePublicacionEvaluadoresCrearEvaluador('formPUBEVAL_Evaluadores')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvPUBEVAL_EvaluadoresRealizacionConcepto"></div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvPUBEVAL_EvaluadoresInformacionPago"></div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicacionPUBEVAL_Evaluadores.js"></script>
+
+  </body>
+
+
+</html>
+

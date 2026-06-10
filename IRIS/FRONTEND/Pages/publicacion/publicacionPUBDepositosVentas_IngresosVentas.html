@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Ingresos Ventas</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Ingresos Por Ventas (Reportes Ventas)</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionIngresosPorVentas" novalidate>
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <!--<input type="button" value="Cancelar" onclick="VolverTablaPublicacionesDesdeConcepto()" class="btn-iris cancel small"/>-->
+              <input type="button" id="btnformPublicacionIngresosPorVentas" value="Calcular" onclick="ObtenerDatosPublicacionIngresosPorVentasForm()" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_IngresosPorVentasModel.js"></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDepositosVentas_IngresosVentas.js"></script>
+
+  </body>
+
+
+</html>

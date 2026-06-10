@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicacion Autores</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIÓN AUTORES</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <span id="spanIdPublicaciones_Autores" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsPublicaciones_Autores">Kardex</label>
+              <input type="text" class="form-control iris" id="txtConsPublicaciones_Autores" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtTituloPublicaciones_Autores">Hermes</label>
+              <input type="text" class="form-control iris" id="txtTituloPublicaciones_Autores" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombrePublicaciones_Autores">Título Manuscrito</label>
+              <textarea class="form-control iris" id="txtNombrePublicaciones_Autores" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaPublicaciones_AutoresDesdeAutores()">Volver Listado Publicaciones</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearAutorPublicaciones_Autores()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_Autores" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Autor</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tablePublicaciones_Autores">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_Autores" >
+              <thead>
+                <tr>                                              
+                  <th>Autor</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalPublicaciones_Autores" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_Autores" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelPublicaciones_Autores">Dato Autor</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicaciones_AutoresDatos" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanPublicaciones_AutoresIdAutor" class="ocultar" ></span>
+                    <div class="col-md-8">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Autor</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboAutorPublicaciones_Autores" required></select>    
+                            <div class="invalid-feedback">
+                                Autor es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>  
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalPublicaciones_Autores" class="btn-iris white small" onclick="CerrarModalPublicaciones_Autores()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_Autores('formPublicaciones_AutoresDatos', 'btnCloseModalPublicaciones_Autores')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/autores_publicacion.js"></script>
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Diagramación</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIONES SEGUIMIENTO DIAGRAMACIÓN</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtKardexPublicacionDiagramacion">Kardex</label>
+              <input type="text" class="form-control iris" id="txtKardexPublicacionDiagramacion" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtHermesPublicacionDiagramacion">Hermes</label>
+              <input type="text" class="form-control iris" id="txtHermesPublicacionDiagramacion" disabled/>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label-iris" for="txtNombrePublicacionDiagramacion">Nombre Publicación</label>
+              <textarea class="form-control iris" id="txtNombrePublicacionDiagramacion" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-2 text-center" id="dvVolverTablaPublicacionesDesdeDiagramacion">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeDiagramacion()">Volver Listado Publicaciones</button>            
+            </div>
+    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-3 titletab"></div>
+          <div class="col-md-6 text-center" id="dvVolverTablaPublicacionesDesdeDiagramacion">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeDiagramacion()">Volver Listado Publicaciones</button>            
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tablePublicacionDiagramacion">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionDiagramacion">
+                <li class="liopcion selected" id="liPUBDiagramacion_Designacion">
+                    <a class="nav-link tabPrin active show" id="navPUBDiagramacion_Designacion" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_Designacion',0)">DESIGNACIÓN DIAGRAMADOR</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_Taco">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_Taco" title="" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_Taco',2)">DIAGRAMACIÓN TACO</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_Cubierta">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_Cubierta" title="" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_Cubierta',2)">DIAGRAMACIÓN CUBIERTA</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_SeguimientoD2D7">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_SeguimientoD2D7" title="Seguimiento Secciones D2 a D7" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_SeguimientoD2D7',2)">D2 a D7</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_SeguimientoD8D14">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_SeguimientoD8D14" title="Seguimiento Secciones D8 a D14" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_SeguimientoD8D14',2)">D8 a D14</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_CierreEdicion">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_CierreEdicion" title="Cierre de la edición" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_CierreEdicion',2)">CIERRE</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDiagramacion_DiagramacionFinal">
+                  <a class="nav-link tabPrin active " id="navPUBDiagramacion_DiagramacionFinal" title="Diagramación Final" data-toggle="tab" href="#" onclick="onclickTabPublicacionDiagramacion('PUBDiagramacion_DiagramacionFinal',2)">FINAL</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionDiagramacion">
+                <div role="tabpanel" id="tabPUBDiagramacion_Designacion" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBDiagramacion_Designacion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_Taco" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_Taco">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_Cubierta" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_Cubierta">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_SeguimientoD2D7" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_SeguimientoD2D7">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_SeguimientoD8D14" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_SeguimientoD8D14">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_CierreEdicion" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_CierreEdicion">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDiagramacion_DiagramacionFinal" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDiagramacion_DiagramacionFinal">
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicaciones_diagramacion.js"></script>
+
+  </body>
+
+
+</html>
+

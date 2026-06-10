@@ -1,0 +1,9 @@
+[0.98 → 4.38]  ¡Hola! ¡Esto es una prueba de audio 1!
+[5.36 → 8.54]  ¡Hola! ¡Esto es una prueba de audio 2!
+[9.54 → 10.06]  ¡Hola!
+[11.82 → 12.96]  ¡Ahora no sé qué decir!
+[14.12 → 16.26]  ¡Yo tampoco sé qué decir!
+[17.14 → 18.18]  ¡Hola, hola, hola!
+[18.76 → 20.68]  ¡Por favor! ¡Identifica mi voz!
+[20.98 → 21.92]  ¡Yo soy la voz 1!
+[22.66 → 24.32]  ¡Y yo soy la voz 2!

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION REPORTES DE VENTAS</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DepositoControlRepVentasHTML">
+                <div class="row" id="dvPublicaciones_DepositoControlRepVentasTable">
+                  <!--<span id="spanIddistribuidorPublicaciones_DepositoControlRepVentas" class="ocultar" ></span>-->
+                  <div class="row">
+                    <div class="col-md-6 titletab">REPORTES DE VENTAS</div>
+                    <div class="col-md-6 text-center">                      
+                      <!--<button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoControlRepVentas()">Nueva Entrega</button>-->
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoControlRepVentas()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoControlRepVentas" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Reporte</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DepositoControlRepVentas">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_DepositoControlRepVentas" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Id</th>
+                            <th>Fecha</th>
+                            <th>Comercializador</th>
+                            <th>Cantidad</th>
+                            <th>Valor Ventas</th>
+                            <th>Valor Comisión</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                <!-- Modal Reporte de Ventas -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoControlRepVentas" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoControlRepVentas" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoControlRepVentas">Datos Reporte Ventas</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formPublicaciones_DepositoControlRepVentas" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnClosePublicaciones_DepositoControlRepVentasModal" onclick="CerrarPublicaciones_DepositoControlRepVentasDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoControlRepVentasForm('formPublicaciones_DepositoControlRepVentas', 'btnClosePublicaciones_DepositoControlRepVentasModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_DepositoControlRepVentasModel.js" ></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDepositosVentas_ReportesVentas.js"></script>    
+
+  </body>
+
+
+</html>
+
+

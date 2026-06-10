@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud de Certificados</title>
+
+    <style>/* Colores para Estados */
+.estado-rojo { 
+    background-color: #ffcccc !important; 
+    color: #cc0000 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.estado-naranja { 
+    background-color: #ffcc99 !important; 
+    color: #cc6600 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.estado-verde { 
+    background-color: #ccffcc !important; 
+    color: #006600 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.estado-gris { 
+    background-color: #cccccc !important; 
+    color: #333333 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.estado-morado { 
+    background-color: #cc99ff !important; 
+    color: #6600cc !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.estado-cafe { 
+    background-color: #cc9966 !important; 
+    color: #663300 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Colores para Pagos */
+.pago-gris { 
+    background-color: #cccccc !important; 
+    color: #333333 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.pago-amarillo { 
+    background-color: #ffff99 !important; 
+    color: #666600 !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.pago-vinotinto { 
+    background-color: #800020 !important; 
+    color: white !important;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Para que los badges se vean bien en la tabla */
+.table td .estado-rojo,
+.table td .estado-naranja,
+.table td .estado-verde,
+.table td .estado-gris,
+.table td .estado-morado,
+.table td .estado-cafe,
+.table td .pago-gris,
+.table td .pago-amarillo,
+.table td .pago-vinotinto {
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Estilos para filtros avanzados */
+.filtro-activo {
+    background-color: #e8f4fd;
+    border-left: 4px solid #007bff;
+}
+
+.multiselect-native-select .btn-group {
+    width: 100%;
+}
+
+.multiselect-container {
+    width: 100%;
+}
+
+.filtro-etiqueta {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 3px 8px;
+    margin: 2px 5px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.filtro-etiqueta .close {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#filtrosAvanzados {
+    background-color: #fafafa;
+}
+
+
+</style>
+  </head>
+
+  <body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divSolicitud_CertificadoHTML">
+                
+                <!-- Identificadores ocultos -->
+                <span id="spanIdSolicitud_Certificado" class="ocultar"></span>
+                <span id="spanNombreSolicitud_Certificado" class="ocultar"></span>
+                <span id="spanTipoSolicitud_Certificado" class="ocultar"></span>
+                <span id="spanProgramaSolicitud_Certificado" class="ocultar"></span>
+
+
+                <!-- Filtros Avanzados -->
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="fa fa-filter"></i> Filtros Avanzados
+                                    <small class="float-right">
+                                        <a href="javascript:void(0)" onclick="mostrarOcultarFiltros()" id="toggleFiltros">
+                                            <i class="fa fa-chevron-down"></i> Ocultar
+                                        </a>
+                                    </small>
+                                </h5>
+                            </div>
+                            <div class="card-body" id="filtrosAvanzados">
+                                <div class="row">
+                                    <!-- Filtro por Estado -->
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label><strong>Estado</strong></label>
+                                            <select id="filtroEstado" class="form-control" multiple="multiple">
+                                                <option value="En Verificación de Pago">En Verificación de Pago</option>
+                                                <option value="En Proceso de Expedición">En Proceso de Expedición</option>
+                                                <option value="En proceso de firma">En proceso de firma</option>
+                                                <option value="Enviado al usuario">Enviado al usuario</option>
+                                                <option value="No es de competencia o aun no puede expedirse">No es de competencia</option>
+                                                <option value="Anulado por el estudiante">Anulado por estudiante</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filtro por Pago -->
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label><strong>Estado de Pago</strong></label>
+                                            <select id="filtroPago" class="form-control" multiple="multiple">
+                                                <option value="En verificación">En verificación</option>
+                                                <option value="Pagado">Pagado</option>
+                                                <option value="Gratis">Gratis</option>
+                                                <option value="No ha pagado">No ha pagado</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filtro por Fecha 
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label><strong>Rango de Fechas</strong></label>
+                                            <div class="input-daterange input-group" id="datepicker">
+                                                <input type="text" class="form-control" id="filtroFechaDesde" placeholder="Desde">
+                                                <span class="input-group-addon">a</span>
+                                                <input type="text" class="form-control" id="filtroFechaHasta" placeholder="Hasta">
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+                                    <!-- Filtro por Solicitante -->
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label><strong>Solicitante</strong></label>
+                                            <input type="text" id="filtroSolicitante" class="form-control" placeholder="Buscar solicitante...">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 text-right">
+                                        <button type="button" class="btn btn-success" onclick="aplicarFiltros()">
+                                            <i class="fa fa-check"></i> Aplicar Filtros
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" onclick="limpiarFiltros()">
+                                            <i class="fa fa-times"></i> Limpiar Filtros
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Filtros Activos -->
+                                <div class="row mt-3" id="filtrosActivos" style="display: none;">
+                                    <div class="col-md-12">
+                                        <div class="alert alert-info">
+                                            <strong>Filtros activos:</strong>
+                                            <span id="etiquetasFiltros"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabla principal -->
+                <div class="row" id="dvSolicitud_CertificadoTable">
+                
+
+                  <!-- Título del formulario -->
+                  <div class="row mb-4">
+                      <div class="col-md-12">
+                          <h4 class="text-primary border-bottom pb-2">CERTIFICADOS SOLICITADOS</h4>
+                      </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicSolicitud_Certificado">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblSolicitud_Certificado">
+                        <thead>
+                          <tr>
+                            <th>Número</th>
+                            <th>Fecha Radicado</th>
+                            <th>Solicitante</th>
+                            <th>Tipo de Certificado</th>
+                            <th>Nivel Académico</th>
+                            <th>Pago</th>
+                            <th>Estado</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor detalle oculto -->
+    <div class="row ocultar col-md-12 scroll" id="dvSolicitud_CertificadoDetalle"></div>
+
+    <!-- Proyecto scripts -->
+   <script src="../js/iris/models/Solicitud_CertificadoModel.js?v=20260303"></script>
+    <script src="../js/iris/Solicitud_Certificado.js?v=20260303"></script>
+  </body>
+</html>

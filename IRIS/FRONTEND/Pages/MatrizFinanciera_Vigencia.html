@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Matriz Financiera Vigencia</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divMatrizFinanciera_VigenciaHTML">
+                  <span id="spanIdMatrizFinanciera_Vigencia" class="ocultar" ></span>
+                  <span id="spanCodigoMatrizFinanciera_Vigencia" class="ocultar" ></span>
+                  <span id="spanNombreMatrizFinanciera_Vigencia" class="ocultar" ></span>                                                  
+                  <div class="row" id="dvMatrizFinanciera_VigenciaTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">MATRIZ FINANCIERA VIGENCIA</div>
+                      <div class="col-md-6 text-center">
+                    
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearMatrizFinanciera_Vigencia()">Nueva Vigencia</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicMatrizFinanciera_Vigencia">
+                      <div class="table-responsive col-md-8 offset-md-2">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblMatrizFinanciera_Vigencia" >
+                        <thead>
+                          <tr>                            
+                            <th>Código</th>
+                            <th>Nombre Vigencia</th>                                                       
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvMatrizFinanciera_VigenciaDetalle"></div>              
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/MatrizFinanciera_Vigencia.js"></script>
+    <script src="../js/iris/models/Decanatura/MatrizFinanciera_VigenciaModel.js" ></script>
+
+    
+  </body>
+
+
+</html>

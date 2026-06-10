@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Deposito Disposicion Legal</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DepositoDisposicionLegalHTML">
+                <div class="container" id="dvPublicaciones_DepositoDisposicionLegalTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Disposición Legal</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoDisposicionLegal()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoDisposicionLegal" data-bs-keyboard="false" data-bs-backdrop="static">Crear Disposición Legal</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DepositoDisposicionLegal">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblPublicaciones_DepositoDisposicionLegal" >
+                        <thead>
+                          <tr>
+                            <th>Disposición Legal</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Disposición Legal -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoDisposicionLegal" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoDisposicionLegal" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoDisposicionLegal">Datos Disposición Legal</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formPublicaciones_DepositoDisposicionLegal" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnClosePublicaciones_DepositoDisposicionLegalModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoDisposicionLegal('formPublicaciones_DepositoDisposicionLegal', 'btnClosePublicaciones_DepositoDisposicionLegalModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris//models/Publicaciones_DepositoDisposicionLegalModel.js"></script>
+    <script src="../JS/iris/publicaciones_depositodisposicionlegal.js"></script>
+
+
+  </body>
+
+
+</html>

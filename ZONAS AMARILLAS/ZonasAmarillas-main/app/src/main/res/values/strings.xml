@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Zonas Amarillas</string>
+    <string name="title_activity_maps1">Mapa</string>
+
+    <array name="Roles">
+        <item>Pasajero</item>
+        <item>Conductor</item>
+        <item>Negocio</item>
+    </array>
+
+</resources>

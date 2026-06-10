@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_PlanAccionIndicadoresEstrategicosHTML">
+                <div class="container" id="dvDecVie_PlanAccionIndicadoresEstrategicosTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Indicadores Estratégicos</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_PlanAccionIndicadoresEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalDecVie_PlanAccionIndicadoresEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Indicador</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_PlanAccionIndicadoresEstrategicos">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblDecVie_PlanAccionIndicadoresEstrategicos" >
+                        <thead>
+                          <tr>
+                            <th>Indicador Estratégico</th>
+                            <th>observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos COntractuales -->
+                <div class="modal fade" id="ModalDecVie_PlanAccionIndicadoresEstrategicos" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_PlanAccionIndicadoresEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelDecVie_PlanAccionIndicadoresEstrategicos">Nuevo Indicador Estratégico</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formDecVie_PlanAccionIndicadoresEstrategicos" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdDecVie_PlanAccionIndicadoresEstrategicos" class="ocultar" ></span>
+                              <span id="spanIdDependenciaPlanAccionIndicadoresEstrategicos" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdDecViePlanAccionIndicadoresEstrategicos">Indicador Estratégico</label>
+                                <input type="text" class="form-control iris" id="txtCdDecViePlanAccionIndicadoresEstrategicos" maxlength="500"placeholder="Indicador" data-span="spanCdDecViePlanAccionIndicadoresEstrategicos" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Indicador es un campo obligatorio
+                                </div>
+                                <div id="spanCdDecViePlanAccionIndicadoresEstrategicos" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtDecVie_PlanAccionIndicadoresEstrategicos">observaciones</label>
+                                <input type="text" class="form-control iris" id="txtDecVie_PlanAccionIndicadoresEstrategicos" maxlength="250" placeholder="Observación" data-span="spanDecVie_PlanAccionIndicadoresEstrategicos" required/>
+                                <div class="invalid-feedback">
+                                    observaciones es un campo obligatorio
+                                </div>
+                                <div id="spanDecVie_PlanAccionIndicadoresEstrategicos" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseDecVie_PlanAccionIndicadoresEstrategicosModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_PlanAccionIndicadoresEstrategicos('formDecVie_PlanAccionIndicadoresEstrategicos', 'btnCloseDecVie_PlanAccionIndicadoresEstrategicosModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/DecVie_PlanAccionIndicadoresEstrategicos.js"></script>
+
+
+  </body>
+
+
+</html>

@@ -1,0 +1,210 @@
+﻿using IrisUNAL.Api.Entities.Repositories;
+using IrisUNAL.Api.Models;
+using IrisUNAL.Api.Models.TableModel;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web;
+using System.Web.Http;
+using System.Web.Http.Cors;
+
+namespace IrisUNAL.Api.Controllers
+{
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    public class DependenciaController : BaseController<Dependencia>
+    {
+        private readonly IDependenciaRepository _dependenciaRepository;
+        public DependenciaController(IDependenciaRepository dependenciaRepository)
+        {
+            _dependenciaRepository = dependenciaRepository;
+        }
+
+        readonly IDependenciaRepository dependenciaRepository = new DependenciaRepository();
+        public DependenciaController()
+        {
+            _dependenciaRepository = dependenciaRepository;
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetAllDependencia()
+        {
+            var resultdb = new ResultObject();
+            try
+            {
+                var data = dependenciaRepository.GetAllDependencia();
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+                resultdb.Data = data;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }            
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetDependenciaDetails(int id_depend)
+        {
+            var resultdb = new ResultObject();
+            try
+            {
+                var data = dependenciaRepository.GetDependenciaDetails(id_depend);
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+
+                if (data == null)
+                {
+                    resultdb.Ok = false;
+                    resultdb.Message = "Dependencia inexistente";
+                }
+
+                resultdb.Data = data;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetDependenciaCodigo(string coddepend)
+        {
+            var resultdb = new ResultObject();
+            try
+            {
+                var data = dependenciaRepository.GetDependenciaDetails(coddepend);
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+
+                if (data == null)
+                {
+                    resultdb.Ok = false;
+                    resultdb.Message = "Dependencia inexistente";
+                }
+
+                resultdb.Data = data;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }
+        }
+
+        [HttpPost]
+        public IHttpActionResult InsertDependencia([FromBody] Dependencia dependencia)
+        {
+            var resultdb = new ResultObject();
+
+            try
+            {
+                //VALIDA BASADO EN LOS DATAANNOTATIONS DEL MODELO
+                if (!ModelState.IsValid)
+                {
+                    resultdb.Ok = false;
+                    resultdb.Message = Request.CreateResponse(ModelState).ToString();
+                    resultdb.Data = null;
+                }
+
+                var created = dependenciaRepository.InsertDependencia(dependencia);
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+                resultdb.Data = created;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }
+
+        }
+
+        [HttpPost]
+        public IHttpActionResult UpdateDependencia([FromBody] Dependencia dependencia)
+        {
+            var resultdb = new ResultObject();
+
+            try
+            {
+                //VALIDA BASADO EN LOS DATAANNOTATIONS DEL MODELO
+                if (!ModelState.IsValid)
+                {
+                    resultdb.Ok = false;
+                    resultdb.Message = Request.CreateResponse(ModelState).ToString();
+                    resultdb.Data = null;
+                }
+
+                var created = dependenciaRepository.UpdateDependencia(dependencia);
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+                resultdb.Data = created;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }
+
+        }
+
+        [HttpDelete]
+        public IHttpActionResult DeleteDependencia(int id_depend)
+        {
+            var resultdb = new ResultObject();
+            try
+            {
+                //***VALIDAR LAS REGLAS DE BORRADO
+
+                var data = dependenciaRepository.DeleteDependencia(id_depend);
+
+                resultdb.Ok = true;
+                resultdb.Message = "";
+                resultdb.Data = data;
+
+                return Return(resultdb);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultdb, ex);
+            }
+
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetDataTableDependencia()
+        {
+            DataTableAdapter<Dependencia> resultado = null;
+            DataTableRequest model = new DataTableRequest();
+
+            try
+            {
+                NameValueCollection dtrequest = HttpUtility.ParseQueryString(Request.RequestUri.Query);
+
+                model = NvcToDataTablesModel(dtrequest);
+
+                resultado = dependenciaRepository.GetDataTableDependencia(model);
+
+                return Return(resultado);
+            }
+            catch (Exception ex)
+            {
+                return Return(resultado, ex);
+            }
+        }
+    }
+}

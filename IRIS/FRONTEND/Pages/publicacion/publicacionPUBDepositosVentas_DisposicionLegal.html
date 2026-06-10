@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION DISTRIBUCION DISPOSICIONES LEGALES</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DepositoDistribucionHTML">
+                <div class="row" id="dvPublicaciones_DepositoDistribucionTable">
+                  <!--<span id="spanIddistribuidorPublicaciones_DepositoDistribucion" class="ocultar" ></span>-->
+                  <div class="row">
+                    <div class="col-md-6 titletab">DISPOSICIONES LEGALES</div>
+                    <div class="col-md-6 text-center">                      
+                      <!--<button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoDistribucion()">Nueva Entrega</button>-->
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoDistribucion()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoDistribucion" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Entrega</button>
+                      <button type="button" class="btn btn-infoiris" onclick="CrearPublicaciones_DepositoDistribucion_Devolucion()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoDistribucion_Devolucion" data-bs-keyboard="false" data-bs-backdrop="static">Registrar Devolución</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DepositoDistribucion">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_DepositoDistribucion" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Id</th>
+                            <th>Fecha</th>
+                            <th>Disposición</th>
+                            <th>Cantidad</th>
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                <!-- Modal Disposición Legal -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoDistribucion" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoDistribucion" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoDistribucion">Datos Entrega Disposición Legal</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formPublicaciones_DepositoDistribucion" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnClosePublicaciones_DepositoDistribucionModal" onclick="CerrarCrearPublicaciones_DepositoDistribucionDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoDistribucionForm('formPublicaciones_DepositoDistribucion', 'btnClosePublicaciones_DepositoDistribucionModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                <!-- Modal Devolucion Disposición Legal -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoDistribucion_Devolucion" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoDistribucion_Devolucion" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoDistribucion_Devolucion">Datos Devolución Disposición Legal</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formPublicaciones_DepositoDistribucion_Devolucion" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnClosePublicaciones_DepositoDistribucion_DevolucionModal" onclick="CerrarCrearPublicaciones_DepositoDistribucionDesdeDevolucion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoDistribucion_DevolucionForm('formPublicaciones_DepositoDistribucion_Devolucion', 'btnClosePublicaciones_DepositoDistribucion_DevolucionModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_DepositoDistribucionModel.js" ></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDepositosVentas_DisposicionLegal.js"></script>    
+
+  </body>
+
+
+</html>
+

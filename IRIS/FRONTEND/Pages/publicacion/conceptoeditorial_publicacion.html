@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Concepto Editorial</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Concepto Editorial Publicación</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionConceptoEditorial" novalidate>
+                    <div class="form-group row mb-3">
+                        <span id="spanIdPublicacionFormConcepto" class="ocultar" ></span>
+                        <span id="spanIdConceptoEditorial" class="ocultar" ></span>  
+
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkManuscOriginalPublicacion"><input type="checkbox" onchange="EnableFechaOriginal();" class="form-check-input iris-check" id="chkManuscOriginalPublicacion"/>Manuscrito Original Presentado</label>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfechaManuscOriginalPublicacion">Fecha Original</label>                                
+                            <input type="date" class="form-control iris" id="dtfechaManuscOriginalPublicacion" title="Fecha Original Manuscrito" data-span="spandtfechaManuscOriginalPublicacion" disabled/>
+                            <div id="spandtfechaManuscOriginalPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkManuscDefinitivoPublicacion"><input type="checkbox" onchange="EnableFechaDefinitivo();" class="form-check-input iris-check" id="chkManuscDefinitivoPublicacion"/>Manuscrito Definititivo Presentado</label>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfechaManuscDefinitivoPublicacion">Fecha Definitivo</label>                                
+                            <input type="date" class="form-control iris" id="dtfechaManuscDefinitivoPublicacion" title="Fecha Manuscrito Definitivo" data-span="spandtfechaManuscDefinitivoPublicacion" disabled/>
+                            <div id="spandtfechaManuscDefinitivoPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkConcEditorialPublicacion"><input type="checkbox" class="form-check-input iris-check" id="chkConcEditorialPublicacion"/>Concepto Editorial</label>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfechaElaboraPreliminarPublicacion">Fecha Preliminar</label>                                
+                            <input type="date" class="form-control iris" id="dtfechaElaboraPreliminarPublicacion" title="Fecha Elaboración Preliminar" data-span="spandtfechaElaboraPreliminarPublicacion" />
+                            <div id="spandtfechaElaboraPreliminarPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtconcepteditpreliminarPublicacion">Concepto Preliminar</label>
+                            <textarea class="form-control iris" id="txtconcepteditpreliminarPublicacion" maxlength="1000" rows="3" placeholder="Concepto Editorial Preliminar" data-span="spantxtconcepteditpreliminarPublicacion" ></textarea>
+                            <div class="invalid-feedback">
+                                Concepto Preliminar es un campo obligatorio
+                            </div>
+                            <div id="spantxtconcepteditpreliminarPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfechaElaboraFinalPublicacion">Fecha Final</label>                                
+                            <input type="date" class="form-control iris" id="dtfechaElaboraFinalPublicacion" title="Fecha Elaboración Final" data-span="spandtfechaElaboraFinalPublicacion" />
+                            <div id="spandtfechaElaboraFinalPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtconcepteditfinalPublicacion">Concepto Final</label>
+                            <textarea class="form-control iris" id="txtconcepteditfinalPublicacion" maxlength="3000" rows="3" placeholder="Concepto Editorial Final" data-span="spantxtconcepteditfinalPublicacion" ></textarea>
+                            <div class="invalid-feedback">
+                                Concepto Final es un campo obligatorio
+                            </div>
+                            <div id="spantxtconcepteditfinalPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Sistema Citación</label>   
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboSistemaCitacionPublica" required></select>    
+                                <div class="invalid-feedback">
+                                    Sistema Citación es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumimgajenolicPublicacion">Figuras Con Licencia</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumimgajenolicPublicacion" title="No. Figuras Ajenas con Licencia" min="0" data-span="spannmnumimgajenolicPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Figuras Con Licencia es un campo obligatorio
+                            </div>
+                            <div id="spannmnumimgajenolicPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumimgajenoslicPublicacion">Figuras Sin Licencia</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumimgajenoslicPublicacion" title="No. Figuras Ajenas Sin Licencia" min="0" data-span="spannmnumimgajenoslicPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Figuras Sin Licencia es un campo obligatorio
+                            </div>
+                            <div id="spannmnumimgajenoslicPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumimgpropioPublicacion">Figuras Propias</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumimgpropioPublicacion" title="No. Figuras Propias" min="0" data-span="spannmnumimgpropioPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Figuras Propias es un campo obligatorio
+                            </div>
+                            <div id="spannmnumimgpropioPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumimgblanconegroPublicacion">Figuras Blanco/Negro</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumimgblanconegroPublicacion" title="No. Figuras Blanco/Negro" min="0" data-span="spannmnumimgblanconegroPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Figuras Blanco/Negro es un campo obligatorio
+                            </div>
+                            <div id="spannmnumimgblanconegroPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumimgcolorPublicacion">Figuras Color</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumimgcolorPublicacion" title="No. Figuras Color" min="0" data-span="spannmnumimgcolorPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Figuras Color es un campo obligatorio
+                            </div>
+                            <div id="spannmnumimgcolorPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumtablasPublicacion">Total Tablas</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumtablasPublicacion" title="No. Total Tablas" min="0" data-span="spannmnumtablasPublicacion" required/>
+                            <div class="invalid-feedback">
+                                Total Tablas es un campo obligatorio
+                            </div>
+                            <div id="spannmnumtablasPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumtblcolorPublicacion">Tablas Color</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumtblcolorPublicacion" title="No. Tablas Color" min="0" data-span="spannmnumtblcolorPublicacion" required/>
+                            <div class="invalid-feedback">
+                                No. Tablas Color es un campo obligatorio
+                            </div>
+                            <div id="spannmnumtblcolorPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmnumtblblanconegroPublicacion">Tablas Blanco/Negro</label>
+                            <input type="number" class="form-control iris iris-number" id="nmnumtblblanconegroPublicacion" title="No. Tablas Blanco/Negro" min="0" data-span="spannmnumtblblanconegroPublicacion" required/>
+                            <div class="invalid-feedback">
+                                No. Tablas Blanco/Negro es un campo obligatorio
+                            </div>
+                            <div id="spannmnumtblblanconegroPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>    
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Recomienda Impresión</label>   
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboRecomendacionImpresionPublica" ></select>    
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txturlconcepeditPublicacion">Link Concepto Editorial</label>
+                            <textarea class="form-control iris" id="txturlconcepeditPublicacion" maxlength="1000" rows="3" title="Link Drive Editorial Final" data-span="spantxturlconcepeditPublicacion" ></textarea>
+                            <div id="spantxturlconcepeditPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Índices Análiticos</label>   
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboIndiceAnaliticosPublica" required></select>    
+                                <div class="invalid-feedback">
+                                    Índices Análiticos es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Sello Editorial</label>   
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboSelloEditorialPublica" required></select>    
+                                <div class="invalid-feedback">
+                                    Sello Editorial es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkestraduccionPublicacion"><input type="checkbox" class="form-check-input iris-check" id="chkestraduccionPublicacion"/>Es Traducción</label>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkescomercializablePublicacion"><input type="checkbox" class="form-check-input iris-check" id="chkescomercializablePublicacion"/>Es Comercializable</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label-iris" for="txtresenacubiertaPublicacion">Reseña Cubierta</label>
+                            <textarea class="form-control iris" id="txtresenacubiertaPublicacion" maxlength="3000" rows="2" title="Reseña (Correspondiente a la cubierta)" data-span="spantxtresenacubiertaPublicacion" ></textarea>
+                            <div id="spantxtresenacubiertaPublicacion" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaPublicacionesDesdeConcepto()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Concepto Editorial" onclick="ValidatePostUpdatePublicacionConcepto('formPublicacionConceptoEditorial')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/conceptoeditorial_publicacion.js"></script>
+
+  </body>
+
+
+</html>

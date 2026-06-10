@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION DISTRIBUIDORES</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DistribuidorHTML">
+                <div class="row" id="dvPublicaciones_DistribuidorTable">
+                  <span id="spanIddistribuidorPublicaciones_Distribuidor" class="ocultar" ></span>
+                  <div class="row">
+                    <div class="col-md-6 titletab">PUBLICACIONES DISTRIBUIDORES</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_Distribuidor()">Nuevo Distribuidor</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_Distribuidor">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_Distribuidor" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicaciones_DistribuidorDetalle"></div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris//models/Publicaciones_DistribuidorModel.js" ></script>
+    <script src="../js/iris/publicaciones_distribuidorcomercial.js"></script>    
+
+  </body>
+
+
+</html>
+

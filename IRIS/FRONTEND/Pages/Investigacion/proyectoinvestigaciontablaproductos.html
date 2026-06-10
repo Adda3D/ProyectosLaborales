@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>GESTION PRODUCTOS PROYECTO INVESTIGACION</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PRODUCTOS PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtHermesPRJINVProductos">Hermes ID</label>
+                <input type="text" class="form-control iris" id="txtHermesPRJINVProductos" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtQuipuPRJINVProductos">Quipu</label>
+                <input type="text" class="form-control iris" id="txtQuipuPRJINVProductos" disabled/>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label-iris" for="txtNombrePRJINVProductos">Nombre Proyecto</label>
+                <textarea class="form-control iris" id="txtNombrePRJINVProductos" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaProyectoInvestigacionDesdeProductosForm()">Volver Listado Proyectos</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearProyectoInvestigacionProductos()" data-bs-toggle="modal" data-bs-target="#ModalProyectoInvestigacionProductos" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Producto</button>
+            </div>    
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoInvestigacionProductos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoInvestigacionProductos" >
+              <thead>
+                <tr> 
+                    <th>Descripción</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                    <th>Cumplidos</th>
+                    <th>Fecha Finaliza</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+
+                <!-- Modal Producto -->
+                <div class="modal fade" id="ModalProyectoInvestigacionProductos" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoInvestigacionProductos" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelProyectoInvestigacionProductos">Datos Producto</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formProyectoInvestigacionProductos" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnCloseProyectoInvestigacionProductosModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoInvestigacionProductosForm('formProyectoInvestigacionProductos', 'btnCloseProyectoInvestigacionProductosModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/investigacion/Investigacion_ProductoModel.js" ></script>
+    <script src="../../js/iris/Investigacion/proyectoinvestigaciontablaproductos.js"></script>
+
+  </body>
+
+
+</html>
+
+

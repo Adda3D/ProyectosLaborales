@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout - MiniLibros{% endblock %}
+
+{% block extra_css %}
+{% if not mp_not_configured %}
+<script src="https://sdk.mercadopago.com/js/v2"></script>
+{% endif %}
+<style>
+  .verify-box {
+    background: #fff8e7;
+    border: 2px dashed #f59e0b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .verify-box h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+    color: #92400e;
+  }
+  .verify-box p {
+    color: #78350f;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .btn-verify {
+    display: inline-block;
+    background: #f59e0b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .btn-verify:hover { background: #d97706; color: #fff; }
+  .order-ref {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Finalizar Compra</h1>
+
+    {% if mp_not_configured %}
+    <div class="alert alert-warning">
+        <h3>⚠️ MercadoPago No Configurado</h3>
+        <p><strong>Número de Orden:</strong> {{ order.order_number }}</p>
+        <p><strong>Total:</strong> ${{ order.total|floatformat:0 }}</p>
+        <p>Para procesar pagos, configura tus credenciales de MercadoPago en el archivo <code>.env</code></p>
+        <p>Consulta <code>docs/MERCADOPAGO_SETUP.md</code> para más información.</p>
+        <a href="{% url 'core:home' %}" class="btn btn-primary">Volver al Inicio</a>
+    </div>
+    {% else %}
+    <div id="checkout-container"></div>
+
+    {# --- Botón de verificación manual para PSE / transferencias bancarias --- #}
+    <div class="verify-box">
+      <h3>¿Pagaste por PSE o transferencia bancaria?</h3>
+      <p>
+        Si ya completaste el pago en tu banco pero esta ventana no cambió,
+        haz clic aquí para confirmar tu compra:
+      </p>
+      <a href="{% url 'payments:verify_payment' order_number=order.order_number %}"
+         class="btn-verify">
+        ✅ Ya pagué — Verificar mi pago
+      </a>
+      <p class="order-ref">Orden: {{ order.order_number }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% if not mp_not_configured %}
+{% block extra_js %}
+<script>
+    const mp = new MercadoPago('{{ public_key }}');
+    const checkout = mp.checkout({
+        preference: {
+            id: '{{ preference_id }}'
+        },
+        autoOpen: true
+    });
+</script>
+{% endblock %}
+{% endif %}

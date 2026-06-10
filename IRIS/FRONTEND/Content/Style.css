@@ -1,0 +1,503 @@
+﻿.cambiarMouse {
+    cursor: pointer
+}
+
+.ocultar {
+    display: none !important;
+}
+
+.mayuscula{
+    text-transform: uppercase;
+}
+
+.transbox {
+    background-color: #272727;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.dvLoaderClass {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding-top: 15%;
+    padding-left: 45%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.botones-generales {
+    margin-top: 1%;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+/*.configureformoculto{
+    display:none;
+}
+
+div#dvModalTercero.configureform {
+    position: absolute;
+    border: 1px solid #e5e6e7;
+    left: 43.1% !important;
+    padding: 15px 10px 0 10px;
+    top: -31px;
+    background: #fff;
+    width: 305px;
+}*/
+
+.configureformoculto{
+   display: none;
+    opacity: 0;
+}
+
+div#dvModalTercero.configureform {
+    position: absolute;
+    border: 1px solid #e5e6e7;
+    left: 43.1% !important;
+    padding: 15px 10px 0 10px;
+    top: -31px;
+    background: #fff;
+    width: 305px;
+    opacity: 1;
+    display:block;
+}
+
+div#importform {
+    position: relative; 
+    z-index: 1;    
+}
+
+
+/*.nav > li > a {
+    padding: 14px 20px 14px 10px !important;   
+}
+
+.nav.nav-second-level {
+   padding-left: 33px !important;
+}*/
+
+.is-invalid_form {
+    border: 1px solid #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.is-valid_form {
+    border: 1px solid #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+.is-focus-select2 {
+    border-color: #1ab394 !important;
+}
+
+.col-form-label {
+    /*font-size: 11px !important;*/
+    font-size: 1em;    
+}
+
+.form-control {
+    /*font-size: 11px !important;*/
+    font-size: 1em;
+}
+
+body {
+    font-size: 11px;
+    /*font-size: 0.68em !important;*/
+}
+
+.color-required {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+}
+
+.w3l-login-form {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ebeff6;
+    border-radius: 0px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 7px 72px -13px rgba(0,0,0,0.75);
+}
+
+h1.titleLoguin {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 30px 0;
+}
+
+h5.titleLoguin {
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    color: #000066;
+}
+
+.centred {
+    margin: 0 auto;
+    float: none;    
+}
+
+.w3l-form-group {
+    margin: 10px 0;
+}
+
+.btnlogin {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    color: #ffffff;
+    padding: 6px 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.125rem;
+    /*border-radius: 6px;
+    //font-size: 1.3em;
+    //font-family: arial, helvetica, sans-serif; */
+    text-decoration: none;
+    display: inline-block;
+    background-color: #3093c7;
+    background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+}
+
+.btnloginvolver {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    color: #ffffff;
+    padding: 6px 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.125rem;    
+    /*border-radius: 6px;    
+    font-family: arial, helvetica, sans-serif;*/
+    text-decoration: none;
+    display: inline-block;
+    background-color: #55ede4;
+    background-image: linear-gradient(to bottom, #55ede4, #1f8294);
+}
+
+i.fas.fa-search.buscar {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ESTILOS TITULO Y MIGA DE PAN PLANTILLA */
+li.breadcrumb-item.active {
+    font-size: 10px;
+}
+
+li.breadcrumb-item a {
+    font-size: 10px;
+}
+
+.row.wrapper.border-bottom.white-bg.page-heading h2 {
+    font-size: 1.50em;
+}
+
+/* span MovimientoCuenta */
+span.redirigir {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* ESTILOS PARA EL SELECT2 CUANDO ESTA EN UN MODAL */
+.select2-close-mask{
+    z-index: 2099;
+}
+.select2-dropdown{
+    z-index: 3051;
+}
+/* FIN */
+
+/* EXTRA LARGE MODAL */
+@media (min-width: 1200px) {
+    .modal-xl {
+        max-width: 1140px;
+    }
+}
+
+/*TREELIST*/
+#tasks {
+    max-height: 640px;
+}
+
+#tasks .dx-treelist-rowsview td {
+    vertical-align: middle;
+}
+
+.img,
+.name {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    background-color: #fff;
+}
+
+.botonopcion {
+  text-align: center;
+  border: solid 1px #59B8DE;
+  margin: 10px;
+  font-size: 15px;
+  background-color: #59B8DE;
+  color: #000000;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 5px 5px 8px 0 rgba(0,0,0,.26);
+  
+}
+
+.spanopcion{
+  display: block;
+  width: 100%;
+  height: 35px;
+  font-size: 14px;
+  padding-top: 7px;
+  color: #000000;
+  text-align: center;
+  background-color: #59B8DE;  
+  margin: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 5px 5px 8px 0 rgba(0,0,0,.26);
+}
+
+.anchotabla {
+    width: 100% !important;
+}
+
+/* FIELDSET */
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width:auto;
+    padding:0 10px;
+    border-bottom:none;
+}
+
+.checkCuentas {
+    position: absolute !important;
+    margin-top: 0.1rem !important;
+    margin-left: -1.25rem !important;
+}
+
+/*PLAN MENU*/
+.caretf {
+    cursor: pointer;
+    background: #fff;
+    display: inline-block;
+    position: relative;
+    height: 14px;
+    width: 14px;
+    vertical-align: middle;
+    z-index: 1;
+}
+
+span.caretf:after {
+    content: "";
+    position: relative;
+    border-top: 5px solid #2C8F7B;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #2C8F7B;
+    top: 9px;
+    left: 2px;
+}
+
+ul#side-menu-all input[type=checkbox], ul#side-menu-all input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    z-index: 0;
+}
+
+.caretf.caret-down {
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.nested {
+    display: none;
+    padding-left: 35px;
+}
+
+.activeCh {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding-left: 7%;
+}
+
+ul#side-menu-all .i-checks {
+    padding-left: 0;
+    display: inline-block;
+    margin-left: 14px;
+}
+
+.icheckbox_square-green, .iradio_square-green {
+    width: 14px !important;
+    height: 14px !important;    
+}
+
+.icheckbox_square-green.checked {
+    background-position: -52px -4px !important;
+}
+
+label.identifycheck {   
+    margin-bottom: .6rem !important;
+}
+
+.item_check_solo {
+    margin-left: 28px !important;
+}
+
+li.subitem {
+    margin-left: -14px;
+}
+
+/* ROL MENU OPCIONES */
+ul#opc-menu-rol {
+    border: 1px solid;
+    padding: 10px 10px 10px 0px;
+    padding-left: 0px;
+    margin-left: 200px;
+    position: absolute;
+    margin-top: -64px;
+    background: white;
+    width: 143px;
+    z-index: 10;
+}
+
+.btnOpc {
+    text-align: center;
+}
+
+.centrar-label-checks {
+    padding-top: 3px !important;
+}
+
+/*Autocomplete BancoCuenta*/
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.custom-combobox-toggle {
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+    right: 0;
+}
+.custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
+.custom-combobox input.custom-combobox-input.ui-widget.ui-widget-content.ui-state-default.ui-corner-left.ui-autocomplete-input {
+    width: 88%;
+}
+
+/* Cuentas fieldset checkbox */
+ul#side-cuentas {
+    list-style: none;
+    padding-left: 0% !important;
+}
+
+.sideCuentas {
+    list-style: none;
+    padding-left: 0% !important;
+}
+
+/* Icono pestañas */
+div#dvTabsPrincipal ul.nav.nav-tabs li svg {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    margin-right: 7px;
+    margin-top: 7px;
+}
+
+div#dvTabsPrincipal ul.nav.nav-tabs li {
+    position: relative;
+}
+
+div#dvTabsPrincipal ul.nav.nav-tabs li a {
+    padding: 10px 39px 10px 10px;
+}
+
+/* ICONO DE ACTUALIZAR */
+.icono-actualizar {
+    position: absolute;
+    padding-left: 8px;
+    margin-top: -5px;
+}
+
+/* DESHABILITAR UI-WIDGET */
+.disabled-widget-ui {
+    background-color: #e9ecef !important;
+}
+
+.ocultar-clic-select {
+    z-index: -1;
+}
+
+/*AJUSTAR TITULO Y CUENTA CERRAR SESION*/
+nav.navbar.navbar-static-top {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-header {
+    margin-right: 20px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_InventarioUsoAmpliadoAhorroHTML">
+                <div class="container" id="dvDecVie_InventarioUsoAmpliadoAhorroTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Uso Ampliado Ahorro</div>
+                    <div class="col-md-6 text-center">
+                     
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_InventarioUsoAmpliadoAhorro()" data-bs-toggle="modal" data-bs-target="#ModalDecVie_InventarioUsoAmpliadoAhorro" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Ahorro</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_InventarioUsoAmpliadoAhorro">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblDecVie_InventarioUsoAmpliadoAhorro" >
+                        <thead>
+                          <tr>
+                            <th>Ahorros</th>
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalDecVie_InventarioUsoAmpliadoAhorro" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_InventarioUsoAmpliadoAhorro" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelDecVie_InventarioUsoAmpliadoAhorro">Uso Ampliado Ahorro</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formDecVie_InventarioUsoAmpliadoAhorro" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdDecVie_InventarioUsoAmpliadoAhorro" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdDecVieInventarioUsoAmpliadoAhorro">Nuevo Ahorro</label>
+                                <input type="text" class="form-control iris" id="txtCdDecVieInventarioUsoAmpliadoAhorro" maxlength="15"placeholder="Ahorro" data-span="spanCdDecVieInventarioUsoAmpliadoAhorro" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Ahorro es un campo obligatorio
+                                </div>
+                                <div id="spanCdDecVieInventarioUsoAmpliadoAhorro" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtDecVie_InventarioUsoAmpliadoAhorro">Observaciones</label>
+                                <input type="text" class="form-control iris" id="txtDecVie_InventarioUsoAmpliadoAhorro" maxlength="120" placeholder="Observación" data-span="spanDecVie_InventarioUsoAmpliadoAhorro" required/>
+                                <div class="invalid-feedback">
+                                    Observaciones es un campo obligatorio
+                                </div>
+                                <div id="spanDecVie_InventarioUsoAmpliadoAhorro" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseDecVie_InventarioUsoAmpliadoAhorroModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_InventarioUsoAmpliadoAhorro('formDecVie_InventarioUsoAmpliadoAhorro', 'btnCloseDecVie_InventarioUsoAmpliadoAhorroModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/DecVie_InventarioUsoAmpliadoAhorro.js"></script>
+
+
+  </body>
+
+
+</html>

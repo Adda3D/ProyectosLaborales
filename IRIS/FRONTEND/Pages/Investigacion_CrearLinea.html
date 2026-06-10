@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Funcionario</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-10 offset-md-1">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divFuncionarioHTML">
+                <div class="row" id="dvInvestigacion_CrearLineaTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Crear Línea</div>
+                    <div class="col-md-6 text-center">
+                
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearInvestigacion_CrearLinea()" data-bs-toggle="modal" data-bs-target="#ModalInvestigacion_CrearLinea" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Línea</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicInvestigacion_CrearLinea">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblInvestigacion_CrearLinea" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Línea</th>
+                            <th>Campo de Interés</th>
+                            <th>Grupo Investigación</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Funcionarioes -->
+                <div class="modal fade" id="ModalInvestigacion_CrearLinea" tabindex="-1" role="dialog" aria-labelledby="ModalLabelInvestigacion_CrearLinea" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelInvestigacion_CrearLinea">Crear Línea</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formModalInvestigacion_CrearLinea" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdInvestigacion_CrearLinea" class="ocultar" ></span>
+                              <div class="form-group row mb-3">
+                                <div class="col-md-3">
+                                    <label class="form-label-iris" for="txtLineaInvestigacion_CrearLinea">Línea</label>
+                                    <input type="text" class="form-control iris" id="txtLineaInvestigacion_CrearLinea" maxlength="250" placeholder="Línea" data-span="spanLineaInvestigacion_CrearLinea" required/>
+                                    <div class="invalid-feedback">
+                                        Línea es un campo obligatorio
+                                    </div>
+                                    <div id="spanLineaInvestigacion_CrearLinea" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales
+                                    </div>
+                                </div>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCampoInvestigacion_CrearLinea">Campo Interés</label>
+                                <textarea class="form-control iris" id="txtCampoInvestigacion_CrearLinea" rows="2" maxlength="1000" placeholder="Campo Interés" data-span="spanCampoInvestigacion_CrearLinea" required ></textarea>                                
+                                <div class="invalid-feedback">
+                                    Campo Interés es un campo obligatorio
+                                </div>
+                                <div id="spanCampoInvestigacion_CrearLinea" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Grupo Investigación</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboGrupoInvestigacionCrearLinea-select2 input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboGrupoInvestigacionCrearLinea" required></select>    
+                                    <div class="invalid-feedback">
+                                      Grupo Investigación es un campo obligatorio
+                                    </div>
+                              </div>
+                            </div>
+                            </div>                            
+                          </div>                            
+                        </form>
+                      </div>
+                    </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalInvestigacion_CrearLinea" class="btn-iris white small"  data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateInvestigacion_CrearLinea('formModalInvestigacion_CrearLinea', 'btnCloseModalInvestigacion_CrearLinea')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Investigacion_CrearLinea.js"></script>
+
+</body>
+
+
+</html>

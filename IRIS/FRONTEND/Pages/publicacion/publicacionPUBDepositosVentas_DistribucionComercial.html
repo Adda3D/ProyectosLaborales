@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION DISTRIBUCION COMERCIAL</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DepositoDistribucionComercialHTML">
+                <div class="row" id="dvPublicaciones_DepositoDistribucionComercialTable">
+                  <!--<span id="spanIddistribuidorPublicaciones_DepositoDistribucionComercial" class="ocultar" ></span>-->
+                  <div class="row">
+                    <div class="col-md-6 titletab">DISTRIBUCIÓN COMERCIAL</div>
+                    <div class="col-md-6 text-center">                      
+                      <!--<button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoDistribucionComercial()">Nueva Entrega</button>-->
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DepositoDistribucionComercial()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoDistribucionComercial" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Entrega</button>
+                      <button type="button" class="btn btn-infoiris" onclick="CrearPublicaciones_DepositoDistribucionComercial_Devolucion()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DepositoDistribucionComercial_Devolucion" data-bs-keyboard="false" data-bs-backdrop="static">Registrar Devolución</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DepositoDistribucionComercial">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_DepositoDistribucionComercial" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Id</th>
+                            <th>Fecha</th>
+                            <th>Comercializador</th>
+                            <th>Cantidad</th>
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                <!-- Modal Entrega Comercializador -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoDistribucionComercial" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoDistribucionComercial" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoDistribucionComercial">Datos Entrega Comercializador</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formPublicaciones_DepositoDistribucionComercial" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnClosePublicaciones_DepositoDistribucionComercialModal" onclick="CerrarPublicaciones_DepositoDistribucionComercialDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoDistribucionComercialForm('formPublicaciones_DepositoDistribucionComercial', 'btnClosePublicaciones_DepositoDistribucionComercialModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+                <!-- Modal Devolución Comercializador -->
+                <div class="modal fade" id="ModalPublicaciones_DepositoDistribucionComercial_Devolucion" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DepositoDistribucionComercial_Devolucion" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPublicaciones_DepositoDistribucionComercial_Devolucion">Datos Devolución Comercializador</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formPublicaciones_DepositoDistribucionComercial_Devolucion" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnClosePublicaciones_DepositoDistribucionComercial_DevolucionModal" onclick="CerrarPublicaciones_DepositoDistribucionComercialDesdeDevolucion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DepositoDistribucionComercial_DevolucionForm('formPublicaciones_DepositoDistribucionComercial_Devolucion', 'btnClosePublicaciones_DepositoDistribucionComercial_DevolucionModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_DepositoDistribucionComercialModel.js" ></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDepositosVentas_DistribucionComercial.js"></script>    
+
+  </body>
+
+
+</html>
+

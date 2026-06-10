@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Extensión Observaciones</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">DETALLE OBSERVACIONES PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <span id="spanIdProyectoExtensionObservaciones" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsProyectoExtensionObservacion">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionObservacion" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtContratoProyectoExtensionObservacion">Contrato/Convenio</label>
+              <input type="text" class="form-control iris" id="txtContratoProyectoExtensionObservacion" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionObservacion">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionObservacion" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeObservaciones()">Volver Listado Proyectos</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearObservacionProyectoExtension()" data-bs-toggle="modal" data-bs-target="#ModalProyectoExtensionObservacion" data-bs-keyboard="false" data-bs-backdrop="static">Crear Observación</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionObservaciones">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionObservaciones" >
+              <thead>
+                <tr>                            
+                  <th>Fecha</th>
+                  <th>Detalle Observación</th>
+                  <th>Usuario</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalProyectoExtensionObservacion" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoExtensionObservacion" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelProyectoExtensionObservacion">Datos Observación</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formProyectoExtensionObservacionDatos" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanProyectoExtensionIdObservacion" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtFechaObservacionProyectoExtension">Fecha Observación</label>                                
+                        <input type="date" class="form-control iris" id="dtFechaObservacionProyectoExtension" data-span="spandtFechaObservacionProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Fecha Observación es un campo obligatorio
+                        </div>
+                        <div id="spandtFechaObservacionProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-8">
+                      <label class="form-label-iris" for="txtObservacionProyectoExtension">Detalle Observación</label>
+                      <input type="text" class="form-control iris" id="txtObservacionProyectoExtension" maxlength="100" placeholder="Descripción" data-span="spantxtObservacionProyectoExtension" required/>
+                      <div class="invalid-feedback">
+                        Detalle Observación es un campo obligatorio
+                      </div>
+                      <div id="spantxtObservacionProyectoExtension" class="color-required ocultar">
+                        No se acepta el ingreso de caracteres especiales
+                      </div>
+                    </div>                    
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalProyectoExtensionObservacion" class="btn-iris white small" onclick="CerrarModalProyectoExtensionObservacion()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoExtensionObservacion('formProyectoExtensionObservacionDatos', 'btnCloseModalProyectoExtensionObservacion')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextensionobservaciones.js"></script>
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,120 @@
+# ===========================================================================
+#  .gitignore global para el monorepo ProyectosLaborales
+#  Objetivo: NO subir secretos (API keys, credenciales) ni archivos pesados
+#  generados (dependencias, builds, binarios).
+# ===========================================================================
+
+# ----------------------------- SECRETOS ------------------------------------
+# Variables de entorno
+.env
+*.env
+.env.*
+!*.env.example
+!.env.example
+
+# Credenciales / cuentas de servicio / tokens
+credentials.json
+client_secret*.json
+*service*account*.json
+*serviceaccount*.json
+inventariobk-*.json
+token.json
+*.token
+
+# Firebase / Google
+google-services.json
+GoogleService-Info.plist
+google_maps_api.xml
+firebase-adminsdk*.json
+
+# Llaves y certificados
+*.pem
+*.key
+*.keystore
+*.jks
+*.p12
+*.pfx
+key.properties
+secrets*.json
+secret*.json
+
+# ----------------------------- PYTHON --------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+entorno/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+db.sqlite3
+staticfiles/
+
+# ----------------------------- NODE / ANGULAR ------------------------------
+node_modules/
+bower_components/
+dist/
+.angular/
+npm-debug.log*
+yarn-error.log*
+.cache/
+
+# ----------------------------- .NET / VISUAL STUDIO ------------------------
+bin/
+obj/
+packages/
+.vs/
+*.user
+*.suo
+*.userprefs
+*_i.c
+*_p.c
+
+# ----------------------------- FLUTTER / ANDROID / iOS ---------------------
+build/
+.gradle/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+local.properties
+*.iml
+**/flutter/ephemeral/
+*.apk
+*.aab
+Pods/
+*.xcuserstate
+DerivedData/
+
+# ----------------------------- BINARIOS PESADOS ----------------------------
+*.exe
+*.dll
+*.pdb
+*.so
+*.dylib
+*.wav
+ffmpeg/
+
+# ----------------------------- CARPETAS PESADAS (no subir) -----------------
+# Material pesado / no esencial para el portafolio de código
+VIDEOS/
+INVESTIGACIONES/
+DOCUMENTOS/
+
+# Bundles compilados de BienMio (el código fuente está en "Bien Mio App")
+# — contenían la API key incrustada
+BienMio/Html/static/js/main.*.js
+BienMio/Html/static/js/main.*.js.map
+
+# ----------------------------- SO / EDITOR ---------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+.vscode/
+*.swp
+*~

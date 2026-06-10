@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Actos Administrativos</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">ACTOS ADMINISTRATIVOS</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecVie_ActosAdministrativosDetalle" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanIdDecVie_ActosAdministrativosForm" class="ocultar" ></span>                    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtExpedicionDecVie_ActosAdministrativos">Fecha Expedición</label>                                
+                        <input type="date" class="form-control iris" id="dtExpedicionDecVie_ActosAdministrativos" data-span="spandtExpedicionDecVie_ActosAdministrativos" required/>
+                        <div class="invalid-feedback">
+                          Fecha Expedición es un campo obligatorio
+                        </div>
+                        <div id="spandtExpedicionDecVie_ActosAdministrativos" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Acto</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                                Tipo Acto es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtConsecutivoDecVie_ActosAdministrativos">Consecutivo Acto</label>
+                        <textarea class="form-control iris" id="txtConsecutivoDecVie_ActosAdministrativos" maxlength="250" rows="3" placeholder="Consecutivo" data-span="spantxtConsecutivoDecVie_ActosAdministrativos" required></textarea>                                
+                        <div class="invalid-feedback">
+                            Consecutivo es un campo obligatorio
+                        </div>
+                        <div id="spantxtConsecutivoDecVie_ActosAdministrativos" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtConceptoDecVie_ActosAdministrativos">Concepto/Asunto</label>
+                        <textarea class="form-control iris" id="txtConceptoDecVie_ActosAdministrativos" maxlength="500" rows="3" placeholder="Consecutivo" data-span="spantxtConceptoDecVie_ActosAdministrativos"></textarea>
+                        <div id="spantxtConceptoDecVie_ActosAdministrativos" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                  
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipología</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipologiaDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                              Tipología es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Macroproceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboMacroprocesoDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                                Macroproceso es un campo obligatorio
+                            </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="form-group row mb-3">
+                      <div class="col-md-2">
+                       <div class="col-md-12">
+                        <label class="form-label-iris">Dependencia Solicitante</label>
+                       </div>
+                        <div class="col-md-12 font-size-iris">
+                         <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboDependenciaSolicitanteDecVie_ActosAdministrativos" required></select>    
+                          <div class="invalid-feedback">
+                          Dependencia Solicitante es un campo obligatorio
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Solicitante</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboSolicitanteDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                                Responsable/Solicitante es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Dependencia Firmante</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboDependenciafirmanteDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                                Dependencia Firmante es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>    
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txtBeneficiarioDecVie_ActosAdministrativos">Beneficiario</label>                                
+                        <input type="text" class="form-control iris" id="txtBeneficiarioDecVie_ActosAdministrativos" data-span="spantxtBeneficiarioDecVie_ActosAdministrativos"/>
+                        <div id="spantxtBeneficiarioDecVie_ActosAdministrativos" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div> 
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txtidentificacionDecVie_ActosAdministrativos">Identificacion Beneficiario</label>                                
+                        <input type="text" class="form-control iris" id="txtidentificacionDecVie_ActosAdministrativos" data-span="spantxtidentificacionDecVie_ActosAdministrativos"/>
+                        <div id="spantxtidentificacionDecVie_ActosAdministrativos" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                      </div>
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Estado Proceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboEstadoDecVie_ActosAdministrativos" required></select>    
+                            <div class="invalid-feedback">
+                                Estado Proceso es un campo obligatorio
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtDocumentoDecVie_ActosAdministrativos">Link Documento</label>                                
+                            <input type="text" class="form-control iris" id="txtDocumentoDecVie_ActosAdministrativos" data-span="spantxttxtDocumentoDecVie_ActosAdministrativos"/>
+                            <div id="spantxttxtDocumentoDecVie_ActosAdministrativos" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                    </div>
+                  
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="CerrarDecVie_ActosAdministrativosDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Proyecto" onclick="ValidatePostUpdateDecVie_ActosAdministrativos('formDecVie_ActosAdministrativosDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Vie/DecVie_ActosAdministrativosDetalle.js"></script>    
+
+  </body>
+
+
+</html>

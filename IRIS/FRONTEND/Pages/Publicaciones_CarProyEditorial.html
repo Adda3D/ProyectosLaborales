@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_CarProyEditorialHTML">
+                <div class="container" id="dvPublicaciones_CarProyEditorialTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Carácter Proyecto</div>
+                    <div class="col-md-6 text-center">
+                   
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_CarProyEditorial()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_CarProyEditorial" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Carácter</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_CarProyEditorial">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblPublicaciones_CarProyEditorial" >
+                        <thead>
+                          <tr>
+                            <th>Carácter Proyecto</th>
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalPublicaciones_CarProyEditorial" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_CarProyEditorial" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPublicaciones_CarProyEditorial">Carácter Proyecto</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPublicaciones_CarProyEditorial" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdPublicaciones_CarProyEditorial" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdPublicacionesCarProyEditorial">Nuevo Carácter</label>
+                                <input type="text" class="form-control iris" id="txtCdPublicacionesCarProyEditorial" maxlength="15"placeholder="Carácter" data-span="spanCdPublicacionesCarProyEditorial" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Carácter es un campo obligatorio
+                                </div>
+                                <div id="spanCdPublicacionesCarProyEditorial" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtPublicaciones_CarProyEditorial">Observaciones</label>
+                                <input type="text" class="form-control iris" id="txtPublicaciones_CarProyEditorial" maxlength="120" placeholder="Observación" data-span="spanPublicaciones_CarProyEditorial" required/>
+                                <div class="invalid-feedback">
+                                    Observaciones es un campo obligatorio
+                                </div>
+                                <div id="spanPublicaciones_CarProyEditorial" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnClosePublicaciones_CarProyEditorialModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_CarProyEditorial('formPublicaciones_CarProyEditorial', 'btnClosePublicaciones_CarProyEditorialModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Publicaciones_CarProyEditorial.js"></script>
+
+
+  </body>
+
+
+</html>

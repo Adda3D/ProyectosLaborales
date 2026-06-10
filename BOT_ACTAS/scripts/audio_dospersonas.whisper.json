@@ -1,0 +1,295 @@
+[
+  {
+    "start": 0.9799999999999991,
+    "end": 4.38,
+    "text": " ¡Hola! ¡Esto es una prueba de audio 1!",
+    "words": [
+      {
+        "start": 0.9799999999999991,
+        "end": 1.6,
+        "word": " ¡Hola!"
+      },
+      {
+        "start": 1.98,
+        "end": 2.28,
+        "word": " ¡Esto"
+      },
+      {
+        "start": 2.28,
+        "end": 2.46,
+        "word": " es"
+      },
+      {
+        "start": 2.46,
+        "end": 2.7,
+        "word": " una"
+      },
+      {
+        "start": 2.7,
+        "end": 3.1,
+        "word": " prueba"
+      },
+      {
+        "start": 3.1,
+        "end": 3.72,
+        "word": " de"
+      },
+      {
+        "start": 3.72,
+        "end": 3.98,
+        "word": " audio"
+      },
+      {
+        "start": 3.98,
+        "end": 4.38,
+        "word": " 1!"
+      }
+    ]
+  },
+  {
+    "start": 5.359999999999999,
+    "end": 8.54,
+    "text": " ¡Hola! ¡Esto es una prueba de audio 2!",
+    "words": [
+      {
+        "start": 5.359999999999999,
+        "end": 5.98,
+        "word": " ¡Hola!"
+      },
+      {
+        "start": 6.42,
+        "end": 6.7,
+        "word": " ¡Esto"
+      },
+      {
+        "start": 6.7,
+        "end": 6.88,
+        "word": " es"
+      },
+      {
+        "start": 6.88,
+        "end": 7.14,
+        "word": " una"
+      },
+      {
+        "start": 7.14,
+        "end": 7.52,
+        "word": " prueba"
+      },
+      {
+        "start": 7.52,
+        "end": 7.82,
+        "word": " de"
+      },
+      {
+        "start": 7.82,
+        "end": 8.04,
+        "word": " audio"
+      },
+      {
+        "start": 8.04,
+        "end": 8.54,
+        "word": " 2!"
+      }
+    ]
+  },
+  {
+    "start": 9.54,
+    "end": 10.06,
+    "text": " ¡Hola!",
+    "words": [
+      {
+        "start": 9.54,
+        "end": 10.06,
+        "word": " ¡Hola!"
+      }
+    ]
+  },
+  {
+    "start": 11.82,
+    "end": 12.96,
+    "text": " ¡Ahora no sé qué decir!",
+    "words": [
+      {
+        "start": 11.82,
+        "end": 12.12,
+        "word": " ¡Ahora"
+      },
+      {
+        "start": 12.12,
+        "end": 12.3,
+        "word": " no"
+      },
+      {
+        "start": 12.3,
+        "end": 12.42,
+        "word": " sé"
+      },
+      {
+        "start": 12.42,
+        "end": 12.56,
+        "word": " qué"
+      },
+      {
+        "start": 12.56,
+        "end": 12.96,
+        "word": " decir!"
+      }
+    ]
+  },
+  {
+    "start": 14.12,
+    "end": 16.26,
+    "text": " ¡Yo tampoco sé qué decir!",
+    "words": [
+      {
+        "start": 14.12,
+        "end": 14.46,
+        "word": " ¡Yo"
+      },
+      {
+        "start": 14.46,
+        "end": 14.92,
+        "word": " tampoco"
+      },
+      {
+        "start": 14.92,
+        "end": 15.36,
+        "word": " sé"
+      },
+      {
+        "start": 15.36,
+        "end": 15.58,
+        "word": " qué"
+      },
+      {
+        "start": 15.58,
+        "end": 16.26,
+        "word": " decir!"
+      }
+    ]
+  },
+  {
+    "start": 17.14,
+    "end": 18.18,
+    "text": " ¡Hola, hola, hola!",
+    "words": [
+      {
+        "start": 17.14,
+        "end": 17.6,
+        "word": " ¡Hola,"
+      },
+      {
+        "start": 17.7,
+        "end": 17.9,
+        "word": " hola,"
+      },
+      {
+        "start": 17.92,
+        "end": 18.18,
+        "word": " hola!"
+      }
+    ]
+  },
+  {
+    "start": 18.76,
+    "end": 20.68,
+    "text": " ¡Por favor! ¡Identifica mi voz!",
+    "words": [
+      {
+        "start": 18.76,
+        "end": 18.98,
+        "word": " ¡Por"
+      },
+      {
+        "start": 18.98,
+        "end": 19.36,
+        "word": " favor!"
+      },
+      {
+        "start": 19.62,
+        "end": 20.16,
+        "word": " ¡Identifica"
+      },
+      {
+        "start": 20.16,
+        "end": 20.42,
+        "word": " mi"
+      },
+      {
+        "start": 20.42,
+        "end": 20.68,
+        "word": " voz!"
+      }
+    ]
+  },
+  {
+    "start": 20.98,
+    "end": 21.92,
+    "text": " ¡Yo soy la voz 1!",
+    "words": [
+      {
+        "start": 20.98,
+        "end": 21.08,
+        "word": " ¡Yo"
+      },
+      {
+        "start": 21.08,
+        "end": 21.28,
+        "word": " soy"
+      },
+      {
+        "start": 21.28,
+        "end": 21.4,
+        "word": " la"
+      },
+      {
+        "start": 21.4,
+        "end": 21.58,
+        "word": " voz"
+      },
+      {
+        "start": 21.58,
+        "end": 21.92,
+        "word": " 1!"
+      }
+    ]
+  },
+  {
+    "start": 22.66,
+    "end": 24.32,
+    "text": " ¡Y yo soy la voz 2!",
+    "words": [
+      {
+        "start": 22.66,
+        "end": 23.06,
+        "word": " ¡Y"
+      },
+      {
+        "start": 23.06,
+        "end": 23.26,
+        "word": " yo"
+      },
+      {
+        "start": 23.26,
+        "end": 23.46,
+        "word": " soy"
+      },
+      {
+        "start": 23.46,
+        "end": 23.68,
+        "word": " la"
+      },
+      {
+        "start": 23.68,
+        "end": 24.0,
+        "word": " voz"
+      },
+      {
+        "start": 24.0,
+        "end": 24.32,
+        "word": " 2!"
+      }
+    ]
+  }
+]

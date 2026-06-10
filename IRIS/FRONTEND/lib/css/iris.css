@@ -1,0 +1,776 @@
+#mainiris {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+}
+
+.menuPrincipalIris {
+  padding: 0;
+  /* bottom: 5px; */
+  margin-top: 3px;
+  color: rgb(15, 2, 2);
+  left: -20px;
+  z-index: 1500;
+}
+
+/* Prueba de boton */
+.alert-button {
+  background-color: #94b43b; /* Color de fondo del botón */
+  color: white; /* Color del texto e icono dentro del botón */
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  border: none; /* Remueve cualquier borde predeterminado */
+  border-top-left-radius: 10px; /* Redondea la esquina superior izquierda */
+  border-bottom-left-radius: 10px; /* Redondea la esquina inferior izquierda */
+}
+
+/* Si estás usando Font Awesome, asegúrate de que el color de los iconos también sea blanco */
+.alert-button .fa, .alert-button .fas {
+  color: white;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Valor alto para asegurar que el pop-up esté por encima de los demás elementos */
+}
+
+.popup-content {
+  width: 40%;
+  margin: auto; /* Centra el contenido horizontalmente */
+  background-color: white;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: añade sombra para mejor estética */
+  max-width: 600px; /* Ajusta según necesites para dispositivos más pequeños */
+  text-align: center; /* Centra el texto dentro del .popup-content */
+}
+
+.info-button {
+  margin-top: 10px; /* Ajusta el espacio encima del botón de información */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los botones a la izquierda */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+#alertPopup button {
+  background-color: #94b43b; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Elimina el borde predeterminado */
+  padding: 10px 20px; /* Ajusta el relleno según necesites */
+  margin: 5px; /* Espacio entre botones */
+  cursor: pointer; /* Indica que son clickeables */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+#alertPopup button:hover {
+  background-color: #82a629; /* Color ligeramente más claro al pasar el mouse por encima */
+}
+/* Prueba de boton */
+
+.mainlogin {
+  min-height: calc(100vh - 220px);
+  /*z-index: 200;*/
+/*min-height: 720px;*/
+}
+
+#menuiris {
+  margin-left: 3%;
+}
+
+.menumoduloiris {
+  color: #0e36c5 !important;
+}
+
+@media (max-width: 767px) {
+  .menumoduloiris {
+    color: #0e36c5 !important;
+    font-size: 9px;
+  }
+  
+}
+
+.divmenugraliris {
+  /*margin-left: 18% !important;*/
+}
+
+@media (max-width: 767px) {
+  .divmenugraliris {
+    margin-left: 1% !important;
+  }    
+}
+
+/*
+.submenuiris {
+  background-color: #666 !important;
+  color: white !important;
+}
+*/
+.imagenlogin {
+  /*style="background: url('/images/iris/Edificio-610---1.jpg');background-position: center center; background-repeat: no-repeat;background-attachment: fixed; background-size: cover; 
+  background-color: #464646;"  */
+  
+  background-image: url("/images/iris/Edificio-610---1.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+}
+
+.loader-iris {
+  width: 96px;
+  height: 96px;
+  border: 8px solid #9994b3;
+  color: #9994b3;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+
+/*overflow-y: scroll;*/
+/*
+  @media only screen and (max-height: 1440px) {
+    .scroll 
+    {
+    max-height: 880px;    
+    overflow-y: auto;
+    }
+  } 
+
+  @media only screen and (max-height: 1080px) {
+    .scroll 
+    {
+    max-height: 580px;    
+    overflow-y: auto;
+    }
+  } 
+
+  @media only screen and (max-height: 768px) {
+    .scroll 
+    {
+    max-height: 350px;    
+    overflow-y: auto;
+    }
+  } 
+*/
+.transbox {
+    background-color: #272727;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.dvLoaderClass {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding-top: 15%;
+    padding-left: 45%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+}  
+
+.homeiris {
+  background: url(images/iris/fachada_home.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+
+}
+
+.cambiarMouse {
+  cursor: pointer
+}
+
+.opciondatatable {  
+  padding-right: 2px;
+}
+
+.ocultar {
+  display: none !important;
+}
+
+.mayuscula{
+  text-transform: uppercase;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}
+
+.tabPrin {
+  color: black;
+}
+
+.tabPrinActive {
+  color: blue;
+}
+
+.modal-backdrop {
+  background-color: #ecf1e8;
+}
+
+.btn-primaryiris { 
+  color: #fff !important; 
+  background-color: #77c3f0 !important;
+  border-color: #77c3f0 !important;
+  font-size: 0.75rem !important;
+  margin: 8px 5px !important;
+}
+
+.btn-primaryiris:hover,
+.btn-primaryiris:focus,
+.btn-primaryiris.focus {
+  background-color: #6dbfee !important;
+  border-color: #6dbfee !important;
+  color: #FFFFFF !important;
+}
+.btn-primaryiris.disabled,
+.btn-primaryiris:disabled {
+  color: #fff !important;
+  background-color: #6dbfee !important;
+  border-color: #6dbfee !important;
+}
+.btn-primaryiris:not(:disabled):not(.disabled):active,
+.btn-primaryiris:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff !important;
+  background-color: #6dbfee !important;
+  border-color: #6dbfee !important;
+}
+.btn-primaryiris:not(:disabled):not(.disabled):active:focus,
+.btn-primaryiris:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-infoiris.btn-outline {
+    color: #23c6c8 !important;
+  }
+
+  .btn-infoiris {
+    color: #fff !important;
+    background-color: #23c6c8 !important;
+    border-color: #23c6c8 !important;
+    font-size: 0.75rem !important;
+    margin: 8px 5px !important;
+  }
+  .btn-infoiris:hover,
+  .btn-infoiris:focus,
+  .btn-infoiris.focus {
+    color: #fff !important;
+    background-color: #21b9bb !important;
+    border-color: #21b9bb !important;
+  }
+  .btn-infoiris.disabled,
+  .btn-infoiris:disabled {
+    color: #fff !important;
+    background-color: #21b9bb !important;
+    border-color: #21b9bb !important;
+  }
+  .btn-infoiris:not(:disabled):not(.disabled):active,
+  .btn-infoiris:not(:disabled):not(.disabled).active,
+  .show > .btn-infoiris.dropdown-toggle {
+    color: #fff !important;
+    background-color: #21b9bb !important;
+    border-color: #21b9bb !important;
+  }
+  .btn-infoiris:not(:disabled):not(.disabled):active:focus,
+  .btn-infoiris:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-infoiris.dropdown-toggle:focus {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  button.btn-infoiris.dim {
+    box-shadow: inset 0 0 0 #1eacae, 0 5px 0 0 #1eacae, 0 10px 5px #999999 !important;
+  }
+  button.btn-infoiris.dim:active {
+    box-shadow: inset 0 0 0 #1eacae, 0 2px 0 0 #1eacae, 0 5px 3px #999999 !important;
+  }
+  
+  div.dt-buttonsold {
+    float: left;    
+  }    
+
+  button.dt-button {
+    position: relative;
+    float: right;
+  }
+
+  table.dataTable td {
+    font-size: 0.7rem;
+  }
+
+  table.dataTable thead tr {
+    font-size: 0.8rem;
+    background-color: rgb(219, 225, 233);
+  }
+
+  .divheader {    
+    align-items: right;
+    justify-content: right;
+  }
+
+  .closetab {
+    margin: 2px 5px;
+  }
+
+  .titletab {
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .tabopciones {
+    margin: 2px 12px 2px 12px;
+  }
+
+  .liopcion {
+    margin: 0 8px -1px 0;
+    border: 1px solid #DAE0E7;
+  }
+
+  .liselected {
+    background: rgb(232, 233, 235);
+  }
+  
+  .login-extra-style {
+    /* CAMBIOS */
+   flex-direction: row; /* Alinea los elementos horizontalmente */
+   align-items: start; /* Alinea los elementos al inicio, puedes ajustar según la necesidad */
+   justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+   gap: 10px; /* Espacio entre los elementos, ajusta según necesites */
+    /* CAMBIOS */ 
+
+    /*float: right;
+    width: calc(20% - 0px);*/
+    width: 400px;
+    height: 270px;
+    background: #f7f7f7;
+    /*color: #000;*/
+    border-radius: 8px;
+    font-size: 1.2em;
+    /*box-shadow: 5px 10px 18px #888888;*/
+    box-shadow: 15px 20px 4px 4px rgb(0 0 0 / 30%);
+    padding: 30px;    
+ }
+
+ .loginiris {
+  padding-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+ .input-double {  
+  padding: 0;
+}
+
+.inserte {
+  position: relative;
+  padding: 8px 0;
+}
+
+.inserte.send {
+  padding-top: 10px;
+}
+
+.item-titulo, .item-campo {
+    display: block; 
+    max-width: 98%;
+    width: 450px;    
+    height: 32px;
+}
+
+.input-double .item-campo > .input-in {
+  vertical-align: top;
+  margin-bottom: 10px;  
+}
+
+.domain-single {
+  position: relative;
+  display: inline-block;  
+  height: 32px;
+}
+
+.domain {
+  display: inline-block;  
+}
+
+.labellogin {
+  font-weight: bold;
+  font-size: .85em;
+}
+
+.logininput {
+    border-width: 0;
+    border-bottom: 1px solid #91b33b;
+    padding-bottom: 2px;
+    background: #f7f7f7;        
+    display: inline-block;     
+}
+
+.btnlogin {
+  background: #94b43b;
+  color: white;
+  max-width: 140px;
+  margin-top: 5px;
+  padding: 8px;
+    float: right;
+    border: none;
+    border-radius: 0;
+    margin-right: 1%;    
+  width: 100%;
+}
+
+.item-campo input[type="text"],
+.item-campo input[type="password"],
+.item-campo textarea,
+.item-campo select {
+  max-width: 98%;
+  width: 450px;
+}
+.item-campo input[type="text"]:focus,
+.item-campo input[type="password"]:focus,
+.item-campo textarea:focus,
+.item-campo select:focus {
+  outline-color: transparent;
+}
+
+.modal-iris {
+  height: 1;
+}
+
+.modal-iris2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1055;
+  display: none;
+  width: 100%;
+  /*height: 100%;*/
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.iris-modal-header {
+  background-color: #e1e4e7;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;
+  padding: 0.6rem 0.6rem;
+}
+
+.iris-modal-footer {
+  background-color: #eef1f3;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;
+  padding: 0.6rem;
+}
+
+.btn-iris {
+  display: inline-block;
+  vertical-align: middle;
+  /*margin: 0.2rem 0.2rem 0.2rem 0.2rem;*/
+  margin: 8px 5px;
+  font-family: inherit;
+  padding: 0.375rem 0.75rem;
+  /*padding: .75rem 1rem;*/
+  /*-webkit-appearance: none;*/
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+  transition: background-color .25s ease-out,color .25s ease-out;
+  font-size: .75rem;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-iris.success {
+  background-color: #1779ba !important;
+  color: #fefefe !important;
+}
+
+.btn-iris.white {
+  background-color: #f8fcff !important;
+  color: #000000 !important;
+}
+
+.btn-iris.cancel {
+  background-color: #cdd1d8 !important;
+  color: #000000 !important;
+}
+
+.btn-iris.info {
+  color: #fefefe;
+  background-color: #23c6c8;
+  /*border-color: #23c6c8;
+  font-size: 0.75rem;
+  margin: 8px 5px;*/
+}
+
+.btn-iris.small {
+  font-size: .75rem;
+}
+
+.form-label-iris {
+  margin-bottom: 0.1rem;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;
+  font-size: .70rem;
+  color: #0a3b4a;
+  text-decoration: underline;
+}
+
+.form-control.iris {  
+  /*font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;*/
+  font-size: .70rem;
+  padding: 0.25rem 0.60rem;
+}
+
+.form-combo.iris {  
+  display: block;
+}
+
+.font-size-iris {  
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;
+  font-size: .70rem;
+}
+
+.iris-number {
+  text-align: right;
+}
+
+.iris-check {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: .4rem;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu {
+  position:relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+  text-decoration: underline;
+  transform: rotate(-90deg);
+} 
+
+.navigation .btnbar {
+  padding: 6px 8px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.025rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: none;
+  background: none;
+  border: none;
+  box-shadow: none!important;
+  width: auto;
+}
+
+.opcionbar {
+  font-size: 0.8rem;
+  letter-spacing: 0.025rem;
+  /*color: white !important;*/
+}
+
+.input-group-append {
+  cursor: pointer;
+}
+
+.hover08 img:hover {
+  background: #ffffff;
+}
+
+.dropdown-acciones {  
+/*  position: fixed;*/
+  display: inline-block;
+  z-index: 500;  
+}
+
+.opciones_datatable {
+  background-color: #f8f9fa;
+  /*z-index: 140000 !important; */
+}
+
+.dropdown-content-acciones {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 15000;
+}
+
+.notclick {
+  pointer-events: none;
+}
+
+.nav-acceso {
+  display: block;
+  padding: 0.5rem 3rem;
+  font-size: 0.8rem;  
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.nav-acceso.submenu {
+  cursor: pointer;  
+}
+
+.acceso-item {
+  color: #3b3e42;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.acceso-item.submenu {
+  padding-left: 0.5rem;
+  text-decoration: underline;
+  color: #0d6efd;
+}
+
+.lista-acceso {
+  padding: 0;
+  bottom: 5px;  
+  color: #fff;
+  /*left: -20px;  */
+}
+
+/*******  PARA DESPLEGABLE NOTIFICACIÓN ALERTAS */
+
+.notification_wrapper {
+  min-width: 270px;
+  padding: 10px 5px 10px 10px;
+  display: flex;
+  position: relative;
+}
+
+.notification-menu {
+  width: 100%;
+}
+
+.notification-dismissIcon {
+  cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    height: 16px;
+    width: 16px;
+    opacity: .4;
+    margin-left: 4px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+    flex: 0 0 auto;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    opacity: 1;
+}
+
+.notification-title {
+  display: flex;
+  padding-bottom: 2px;
+  max-width: calc(100% - 20px);
+}
+
+.notification-label {
+  margin-bottom: 0.1rem;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif !important;
+  font-size: 0.75rem;
+  color: #0078d4;    
+  text-decoration: underline;
+}
+
+.notification-description {
+    font-size: 0.7rem;
+    color: #646464;  
+    line-height: normal;
+    display: block;
+    line-height: 18px;
+    max-height: 144px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    width: 100%;
+}
+
+.notification-due {
+  font-size: 0.75rem;
+  color: #646464;  
+  line-height: normal;
+  display: block;
+  text-align: right;
+  /*
+  line-height: 18px;
+  max-height: 144px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 5px;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;*/
+  width: 100%;
+}
+
+.dropdown-iris {
+  width: auto !important;
+}
+
+.site-url-iris {
+  color: white;  
+  text-decoration-color: white;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+}
+
+.site-url-iris:hover {
+  color: white; 
+  text-decoration: underline;
+}

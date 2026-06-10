@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - MiniLibros{% endblock %}
+
+{% block content %}
+<!-- ====== HERO SECTION ====== -->
+<section class="landing-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+        <h1 class="hero-title">Tus recuerdos físicos con alma digital</h1>
+        <p class="hero-subtitle">Revive tus momentos favoritos, tu música o tu historia con nuestros libros, CDs y vinilos miniatura. Acércalos a tu celular y descubre la magia.</p>
+        <div class="hero-buttons">
+            <a href="#productos" class="btn btn-primary btn-lg shine-effect">Explorar Colección</a>
+            <a href="#como-funciona" class="btn btn-outline btn-lg">¿Cómo funciona?</a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== HOW IT WORKS ====== -->
+<section id="como-funciona" class="landing-features">
+    <div class="container text-center">
+        <h2 class="section-title">La magia en 3 pasos</h2>
+        <p class="section-subtitle">Es más fácil de lo que imaginas</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛒</div>
+                <h3>1. Elige tu formato</h3>
+                <p>Selecciona entre Mini Libro, Mini CD o Vinilo. Sube tu PDF, elige tu imagen o añade el link de tu canción favorita.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>2. Recíbelo en casa</h3>
+                <p>Fabricamos tu producto con los mejores materiales, lo empaquetamos con amor y te lo enviamos a cualquier parte.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>3. Escanea y revive</h3>
+                <p>Acerca tu teléfono al MiniLibro o MiniCD. Gracias a la tecnología NFC, se abrirá instantáneamente la versión digital.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== PRODUCTS SHOWCASE ====== -->
+<section id="productos" class="landing-products">
+    <div class="container">
+        <h2 class="section-title text-center">Nuestra Colección</h2>
+        <div class="product-types-grid">
+            
+            <!-- General Books Promo -->
+            <div class="promo-card catalog-promo">
+                <div class="promo-content">
+                    <h3>MiniLibros de Catálogo</h3>
+                    <p>Explora nuestra selección de grandes títulos en formato miniatura. ¡Perfectos para coleccionar, regalar y llevar a todas partes!</p>
+                    <a href="{% url 'books:list' %}" class="btn btn-primary">Ver Catálogo</a>
+                </div>
+            </div>
+
+            <!-- Custom Book Promo -->
+            <div class="promo-card book-promo">
+                <div class="promo-content">
+                    <h3>MiniLibros Personalizados</h3>
+                    <p>Sube tu PDF (tu tesis, poemas, historias) y crea un recuerdo físico hermoso que te redirige a tu archivo digital al escanearlo.</p>
+                    <a href="{% url 'products:upload_book' %}" class="btn btn-primary" style="background: #d6336c;">Crear mi libro</a>
+                </div>
+            </div>
+
+            <!-- Mini CD / Vinyl Promo -->
+            <div class="promo-card music-promo">
+                <div class="promo-content">
+                    <h3>Mini CDs y Vinilos</h3>
+                    <p>Dedica esa canción o playlist especial. Un regalo espectacular, escaneable con NFC y lleno de estilo vintage.</p>
+                    <div class="btn-group">
+                        <a href="{% url 'products:create_cd' %}" class="btn btn-primary">Crear CD</a>
+                        <a href="{% url 'products:create_vinyl' %}" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color:white; border:1px solid white;">Crear Vinilo</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h3 id="catalogo" class="subsection-title">Libros en Venta</h3>
+        <div class="book-grid">
+            {% for book in books %}
+            <div class="book-card" data-book-id="{{ book.id }}">
+                <div class="book-img-wrapper">
+                    {% if book.cover_image %}
+                    <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                    {% else %}
+                    <div class="book-placeholder">📚</div>
+                    {% endif %}
+                </div>
+                <h3>{{ book.title }}</h3>
+                <p class="author">{{ book.author }}</p>
+                <p class="price">${{ book.price|floatformat:0 }}</p>
+                <div class="book-actions">
+                    <button class="btn btn-primary" onclick="showBookDetail({{ book.id }})">Ver Detalles</button>
+                    <button class="btn btn-success" onclick="addToCart('book', {{ book.id }})">Comprar</button>
+                </div>
+            </div>
+            {% empty %}
+            <p>No hay libros disponibles en este momento.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ====== TESTIMONIALS (Social Proof) ====== -->
+<section class="landing-testimonials">
+    <div class="container text-center">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p class="review">"Le regalé un mini vinilo con nuestra playlist de Spotify a mi novio por nuestro aniversario. ¡Se emocionó muchísimo! Funciona perfecto al acercar el celular."</p>
+                <p class="client-name">- Camila M.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p class="review">"Convertí mi tesis en un minilibro. Es un recuerdo espectacular para tener en el escritorio, y siempre puedo acceder al PDF original."</p>
+                <p class="client-name">- Andrés F.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="stars">⭐⭐⭐⭐⭐</p>
+                <p class="review">"El nivel de detalle es increíble. El case del CD es tan real que parece mágico cuando el celular lo lee y abre la canción al instante."</p>
+                <p class="client-name">- Laura Gómez</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Book Detail Modal remains below -->
+<div id="bookModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Definir funciones globalmente primero
+    window.closeModal = function () {
+        document.getElementById('bookModal').style.display = 'none';
+    };
+
+    window.getCookie = function (name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    };
+
+    window.addToCart = function (type, id, quantity = 1) {
+        const csrftoken = getCookie('csrftoken');
+        if (!csrftoken) {
+            console.error('CSRF Token not found in cookies');
+            alert('Error de seguridad: No se pudo obtener el token CSRF. Por favor recarga la página.');
+            return;
+        }
+
+        fetch('/cart/add/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify({ type: type, id: id, quantity: quantity })
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.success) {
+                    alert('¡Añadido al carrito!');
+                    const cartCountEl = document.querySelector('.cart-count');
+                    if (cartCountEl) {
+                        cartCountEl.textContent = data.cart_count;
+                    }
+                } else {
+                    alert('Error al añadir al carrito: ' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Ocurrió un error al procesar la solicitud. Revisa la consola para más detalles.');
+            });
+    };
+
+    window.addToCartWithQty = function (type, id) {
+        const qtyInput = document.getElementById(`qty-${id}`);
+        const quantity = qtyInput ? parseInt(qtyInput.value) : 1;
+        if (isNaN(quantity) || quantity < 1) {
+            alert('Por favor, ingresa una cantidad válida');
+            return;
+        }
+        addToCart(type, id, quantity);
+        closeModal();
+    };
+
+    // Objeto books fuera del try-catch para que sea global
+    let booksData = {};
+
+    try {
+        booksData = {
+            {% for book in books %}
+        "{{ book.id }}": {
+            title: "{{ book.title|escapejs }}",
+                author: "{{ book.author|escapejs }}",
+                    description: "{{ book.description|escapejs }}",
+                        price: parseFloat("{{ book.price|stringformat:'f' }}"),
+                            cover: "{% if book.cover_image %}{{ book.cover_image.url }}{% endif %}"
+        } {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    };
+    } catch (e) {
+        console.error("Error al analizar datos de libros:", e);
+    }
+
+    window.showBookDetail = function (bookId) {
+        const book = booksData[bookId];
+        if (!book) {
+            console.error("Libro no encontrado:", bookId);
+            alert('Error al cargar los detalles del libro');
+            return;
+        }
+
+        const modal = document.getElementById('bookModal');
+        const modalBody = document.getElementById('modalBody');
+
+        modalBody.innerHTML = `
+            <div class="book-detail">
+                ${book.cover ? `<img src="${book.cover}" alt="${book.title}" style="max-height:300px; object-fit:contain; width:100%;">` : '<div class="book-placeholder">📚</div>'}
+                <h2>${book.title}</h2>
+                <p class="author">Por ${book.author}</p>
+                <p class="description">${book.description}</p>
+                <p class="price">$${book.price.toFixed(0)}</p>
+                
+                <div class="quantity-selector" style="margin: 1rem 0; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <label for="qty-${bookId}" style="font-weight: bold;">Cantidad:</label>
+                    <input type="number" id="qty-${bookId}" value="1" min="1" style="width: 70px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                </div>
+
+                <div class="modal-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center;">
+                    <button class="btn btn-secondary" onclick="closeModal()" style="background: #6c757d; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Cerrar</button>
+                    <button class="btn btn-success" onclick="addToCartWithQty('book', ${bookId})" style="padding: 0.8rem 1.5rem; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        `;
+
+        modal.style.display = 'block';
+    };
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+        const modal = document.getElementById('bookModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    };
+</script>
+{% endblock %}

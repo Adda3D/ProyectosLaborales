@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Impresión / Digitalización</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIONES SEGUIMIENTO IMPRESIÓN - DIGITALIZACIÓN</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtKardexPublicacionImpresionDigitalizacion">Kardex</label>
+              <input type="text" class="form-control iris" id="txtKardexPublicacionImpresionDigitalizacion" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtHermesPublicacionImpresionDigitalizacion">Hermes</label>
+              <input type="text" class="form-control iris" id="txtHermesPublicacionImpresionDigitalizacion" disabled/>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label-iris" for="txtNombrePublicacionImpresionDigitalizacion">Nombre Publicación</label>
+              <textarea class="form-control iris" id="txtNombrePublicacionImpresionDigitalizacion" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-2 text-center" id="dvVolverTablaPublicacionesDesdeImpresionDigitalizacion">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeImpresionDigitalizacion()">Volver Listado Publicaciones</button>            
+            </div>
+    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-3 titletab"></div>
+          <div class="col-md-6 text-center" id="dvVolverTablaPublicacionesDesdeImpresionDigitalizacion">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeImpresionDigitalizacion()">Volver Listado Publicaciones</button>            
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tablePublicacionImpresionDigitalizacion">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionImpresionDigitalizacion">
+                <li class="liopcion selected" id="liPUBImpresionDigitalizacion_Impresion">
+                    <a class="nav-link tabPrin active show" id="navPUBImpresionDigitalizacion_Impresion" data-toggle="tab" href="#" onclick="onclickTabPublicacionImpresionDigitalizacion('PUBImpresionDigitalizacion_Impresion',0)">IMPRESIÓN</a>
+                </li>
+                <li class="liopcion selected" id="liPUBImpresionDigitalizacion_Digitalizacion">
+                  <a class="nav-link tabPrin active " id="navPUBImpresionDigitalizacion_Digitalizacion" title="" data-toggle="tab" href="#" onclick="onclickTabPublicacionImpresionDigitalizacion('PUBImpresionDigitalizacion_Digitalizacion',2)">DIGITALIZACIÓN</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionImpresionDigitalizacion">
+                <div role="tabpanel" id="tabPUBImpresionDigitalizacion_Impresion" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBImpresionDigitalizacion_Impresion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBImpresionDigitalizacion_Digitalizacion" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBImpresionDigitalizacion_Digitalizacion">
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicaciones_impresiondigitalizacion.js"></script>
+
+  </body>
+
+
+</html>
+

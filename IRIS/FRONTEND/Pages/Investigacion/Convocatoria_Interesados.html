@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Convocatoria iNTERESADOS</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row" id="dvConvocatoria_Interesados">
+          <div class="col-md-6 titletab">CONVOCATORIA INTERESADOS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtTituloConvocatoria_Interesados">Titulo Convocatoria</label>
+              <input type="text" class="form-control iris" id="txtTituloConvocatoria_Interesados" disabled/>
+            </div>
+            <!-- <div class="col-md-3">
+              <label class="form-label-iris" for="txtDependenciaConvocatoria_Interesados">Dependencia</label>
+              <input type="text" class="form-control iris" id="txtDependenciaConvocatoria_Interesados" disabled/>
+            </div> -->
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaConvocatoria_InteresadosDesdeInteresados()">Volver Convocatorias</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearConvocatoria_Interesados()" data-bs-toggle="modal" data-bs-target="#ModalConvocatoria_Interesados" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Interesado</button>
+              </div>    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeEjes()">Volver Matryoshka</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearMatryoshkaEjesEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalMatryoshkaEjesEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Eje</button>
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableConvocatoria_Interesados">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblConvocatoria_Interesados" >
+              <thead>
+                <tr>                                              
+                  <th>Nombre Interesado</th>
+                  <th>Correo</th>
+                  <th>Consecutivo Correo</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalConvocatoria_Interesados" tabindex="-1" role="dialog" aria-labelledby="ModalLabelConvocatoria_Interesados" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelConvocatoria_Interesados">Convocatoria Interesados</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formConvocatoria_InteresadosDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalModalLabelConvocatoria_Interesados" class="btn-iris white small" onclick="CerrarConvocatoria_Interesados()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateConvocatoria_InteresadosForm('formConvocatoria_InteresadosDetalle', 'btnCloseModalModalLabelConvocatoria_Interesados')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Convocatoria_InteresadosModel.js" ></script>
+    <script src="../../js/iris/Investigacion/Convocatoria_Interesados.js"></script>
+
+  </body>
+
+
+</html>

@@ -1,0 +1,1349 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95F89487-59B3-4DB4-AC21-90CBFD95FCEB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IrisUNAL.Api</RootNamespace>
+    <AssemblyName>IrisUNAL.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=6.4.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.6.4.3\lib\net461\EntityFramework6.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.1.3\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common.Supertype\LinqExtensions.cs" />
+    <Compile Include="Common.Supertype\SuperType.cs" />
+    <Compile Include="Controllers\Actualizacion_ModuloRController.cs" />
+    <Compile Include="Controllers\Alerta_SeguimientoController.cs" />
+    <Compile Include="Controllers\Area_AcademicaController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\Concepto_UGIController.cs" />
+    <Compile Include="Controllers\Consecutivo_AnnioController.cs" />
+    <Compile Include="Controllers\ContrapartidasController.cs" />
+    <Compile Include="Controllers\Correspondencia_PrefijoConsecutivoController.cs" />
+    <Compile Include="Controllers\Decanatura\MatrizFinancieraController.cs" />
+    <Compile Include="Controllers\Decanatura\MatrizFinanciera_GastoApoyoController.cs" />
+    <Compile Include="Controllers\Decanatura\MatrizFinanciera_GastoOperativoController.cs" />
+    <Compile Include="Controllers\Decanatura\MatrizFinanciera_TipoOperativoController.cs" />
+    <Compile Include="Controllers\Decanatura\MatrizFinanciera_VigenciaController.cs" />
+    <Compile Include="Controllers\DecVie_ActosAdministrativosController.cs" />
+    <Compile Include="Controllers\DecVie_ActosAdministrativosEstadoController.cs" />
+    <Compile Include="Controllers\Decanatura\DecVie_ActosAdministrativosInformesController.cs" />
+    <Compile Include="Controllers\DecVie_ActosAdministrativosTipoController.cs" />
+    <Compile Include="Controllers\DecVie_AlcanceSolicitudController.cs" />
+    <Compile Include="Controllers\DecVie_AsuntosDisciplinariosController.cs" />
+    <Compile Include="Controllers\Decvie_CicloFinancieroController.cs" />
+    <Compile Include="Controllers\DecVie_CicloFinancieroPostProgramController.cs" />
+    <Compile Include="Controllers\Decvie_CicloFinancieroProgramaPostgradoController.cs" />
+    <Compile Include="Controllers\DecVie_ColegiadosController.cs" />
+    <Compile Include="Controllers\DecVie_ConceptoController.cs" />
+    <Compile Include="Controllers\DecVie_ConceptoDecanaturaController.cs" />
+    <Compile Include="Controllers\DecVie_CertificadosTecController.cs" />
+    <Compile Include="Controllers\DecVie_RadicadorTecAuditoriaController.cs" />
+    <Compile Include="Controllers\DecVie_RadicadorTecController.cs" />
+    <Compile Include="Controllers\DecVie_ConsecutivoController.cs" />
+    <Compile Include="Controllers\DecVie_ControlFinancieroController.cs" />
+    <Compile Include="Controllers\DecVie_ControlFinancieroGastosController.cs" />
+    <Compile Include="Controllers\DecVie_ControlFinancieroOperativosController.cs" />
+    <Compile Include="Controllers\DecVie_ControlFinancieroTipoOperativoController.cs" />
+    <Compile Include="Controllers\DecVie_CuerposColegiadosController.cs" />
+    <Compile Include="Controllers\DecVie_DependenciaController.cs" />
+    <Compile Include="Controllers\DecVie_DerechosPeticionController.cs" />
+    <Compile Include="Controllers\DecVie_DerechosPeticionEstadoController.cs" />
+    <Compile Include="Controllers\DecVie_DerechosPeticionOficinaController.cs" />
+    <Compile Include="Controllers\DecVie_EstadoController.cs" />
+    <Compile Include="Controllers\DecVie_EstadoPreAvalController.cs" />
+    <Compile Include="Controllers\DecVie_InstanciasController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioConocimientoContratanteController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioConocimientoEnfasisController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioConocimientoImpactoController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioConocimientoSoporteController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioConocimientoTipologiaController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioGestionConocimientoController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioObsolescenciaConceptoController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioRegistroPatenteTipoController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioUsoAmpliadoAhorroController.cs" />
+    <Compile Include="Controllers\DecVie_InventarioUsoAmpliadoInsumoController.cs" />
+    <Compile Include="Controllers\DecVie_MacroprocesoController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaActividadDepController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaEjeEstrategicoController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaEstrategiaController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaIndicadorEstrategicoController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaMetaDepController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaNuevoIndicadorController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaObjetivoDepController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaObjetivoPgdController.cs" />
+    <Compile Include="Controllers\Decvie_MatryoshkaProgramaPgdController.cs" />
+    <Compile Include="Controllers\DecVie_OrigenSolicitudController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionActividadesController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionAlcanceAnnoController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionAlcanceController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionEjeEstrategicoController.cs" />
+    <Compile Include="Controllers\DecVie_PlanaccionFuncionesController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionIndicadoresEstrategicosController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionLineaPoliticaController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionMatrizIndicadoresController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionMatryoshkaController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionMetaController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionNuevosIndicadoresController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionObjetivoDependenciaController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionObjetivoEstrategicoController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionObjetivosPgdVriSedeController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionProgramaFdcpsController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionProgramaPgdController.cs" />
+    <Compile Include="Controllers\DecVie_PlanAccionTipoIndicadorController.cs" />
+    <Compile Include="Controllers\DecVie_PreAvalController.cs" />
+    <Compile Include="Controllers\DecVie_RadicadorCorController.cs" />
+    <Compile Include="Controllers\DecVie_RevSigepController.cs" />
+    <Compile Include="Controllers\DecVie_SerieDocumentalController.cs" />
+    <Compile Include="Controllers\DecVie_SubSerieDocController.cs" />
+    <Compile Include="Controllers\DecVie_TipoDocContractualesController.cs" />
+    <Compile Include="Controllers\DecVie_TipologiaController.cs" />
+    <Compile Include="Controllers\DependenciaController.cs" />
+    <Compile Include="Controllers\Distribucion_Fondo_UGIController.cs" />
+    <Compile Include="Controllers\Estado_TareaController.cs" />
+    <Compile Include="Controllers\Extension\ProyectosCentroExtensionController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\Hermes\HermesProyectoExtensionController.cs" />
+    <Compile Include="Controllers\Hermes\HermesProyectoInvestigacionController.cs" />
+    <Compile Include="Controllers\Investigacion\ConvocatoriaController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_AlcanceController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_EstadoCnvController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_FuenteCnvController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_InteresadosController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_RecursoParticipanteController.cs" />
+    <Compile Include="Controllers\Investigacion\Convocatoria_RequerimientoRequisitoController.cs" />
+    <Compile Include="Controllers\Investigacion\InvestigacionDashboardController.cs" />
+    <Compile Include="Controllers\Investigacion\InvestigacionExcelControlFinancieroController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_AplicarpagoController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_DesembolsoController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_EstadoProyectoController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_GastoController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_ResolucionController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_ObligacionController.cs" />
+    <Compile Include="Controllers\Investigacion\Investigacion_ObservacionController.cs" />
+    <Compile Include="Controllers\Investigacion_ActoAdmonContrapartidaController.cs" />
+    <Compile Include="Controllers\Investigacion_ContrapartidaController.cs" />
+    <Compile Include="Controllers\Investigacion_CrearGrupoController.cs" />
+    <Compile Include="Controllers\Investigacion_CrearLineaController.cs" />
+    <Compile Include="Controllers\Investigacion_CrearProyectoController.cs" />
+    <Compile Include="Controllers\Investigacion_LineaController.cs" />
+    <Compile Include="Controllers\Investigacion_ProductoController.cs" />
+    <Compile Include="Controllers\Investigacion_PublicacionController.cs" />
+    <Compile Include="Controllers\Investigacion_SeguimientoController.cs" />
+    <Compile Include="Controllers\Liquidacion_FinalizacionController.cs" />
+    <Compile Include="Controllers\Liquidacion_InformeFinalProyController.cs" />
+    <Compile Include="Controllers\Literal_UGIController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PersonaController.cs" />
+    <Compile Include="Controllers\Persona_CalificacionController.cs" />
+    <Compile Include="Controllers\Persona_CiudadController.cs" />
+    <Compile Include="Controllers\Persona_FormacionController.cs" />
+    <Compile Include="Controllers\Persona_GeneroController.cs" />
+    <Compile Include="Controllers\Persona_PaisController.cs" />
+    <Compile Include="Controllers\Persona_TipoEntidadController.cs" />
+    <Compile Include="Controllers\Persona_TipoServicioController.cs" />
+    <Compile Include="Controllers\Persona_TituloAltoController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
+    <Compile Include="Controllers\PropuestaController.cs" />
+    <Compile Include="Controllers\PropuestaSeguimientoController.cs" />
+    <Compile Include="Controllers\Propuesta_AprobacionConsejoFacultadController.cs" />
+    <Compile Include="Controllers\Propuesta_AvalConsejoFacultadController.cs" />
+    <Compile Include="Controllers\Propuesta_AvalInternoController.cs" />
+    <Compile Include="Controllers\Propuesta_CoberturaController.cs" />
+    <Compile Include="Controllers\propuesta_entidadController.cs" />
+    <Compile Include="Controllers\Propuesta_EstadoPropuestaController.cs" />
+    <Compile Include="Controllers\Propuesta_EstadoSuscripcionContratoConvenioController.cs" />
+    <Compile Include="Controllers\Propuesta_ModalidadController.cs" />
+    <Compile Include="Controllers\Propuesta_ModificacionGarantiaController.cs" />
+    <Compile Include="Controllers\Propuesta_ModificacionMinutaController.cs" />
+    <Compile Include="Controllers\Propuesta_OrigenPropuestaController.cs" />
+    <Compile Include="Controllers\Propuesta_SuscripcionGarantiaController.cs" />
+    <Compile Include="Controllers\Propuesta_SuscripcionMinutaController.cs" />
+    <Compile Include="Controllers\Propuesta_TipoModificacionController.cs" />
+    <Compile Include="Controllers\Propuesta_TipoPropuestaController.cs" />
+    <Compile Include="Controllers\Propuesta_TipoUsuarioController.cs" />
+    <Compile Include="Controllers\Proyectos_AlcanceProyectoController.cs" />
+    <Compile Include="Controllers\Proyectos_AsignacionProyectoController.cs" />
+    <Compile Include="Controllers\Proyectos_EstadoContratoController.cs" />
+    <Compile Include="Controllers\Proyectos_EstadoObligacionController.cs" />
+    <Compile Include="Controllers\Proyectos_EstadoProductoController.cs" />
+    <Compile Include="Controllers\Proyectos_NaturalezaProyectoController.cs" />
+    <Compile Include="Controllers\Proyectos_NuevoProductoController.cs" />
+    <Compile Include="Controllers\Proyectos_ObligacionesController.cs" />
+    <Compile Include="Controllers\Proyectos_ProyectosObservacionesController.cs" />
+    <Compile Include="Controllers\Proyectos_TipoProductoController.cs" />
+    <Compile Include="Controllers\Proyectos_TipoProyectoController.cs" />
+    <Compile Include="Controllers\Proyecto_ObservacionController.cs" />
+    <Compile Include="Controllers\Proyecto_PersonaController.cs" />
+    <Compile Include="Controllers\Publicaciones_AreaCurricularController.cs" />
+    <Compile Include="Controllers\Publicaciones_AutoresController.cs" />
+    <Compile Include="Controllers\Publicaciones_CarProyEditorialController.cs" />
+    <Compile Include="Controllers\Publicaciones_CesionDerechosController.cs" />
+    <Compile Include="Controllers\Publicaciones_CierreEdicionController.cs" />
+    <Compile Include="Controllers\Publicaciones_CoedicionController.cs" />
+    <Compile Include="Controllers\Publicaciones_ColeccionController.cs" />
+    <Compile Include="Controllers\Publicaciones_ComplejidadController.cs" />
+    <Compile Include="Controllers\Publicaciones_ConceptoController.cs" />
+    <Compile Include="Controllers\Publicaciones_CostosEjecucionContractualController.cs" />
+    <Compile Include="Controllers\Publicaciones_CostosOrigenContratoController.cs" />
+    <Compile Include="Controllers\Publicaciones_CostosParametrosPresupuestalesController.cs" />
+    <Compile Include="Controllers\Publicaciones_CostosServicioEditorialController.cs" />
+    <Compile Include="Controllers\Publicaciones_CrearPublicacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlActaController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlCertVentasController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlIngresoVentasController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlInventarioBodegaController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlInventarioMovimientosController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoControlRepVentasController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDisposicionLegalController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDistribucionComercialController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDistribucionComercialOtrosController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDistribucionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDistribucionParamController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoDistribucionTituloController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoPreciosController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoResolucionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoTipoMovController.cs" />
+    <Compile Include="Controllers\Publicaciones_DepositoTipoPubController.cs" />
+    <Compile Include="Controllers\Publicaciones_DesignacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DiagFinalController.cs" />
+    <Compile Include="Controllers\Publicaciones_DiagFinalParamController.cs" />
+    <Compile Include="Controllers\Publicaciones_DiagFinalTituloController.cs" />
+    <Compile Include="Controllers\Publicaciones_DiagramacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DigitalizacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_DistribuidorController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionActividadController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionActividadFeriaEventoController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionActividadInvitadosController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionActividadNombreController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionCierreController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionHerramientaController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionInicioController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionMaillingController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionMediosController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionParamController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionPlanActividadController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionPlanController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionTipoMedioController.cs" />
+    <Compile Include="Controllers\Publicaciones_DivulgacionTituloController.cs" />
+    <Compile Include="Controllers\Publicaciones_EdicionParamController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoConceptoController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoCorabController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoCoreController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoCorParamController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoCorreccionController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoCubiertaController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoDiagramacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_EstadoEvaluadorController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvalConceptoController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvalGeneradaController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvalObservacionesController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvaluacionesController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvaluacionInicialController.cs" />
+    <Compile Include="Controllers\Publicaciones_EvaluadoresController.cs" />
+    <Compile Include="Controllers\Publicaciones_FormatoDistribucionController.cs" />
+    <Compile Include="Controllers\Publicaciones_HermesController.cs" />
+    <Compile Include="Controllers\Publicaciones_IdiomaController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionEncuadernacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionGramajeController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionPapelController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionTintasTacoController.cs" />
+    <Compile Include="Controllers\Publicaciones_ImpresionTipoController.cs" />
+    <Compile Include="Controllers\Publicaciones_InformacionPagoController.cs" />
+    <Compile Include="Controllers\Publicaciones_OrigenManuscritoController.cs" />
+    <Compile Include="Controllers\Publicaciones_ProveedorServicioController.cs" />
+    <Compile Include="Controllers\Publicaciones_ResenaController.cs" />
+    <Compile Include="Controllers\Publicaciones_ResponsableController.cs" />
+    <Compile Include="Controllers\Publicaciones_RolEditorialController.cs" />
+    <Compile Include="Controllers\Publicaciones_ConceptoEditorialController.cs" />
+    <Compile Include="Controllers\Publicaciones_TipoCorreccionController.cs" />
+    <Compile Include="Controllers\Publicaciones_TipoDiagramacionController.cs" />
+    <Compile Include="Controllers\Publicaciones_TipoEvaluadorController.cs" />
+    <Compile Include="Controllers\Publicaciones_TipologiaController.cs" />
+    <Compile Include="Controllers\Publicaciones_TipoObraController.cs" />
+    <Compile Include="Controllers\PublicacionInformesController.cs" />
+    <Compile Include="Controllers\Publicacion\PublicacionesExcelController.cs" />
+    <Compile Include="Controllers\Publicacion\Publicaciones_DashBoardController.cs" />
+    <Compile Include="Controllers\Publicacion\Publicaciones_EstadoManuscritoController.cs" />
+    <Compile Include="Controllers\Publicacion\Publicacion_AplicarpagoController.cs" />
+    <Compile Include="Controllers\Publicacion\Publicacion_DesembolsoController.cs" />
+    <Compile Include="Controllers\Publicacion\Publicacion_GastoController.cs" />
+    <Compile Include="Controllers\RnableCorsAttribute.cs" />
+    <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\RolMenuController.cs" />
+    <Compile Include="Controllers\RolMenuOpcionesController.cs" />
+    <Compile Include="Controllers\SeguimientoHistorico_Conceptos_Literales_UGIController.cs" />
+    <Compile Include="Controllers\Seguimiento_AcuerdoController.cs" />
+    <Compile Include="Controllers\Seguimiento_AplicarPagoController.cs" />
+    <Compile Include="Controllers\Seguimiento_ConceptoController.cs" />
+    <Compile Include="Controllers\Seguimiento_CrearGastoController.cs" />
+    <Compile Include="Controllers\Seguimiento_DesembolsoController.cs" />
+    <Compile Include="Controllers\Seguimiento_DetalladoDesembolsoController.cs" />
+    <Compile Include="Controllers\Seguimiento_DetalleRubroController.cs" />
+    <Compile Include="Controllers\Seguimiento_FinancieroExcelController.cs" />
+    <Compile Include="Controllers\Seguimiento_PartidaController.cs" />
+    <Compile Include="Controllers\Seguimiento_RelacionVinculoController.cs" />
+    <Compile Include="Controllers\Seguimiento_RubroController.cs" />
+    <Compile Include="Controllers\SemestreController.cs" />
+    <Compile Include="Controllers\Solicitud_CertificadoTrazabilidadController.cs" />
+    <Compile Include="Controllers\Suscripcion_LiquidacionController.cs" />
+    <Compile Include="Controllers\TareasController.cs" />
+    <Compile Include="Controllers\Tareas_ModuloController.cs" />
+    <Compile Include="Controllers\Tareas_SeguimientoController.cs" />
+    <Compile Include="Controllers\TipoOpcionController.cs" />
+    <Compile Include="Controllers\Tipo_DocumentoController.cs" />
+    <Compile Include="Controllers\Tipo_PersonaController.cs" />
+    <Compile Include="Controllers\UGI\UGI_ConceptoSemestreController.cs" />
+    <Compile Include="Controllers\UGI\UGI_LiteralSemestreController.cs" />
+    <Compile Include="Controllers\UGI\UGI_SemestreController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="Entities\Repositories\Alerta_SeguimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\DecVie_ActosAdministrativosInformesRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\MatrizFinancieraRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\MatrizFinanciera_GastoApoyoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\MatrizFinanciera_GastoOperativoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\MatrizFinanciera_TipoOperativoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decanatura\MatrizFinanciera_VigenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_CertificadosTecRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_RadicadorTecAuditoriaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_RadicadorTecAuditoriaRepository.cs" />
+    <Compile Include="Entities\Repositories\ISolicitud_CertificadoTrazabilidadRepository.cs" />
+    <Compile Include="Entities\Repositories\Solicitud_CertificadoTrazabilidadRepository.cs" />
+    <Compile Include="Models\DecVie_RadicadorTecAuditoria.cs" />
+    <Compile Include="Entities\Repositories\DecVie_RadicadorTecRepository.cs" />
+    <Compile Include="Entities\Repositories\Extension\ProyectosCentroExtensionRepository.cs" />
+    <Compile Include="Entities\Repositories\Hermes\HermesProyectoExtensionRepository.cs" />
+    <Compile Include="Entities\Repositories\Hermes\HermesProyectoInvestigacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_CertificadosTecRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_RadicadorTecRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\ConvocatoriaRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_AlcanceRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_EstadoCnvRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_FuenteCnvRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_InteresadosRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_RecursoParticipanteRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Convocatoria_RequerimientoRequisitoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\InvestigacionDashboardRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\InvestigacionExcelControlFinancieroRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_AplicarpagoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_DesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_EstadoProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_GastoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_ResolucionRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_ObligacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion\Investigacion_ObservacionRepository.cs" />
+    <Compile Include="Entities\Repositories\PublicacionInformesRepository.cs" />
+    <Compile Include="Entities\Repositories\Actualizacion_ModuloRRepository.cs" />
+    <Compile Include="Entities\Repositories\Area_AcademicaRepository.cs" />
+    <Compile Include="Entities\Repositories\Concepto_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\Consecutivo_AnnioRepository.cs" />
+    <Compile Include="Entities\Repositories\ContrapartidasRepository.cs" />
+    <Compile Include="Entities\Repositories\Correspondencia_PrefijoConsecutivoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ActosAdministrativosEstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ActosAdministrativosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ActosAdministrativosTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_AlcanceSolicitudRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_AsuntosDisciplinariosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_CicloFinancieroPostProgramRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_CicloFinancieroProgramaPostgradoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_CicloFinancieroRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ColegiadosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ConceptoDecanaturaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ConsecutivoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ControlFinancieroGastosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ControlFinancieroOperativosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ControlFinancieroRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_ControlFinancieroTipoOperativoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_CuerposColegiadosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_DependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_DerechosPeticionEstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_DerechosPeticionOficinaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_DerechosPeticionRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_EstadoPreAvalRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_EstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InstanciasRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioConocimientoContratanteRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioConocimientoEnfasisRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioConocimientoImpactoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioConocimientoSoporteRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioConocimientoTipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioGestionConocimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioObsolescenciaConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioRegistroPatenteTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioUsoAmpliadoAhorroRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_InventarioUsoAmpliadoInsumoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_MacroprocesoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaActividadDepRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaEjeEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaEstrategiaRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaIndicadorEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaMetaDepRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaNuevoIndicadorRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaObjetivoDepRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaObjetivoPgdRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaProgramaPgdRepository.cs" />
+    <Compile Include="Entities\Repositories\Decvie_MatryoshkaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_OrigenSolicitudRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionActividadesRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionAlcanceAnnoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionAlcanceRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionEjeEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanaccionFuncionesRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionIndicadoresEstrategicosRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionLineaPoliticaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionMatrizIndicadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionMatryoshkaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionMetaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionNuevosIndicadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionObjetivoDependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionObjetivoEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionObjetivosPgdVriSedeRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionProgramaFdcpsRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionProgramaPgdRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PlanAccionTipoIndicadorRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_PreAvalRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_RadicadorCorRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_RevSigepRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_SerieDocumentalRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_SubSerieDocRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_TipoDocContractualesRepository.cs" />
+    <Compile Include="Entities\Repositories\DecVie_TipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\DependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\Distribucion_Fondo_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\Estado_TareaRepository.cs" />
+    <Compile Include="Entities\Repositories\FuncionarioRepository.cs" />
+    <Compile Include="Entities\Repositories\IActualizacion_ModuloRRepository.cs" />
+    <Compile Include="Entities\Repositories\IArea_AcademicaRepository.cs" />
+    <Compile Include="Entities\Repositories\IConcepto_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\IConsecutivo_AnnioRepository.cs" />
+    <Compile Include="Entities\Repositories\IContrapartidasRepository.cs" />
+    <Compile Include="Entities\Repositories\ICorrespondencia_PrefijoConsecutivoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ActosAdministrativosEstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ActosAdministrativosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ActosAdministrativosTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_AlcanceSolicitudRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_AsuntosDisciplinariosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_CicloFinancieroPostProgramRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ColegiadosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ConceptoDecanaturaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ConsecutivoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ControlFinancieroGastosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ControlFinancieroOperativosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ControlFinancieroRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_ControlFinancieroTipoOperativoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_CuerposColegiadosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_DependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_DerechosPeticionEstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_DerechosPeticionOficinaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_DerechosPeticionRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_EstadoPreAvalRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_EstadoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InstanciasRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioConocimientoContratanteRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioConocimientoEnfasisRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioConocimientoImpactoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioConocimientoSoporteRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioConocimientoTipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioGestionConocimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioObsolescenciaConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioRegistroPatenteTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioUsoAmpliadoAhorroRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_InventarioUsoAmpliadoInsumoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_MacroprocesoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_OrigenSolicitudRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionActividadesRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionAlcanceAnnoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionAlcanceRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionEjeEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanaccionFuncionesRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionIndicadoresEstrategicosRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionLineaPoliticaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionMatrizIndicadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionMatryoshkaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionMetaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionNuevosIndicadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionObjetivoDependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionObjetivoEstrategicoRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionObjetivosPgdVriSedeRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionProgramaFdcpsRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionProgramaPgdRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PlanAccionTipoIndicadorRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_PreAvalRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_RadicadorCorRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_RevSigepRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_SerieDocumentalRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_SubSerieDocRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_TipoDocContractualesRepository.cs" />
+    <Compile Include="Entities\Repositories\IDecVie_TipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDependenciaRepository.cs" />
+    <Compile Include="Entities\Repositories\IDistribucion_Fondo_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\IEstado_TareaRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_ActoAdmonContrapartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_ContrapartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_CrearGrupoRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_CrearLineaRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_CrearProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_LineaRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_ProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_PublicacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IInvestigacion_SeguimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\ILiquidacion_FinalizacionRepository.cs" />
+    <Compile Include="Entities\Repositories\ILiquidacion_InformeFinalProyRepository.cs" />
+    <Compile Include="Entities\Repositories\ILiteral_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\IMenuRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_ActoAdmonContrapartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_ContrapartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_CrearGrupoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_CrearLineaRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_CrearProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_LineaRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_ProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_PublicacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Investigacion_SeguimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_CalificacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_CiudadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_FormacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_GeneroRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_PaisRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_TipoEntidadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_TipoServicioRepository.cs" />
+    <Compile Include="Entities\Repositories\IPersona_TituloAltoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProductosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_CoberturaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_AprobacionConsejoFacultadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_AvalConsejoFacultadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_AvalInternoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_EstadoPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_EstadoSuscripcionContratoConvenioRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_ModalidadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_ModificacionGarantiaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_ModificacionMinutaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_OrigenPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_SuscripcionGarantiaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_SuscripcionMinutaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_TipoModificacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_TipoPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPropuesta_TipoUsuarioRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_AlcanceProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_AsignacionProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_EstadoContratoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_EstadoObligacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_NaturalezaProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_NuevoProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_ObligacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_ProyectosObservacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyectos_TipoProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyecto_ObservacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IProyecto_PersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_AreaCurricularRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_AutoresRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CarProyEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CesionDerechosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CierreEdicionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CoedicionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ColeccionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ComplejidadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CostosEjecucionContractualRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CostosOrigenContratoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CostosParametrosPresupuestalesRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CostosServicioEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_CrearPublicacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlActaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlCertVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlIngresoVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlInventarioBodegaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlInventarioMovimientosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoControlRepVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoDistribucionComercialOtrosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoDistribucionComercialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoDistribucionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoDistribucionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoDistribucionTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoPreciosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoResolucionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoTipoMovRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DepositoTipoPubRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DesignacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DiagFinalParamRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DiagFinalRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DiagFinalTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DigitalizacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionActividadInvitadosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionActividadNombreRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionActividadRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionCierreRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionHerramientaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionMaillingRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionMediosRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionPlanRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionTipoMedioRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_DivulgacionTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EdicionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoCorabRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoCoreRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoCorParamRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoCorreccionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoCubiertaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoDiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EstadoEvaluadorRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EvalConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EvalGeneradaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EvaluacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EvaluacionInicialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_EvaluadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_FormatoDistribucionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_HermesRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_IdiomaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionEncuadernacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionGramajeRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionPapelRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionTintasTacoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ImpresionTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_InformacionPagoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_OrigenManuscritoRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ProveedorServicioRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ResenaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ResponsableRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_RolEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_ConceptoEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_TipoCorreccionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_TipoDiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_TipoEvaluadorRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_TipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\IPublicaciones_TipoObraRepository.cs" />
+    <Compile Include="Entities\Repositories\IRolMenuRepository.cs" />
+    <Compile Include="Entities\Repositories\IRolRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimientoHistorico_Conceptos_Literales_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_AplicarPagoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_CrearGastoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_DesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_DetalladoDesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_DetalleRubroRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_FinancieroExcelRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_PartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_RelacionVinculoRepository.cs" />
+    <Compile Include="Entities\Repositories\ISeguimiento_RubroRepository.cs" />
+    <Compile Include="Entities\Repositories\ISemestreRepository.cs" />
+    <Compile Include="Entities\Repositories\ISuscripcion_LiquidacionRepository.cs" />
+    <Compile Include="Entities\Repositories\ITareasRepository.cs" />
+    <Compile Include="Entities\Repositories\ITipoOpcionRepository.cs" />
+    <Compile Include="Entities\Repositories\ITipo_DocumentoRepository.cs" />
+    <Compile Include="Entities\Repositories\ITipo_PersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\IUsuarioRepository.cs" />
+    <Compile Include="Entities\Repositories\Liquidacion_FinalizacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Liquidacion_InformeFinalProyRepository.cs" />
+    <Compile Include="Entities\Repositories\Literal_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\MenuRepository.cs" />
+    <Compile Include="Entities\Repositories\PersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_CalificacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_CiudadRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_FormacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_GeneroRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_PaisRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_TipoEntidadRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_TipoServicioRepository.cs" />
+    <Compile Include="Entities\Repositories\Persona_TituloAltoRepository.cs" />
+    <Compile Include="Entities\Repositories\ProductosRepository.cs" />
+    <Compile Include="Entities\Repositories\PropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\PropuestaSeguimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_AprobacionConsejoFacultadRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_AvalConsejoFacultadRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_AvalInternoRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_CoberturaRepository.cs" />
+    <Compile Include="Entities\Repositories\propuesta_entidadRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_EstadoPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_EstadoSuscripcionContratoConvenioRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_ModalidadRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_ModificacionGarantiaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_ModificacionMinutaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_OrigenPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_SuscripcionGarantiaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_SuscripcionMinutaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_TipoModificacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_TipoPropuestaRepository.cs" />
+    <Compile Include="Entities\Repositories\Propuesta_TipoUsuarioRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_EstadoProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_TipoProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyecto_ObservacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_AlcanceProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_AsignacionProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_EstadoContratoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_EstadoObligacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_NaturalezaProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_NuevoProductoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_ObligacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_ProyectosObservacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyectos_TipoProyectoRepository.cs" />
+    <Compile Include="Entities\Repositories\Proyecto_PersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_AreaCurricularRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_AutoresRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CarProyEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CesionDerechosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CierreEdicionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CoedicionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ColeccionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ComplejidadRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CostosEjecucionContractualRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CostosOrigenContratoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CostosParametrosPresupuestalesRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CostosServicioEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_CrearPublicacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlActaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlCertVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlIngresoVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlInventarioBodegaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlInventarioMovimientosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoControlRepVentasRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDisposicionLegalRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDistribucionComercialOtrosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDistribucionComercialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDistribucionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDistribucionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoDistribucionTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoPreciosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoResolucionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoTipoMovRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DepositoTipoPubRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DesignacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DiagFinalParamRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DiagFinalRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DiagFinalTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DigitalizacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DistribuidorRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionActividadFeriaEventoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionActividadInvitadosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionActividadNombreRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionActividadRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionCierreRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionHerramientaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionInicioRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionMaillingRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionMediosRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionPlanActividadRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionPlanRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionTipoMedioRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_DivulgacionTituloRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EdicionParamRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoCorabRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoCoreRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoCorParamRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoCorreccionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoCubiertaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoDiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EstadoEvaluadorRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvalConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvalGeneradaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvalObservacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvaluacionesRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvaluacionInicialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_EvaluadoresRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_FormatoDistribucionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_HermesRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_IdiomaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionEncuadernacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionGramajeRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionPapelRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionTintasTacoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ImpresionTipoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_InformacionPagoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_OrigenManuscritoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ProveedorServicioRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ResenaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ResponsableRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_RolEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_ConceptoEditorialRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_TipoCorreccionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_TipoDiagramacionRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_TipoEvaluadorRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_TipologiaRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicaciones_TipoObraRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\PublicacionesExcelRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\Publicaciones_DashBoardRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\Publicaciones_EstadoManuscritoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\Publicacion_AplicarpagoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\Publicacion_DesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\Publicacion\Publicacion_GastoRepository.cs" />
+    <Compile Include="Entities\Repositories\RolMenuOpcionesRepository.cs" />
+    <Compile Include="Entities\Repositories\RolMenuRepository.cs" />
+    <Compile Include="Entities\Repositories\RolRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_AcuerdoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_AplicarPagoRepository.cs" />
+    <Compile Include="Entities\Repositories\SeguimientoHistorico_Conceptos_Literales_UGIRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_ConceptoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_CrearGastoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_DesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_DetalladoDesembolsoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_DetalleRubroRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_FinancieroExcelRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_PartidaRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_RelacionVinculoRepository.cs" />
+    <Compile Include="Entities\Repositories\Seguimiento_RubroRepository.cs" />
+    <Compile Include="Entities\Repositories\SemestreRepository.cs" />
+    <Compile Include="Entities\Repositories\Suscripcion_LiquidacionRepository.cs" />
+    <Compile Include="Entities\Repositories\TareasRepository.cs" />
+    <Compile Include="Entities\Repositories\Tareas_ModuloRepository.cs" />
+    <Compile Include="Entities\Repositories\Tareas_SeguimientoRepository.cs" />
+    <Compile Include="Entities\Repositories\TipoOpcionRepository.cs" />
+    <Compile Include="Entities\Repositories\Tipo_DocumentoRepository.cs" />
+    <Compile Include="Entities\Repositories\Tipo_PersonaRepository.cs" />
+    <Compile Include="Entities\Repositories\UGI\UGI_ConceptoSemestreRepository.cs" />
+    <Compile Include="Entities\Repositories\UGI\UGI_LiteralSemestreRepository.cs" />
+    <Compile Include="Entities\Repositories\UGI\UGI_SemestreRepository.cs" />
+    <Compile Include="Entities\Repositories\UsuarioRepository.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Actualizacion_ModuloR.cs" />
+    <Compile Include="Models\Alerta_Seguimiento.cs" />
+    <Compile Include="Models\Area_Academica.cs" />
+    <Compile Include="Models\Concepto_UGI.cs" />
+    <Compile Include="Models\Consecutivo_Annio.cs" />
+    <Compile Include="Models\Contrapartidas.cs" />
+    <Compile Include="Models\Correspondencia_PrefijoConsecutivo.cs" />
+    <Compile Include="Models\Decanatura\MatrizFinanciera.cs" />
+    <Compile Include="Models\Decanatura\MatrizFinanciera_GastoApoyo.cs" />
+    <Compile Include="Models\Decanatura\MatrizFinanciera_GastoOperativo.cs" />
+    <Compile Include="Models\Decanatura\MatrizFinanciera_TipoOperativo.cs" />
+    <Compile Include="Models\Decanatura\MatrizFinanciera_Vigencia.cs" />
+    <Compile Include="Models\DecVie_ActosAdministrativos.cs" />
+    <Compile Include="Models\DecVie_ActosAdministrativosEstado.cs" />
+    <Compile Include="Models\DecVie_ActosAdministrativosTipo.cs" />
+    <Compile Include="Models\DecVie_AlcanceSolicitud.cs" />
+    <Compile Include="Models\DecVie_AsuntosDisciplinarios.cs" />
+    <Compile Include="Models\Decvie_CicloFinanciero.cs" />
+    <Compile Include="Models\DecVie_CicloFinancieroPostProgram.cs" />
+    <Compile Include="Models\Decvie_CicloFinancieroProgramaPostgrado.cs" />
+    <Compile Include="Models\DecVie_Colegiados.cs" />
+    <Compile Include="Models\DecVie_Concepto.cs" />
+    <Compile Include="Models\DecVie_ConceptoDecanatura.cs" />
+    <Compile Include="Models\DecVie_CertificadosTec.cs" />
+    <Compile Include="Models\DecVie_RadicadorTec.cs" />
+    <Compile Include="Models\DecVie_Consecutivo.cs" />
+    <Compile Include="Models\DecVie_ControlFinanciero.cs" />
+    <Compile Include="Models\DecVie_ControlFinancieroGastos.cs" />
+    <Compile Include="Models\DecVie_ControlFinancieroOperativos.cs" />
+    <Compile Include="Models\DecVie_ControlFinancieroTipoOperativo.cs" />
+    <Compile Include="Models\DecVie_CuerposColegiados.cs" />
+    <Compile Include="Models\DecVie_Dependencia.cs" />
+    <Compile Include="Models\DecVie_DerechosPeticion.cs" />
+    <Compile Include="Models\DecVie_DerechosPeticionEstado.cs" />
+    <Compile Include="Models\DecVie_DerechosPeticionOficina.cs" />
+    <Compile Include="Models\DecVie_Estado.cs" />
+    <Compile Include="Models\DecVie_EstadoPreAval.cs" />
+    <Compile Include="Models\DecVie_Instancias.cs" />
+    <Compile Include="Models\DecVie_InventarioConocimientoContratante.cs" />
+    <Compile Include="Models\DecVie_InventarioConocimientoEnfasis.cs" />
+    <Compile Include="Models\DecVie_InventarioConocimientoImpacto.cs" />
+    <Compile Include="Models\DecVie_InventarioConocimientoSoporte.cs" />
+    <Compile Include="Models\DecVie_InventarioConocimientoTipologia.cs" />
+    <Compile Include="Models\DecVie_InventarioGestionConocimiento.cs" />
+    <Compile Include="Models\DecVie_InventarioObsolescenciaConcepto.cs" />
+    <Compile Include="Models\DecVie_InventarioRegistroPatenteTipo.cs" />
+    <Compile Include="Models\DecVie_InventarioUsoAmpliadoAhorro.cs" />
+    <Compile Include="Models\DecVie_InventarioUsoAmpliadoInsumo.cs" />
+    <Compile Include="Models\DecVie_Macroproceso.cs" />
+    <Compile Include="Models\Decvie_Matryoshka.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaActividadDep.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaEjeEstrategico.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaEstrategia.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaIndicadorEstrategico.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaMetaDep.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaNuevoIndicador.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaObjetivoDep.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaObjetivoPgd.cs" />
+    <Compile Include="Models\Decvie_MatryoshkaProgramaPgd.cs" />
+    <Compile Include="Models\DecVie_OrigenSolicitud.cs" />
+    <Compile Include="Models\DecVie_PlanAccionActividades.cs" />
+    <Compile Include="Models\DecVie_PlanAccionAlcance.cs" />
+    <Compile Include="Models\DecVie_PlanAccionAlcanceAnno.cs" />
+    <Compile Include="Models\DecVie_PlanAccionEjeEstrategico.cs" />
+    <Compile Include="Models\DecVie_PlanaccionFunciones.cs" />
+    <Compile Include="Models\DecVie_PlanAccionIndicadoresEstrategicos.cs" />
+    <Compile Include="Models\DecVie_PlanAccionLineaPolitica.cs" />
+    <Compile Include="Models\DecVie_PlanAccionMatrizIndicadores.cs" />
+    <Compile Include="Models\DecVie_PlanAccionMatryoshka.cs" />
+    <Compile Include="Models\DecVie_PlanAccionMeta.cs" />
+    <Compile Include="Models\DecVie_PlanAccionNuevosIndicadores.cs" />
+    <Compile Include="Models\DecVie_PlanAccionObjetivoDependencia.cs" />
+    <Compile Include="Models\DecVie_PlanAccionObjetivoEstrategico.cs" />
+    <Compile Include="Models\DecVie_PlanAccionObjetivosPgdVriSede.cs" />
+    <Compile Include="Models\DecVie_PlanAccionProgramaFdcps.cs" />
+    <Compile Include="Models\DecVie_PlanAccionProgramaPgd.cs" />
+    <Compile Include="Models\DecVie_PlanAccionTipoIndicador.cs" />
+    <Compile Include="Models\DecVie_PreAval.cs" />
+    <Compile Include="Models\DecVie_RadicadorCor.cs" />
+    <Compile Include="Models\DecVie_RevSigep.cs" />
+    <Compile Include="Models\DecVie_SerieDocumental.cs" />
+    <Compile Include="Models\DecVie_SubSerieDoc.cs" />
+    <Compile Include="Models\DecVie_TipoDocContractuales.cs" />
+    <Compile Include="Models\DecVie_Tipologia.cs" />
+    <Compile Include="Models\Dependencia.cs" />
+    <Compile Include="Models\Distribucion_Fondo_UGI.cs" />
+    <Compile Include="Models\DTO\AsignacionProyectoDTO.cs" />
+    <Compile Include="Models\DTO\CicloFinancieroPosgradoDTO.cs" />
+    <Compile Include="Models\DTO\CrearPublicacionEvaluacionDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_ActosAdministrativosDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_CicloFinancieroPostProgramBogotaDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_CicloFinancieroPostProgramConvenioDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_CicloFinancieroPostProgramFacultadDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_CicloFinancieroPostProgramUAdministrativaDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_InventarioGestionConocimientoDTO.cs" />
+    <Compile Include="Models\DTO\Decvie_MatryoshkaDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_PreAvalConceptoDecanaturaDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_PreAvalRevisionDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_CertificadosTecDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_RadicadorTecAuditoriaDTO.cs" />
+    <Compile Include="Models\DTO\DecVie_RadicadorTecDTO.cs" />
+    <Compile Include="Models\DTO\InformeTipoCantidadDTO.cs" />
+    <Compile Include="Models\DTO\Investigacion_ResolucionDto.cs" />
+    <Compile Include="Models\DTO\InvestigacionDashboardDTO.cs" />
+    <Compile Include="Models\DTO\InvestigacionExcelControlFinancieroDTO.cs" />
+    <Compile Include="Models\DTO\MatrizFinancieraDTO.cs" />
+    <Compile Include="Models\DTO\MenuUsuario.cs" />
+    <Compile Include="Models\DTO\ProyectosCentroExtensionDTO.cs" />
+    <Compile Include="Models\DTO\ProyectoTotalAportesDTO.cs" />
+    <Compile Include="Models\DTO\PublicacionesExcelDTO.cs" />
+    <Compile Include="Models\DTO\PublicacionIngresoVentasDTO.cs" />
+    <Compile Include="Models\DTO\PublicacionInventarioDTO.cs" />
+    <Compile Include="Models\DTO\PublicacionTotalAportesDTO.cs" />
+    <Compile Include="Models\DTO\TareasEstadoAvanceDTO.cs" />
+    <Compile Include="Models\DTO\UGI_SemestreDTO.cs" />
+    <Compile Include="Models\Estado_Tarea.cs" />
+    <Compile Include="Models\Extension\excelControlFinancieroExtension.cs" />
+    <Compile Include="Models\Extension\ProyectosCentroExtension.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Hermes\HermesProyectoExtension.cs" />
+    <Compile Include="Models\Hermes\HermesProyectoExtensionWS.cs" />
+    <Compile Include="Models\Hermes\HermesProyectoInvestigacion.cs" />
+    <Compile Include="Models\Hermes\HermesProyectoInvestigacionWS.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_Alcance.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_EstadoCnv.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_FuenteCnv.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_Interesados.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_RecursoParticipante.cs" />
+    <Compile Include="Models\Investigacion\Convocatoria_RequerimientoRequisito.cs" />
+    <Compile Include="Models\Investigacion\excelControlFinancieroInvestigacion.cs" />
+    <Compile Include="Models\Investigacion\InvestigacionDashboard.cs" />
+    <Compile Include="Models\Investigacion\InvestigacionExcelControlFinanciero.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Aplicarpago.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Desembolso.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_EstadoProyecto.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Gasto.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Resolucion.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Obligacion.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Observacion.cs" />
+    <Compile Include="Models\Investigacion_ActoAdmonContrapartida.cs" />
+    <Compile Include="Models\Investigacion_Contrapartida.cs" />
+    <Compile Include="Models\Investigacion_CrearGrupo.cs" />
+    <Compile Include="Models\Investigacion_CrearLinea.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_CrearProyecto.cs" />
+    <Compile Include="Models\Investigacion_Linea.cs" />
+    <Compile Include="Models\Investigacion\Investigacion_Producto.cs" />
+    <Compile Include="Models\Investigacion_Publicacion.cs" />
+    <Compile Include="Models\Investigacion_Seguimiento.cs" />
+    <Compile Include="Entities\Repositories\IRolMenuOpcionesRepository.cs" />
+    <Compile Include="Models\keyAttribute.cs" />
+    <Compile Include="Models\Liquidacion_Finalizacion.cs" />
+    <Compile Include="Models\Liquidacion_InformeFinalProy.cs" />
+    <Compile Include="Models\Literal_UGI.cs" />
+    <Compile Include="Models\LTLogApp.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Parciales.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Persona_Calificacion.cs" />
+    <Compile Include="Models\Persona_Ciudad.cs" />
+    <Compile Include="Models\Persona_Formacion.cs" />
+    <Compile Include="Models\Persona_Genero.cs" />
+    <Compile Include="Models\Persona_Pais.cs" />
+    <Compile Include="Models\Persona_TipoEntidad.cs" />
+    <Compile Include="Models\Persona_TipoServicio.cs" />
+    <Compile Include="Models\Persona_TituloAlto.cs" />
+    <Compile Include="Models\Productos.cs" />
+    <Compile Include="Models\Propuesta.cs" />
+    <Compile Include="Models\Propuestaseguimiento.cs" />
+    <Compile Include="Models\Propuesta_AprobacionConsejoFacultad.cs" />
+    <Compile Include="Models\Propuesta_AvalConsejoFacultad.cs" />
+    <Compile Include="Models\Propuesta_AvalInterno.cs" />
+    <Compile Include="Models\Propuesta_Cobertura.cs" />
+    <Compile Include="Models\propuesta_entidad.cs" />
+    <Compile Include="Models\Propuesta_EstadoPropuesta.cs" />
+    <Compile Include="Models\Propuesta_EstadoSuscripcionContratoConvenio.cs" />
+    <Compile Include="Models\Propuesta_Modalidad.cs" />
+    <Compile Include="Models\Propuesta_ModificacionGarantia.cs" />
+    <Compile Include="Models\Propuesta_ModificacionMinuta.cs" />
+    <Compile Include="Models\Propuesta_OrigenPropuesta.cs" />
+    <Compile Include="Models\Propuesta_SuscripcionGarantia.cs" />
+    <Compile Include="Models\Propuesta_SuscripcionMinuta.cs" />
+    <Compile Include="Models\Propuesta_TipoModificacion.cs" />
+    <Compile Include="Models\Propuesta_TipoPropuesta.cs" />
+    <Compile Include="Models\Propuesta_TipoUsuario.cs" />
+    <Compile Include="Models\Proyectos_AlcanceProyecto.cs" />
+    <Compile Include="Models\Proyectos_AsignacionProyecto.cs" />
+    <Compile Include="Models\Proyectos_EstadoContrato.cs" />
+    <Compile Include="Models\Proyectos_EstadoObligacion.cs" />
+    <Compile Include="Models\Proyectos_EstadoProducto.cs" />
+    <Compile Include="Models\Proyectos_NaturalezaProyecto.cs" />
+    <Compile Include="Models\Proyectos_NuevoProducto.cs" />
+    <Compile Include="Models\Proyectos_Obligaciones.cs" />
+    <Compile Include="Models\Proyectos_ProyectosObservaciones.cs" />
+    <Compile Include="Models\Proyectos_TipoProducto.cs" />
+    <Compile Include="Models\Proyectos_TipoProyecto.cs" />
+    <Compile Include="Models\Proyecto_Observacion.cs" />
+    <Compile Include="Models\Proyecto_Persona.cs" />
+    <Compile Include="Models\Publicaciones_AreaCurricular.cs" />
+    <Compile Include="Models\Publicaciones_Autores.cs" />
+    <Compile Include="Models\Publicaciones_CarProyEditorial.cs" />
+    <Compile Include="Models\Publicaciones_CesionDerechos.cs" />
+    <Compile Include="Models\Publicaciones_CierreEdicion.cs" />
+    <Compile Include="Models\Publicaciones_Coedicion.cs" />
+    <Compile Include="Models\Publicaciones_Coleccion.cs" />
+    <Compile Include="Models\Publicaciones_Complejidad.cs" />
+    <Compile Include="Models\Publicaciones_Concepto.cs" />
+    <Compile Include="Models\Publicaciones_CostosEjecucionContractual.cs" />
+    <Compile Include="Models\Publicaciones_CostosOrigenContrato.cs" />
+    <Compile Include="Models\Publicaciones_CostosParametrosPresupuestales.cs" />
+    <Compile Include="Models\Publicaciones_CostosServicioEditorial.cs" />
+    <Compile Include="Models\Publicaciones_CrearPublicacion.cs" />
+    <Compile Include="Models\Publicaciones_Deposito.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControl.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlActa.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlCertVentas.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlIngresoVentas.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlInventarioBodega.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlInventarioMovimientos.cs" />
+    <Compile Include="Models\Publicaciones_DepositoControlRepVentas.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDisposicionLegal.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDistribucion.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDistribucionComercial.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDistribucionComercialOtros.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDistribucionParam.cs" />
+    <Compile Include="Models\Publicaciones_DepositoDistribucionTitulo.cs" />
+    <Compile Include="Models\Publicaciones_DepositoPrecios.cs" />
+    <Compile Include="Models\Publicaciones_DepositoResolucion.cs" />
+    <Compile Include="Models\Publicaciones_DepositoTipoMov.cs" />
+    <Compile Include="Models\Publicaciones_DepositoTipoPub.cs" />
+    <Compile Include="Models\Publicaciones_Designacion.cs" />
+    <Compile Include="Models\Publicaciones_DiagFinal.cs" />
+    <Compile Include="Models\Publicaciones_DiagFinalParam.cs" />
+    <Compile Include="Models\Publicaciones_DiagFinalTitulo.cs" />
+    <Compile Include="Models\Publicaciones_Diagramacion.cs" />
+    <Compile Include="Models\Publicaciones_Digitalizacion.cs" />
+    <Compile Include="Models\Publicaciones_Distribuidor.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionActividad.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionActividadFeriaEvento.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionActividadInvitados.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionActividadNombre.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionCierre.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionHerramienta.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionInicio.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionMailling.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionMedios.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionParam.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionPlan.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionPlanActividad.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionTipoMedio.cs" />
+    <Compile Include="Models\Publicaciones_DivulgacionTitulo.cs" />
+    <Compile Include="Models\Publicaciones_EdicionParam.cs" />
+    <Compile Include="Models\Publicaciones_EstadoConcepto.cs" />
+    <Compile Include="Models\Publicaciones_EstadoCorab.cs" />
+    <Compile Include="Models\Publicaciones_EstadoCore.cs" />
+    <Compile Include="Models\Publicaciones_EstadoCorParam.cs" />
+    <Compile Include="Models\Publicaciones_EstadoCorreccion.cs" />
+    <Compile Include="Models\Publicaciones_EstadoCubierta.cs" />
+    <Compile Include="Models\Publicaciones_EstadoDiagramacion.cs" />
+    <Compile Include="Models\Publicaciones_EstadoEvaluador.cs" />
+    <Compile Include="Models\Publicaciones_EvalConcepto.cs" />
+    <Compile Include="Models\Publicaciones_EvalGenerada.cs" />
+    <Compile Include="Models\Publicaciones_EvalObservaciones.cs" />
+    <Compile Include="Models\Publicaciones_Evaluaciones.cs" />
+    <Compile Include="Models\Publicaciones_EvaluacionInicial.cs" />
+    <Compile Include="Models\Publicaciones_Evaluadores.cs" />
+    <Compile Include="Models\Publicaciones_FormatoDistribucion.cs" />
+    <Compile Include="Models\Publicaciones_Hermes.cs" />
+    <Compile Include="Models\Publicaciones_Idioma.cs" />
+    <Compile Include="Models\Publicaciones_Impresion.cs" />
+    <Compile Include="Models\Publicaciones_ImpresionEncuadernacion.cs" />
+    <Compile Include="Models\Publicaciones_ImpresionGramaje.cs" />
+    <Compile Include="Models\Publicaciones_ImpresionPapel.cs" />
+    <Compile Include="Models\Publicaciones_ImpresionTintasTaco.cs" />
+    <Compile Include="Models\Publicaciones_ImpresionTipo.cs" />
+    <Compile Include="Models\Publicaciones_InformacionPago.cs" />
+    <Compile Include="Models\Publicaciones_OrigenManuscrito.cs" />
+    <Compile Include="Models\Publicaciones_ProveedorServicio.cs" />
+    <Compile Include="Models\Publicaciones_Resena.cs" />
+    <Compile Include="Models\Publicaciones_Responsable.cs" />
+    <Compile Include="Models\Publicaciones_RolEditorial.cs" />
+    <Compile Include="Models\Publicaciones_ConceptoEditorial.cs" />
+    <Compile Include="Models\Publicaciones_TipoCorreccion.cs" />
+    <Compile Include="Models\Publicaciones_TipoDiagramacion.cs" />
+    <Compile Include="Models\Publicaciones_TipoEvaluador.cs" />
+    <Compile Include="Models\Publicaciones_Tipologia.cs" />
+    <Compile Include="Models\Publicaciones_TipoObra.cs" />
+    <Compile Include="Models\Publicacion\excelControlFinancieroPublicaciones.cs" />
+    <Compile Include="Models\Publicacion\PublicacionesExcel.cs" />
+    <Compile Include="Models\Publicacion\Publicaciones_EstadoManuscrito.cs" />
+    <Compile Include="Models\Publicacion\Publicacion_Aplicarpago.cs" />
+    <Compile Include="Models\Publicacion\Publicacion_Desembolso.cs" />
+    <Compile Include="Models\Publicacion\Publicacion_Gasto.cs" />
+    <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\RolMenu.cs" />
+    <Compile Include="Models\RolMenuOpciones.cs" />
+    <Compile Include="Models\SeguimientoHistorico_Conceptos_Literales_UGI.cs" />
+    <Compile Include="Models\Seguimiento_Acuerdo.cs" />
+    <Compile Include="Models\Seguimiento_AplicarPago.cs" />
+    <Compile Include="Models\Seguimiento_Concepto.cs" />
+    <Compile Include="Models\Seguimiento_CrearGasto.cs" />
+    <Compile Include="Models\Seguimiento_Desembolso.cs" />
+    <Compile Include="Models\Seguimiento_DetalladoDesembolso.cs" />
+    <Compile Include="Models\Seguimiento_DetalleRubro.cs" />
+    <Compile Include="Models\Seguimiento_FinancieroExcel.cs" />
+    <Compile Include="Models\Seguimiento_Partida.cs" />
+    <Compile Include="Models\Seguimiento_RelacionVinculo.cs" />
+    <Compile Include="Models\Seguimiento_Rubro.cs" />
+    <Compile Include="Models\Semestre.cs" />
+    <Compile Include="Models\Solicitud_CertificadoTrazabilidad.cs" />
+    <Compile Include="Models\Suscripcion_Liquidacion.cs" />
+    <Compile Include="Models\TableModel\DataTableAdapter.cs" />
+    <Compile Include="Models\TableModel\DataTableRequest.cs" />
+    <Compile Include="Models\Tareas.cs" />
+    <Compile Include="Models\Tareas_Modulo.cs" />
+    <Compile Include="Models\Tareas_Seguimiento.cs" />
+    <Compile Include="Models\TipoOpcion.cs" />
+    <Compile Include="Models\Tipo_Documento.cs" />
+    <Compile Include="Models\Tipo_Persona.cs" />
+    <Compile Include="Models\UGI\UGI_ConceptoSemestre.cs" />
+    <Compile Include="Models\UGI\UGI_LiteralSemestre.cs" />
+    <Compile Include="Models\UGI\UGI_Semestre.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\AuthorizationException.cs" />
+    <Compile Include="Utilities\BusinessException.cs" />
+    <Compile Include="Utilities\BusinessExceptionData.cs" />
+    <Compile Include="Utilities\GlobalParams.cs" />
+    <Compile Include="Utilities\WebAppLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Export\" />
+    <Folder Include="Plantillas\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63916</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63940/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://iris</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

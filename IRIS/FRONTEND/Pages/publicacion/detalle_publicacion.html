@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Detalle</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvPublicacionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Datos Publicación</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionDetalle" novalidate>
+                  <div class="form-group row mb-2">
+                    <span id="spanIdPublicacionForm" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtidkardexPublicacion">Kardex *</label>
+                        <input type="text" class="form-control iris" id="txtidkardexPublicacion" maxlength="30" placeholder="Kardex" data-span="spantxtidkardexPublicacion" required/>
+                        <div class="invalid-feedback">
+                            Kardex es un campo obligatorio
+                        </div>
+                        <div id="spantxtidkardexPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfecregmanuscritoPublicacion">Fecha Registro *</label>                                
+                        <input type="date" class="form-control iris" id="dtfecregmanuscritoPublicacion" title="Fecha Registro Manuscrito" data-span="spandtfecregmanuscritoPublicacion" required/>
+                        <div class="invalid-feedback">
+                            Fecha Registro es un campo obligatorio
+                        </div>
+                        <div id="spandtfecregmanuscritoPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtTituloPublicacion">Título Manuscrito *</label>
+                        <textarea class="form-control iris" id="txtTituloPublicacion" maxlength="500" rows="3" placeholder="Título Manuscrito" data-span="spantxtTituloPublicacion" required></textarea>                                
+                        <div class="invalid-feedback">
+                            Título Manuscrito es un campo obligatorio
+                        </div>
+                        <div id="spantxtTituloPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Origen Obra *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboOrigenPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Origen Obra es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtproyextedcontinuaPublicacion">Proyecto Extensión</label>
+                        <input type="text" class="form-control iris" id="txtproyextedcontinuaPublicacion" maxlength="50" placeholder="Proyecto Extensión" title="HERMES ID Proyecto Extensión y/o Educación Continua" data-span="spantxtproyextedcontinuaPublicacion"/>
+                        <div id="spantxtproyextedcontinuaPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Publicación *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Tipo Publicación es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Grupo Investigación</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboGrupoInvestigacionPublicacion" ></select>    
+                            <div class="invalid-feedback">
+                              Entidad es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Colección *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboColeccionPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Colección es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmNroColeccionPublicacion">No. Colección *</label>
+                        <input type="number" class="form-control iris iris-number" id="nmNroColeccionPublicacion" title="No. Colección" min="1" data-span="spannmNroColeccionPublicacion" required/>
+                        <div class="invalid-feedback">
+                            No. Colección es un campo obligatorio
+                        </div>
+                        <div id="spannmNroColeccionPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmNroEdicionPublicacion">No. Edición *</label>
+                        <input type="number" class="form-control iris iris-number" id="nmNroEdicionPublicacion" title="No. Edición" min="1" data-span="spannmNroEdicionPublicacion" required/>
+                        <div class="invalid-feedback">
+                            No. Edición es un campo obligatorio
+                        </div>
+                        <div id="spannmNroEdicionPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Caracter Editorial *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cbocarproyeditorialPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Colección es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Coedición</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboCoedicionPublicacion" ></select>    
+                            <div class="invalid-feedback">
+                                Coedición es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>   
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Responsable *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboResponsablePublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Responsable es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtGestorUnijusPublicacion">Gestor Editorial</label>
+                        <input type="text" class="form-control iris" id="txtGestorUnijusPublicacion" maxlength="30" placeholder="Gestor Editorial" title="Gestor Editorial UNIJUS" data-span="spantxtGestorUnijusPublicacion" />
+                        <div class="invalid-feedback">
+                            Gestor Editorial es un campo obligatorio
+                        </div>
+                        <div id="spantxtGestorUnijusPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfeciniruteditPublicacion">Fecha Ruta Editorial *</label>                                
+                        <input type="date" class="form-control iris" id="dtfeciniruteditPublicacion" title="Fecha Inicio Ruta Editorial" data-span="spandtfeciniruteditPublicacion" required/>
+                        <div class="invalid-feedback">
+                            Fecha Inicio Ruta Editorial es un campo obligatorio
+                        </div>
+                        <div id="spandtfeciniruteditPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Área Curricular *</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboAreaAcademicaPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                              Área Curricular es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtHermesIDPublicacion">HERMES ID</label>
+                        <input type="text" class="form-control iris" id="txtHermesIDPublicacion" maxlength="30" placeholder="HERMES ID" data-span="spantxtHermesIDPublicacion"/>
+                        <div class="invalid-feedback">
+                            HERMES ID es un campo obligatorio
+                        </div>
+                        <div id="spantxtHermesIDPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Formato Distribución *</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboFormatoDistPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Formato Distribución es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Complejidad *</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboComplejidadPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Complejidad es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Idioma Original *</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboIdiomaPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Idioma Original es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmCaracteresPublicacion">No. Caracteres *</label>
+                        <input type="number" class="form-control iris iris-number" id="nmCaracteresPublicacion" title="No. Caracteres con espacio" min="1" onchange="TotalCuartillaPagina();" data-span="spannmCaracteresPublicacion" required/>
+                        <div class="invalid-feedback">
+                            No. Caracteres es un campo obligatorio
+                        </div>
+                        <div id="spannmCaracteresPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris iris-number" for="txtCuartillasPublicacion">Cuartillas</label>
+                        <input type="text" class="form-control iris" id="txtCuartillasPublicacion" disabled/>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris iris-number" for="txtPaginasPublicacion">Páginas</label>
+                        <input type="text" class="form-control iris" id="txtPaginasPublicacion" disabled/>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtLiteralugiPublicacion">Literal U.G.I.</label>
+                        <input type="text" class="form-control iris" id="txtLiteralugiPublicacion" maxlength="20" placeholder="Literal U.G.I." data-span="spantxtLiteralugiPublicacion" />
+                        <div class="invalid-feedback">
+                            Literal UGI es un campo obligatorio
+                        </div>
+                        <div id="spantxtLiteralugiPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtResolucionugiPublicacion">Resolución UGI</label>
+                        <input type="text" class="form-control iris" id="txtResolucionugiPublicacion" maxlength="100" placeholder="Resolución UGI" data-span="spantxtResolucionugiPublicacion" />
+                        <div class="invalid-feedback">
+                            Resolución UGI es un campo obligatorio
+                        </div>
+                        <div id="spantxtResolucionugiPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtFichaQuipuPublicacion">Ficha QUIPU</label>
+                        <input type="text" class="form-control iris" id="txtFichaQuipuPublicacion" maxlength="100" placeholder="Ficha QUIPU" data-span="spantxtFichaQuipuPublicacion"/>
+                        <div class="invalid-feedback">
+                            Ficha QUIPU es un campo obligatorio
+                        </div>
+                        <div id="spantxtFichaQuipuPublicacion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Año Publicación *</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboAnnioPublicacionPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Año Publicación es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <label class="form-label-iris" for="chkReimpresionPublicacion"><input type="checkbox" class="form-check-input iris-check" id="chkReimpresionPublicacion"/>Reimpresión</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtPalabraclavePublicacion">Palabras Clave</label>
+                        <textarea class="form-control iris" id="txtPalabraclavePublicacion" maxlength="1000" rows="3" placeholder="Palabras Clave" data-span="spantxtPalabraclavePublicacion" ></textarea>
+                        <div class="invalid-feedback">
+                            Palabras Clave es un campo obligatorio
+                        </div>
+                        <div id="spantxtPalabraclavePublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtComentariosPublicacion">Comentarios</label>
+                        <textarea class="form-control iris" id="txtComentariosPublicacion" maxlength="1000" rows="3" placeholder="Comentarios" data-span="spantxtComentariosPublicacion" ></textarea>
+                        <div class="invalid-feedback">
+                            Comentarios es un campo obligatorio
+                        </div>
+                        <div id="spantxtComentariosPublicacion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+                  <!--Siempre que cambie, aquí se va a colocar el estado de la publicación-->
+                  <div class="form-group row mb-2">
+                  
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Estado Publicación *</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboEstadoPublicacion" required></select>    
+                            <div class="invalid-feedback">
+                                Estado Publicación es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                   
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaPublicacionesDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Publicación" onclick="ValidatePostUpdatePublicacion('formPublicacionDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/detalle_publicacion.js"></script>
+
+  </body>
+
+
+</html>

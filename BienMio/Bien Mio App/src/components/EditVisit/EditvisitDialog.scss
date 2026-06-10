@@ -1,0 +1,23 @@
+.info-section{
+  width: "50%";
+}
+.form-section{
+  width: "50%";
+}
+.form-container{
+  display: "flex";
+  flex-direction: "row";
+}
+
+@media(max-width: 900px){
+  .info-section{
+    width: "100%";
+  }
+  .form-section{
+    width: "100%";
+  }
+  .form-container{
+    display: "flex";
+    flex-direction: "column";
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Cberturas/title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divPropuestas_coberturaHTML">
+                  <span id="spanIdPropuestas_cobertura" class="ocultar" ></span>
+                  <span id="spanNombrePropuestas_cobertura" class="ocultar" ></span>                                                  
+                  <div class="row" id="dvPropuestas_coberturaTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">Coberturas Garantía</div>
+                      <div class="col-md-6 text-center">
+                    
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearPropuestas_cobertura()">Nueva Cobertura</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicPropuestas_cobertura">
+                      <div class="table-responsive col-md-6 offset-md-3">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestas_cobertura" >
+                        <thead>
+                          <tr>
+                            <th>Cobertura</th>                            
+                           <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvPropuestas_coberturaDetalle"></div>              
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Propuestas_cobertura.js"></script>
+    <script src="../js/iris/models/proyectoextension/Propuestas_coberturaModel.js" ></script>
+
+
+  </body>
+
+
+</html>

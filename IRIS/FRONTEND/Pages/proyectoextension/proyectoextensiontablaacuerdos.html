@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Extensión Acuerdos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROYECTO EXTENSIÓN RELACIÓN DE ACUERDOS INTERFIC</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <span id="spanIdProyectoExtensionAcuerdos" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsProyectoExtensionAcuerdo">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionAcuerdo" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtContratoProyectoExtensionAcuerdo">Contrato/Convenio</label>
+              <input type="text" class="form-control iris" id="txtContratoProyectoExtensionAcuerdo" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionAcuerdo">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionAcuerdo" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center" id="dvVolverTablaProyectoExtensionDesdeAcuerdos">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeAcuerdos()">Volver Listado Proyectos</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearAcuerdoProyectoExtension()">Agregar Acuerdo</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionAcuerdos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionAcuerdos" >
+              <thead>
+                <tr>                                              
+                  <th>No. Acuerdo</th>
+                  <th>Sede</th>
+                  <th>Facultad</th>
+                  <th>Nombre</th>
+                  <th>Fecha Inicia</th>
+                  <th>Fecha Finaliza</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionAcuerdoDatos">
+          <div class="row">
+            <div class="col-md-6 titletab" id="LabeldvCrearDesembolsoProyectoExtensionFinanciero">Datos Acuerdo Interfic</div>
+          </div>
+          
+          
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formProyectoExtensionAcuerdoDatos" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanProyectoExtensionIdAcuerdo" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtProyectoExtensionNroAcuerdo">Número Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionNroAcuerdo" maxlength="15" placeholder="No. Acuerdo" data-span="spantxtProyectoExtensionNroAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Número Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionNroAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>                    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtProyectoExtensionSedeAcuerdo">Sede Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionSedeAcuerdo" maxlength="30" placeholder="Sede Acuerdo" data-span="spantxtProyectoExtensionSedeAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Sede Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionSedeAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>                    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtProyectoExtensionFacultadAcuerdo">Facultad Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionFacultadAcuerdo" maxlength="30" placeholder="Facultad Acuerdo" data-span="spantxtProyectoExtensionFacultadAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Facultad Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionFacultadAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>                    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtProyectoExtensionNombreAcuerdo">Nombre Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionNombreAcuerdo" maxlength="40" placeholder="Nombre Acuerdo" data-span="spantxtProyectoExtensionNombreAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Nombre Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionNombreAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtProyectoExtensionIniciaAcuerdo">Fecha Inicia</label>                                
+                        <input type="date" class="form-control iris" id="dtProyectoExtensionIniciaAcuerdo" data-span="spandtProyectoExtensionIniciaAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Fecha Inicia es un campo obligatorio
+                        </div>
+                        <div id="spandtProyectoExtensionIniciaAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtProyectoExtensionFinAcuerdo">Fecha Finaliza</label>                                
+                        <input type="date" class="form-control iris" id="dtProyectoExtensionFinAcuerdo" data-span="spandtProyectoExtensionFinAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Fecha Finaliza es un campo obligatorio
+                        </div>
+                        <div id="spandtProyectoExtensionFinAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                  </div>
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtProyectoExtensionDuracionAcuerdo">Duración Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionDuracionAcuerdo" maxlength="50" placeholder="Duración Acuerdo" data-span="spantxtProyectoExtensionDuracionAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Duración Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionDuracionAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="txtProyectoExtensionObjetoAcuerdo">Objeto Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionObjetoAcuerdo" maxlength="50" placeholder="Objeto Acuerdo" data-span="spantxtProyectoExtensionObjetoAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Objeto Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionObjetoAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtProyectoExtensionJustificacionAcuerdo">Justificación Acuerdo</label>
+                        <input type="text" class="form-control iris" id="txtProyectoExtensionJustificacionAcuerdo" maxlength="200" placeholder="Justificación Acuerdo" data-span="spantxtProyectoExtensionJustificacionAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Justificación Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionJustificacionAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmProyectoExtensionValorAcuerdo">Valor Acuerdo</label>
+                        <input type="number" class="form-control iris iris-number" id="nmProyectoExtensionValorAcuerdo" min="1" data-span="spannmProyectoExtensionValorAcuerdo" required/>
+                        <div class="invalid-feedback">
+                            Valor Acuerdo es un campo obligatorio
+                        </div>
+                        <div id="spannmProyectoExtensionValorAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                  </div>
+                  <div class="form-group row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtProyectoExtensionBenefAcuerdo">Beneficio Acuerdo</label>
+                        <textarea class="form-control iris" id="txtProyectoExtensionBenefAcuerdo" maxlength="500" rows="3" placeholder="Beneficio Acuerdo" data-span="spantxtProyectoExtensionBenefAcuerdo" ></textarea>                                
+                        <div class="invalid-feedback">
+                            Beneficio Proyecto es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionBenefAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtProyectoExtensionDificultadAcuerdo">Dificultades Acuerdo</label>
+                        <textarea class="form-control iris" id="txtProyectoExtensionDificultadAcuerdo" maxlength="500" rows="3" placeholder="Dificultades Acuerdo" data-span="spantxtProyectoExtensionDificultadAcuerdo" ></textarea>                                
+                        <div class="invalid-feedback">
+                            Dificultades Proyecto es un campo obligatorio
+                        </div>
+                        <div id="spantxtProyectoExtensionDificultadAcuerdo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="container container-fluid">
+              <button type="button" class="btn-iris white small" onclick="VolverTablaAcuerdosProyectoExtensionDesdeEdicion()">Cancelar</button>
+              <input type="button" value="Guardar Datos Acuerdo" onclick="ValidatePostUpdateProyectoExtensionAcuerdo('formProyectoExtensionAcuerdoDatos')" class="btn-iris success small"/>
+            </div>
+          
+        
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextensionacuerdos.js"></script>
+
+  </body>
+
+
+</html>
+
+

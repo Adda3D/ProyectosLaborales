@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Extensión Desembolsos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row col-md-10 offset-md-1 scroll" id="tableProyectoExtensionFinancieroDesembolsos">
+        <div class="row">
+          <div class="col-md-6 titletab">DETALLE APORTES / FINANCIACIÓN EXTERNA</div>
+        </div>
+        <div class="row" style="margin-bottom: 8px;">          
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtProyectoExtensionAporteFacultad">Aporte Facultad</label>
+              <input type="text" class="form-control iris iris-number" id="txtProyectoExtensionAporteFacultad" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtProyectoExtensionAporteVIR">Aporte VIR</label>
+              <input type="text" class="form-control iris iris-number" id="txtProyectoExtensionAporteVIR" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtProyectoExtensionAporteDIEB">Aportes DIEB</label>
+              <input type="text" class="form-control iris iris-number" id="txtProyectoExtensionAporteDIEB" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtProyectoExtensionTotalConvenio">Total Contrato / Convenio</label>
+              <input type="text" class="form-control iris iris-number" id="txtProyectoExtensionTotalConvenio" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtProyectoExtensionTotalAportadoConvenio">Total Aportado</label>
+              <input type="text" class="form-control iris iris-number" id="txtProyectoExtensionTotalAportadoConvenio" disabled/>
+            </div>
+          
+            <div class="col-md-2 text-center">                                 
+              <button type="button" class="btn btn-primaryiris" onclick="DetalleAportesProyectoExtension()">Detalle Aportes</button>
+              <button type="button" class="btn btn-primaryiris" onclick="CrearDesembolsoProyectoExtension()">Nuevo Desembolso</button>
+            </div>          
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionDesembolsos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionDesembolsos" >
+              <thead>
+                <tr>                            
+                  <th>Fecha Giro</th>
+                  <th>Valor</th>
+                  <th>Porcentaje</th>
+                  <th>Notas</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvCrearDesembolsoProyectoExtensionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab">Datos para aplicar Desembolso</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoExtensionFinancieroAplicarDesembolso" novalidate>
+
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaDesembolsosProyectoExtensionFinancieroDesdeDesembolso()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos" onclick="ValidatePostUpdateProyectoExtensionFinancieroDesembolso('formProyectoExtensionFinancieroAplicarDesembolso')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionDetalleAportes">
+        <div class="row">
+          <div class="col-md-6 titletab">Detalle Aportes</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoExtensionDetalleAportes" novalidate>
+
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaDesembolsosProyectoExtensionFinancieroDesdeAportes(false)" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Dato Aportes" onclick="ValidatePostUpdateProyectoExtensionFinancieroAportes('formProyectoExtensionDetalleAportes')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/proyectoextension/Proyecto_Seguimiento_DesembolsoModel.js"></script>
+    <script src="../../js/iris/models/proyectoextension/Proyecto_DetalleAportesModel.js"></script>
+    <script src="../../js/iris/proyectoextension/proyectoextensiontablaPEFinIngresos.js"></script>
+
+  </body>
+
+
+</html>
+

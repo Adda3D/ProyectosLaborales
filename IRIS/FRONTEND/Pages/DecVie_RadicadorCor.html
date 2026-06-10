@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_RadicadorTecHTML">
+                <span id="spanIdDecVie_RadicadorTec" class="ocultar" ></span>
+                <span id="spanConsecutivoDecVie_RadicadorTec" class="ocultar" ></span>
+                <span id="spanFechaDecVie_RadicadorTec" class="ocultar" ></span>
+                <span id="spanAsuntoDecVie_RadicadorTec" class="ocultar" ></span>
+                <span id="spanDependenciaDecVie_RadicadorTec" class="ocultar" ></span>                
+                <div class="row" id="dvDecVie_RadicadorTecTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">RADICADOR</div>
+                    <div class="col-md-6 text-center">
+                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_RadicadorTec()">Nuevo Radicado</button>
+                      <button type="button" class="btn btn-primaryiris" onclick="VerTodos()">Ver Todos</button>
+
+
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_RadicadorTec">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_RadicadorTec">
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Radicador</th>
+                            <th>Asunto</th>
+                            <th>Solicitante</th> 
+                            <th>Fecha de Vencimiento</th>
+                            <th>Estado</th>
+                            <th>Responsable Radicador</th>
+                            <th>Dependencia Destino</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_RadicadorTecDetalle"></div>
+    <script src="../js/iris/models/DecVie_RadicadorTecModel.js"></script>
+    <script src="../js/iris/DecVie_RadicadorTec.js"></script>    
+
+  </body>
+
+</html>

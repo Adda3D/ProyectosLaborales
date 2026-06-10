@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Evaluaciópn Inicial</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Publicación Evaluación Inicial</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionEvaluacionInicial" novalidate>
+                    <div class="form-group row mb-3">
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Resultado Inicial Evaluación</label>
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionEvaluacionInicial"></select>    
+                                <div class="invalid-feedback">
+                                    Resultado Evaluación es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>    
+
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">              
+              <input type="button" value="Guardar Resultado" onclick="ValidatePostUpdatePublicacionInicial('formPublicacionEvaluacionInicial')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicacionPUBEVAL_Evaluacion.js"></script>
+
+  </body>
+
+
+</html>

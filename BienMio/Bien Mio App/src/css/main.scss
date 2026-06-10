@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,500;1,300;1,600&display=swap");
+@import "forms";
+
+$background-color: #ff8243;
+$white: white;
+$black: black;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.44;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    //background: url(../img/fondo.jpg) center no-repeat;
+    font-family: "Fira Sans", sans-serif;
+    height: 100vh;
+}
+
+.App{
+    background: url(../img/fondo.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.login-box {
+    background-color: $white;
+    color: $black;
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 3%;
+    box-shadow: 0 0 30px;
+    text-align: center;
+    width: 400px;
+}
+
+.login-container{
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10rem 5rem;
+}
+
+.login-box h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.login-box h2 {
+    margin: 0;
+    padding: 0 0 50px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.login-box input {
+    width: 90%;
+    height: 10mm;
+    margin-bottom: 5%;
+    align-content: center;
+    background-color: lightgray;
+    border-radius: 2mm;
+    border-color: transparent;
+    outline: none;
+}
+
+.login-box input[type="submit"] {
+    background-color: $background-color;
+    margin-top: 10%;
+    width: 70%;
+    align-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 10px;
+}
+
+.login-box input[placeholder="Usuario"],
+.login-box input[placeholder="Contraseña"] {
+    text-align: center;
+    font-size: 15px;
+}
+
+.login-box a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.login-box a:hover {
+    color: $background-color;
+}
+
+.logo-space img {
+    width: 600px;
+    height: 400px;
+}
+
+
+
+/* PAGINA DE REGISTRO */
+.logoRegister-space img {
+    width: 500px;
+    height: 300px;
+}
+
+.register-box {
+    background-color: $white;
+    color: $black;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px;
+    text-align: center;
+    width: 520px;
+    box-sizing: border-box;
+    padding: 50px 20px;
+    border-radius: 3%;
+}
+
+.register-box h1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.register-box h2 {
+    margin: 0;
+    padding: 0 0 30px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.register-box input {
+    width: 90%;
+    height: 10mm;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    align-content: center;
+    background-color: lightgray;
+    border-radius: 2mm;
+    border-color: transparent;
+    outline: none;
+}
+
+.register-box input[type="submit"] {
+    background-color: $background-color;
+    margin-top: 5%;
+    width: 50%;
+    align-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 10px;
+}
+
+.register-box a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.register-box a:hover {
+    color: $background-color;
+}
+
+.passwordold-box {
+    width: 420px;
+    height: 420px;
+    background-color: $white;
+    color: $black;
+    top: 30%;
+    left: 65%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 60px 20px;
+    border-radius: 3%;
+    box-shadow: 0 0 30px;
+    text-align: center;
+}
+
+.passwordold-box h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: lighter;
+    color: $background-color;
+    font-size: 25px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.passwordold-box p {
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 0 0 30px;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.passwordold-box input {
+    width: 90%;
+    height: 10mm;
+    margin-bottom: 2%;
+    align-content: center;
+    background-color: lightgray;
+    border-radius: 2mm;
+    border-color: transparent;
+    outline: none;
+}
+
+.passwordold-box input[type="submit"] {
+    background-color: $background-color;
+    margin-top: 10%;
+    width: 50%;
+    align-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 10px;
+}
+
+.passwordold-box a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black;
+    margin-top: 10px;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.passwordold-box a:hover {
+    color: $background-color;
+}
+
+@media (max-width: 600px){
+    .login-box{
+        top: 10%;
+        left: 10%;
+        width: max-content;
+        height: 60%;
+    }
+    .logo-space img {
+        width: 200px;
+        height: 100px;
+    }
+    .login-container{
+        padding: 1rem;
+        align-content: center;
+        justify-content: center;
+        background-size: contain;
+    }
+    .register-box{
+        top: 10%;
+        left: 10%;
+        width: max-content;
+        height: 60%;
+    }
+    .logoRegister-space img {
+        width: 200px;
+        height: 100px;
+    }
+    
+}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear Mini {{ product_type }} - MiniLibros{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Crear Mini {{ product_type }}</h1>
+    <p>Precio: ${{ price|floatformat:0 }} (sin envío)</p>
+
+    <form method="post" enctype="multipart/form-data" class="product-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="case_color">Color de la Carcasa:</label>
+            <input type="color" id="case_color" name="case_color" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nfc_url">URL para NFC/QR:</label>
+            <input type="url" id="nfc_url" name="nfc_url" required placeholder="https://example.com/cancion">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="cover_image">Imagen de Carátula:</label>
+            <input type="file" id="cover_image" name="cover_image" accept="image/*" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" required style="width: 100px;">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">Crear y Añadir al Carrito</button>
+    </form>
+</div>
+{% endblock %}

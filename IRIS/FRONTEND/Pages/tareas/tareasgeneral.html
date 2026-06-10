@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Gestión de Tareas General</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divTareasGeneralHTML">
+                <span id="spanIdTareasGeneral" class="" ></span>
+                
+                <div class="row" id="dvTareasGeneralTable">
+                  <div class="row">
+                    <div class="col-md-10 titletab">PANEL GENERAL GESTIÓN DE TAREAS</div>
+                  </div>
+
+                  <div class="row">      
+                    <div class="col-md-4 text-center"></div>
+                    <div class="col-md-3 text-center">     
+                      <div class="col-md-4">
+                        <label class="form-label-iris">Filtro Estado Tareas</label>
+                      </div>  
+                      <div class="col-md-6 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboFiltroTareasGeneral" onchange="ActualizarFiltroTareasGeneral();"></select>          
+                      </div>
+                    </div>
+                    <div class="col-md-1 text-center"></div>
+                    <div class="col-md-3 text-center">
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearTareasGeneral()"  data-bs-toggle="modal" data-bs-target="#ModalTareasGeneral" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Tarea</button>
+                      <button type="button" class="btn-iris success " onclick="RefreshDataTableTareasGeneral();">Refrescar</button>
+                    </div>
+                  </div>
+              
+                  <div class="row scroll" id="tableDynamicTareasGeneral">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblTareasGeneral" >
+                        <thead>
+                          <tr> 
+                            <th>Vencimiento</th>
+                            <th>En Relación Con</th>
+                            <th>Consecutivo</th>
+                            <th>Tarea</th>                    
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th>Avance</th>
+                            <th>Finalización</th>
+                            <th>Asignado Por</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Asignación Tarea -->
+                <div class="modal fade" id="ModalTareasGeneral" tabindex="-1" role="dialog" aria-labelledby="ModalLabelTareasGeneral" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelTareasGeneral">Datos Asignación Tarea</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formTareasGeneral" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnCloseTareasGeneralModal" onclick="CerrarTareasGeneralDesdeEdicion()" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdateTareasGeneralForm('formTareasGeneral', 'btnCloseTareasGeneralModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/tareas/tarea_crearModuloModel.js" ></script>
+    <script src="../../js/iris/tareas/tareasgeneral.js"></script>
+
+  </body>
+
+
+</html>
+

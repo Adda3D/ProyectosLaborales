@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>GESTION TAREAS PROYECTO INVESTIGACIÓN</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">TAREAS DEL PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtHermesPRJINVTareas">Hermes ID</label>
+                <input type="text" class="form-control iris" id="txtHermesPRJINVTareas" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtQuipuPRJINVTareas">Quipu</label>
+                <input type="text" class="form-control iris" id="txtQuipuPRJINVTareas" disabled/>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label-iris" for="txtNombrePRJINVTareas">Nombre Proyecto</label>
+                <textarea class="form-control iris" id="txtNombrePRJINVTareas" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center">
+                <button type="button" class="btn-iris success " onclick="VolverTablaProyectoInvestigacionDesdeTareasForm()">Volver Listado Proyectos</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearProyectoInvestigacionTareas()" data-bs-toggle="modal" data-bs-target="#ModalProyectoInvestigacionTareas" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Tarea</button>
+            </div>  
+          </div>
+        </div>
+  
+        <div class="row scroll" id="tableProyectoInvestigacionTareas">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoInvestigacionTareas" >
+              <thead>
+                <tr> 
+                    <th>Vencimiento</th>
+                    <th>Tarea</th>                    
+                    <th>Responsable</th>
+                    <th>Estado</th>
+                    <th>Avance</th>
+                    <th>Finalización</th>     
+                    <th>Asignado Por</th>                       
+                    <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+
+                <!-- Modal Asignación Tarea -->
+                <div class="modal fade" id="ModalProyectoInvestigacionTareas" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoInvestigacionTareas" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelProyectoInvestigacionTareas">Datos Asignación <Tarea></Tarea></h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formProyectoInvestigacionTareas" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnCloseProyectoInvestigacionTareasModal" onclick="CerrarProyectoInvestigacionTareasDesdeEdicion()" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoInvestigacionTareasForm('formProyectoInvestigacionTareas', 'btnCloseProyectoInvestigacionTareasModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/tareas/tarea_crearModuloModel.js" ></script>
+    <script src="../../js/iris/tareas/proyectoinvestigacion_tareas.js"></script>
+
+  </body>
+
+
+</html>
+
+

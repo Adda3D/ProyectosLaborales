@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">    
+
+    <!--
+    <title>Proyectos Extensión</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divProyectoExtensionHTML">
+                <span id="spanIdProyectoExtension" class="ocultar" ></span>
+                <span id="spanConsecutivoProyectoExtension" class="ocultar" ></span>
+                <span id="spanContratoProyectoExtension" class="ocultar" ></span>
+                <span id="spanNombreProyectoExtension" class="ocultar" ></span>
+                <span id="spanid_propuestaProyectoExtension" class="ocultar" ></span>
+                <span id="spanId_suscripcionminutaProyectoExtension" class="ocultar" ></span>
+                <span id="spanId_suscripciongarantiaProyectoExtension" class="ocultar" ></span>
+                <span id="spanFechaInicioProyectoExtension" class="ocultar" ></span>
+                <span id="spanFechaFinalizaProyectoExtension" class="ocultar" ></span>
+                
+                <div class="row" id="dvProyectoExtensionTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">PROYECTOS EXTENSIÓN</div>
+                    <div class="col-md-6 text-center">                    
+                      <!--<button type="button" class="btn btn-primaryiris" onclick="CrearProyectoExtension()">Nuevo Proyecto</button>-->
+                    </div>
+                  </div>
+
+                  <div class="filter-container">
+                    <label for="searchByName">Buscar por Nombre del Proyecto:</label>
+                    <input type="text" id="searchByName" placeholder="Nombre del proyecto">
+                </div>
+
+                
+                  <div class="row scroll" id="tableDynamicProyectoExtension">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtension" >
+                        <thead>
+                          <tr>                            
+                            <th>Id</th>
+                            <th>Consecutivo</th>
+                            <th>Contrato</th>
+                            <th>Año Suscribe</th>
+                            <th>Nombre Proyecto</th>
+                            <th>Entidad</th>
+                            <th>QUIPU</th>
+                            <th>HERMES</th>
+                            <th>Inicia</th>
+                            <th>Finaliza</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObligaciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTablaProductos"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoExtensionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaAcuerdos"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTareas"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionModificacionMinuta"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionModificacionGarantia"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionLiquidacionFinalizacion"></div>
+    
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/proyectoextension.js"></script>
+    <script> $(document).ready(function() {
+      // Inicializar DataTables
+      var table = $('#tblProyectoExtension').DataTable();
+  
+      // Evento keyup para el campo de búsqueda
+      $('#searchByName').keyup(function(){
+          // Filtrar la tabla basándose en el valor del campo de búsqueda
+          table.column(4).search(this.value).draw(); // El índice 4 asume que "Nombre Proyecto" es la quinta columna
+      });
+  });</script>
+  
+
+  </body>
+
+
+</html>
+

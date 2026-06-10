@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="row">
+    <div class="row">
+      <div class="row">
+        <div class="col-md-6 titletab">CERTIFICADOS Ó VERIFICACIONES</div>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form class="needs-validation" id="formDecVie_CertificadosTecDetalle" novalidate>
+            <div class="form-group row mb-3">
+              <span id="spanIdDecVie_CertificadosTecForm" class="ocultar"></span>
+              <input type="text" class="ocultar" id="txtid_decviecertificadostec_DecVie_CertificadosTec" />
+              <div class="col-md-2">
+                <label class="form-label-iris" for="dtfecha_DecVie_CertificadosTec">Fecha Solicitud</label>
+                <input type="datetime-local" class="form-control iris" id="dtfecha_DecVie_CertificadosTec"
+                  data-span="spandtFechaDecVie_CertificadosTec" required />
+                <div class="invalid-feedback">
+                  Fecha Solicitud es un campo obligatorio
+                </div>
+                <div id="spandtFechaDecVie_CertificadosTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Dependencia Solicitante</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                  <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cboid_depend_DecVie_CertificadosTec" onchange="CargarPrefijosDependencia_CertificadosTecDetalle();">
+                  </select>
+                  <div class="invalid-feedback">
+                    Dependencia es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Prefijo</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                  <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cboid_prefijoconsecutivo_DecVie_CertificadosTec"></select>
+                  <div class="invalid-feedback">
+                    Prefijo es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtnumcertificadotec_DecVie_CertificadosTec">Certificado</label>
+                <input type="text" class="form-control iris" id="txtnumcertificadotec_DecVie_CertificadosTec" maxlength="250"
+                  placeholder="Certificado" data-span="spantxtnumcertificadotec_DecVie_CertificadosTec" disabled />
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="cbotipo_DecVie_CertificadosTec">Tipo</label>
+                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                  id="cbotipo_DecVie_CertificadosTec" required>
+                </select>
+                <div class="invalid-feedback">
+                  Tipo es un campo obligatorio
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="cboid_certificado_tipo_DecVie_CertificadosTec">Vinculación</label>
+                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                  id="cboid_certificado_tipo_DecVie_CertificadosTec" required>
+                </select>
+                <div class="invalid-feedback">
+                  Vinculación es un campo obligatorio
+                </div>
+              </div>
+
+
+              
+            </div>
+
+            <div class="form-group row mb-3">
+              <div class="col-md-2">
+                <label class="form-label-iris" for="cboestado_pago_DecVie_CertificadosTec">Estado Pago</label>
+                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboestado_pago_DecVie_CertificadosTec">
+                </select>
+            </div>
+            
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txttsersubserdocu_DecVie_CertificadosTec">Procedencia</label>
+                <textarea class="form-control iris" id="txttsersubserdocu_DecVie_CertificadosTec" maxlength="500" rows="2"
+                  placeholder="Procedencia" data-span="spantxttsersubserdocu_DecVie_CertificadosTec" required></textarea>
+                <div class="invalid-feedback">
+                  Procedencia es un campo obligatorio.
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtasunto_DecVie_CertificadosTec">Asunto</label>
+                <textarea class="form-control iris" id="txtasunto_DecVie_CertificadosTec" maxlength="500" rows="3"
+                  placeholder="Asunto" data-span="spantxtasunto_DecVie_CertificadosTec" required></textarea>
+                <div class="invalid-feedback">
+                  Asunto es un campo obligatorio.
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtdni_DecVie_CertificadosTec">DNI</label>
+                <textarea class="form-control iris" id="txtdni_DecVie_CertificadosTec" maxlength="500" rows="2"
+                  placeholder="Ingrese DNI" data-span="spantxtdni_DecVie_CertificadosTec"></textarea>
+                <div id="spantxtdni_DecVie_CertificadosTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas.
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="cboidfuncionario_DecVie_CertificadosTec">Responsable</label>
+                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                  id="cboidfuncionario_DecVie_CertificadosTec" required>
+                </select>
+                <div class="invalid-feedback">
+                  Responsable es un campo obligatorio
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="dtrecibido_dependencia_DecVie_CertificadosTec">Fecha Recibido de Dependencia</label>
+                <input type="date" class="form-control iris" id="dtrecibido_dependencia_DecVie_CertificadosTec" />
+                <div class="invalid-feedback">
+                  Fecha Recibido es un campo obligatorio.
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label-iris" for="txtobservaciones_DecVie_CertificadosTec">Observaciones</label>
+                <textarea class="form-control iris" id="txtobservaciones_DecVie_CertificadosTec" maxlength="500" rows="2"
+                  placeholder="Observaciones" data-span="spantxtobservaciones_DecVie_CertificadosTec"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-fluid">
+    <input type="button" value="Cancelar" onclick="CerrarDecVie_CertificadosTecDesdeEdicion()"
+      class="btn-iris cancel small" />
+    <input type="button" value="Guardar Datos Certificados"
+      onclick="ValidatePostUpdateDecVie_CertificadosTec('formDecVie_CertificadosTecDetalle')"
+      class="btn-iris success small" />
+  </div>
+</body>
+
+<script src="../../js/iris/Vie/DecVie_CertificadosTecDetalle.js"></script>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divPublicaciones_DivulgacionTipoMedioHTML">
+                  <div class="container" id="dvPublicaciones_DivulgacionTipoMedioTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">Tipo Medio</div>
+                      <div class="col-md-6 text-center">                        
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DivulgacionTipoMedio()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DivulgacionTipoMedio" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Tipo</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicPublicaciones_DivulgacionTipoMedio">
+                      <div class="table-responsive col-md-12">
+                        <table class="table table-bordered table-hover dataTables-example" id="tblPublicaciones_DivulgacionTipoMedio" >
+                          <thead>
+                            <tr>
+                              <th>Tipo Medio</th>
+                          <!--<th>Descripción</th>-->
+                              <th>Opciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+  
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalPublicaciones_DivulgacionTipoMedio" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DivulgacionTipoMedio" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPublicaciones_DivulgacionTipoMedio">Tipo Medio</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPublicaciones_DivulgacionTipoMedio" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdPublicaciones_DivulgacionTipoMedio" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtTipoPublicaciones_DivulgacionTipoMedio">Nuevo Tipo</label>
+                                <input type="text" class="form-control iris" id="txtTipoPublicaciones_DivulgacionTipoMedio" maxlength="50"placeholder="Tipo Medio" data-span="spantxtTipoPublicaciones_DivulgacionTipoMedio" required/>
+                                <div class="invalid-feedback">
+                                    Nueva Tipo es un campo obligatorio
+                                </div>
+                                <div id="spantxtTipoPublicaciones_DivulgacionTipoMedio" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                            <!--  <div class="col-md-12">
+                                <label class="form-label-iris" for="txtDescripcionPublicaciones_DivulgacionTipoMedio">Descripción</label>
+                                <input type="text" class="form-control iris" id="txtDescripcionPublicaciones_DivulgacionTipoMedio" maxlength="120" placeholder="Descripción" data-span="spantxtDescripcionPublicaciones_DivulgacionTipoMedio" required/>
+                                <div class="invalid-feedback">
+                                    Descripción es un campo obligatorio
+                                </div>
+                                <div id="spantxtDescripcionPublicaciones_DivulgacionTipoMedio" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>-->
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnClosePublicaciones_DivulgacionTipoMedioModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DivulgacionTipoMedio('formPublicaciones_DivulgacionTipoMedio', 'btnClosePublicaciones_DivulgacionTipoMedioModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Publicaciones_DivulgacionTipoMedio.js"></script>
+
+
+  </body>
+
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Actos Administrativos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_ActosAdministrativosHTML">
+                <span id="spanIdDecVie_ActosAdministrativos" class="ocultar" ></span>
+                <span id="spanConsecutivoProyectoExtension" class="ocultar" ></span>
+                <span id="spanDependenciaDecVie_ActosAdministrativos" class="ocultar" ></span>
+                <span id="spanEstadoDecVie_ActosAdministrativos" class="ocultar" ></span>
+                <div class="row" id="dvDecVie_ActosAdministrativosTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">ACTOS ADMINISTRATIVOS</div>
+                    <div class="col-md-6 text-center">
+                   
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_ActosAdministrativos()">Nuevo Acto</button>
+                      <input type="button" value="Exportar a Excel" onclick="ExportarExcelFunction('DecVie_ActosAdministrativos', 'DescargarExcelActosAdministratrivos')" class="btn btn-infoiris"/>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_ActosAdministrativos">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_ActosAdministrativos" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Consecutivo</th>
+                            <th>Dependencia Solicitante</th>
+                            <th>Estado</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_ActosAdministrativosDetalle"></div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_ActosAdministrativos.js"></script>
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Depositos / Ventas</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIONES SEGUIMIENTO DEPOSITOS - VENTAS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtKardexPublicacionDepositosVentas">Kardex</label>
+              <input type="text" class="form-control iris" id="txtKardexPublicacionDepositosVentas" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtHermesPublicacionDepositosVentas">Hermes</label>
+              <input type="text" class="form-control iris" id="txtHermesPublicacionDepositosVentas" disabled/>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label-iris" for="txtNombrePublicacionDepositosVentas">Nombre Publicación</label>
+              <textarea class="form-control iris" id="txtNombrePublicacionDepositosVentas" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-2 text-center" id="dvVolverTablaPublicacionesDesdeDepositosVentas">                  
+                <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeDepositosVentas()">Volver Listado Publicaciones</button>            
+            </div>
+    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-3 titletab"></div>
+          <div class="col-md-6 text-center" id="dvVolverTablaPublicacionesDesdeDepositosVentas">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeDepositosVentas()">Volver Listado Publicaciones</button>            
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tablePublicacionDepositosVentas">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionDepositosVentas">
+                <li class="liopcion selected" id="liPUBDepositosVentas_Resolucion">
+                    <a class="nav-link tabPrin active show" id="navPUBDepositosVentas_Resolucion" title="Resolución FINAL de distribución" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_Resolucion',0)">RESOLUCIÓN</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDepositosVentas_Precios">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_Precios" title="Precios para la distribución" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_Precios',2)">PRECIOS</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDepositosVentas_ActaCostos">
+                    <a class="nav-link tabPrin active " id="navPUBDepositosVentas_ActaCostos" title="Acta de Costos" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_ActaCostos',2)">ACTA COSTOS</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_DisposicionLegal">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_DisposicionLegal" title="Disposiciones Legales" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_DisposicionLegal',2)">DISPOSICIÓN LEGAL</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_DistribucionComercial">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_DistribucionComercial" title="Distribución Comercial" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_DistribucionComercial',2)">COMERCIAL</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_ReportesVentas">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_ReportesVentas" title="Reportes de Ventas" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_ReportesVentas',2)">REPORTES VENTAS</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_CertificadosVentas">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_CertificadosVentas" title="Certificados de Ventas" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_CertificadosVentas',2)">CERTIFICADOS VENTAS</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_AjustesInventario">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_AjustesInventario" title="Ajustes Inventario" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_AjustesInventario',2)">AJUSTES</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_IngresosVentas">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_IngresosVentas" title="Ingresos por Ventas del libro" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_IngresosVentas',2)">INGRESOS $</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDepositosVentas_Inventario">
+                  <a class="nav-link tabPrin active " id="navPUBDepositosVentas_Inventario" title="Inventario" data-toggle="tab" href="#" onclick="onclickTabPublicacionDepositosVentas('PUBDepositosVentas_Inventario',2)">INVENTARIO</a>
+                </li>  
+
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionDepositosVentas">
+                <div role="tabpanel" id="tabPUBDepositosVentas_Resolucion" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBDepositosVentas_Resolucion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDepositosVentas_Precios" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_Precios">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDepositosVentas_ActaCostos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBDepositosVentas_ActaCostos">
+                        
+                    </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_DisposicionLegal" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_DisposicionLegal">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_DistribucionComercial" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_DistribucionComercial">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_ReportesVentas" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_ReportesVentas">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_CertificadosVentas" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_CertificadosVentas">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_AjustesInventario" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_AjustesInventario">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_IngresosVentas" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_IngresosVentas">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDepositosVentas_Inventario" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDepositosVentas_Inventario">
+                      
+                  </div>
+                </div>  
+
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_EstadoCorParamModel.js"></script>
+    <script src="../../js/iris/publicacion/publicaciones_depositosventas.js"></script>
+
+  </body>
+
+
+</html>
+

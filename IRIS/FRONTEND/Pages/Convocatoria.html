@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Convocatoria</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divConvocatoriaHTML">
+                <span id="spanIdConvocatoria" class="ocultar" ></span>
+                <span id="spanNaturalezaConvocatoria" class="ocultar" ></span>
+                <span id="spanTituloConvocatoria" class="ocultar" ></span>
+                <span id="spanFecAperturaConvocatoria" class="ocultar" ></span>
+                <span id="spanFecCierreConvocatoria" class="ocultar" ></span>
+                <span id="spanEstadoConvocatoria" class="ocultar" ></span>
+                <div class="row" id="dvConvocatoriaTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">CONVOCATORIAS</div>
+                    <div class="col-md-6 text-center">
+                 
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearConvocatoria()">Nueva Convocatoria</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicConvocatoria">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblConvocatoria" >
+                        <thead>
+                          <tr>  
+                            <th>Naturaleza</th>
+                            <th>Título Convocatoria</th>
+                            <th>Apertura</th>
+                            <th>Cierre</th>
+                            <th>Estado</th> 
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvConvocatoriaDetalle"></div>
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvConvocatoria_RecursoParticipante"></div>
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvConvocatoria_RequerimientoRequisito"></div>
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvConvocatoria_Interesados"></div>
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/models/ConvocatoriaModel.js" ></script>    
+    <script src="../js/iris/Convocatoria.js"></script>    
+
+  </body>
+</html>
+

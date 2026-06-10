@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION DIVULGACION MEDIOS FERIAS/EVENTOS</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DivulgacionActividadFeriaEventoHTML">
+                <div class="row" id="dvPublicaciones_DivulgacionActividadFeriaEventoTable">                  
+                  <div class="row">
+                    <div class="col-md-6 titletab">MEDIOS DIVULGACIÓN FERIAS / EVENTOS</div>
+                    <div class="col-md-6 text-center">
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DivulgacionActividadFeriaEvento()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DivulgacionActividadFeriaEvento" data-bs-keyboard="false" data-bs-backdrop="static">Registrar Actividad</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DivulgacionActividadFeriaEvento">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_DivulgacionActividadFeriaEvento" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Tipo</th>
+                            <th>Nombre</th>
+                            <th>Fecha</th>                            
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                <!-- Modal Divulgación feria / evento -->
+                <div class="modal fade" id="ModalPublicaciones_DivulgacionActividadFeriaEvento" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DivulgacionActividadFeriaEvento" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelPublicaciones_DivulgacionActividadFeriaEvento">Datos Invitado</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formPublicaciones_DivulgacionActividadFeriaEvento" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnClosePublicaciones_DivulgacionActividadFeriaEventoModal" onclick="CerrarPublicaciones_DivulgacionActividadFeriaEventoDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DivulgacionActividadFeriaEventoForm('formPublicaciones_DivulgacionActividadFeriaEvento', 'btnClosePublicaciones_DivulgacionActividadFeriaEventoModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_DivulgacionActividadFeriaEventoModel.js" ></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDivulgacion_MediosFeriasEventos.js"></script>    
+
+  </body>
+
+
+</html>
+
+

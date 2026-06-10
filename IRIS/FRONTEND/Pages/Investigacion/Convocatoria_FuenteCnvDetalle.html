@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>FuenteCNV Convocatoria</title>
+-->
+
+  </head>
+
+  <body>
+
+
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">FUENTE CONVOCATORIA</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formConvocatoria_FuenteCnvDetalle" novalidate>
+                 
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="CerrarConvocatoria_FuenteCnvDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos" onclick="ValidatePostUpdateConvocatoria_FuenteCnv('formConvocatoria_FuenteCnvDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Convocatoria_FuenteCnvModel.js"></script>
+    <script src="../../js/iris/Investigacion/Convocatoria_FuenteCnvDetalle.js"></script>    
+
+  </body>
+
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Estado Acto Administrativo</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_ActosAdministrativosEstadoHTML">
+                <div class="container" id="dvDecVie_ActosAdministrativosEstadoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Estado Acto Administrativo</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_ActosAdministrativosEstado()" data-bs-toggle="modal" data-bs-target="#ModalDecVie_ActosAdministrativosEstado" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Estado</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_ActosAdministrativosEstado">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblDecVie_ActosAdministrativosEstado" >
+                        <thead>
+                          <tr>
+                            <th>Estado Acto Administrativo</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalDecVie_ActosAdministrativosEstado" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_ActosAdministrativosEstado" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelDecVie_ActosAdministrativosEstado">Estado Acto Administrativo</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formDecVie_ActosAdministrativosEstado" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdEstadoActosAdministrativos" class="ocultar" ></span>
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtEstadoActosAdministrativos">Nuevo Estado</label>
+                                <input type="text" class="form-control iris" id="txtEstadoActosAdministrativos" maxlength="200"placeholder="Estado Acto Administrativo" data-span="spanEstadoActosAdministrativos" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Estado es un campo obligatorio
+                                </div>
+                                <div id="spanEstadoActosAdministrativos" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseEstadoActosAdministrativosModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_ActosAdministrativosEstado('formDecVie_ActosAdministrativosEstado', 'btnCloseEstadoActosAdministrativosModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/DecVie_ActosAdministrativosEstado.js"></script>
+
+
+  </body>
+
+
+</html>

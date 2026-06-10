@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_PlanaccionFuncionesHTML">
+                <div class="container" id="dvDecVie_PlanaccionFuncionesTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Funciones</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_PlanaccionFunciones()" data-bs-toggle="modal" data-bs-target="#ModalDecVie_PlanaccionFunciones" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Función</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_PlanaccionFunciones">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblDecVie_PlanaccionFunciones" >
+                        <thead>
+                          <tr>
+                            <th>Funciones</th>
+                            <th>Observaciones</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos COntractuales -->
+                <div class="modal fade" id="ModalDecVie_PlanaccionFunciones" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_PlanaccionFunciones" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelDecVie_PlanaccionFunciones">Nueva Función</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formDecVie_PlanaccionFunciones" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdDecVie_PlanaccionFunciones" class="ocultar" ></span>
+                              <span id="spanIdDependenciaPlanaccionFunciones" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdDecViePlanaccionFunciones">Función</label>
+                                <input type="text" class="form-control iris" id="txtCdDecViePlanaccionFunciones" maxlength="120"placeholder="Función" data-span="spanCdDecViePlanaccionFunciones" required/>
+                                <div class="invalid-feedback">
+                                    Nueva Función es un campo obligatorio
+                                </div>
+                                <div id="spanCdDecViePlanaccionFunciones" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtDecVie_PlanaccionFunciones">Observaciones</label>
+                                <input type="text" class="form-control iris" id="txtDecVie_PlanaccionFunciones" maxlength="120" placeholder="Observación" data-span="spanDecVie_PlanaccionFunciones" required/>
+                                <div class="invalid-feedback">
+                                    Observaciones es un campo obligatorio
+                                </div>
+                                <div id="spanDecVie_PlanaccionFunciones" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseDecVie_PlanaccionFuncionesModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_PlanaccionFunciones('formDecVie_PlanaccionFunciones', 'btnCloseDecVie_PlanaccionFuncionesModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/DecVie_PlanaccionFunciones.js"></script>
+
+
+  </body>
+
+
+</html>

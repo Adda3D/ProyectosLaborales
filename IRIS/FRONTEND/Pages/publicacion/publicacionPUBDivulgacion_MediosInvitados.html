@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PUBLICACION DIVULGACION MEDIOS INVITADOS</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicaciones_DivulgacionMediosInvitadosHTML">
+                <div class="row" id="dvPublicaciones_DivulgacionMediosInvitadosTable">                  
+                  <div class="row">
+                    <div class="col-md-6 titletab">LANZAMIENTO FACULTAD INVITADOS</div>
+                    <div class="col-md-6 text-center">
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicaciones_DivulgacionMediosInvitados()" data-bs-toggle="modal" data-bs-target="#ModalPublicaciones_DivulgacionMediosInvitados" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Invitado</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones_DivulgacionMediosInvitados">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones_DivulgacionMediosInvitados" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Nombre</th>
+                            <th>Institución</th>
+                            <th>E-mail</th>
+                            <th>Teléfono</th>
+                            <th>Check Nombre</th>
+                            <th>Check Fotografía</th>
+                            <th>Check Perfil</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+                <!-- Modal Lanzamiento Invitados -->
+                <div class="modal fade" id="ModalPublicaciones_DivulgacionMediosInvitados" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPublicaciones_DivulgacionMediosInvitados" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelPublicaciones_DivulgacionMediosInvitados">Datos Invitado</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formPublicaciones_DivulgacionMediosInvitados" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnClosePublicaciones_DivulgacionMediosInvitadosModal" onclick="CerrarPublicaciones_DivulgacionMediosInvitadosDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdatePublicaciones_DivulgacionMediosInvitadosForm('formPublicaciones_DivulgacionMediosInvitados', 'btnClosePublicaciones_DivulgacionMediosInvitadosModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_DivulgacionActividadInvitadosModel.js" ></script>
+    <script src="../../js/iris/publicacion/publicacionPUBDivulgacion_MediosInvitados.js"></script>    
+
+  </body>
+
+
+</html>
+
+

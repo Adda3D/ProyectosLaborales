@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Desembolsos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row col-md-10 offset-md-1 scroll" id="tablePublicacionFinancieroDesembolsos">
+        <div class="row">
+          <div class="col-md-6 titletab">DETALLE APORTES / FINANCIACIÓN EXTERNA</div>
+        </div>
+        <div class="row" style="margin-bottom: 8px;">          
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtPublicacionAporteFacultad">Aporte Facultad</label>
+              <input type="text" class="form-control iris iris-number" id="txtPublicacionAporteFacultad" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtPublicacionAporteVIR">Aporte VIR</label>
+              <input type="text" class="form-control iris iris-number" id="txtPublicacionAporteVIR" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtPublicacionAporteDIEB">Aportes DIEB</label>
+              <input type="text" class="form-control iris iris-number" id="txtPublicacionAporteDIEB" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtPublicacionTotalConvenio">Total Contrato / Convenio</label>
+              <input type="text" class="form-control iris iris-number" id="txtPublicacionTotalConvenio" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtPublicacionTotalAportadoConvenio">Total Aportado</label>
+              <input type="text" class="form-control iris iris-number" id="txtPublicacionTotalAportadoConvenio" disabled/>
+            </div>
+          
+            <div class="col-md-2 text-center">                                 
+              <button type="button" class="btn btn-primaryiris" onclick="DetalleAportesPublicacion()">Detalle Aportes</button>
+              <button type="button" class="btn btn-primaryiris" onclick="CrearDesembolsoPublicacion()">Nuevo Desembolso</button>
+            </div>          
+        </div>
+
+        <div class="row scroll" id="tablePublicacionDesembolsos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicacionDesembolsos" >
+              <thead>
+                <tr>                            
+                  <th>Fecha Giro</th>
+                  <th>Valor</th>
+                  <th>Porcentaje</th>
+                  <th>Notas</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvCrearDesembolsoPublicacionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab">Datos para aplicar Desembolso</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formPublicacionFinancieroAplicarDesembolso" novalidate>
+
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaDesembolsosPublicacionFinancieroDesdeDesembolso()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos" onclick="ValidatePostUpdatePublicacionFinancieroDesembolso('formPublicacionFinancieroAplicarDesembolso')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvPublicacionDetalleAportes">
+        <div class="row">
+          <div class="col-md-6 titletab">Detalle Aportes</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formPublicacionDetalleAportes" novalidate>
+
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaDesembolsosPublicacionFinancieroDesdeAportes(false)" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Dato Aportes" onclick="ValidatePostUpdatePublicacionFinancieroAportes('formPublicacionDetalleAportes')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/publicacion/Publicacion_DesembolsoModel.js"></script>
+    <script src="../../js/iris/models/publicacion/publicacion_DetalleAportesModel.js"></script>
+    <script src="../../js/iris/publicacion/publicaciontablaPUBFinancieroIngresos.js"></script>
+
+  </body>
+
+
+</html>
+

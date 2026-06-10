@@ -1,0 +1,1346 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+    <!--
+
+* AerWebCopy Engine [version 6.3.0]
+* Copyright Aeroson Systems & Co.
+* File mirrored from https://nostoca.org/gobiernoabierto/
+* At UTC time: 2022-04-19 12:46:19.335121
+
+-->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Gobierno Abierto de Cartagena de Indias</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'contratacion_abierta/assets/img/0ffbdac4__favicon.ico' %}">
+        <link rel="preconnect" href="../../fonts.googleapis.com/file_6dd671d2.pwc">
+        <link rel="preconnect" href="../../fonts.gstatic.com/file_5481513d.pwc">
+        <link href="../../fonts.googleapis.com/d1a8d4b6__css2.css" rel="stylesheet">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- ========================= CSS here ========================= -->
+        
+        <link rel="stylesheet" href="{% static 'contratacion_abierta/assets/css/0abd6ed3__bootstrap-5.0.0-alpha-1.min.css'%} ">
+        <link rel="stylesheet" href="{% static 'contratacion_abierta/assets/css/b84c960b__LineIcons.2.0.css'%}">
+        <link rel="stylesheet" href="{% static 'contratacion_abierta/assets/css/dc38ab09__animate.css'%}">
+        <link rel="stylesheet" href="{% static 'contratacion_abierta/assets/css/7bb01605__main.css'%}">
+        <link rel="stylesheet" href="{% static 'contratacion_abierta/assets/css/bea0b270__config.css'%}">
+        <link rel="stylesheet" href="path/to/font-awesome/css/e1b27463__font-awesome.min.css">
+        <script src="../../ajax.googleapis.com/ajax/libs/jquery/3.5.1/5a650d59__jquery.min.js"></script>
+       <!--  <script src="//d3plus.org/js/d3.js"></script>
+        <script src="//d3plus.org/js/d3plus.js"></script> -->
+
+        <script src="{% static 'contratacion_abierta/assets/js/1f38c9de__d3.v3.js'%}"></script>
+        <script src="{% static 'contratacion_abierta/assets/js/686d6879__d3plus.js'%}"></script>
+        
+        <!--script src="https://cdn.jsdelivr.net/npm/d3plus@2"></script-->
+
+        <style type="text/css">
+        .gray-bg{ background: #f5f5f5; }
+        .img-bg{ 
+            background:#0160a2  url({% static 'contratacion_abierta/assets/img/4c561048__Banner.png'%}) no-repeat; 
+            background-size: cover;  
+            background-position: 0px -5px;
+            color: #0160a2; 
+            height: 95vh;
+        }
+         @media only screen  and (max-width: 760px), (min-device-width: 768px)     and (max-device-width: 1024px)  {
+            .img-bg{ 
+                background:#0160a2; 
+             }
+         }
+         .purple-color{color:#9f2241 !important;}
+         section .element:nth-child(2n) {
+              background: #eee; border-radius: 15px; border: 1px solid #ddd; 
+        }
+        #ejecucion, #planificacion{ padding: 5% 1%; }
+        .greenlite-bg{background: #f5f5f5;}
+        </style>
+</head>
+
+<body>
+        <!--[if// lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- ========================= preloader start ========================= -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="ytp-spinner">
+                    <div class="ytp-spinner-container">
+                        <div class="ytp-spinner-rotator">
+                            <div class="ytp-spinner-left">
+                                <div class="ytp-spinner-circle">
+                                </div>
+                            </div>
+                            <div class="ytp-spinner-right">
+                                <div class="ytp-spinner-circle">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+        <!-- ========================= header start ========================= -->
+        <header class="header">
+            <div class="navbar-area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="#">
+                                    <!--img id="logo" class="wow" src="assets/img/logoblue.svg" data-wow-duration="3s" alt="Logo">
+                                     <b></b-->
+                                </a> 
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                    <ul id="nav" class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                            <a class="page-scroll active" href="#inicio">Inicio</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#ejecucion">Ejecución</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="page-scroll" href="#planificacion">Planificaci&#243;n</a>
+                                        </li>
+                                    </ul>
+                                </div> <!-- navbar collapse -->
+                            </nav> <!-- navbar -->
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- container -->
+            </div> <!-- navbar area -->
+            <div class="nav-vertical">
+                <a href="#inicio"><i class="lni lni-stop"></i></a>
+                <a href="#ejecucion"><i class="lni lni-stop"></i></a>
+                <a href="#planificacion"><i class="lni lni-stop"></i></a>
+            </div>
+        </header>
+        <!-- ========================= header end ========================= -->
+        
+        <!-- ========================= slider-section start =========================background-image: url(assets/img/hero/hero-bg.svg) -->
+        <section id="inicio" class="hero-section img-bg">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-12">
+                        <div class="hero-content-wrapper text-center" style="z-index: 1; position:relative;">
+                            <p class="wow fadeInUp" data-wow-delay=".2s" data-wow-duration="1.3s">Gobierno Abierto de Cartagena de Indias</p>
+                            <h2 class="wow fadeInDown" data-wow-delay=".4s" data-wow-duration="1.3s" style="color:#eee"><b>CONTRATACI&#211;N</b></h2>
+                            <h1 class="wow fadeInDown" data-wow-delay=".4s" data-wow-duration="1.3s" style="color:#fff;"><b>ABIERTA</b></h1>
+                            <input class="input mt-15" type="text" name="txtBuscar" id="txtBuscar" placeholder="Ingresa el proveedor o detalle del contrato">
+                            <a href="#secBuscar" type="submit" id="btnBuscar" class="theme-btn" onclick="inicio($('#txtBuscar').val(),'buscar','0','txtBuscar','#detBuscar','contratacion/leg_detalle.php');"><i class="lni lni-search"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <!-- ========================= slider-section end ========================= -->
+        <section id="secBuscar" class="container mt-50" style="display: none;">
+            <div class="text-right">
+                <button type="button" class="close red-color" style="font-size: 3em;">&#215;
+                </button>
+            </div>
+            <div id="detBuscar" class="mb-80">
+            </div>
+        </section>
+
+        <!--========================= contracting-section start========================= -->
+        <section id="ejecucion" class="service-section gray-bg pt-100 pb-100"> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8 col-md-10 mxs-auto">
+                        <div class="section-title mb-55">
+                            <h4 class="mb-15 wow fadeInDown" data-wow-delay=".1s">CONTRATACI&#211;N</h4>
+                            <p class="wow fadeInUp" data-wow-delay=".2s">
+                                Las herramientas de Gobierno Abierto que hemos dise&#241;ado nos permiten entablar un puente de comunicaci&#243;n directo con nuestros ciudadanos y ciudadanas para que conozcan nuestra gesti&#243;n, y as&#237; generar un lazo de confianza en el marco de la transparencia y la participaci&#243;n.
+                                <span style="font-size:12px; color:#000">
+                                    Datos tomados secop II datos.gov.co
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <!--INICIO GRAFICOS IPCC-->
+            <div class="container-fluid element mt-10" id="nit806013631">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="wow fadeInDown" data-wow-delay=".05s">
+                            Contratación ejecutada de
+                        </span>
+                        <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                            INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC
+                        </h5>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <select name="anio806013631" id="anio806013631" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('806013631','99','',$('#anio806013631').val(),'#leg806013631','contratacion/leg_modalidad.php'); ">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                        <a href="twitter.com/intent/6fbf55ef__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                        <a href="contratacion/6dbbae3c__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                        <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','806013631','2022','#listContratos806013631','contratacion/datos.php');"></i>
+                        <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('806013631','','','2022','#listContratos806013631','contratacion/graficos.php');"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+<div class="col-md-12 mx-auto" id="leg806013631">
+
+<div class="row">
+    <div class="col-sm-4 col-lg-4 mt-15">
+        <!-- Bloque de codigo para grafico 1
+        <div class="accordion " id="tipo806013631">
+            2022                <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="faq-header" id="faq-heading-1">
+                        <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1806013631" aria-expanded="false" aria-controls="tipo1">
+                            Contrataci&#243;n directa                        </button>
+                    </div>
+                    <div id="tipo1806013631" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo806013631" style="">
+                        <div class="faq-body ">
+                                                        <p>
+                                <a class="action" href="#listContratos806013631" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','806013631','2022','#listContratos806013631','contratacion/leg_detalle.php'); getElementById('det_tree806013631').innerHTML = '';">
+                                    <i class="lni lni-chevron-right"></i>Prestaci&#243;n de servicios                                </a>
+                            </p>
+                                                    </div>
+                    </div>
+                </div>
+        </div>-->
+    </div>
+</div>
+<!-- DIV DONDE SE COLOCAN INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC
+<div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos806013631" data-wow-delay=".5s">
+-->
+<div class="grafico806013631 headmap " id="graficos_ipcc" style="height:45vh">
+</div>
+
+<script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 3004993138, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "30049931381", color:"#B9BF04"},
+      ];
+
+    var data = "{{datos_graficos_ipcc}}";
+    data = data.replace(/&quot;/g,'"');
+
+
+    console.log("si");
+    const json = '{"Nombre":"Cristobal", "Edad":"12"}';
+    //const json = '{"Nombre":"Cristobal", "Edad":"12"}';
+    var nada = JSON.parse(data);
+    //console.log(nada);
+
+  var datModalidad = [
+  {valor: 3004993138, modalidad: "Contratacion directa", anio: "2022", Valor: "30049931382", color:"#B9BF04", porcentaje:"100,00%"},
+  {valor: 3004993138, modalidad: "Contratacion directa3", anio: "2022", Valor: "30049931382", color:"#B9BF04", porcentaje:"100,00%"},
+  {valor: 3205071014, modalidad: "Contrataci&#243;n indirecta", anio: "2022", Valor: "32050710142", color:"#B9BF04", porcentaje:"100,00%"},
+  nada
+      ];
+
+  //window.alert(datModalidad);
+
+  //var data = "{{datos_graficos_ipcc}}";
+  //window.alert(data);
+  //data = data.replace(/&quot;/g,'"');
+  //window.alert(data);
+  //var conversion = JSON.parse(data.replace(/&quot;/g,'"'));
+  //window.alert(conversion);
+
+  var datTipo = [
+          {valor: 3004993138, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "30049931383", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 3004993138, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "30049931384", color:"#B9BF04"},
+      ];
+</script>
+
+<script type="text/javascript">
+    d3plus.viz()
+    .container("#graficos_ipcc")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+</script>
+<!--FIN GRAFICOS IPCC-->
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+<!--INICIO GRAFICOS FONDO DE VIVIENDA-->
+            <div class="container-fluid element mt-10" id="nit800165392">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="wow fadeInDown" data-wow-delay=".05s">
+                            Contratación ejecutada de
+                        </span>
+                        <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                            FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS
+                        </h5>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <select name="anio800165392" id="anio800165392" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('800165392','99','',$('#anio800165392').val(),'#leg800165392','contratacion/leg_modalidad.php'); ">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                        <a href="../../twitter.com/intent/97613cb1__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                        <a href="contratacion/e08c4cd5__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                        <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','800165392','2022','#listContratos800165392','contratacion/datos.php');"></i>
+                        <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('800165392','','','2022','#listContratos800165392','contratacion/graficos.php');"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mx-auto" id="leg800165392">
+                                 
+            <div class="row">
+                <!--Bloque de codigo para grafico 2
+                <div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%;">
+                    <div class="accordion " id="tipo800165392">2022
+                        <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="faq-header" id="faq-heading-1">
+                                <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1800165392" aria-expanded="false" aria-controls="tipo1">
+                                    Contratación directa
+                                </button>
+                            </div>
+                            <div id="tipo1800165392" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo800165392" style="">
+                                <div class="faq-body ">
+                                    <p>
+                                        <a class="action" href="#listContratos800165392" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','800165392','2022','#listContratos800165392','contratacion/leg_detalle.php'); getElementById('det_tree800165392').innerHTML = '';">
+                                        <i class="lni lni-chevron-right"></i>Prestación de servicios
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+    <div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos800165392" data-wow-delay=".5s">
+        <div class="grafico800165392 headmap " id="graficos_fondo_vivienda" style="height:45vh">
+    </div>
+ <script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 697200000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$697.200.000", color:"#B9BF04"},
+      ];
+
+  var datModalidad = [
+          {valor: 697200000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$697.200.000", color:"#B9BF04", porcentaje:"100,00%"},
+      ];
+
+  var datTipo = [
+          {valor: 697200000, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$697.200.000", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 697200000, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$697.200.000", color:"#B9BF04"},
+      ];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+    d3plus.viz()
+    .container("#graficos_fondo_vivienda")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+ </script>
+<!--FIN GRAFICOS FONDO DE VIVIENDA-->
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+<!--INICIO GRAFICOS ESCUELA TALLER-->
+                <div class="container-fluid element mt-10" id="nit800169265">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="wow fadeInDown" data-wow-delay=".05s">
+                                Contratación ejecutada de
+                            </span>
+                            <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                                ESCUELA TALLER CARTAGENA DE INDIAS
+                            </h5>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <select name="anio800169265" id="anio800169265" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('800169265','99','',$('#anio800169265').val(),'#leg800169265','contratacion/leg_modalidad.php'); ">
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <a href="../../twitter.com/intent/39c9607c__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                            <a href="contratacion/d8829a0a__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                            <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','800169265','2022','#listContratos800169265','contratacion/datos.php');"></i>
+                            <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('800169265','','','2022','#listContratos800169265','contratacion/graficos.php');"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto" id="leg800169265">
+                                 
+    <div class="row">
+        <!--
+        <div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%;">
+            <div class="accordion " id="tipo800169265">
+                2022
+                <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="faq-header" id="faq-heading-1">
+                        <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1800169265" aria-expanded="false" aria-controls="tipo1">
+                            Contrataci&#243;n directa
+                        </button>
+                    </div>
+                    <div id="tipo1800169265" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo800169265" style="">
+                        <div class="faq-body ">
+                            <p>
+                                <a class="action" href="#listContratos800169265" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','800169265','2022','#listContratos800169265','contratacion/leg_detalle.php'); getElementById('det_tree800169265').innerHTML = '';"><i class="lni lni-chevron-right"></i>Prestaci&#243;n de servicios                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+    <div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos800169265" data-wow-delay=".5s">
+        <div class="grafico800169265 headmap " id="graficos_escuela_taller" style="height:45vh">
+        </div>
+ <script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 1123259440, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$1.123.259.440", color:"#B9BF04"},
+      ];
+
+  var datModalidad = [
+          {valor: 1123259440, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$1.123.259.440", color:"#B9BF04", porcentaje:"100,00%"},
+      ];
+
+  var datTipo = [
+          {valor: 1123259440, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$1.123.259.440", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 1123259440, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$1.123.259.440", color:"#B9BF04"},
+      ];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+    d3plus.viz()
+    .container("#graficos_escuela_taller")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+ </script>
+<!--FIN GRAFICOS ESCUELA TALLER-->
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+ <!--INICIO GRAFICOS ALCALDIA CARTAGENA-->
+                <div class="container-fluid element mt-10" id="nit890480184">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="wow fadeInDown" data-wow-delay=".05s">
+                                Contratación ejecutada de
+                            </span>
+                            <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                                ALCALDíA DEL DISTRITO TURíSTICO Y CULTURAL DE CARTAGENA DE INDIAS
+                            </h5>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <select name="anio890480184" id="anio890480184" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('890480184','99','',$('#anio890480184').val(),'#leg890480184','contratacion/leg_modalidad.php'); ">
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <a href="../../twitter.com/intent/bcc2a83c__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                            <a href="contratacion/87df8a72__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                            <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','890480184','2022','#listContratos890480184','contratacion/datos.php');"></i>
+                            <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('890480184','','','2022','#listContratos890480184','contratacion/graficos.php');"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto" id="leg890480184">
+                                 
+<div class="row">
+    <!--Bloque de codigo de grafica 4
+    <div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%;">
+        <div class="accordion " id="tipo890480184">
+            2022
+            <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                <div class="faq-header" id="faq-heading-1">
+                    <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1890480184" aria-expanded="false" aria-controls="tipo1">
+                            Contratación directa
+                    </button>
+                </div>
+                <div id="tipo1890480184" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo890480184" style="">
+                    <div class="faq-body ">
+                        <p>
+                            <a class="action" href="#listContratos890480184" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','890480184','2022','#listContratos890480184','contratacion/leg_detalle.php'); getElementById('det_tree890480184').innerHTML = '';"><i class="lni lni-chevron-right"></i>Prestaci&#243;n de servicios</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                <div class="faq-header" id="faq-heading-2">
+                    <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo2890480184" aria-expanded="false" aria-controls="tipo2">
+                            Selección abreviada de menor cuant&#237;a
+                    </button>
+                    </div>
+                    <div id="tipo2890480184" class="collapse" aria-labelledby="faq-heading-2" data-parent="#tipo890480184" style="">
+                        <div class="faq-body ">
+                            <p>
+                                <a class="action" href="#listContratos890480184" onclick="inicio('Selecci&#243;n Abreviada de Menor Cuant&#237;a','Obra','890480184','2022','#listContratos890480184','contratacion/leg_detalle.php'); getElementById('det_tree890480184').innerHTML = '';"><i class="lni lni-chevron-right"></i>Obra                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+    <div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos890480184" data-wow-delay=".5s">
+         
+<div class="grafico890480184 headmap " id="graficos_alcaldia_cartagena" style="height:45vh">
+</div>
+ <script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 5280936114, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$5.280.936.114", color:"#B9BF04"},
+      ];
+
+  var datModalidad = [
+          {valor: 4384528000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$4.384.528.000", color:"#B9BF04", porcentaje:"83,03%"},
+          {valor: 896408114, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: "2022", Valor: "$896.408.114", color:"#B9BF04", porcentaje:"16,97%"},
+      ];
+
+  var datTipo = [
+          {valor: 896408114, tipo: "Obra - Selecci&#243;n Abreviada de Menor Cuant&#237;a", modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: "2022", Valor: "$896.408.114", color:"#B9BF04"},
+          {valor: 4384528000, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$4.384.528.000", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 4384528000, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$4.384.528.000", color:"#B9BF04"},
+          {valor: 896408114, justificacion: "Presupuesto menor al 10% de la Menor Cuant&#237;a", tipo: "Obra", modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: "2022", Valor: "$896.408.114", color:"#B9BF04"},
+      ];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+    d3plus.viz()
+    .container("#graficos_alcaldia_cartagena")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+ </script>
+ <!--FIN GRAFICOS ALCALDIA CARTAGENA-->
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+                   
+<!--INICIO GRAFICOS EPA CARTAGENA-->
+            <div class="container-fluid element mt-10" id="nit806013999">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="wow fadeInDown" data-wow-delay=".05s">
+                            Contrataci&#243;n ejecutada de
+                        </span>
+                        <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                            ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA
+                        </h5>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <select name="anio806013999" id="anio806013999" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('806013999','99','',$('#anio806013999').val(),'#leg806013999','contratacion/leg_modalidad.php'); ">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                        <a href="../../twitter.com/intent/932e9f1d__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                        <a href="contratacion/520e020f__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                        <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','806013999','2022','#listContratos806013999','contratacion/datos.php');"></i>
+                        <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('806013999','','','2022','#listContratos806013999','contratacion/graficos.php');"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mx-auto" id="leg806013999">
+                                 
+            <div class="row">
+                <!--Bloque grafica 5
+                <div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%;">
+                    <div class="accordion " id="tipo806013999">
+                        2022
+                        <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="faq-header" id="faq-heading-1">
+                                <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1806013999" aria-expanded="false" aria-controls="tipo1">
+                                    Contratación directa
+                                </button>
+                            </div>
+                        <div id="tipo1806013999" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo806013999" style="">
+                            <div class="faq-body ">
+                                <p>
+                                    <a class="action" href="#listContratos806013999" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','806013999','2022','#listContratos806013999','contratacion/leg_detalle.php'); getElementById('det_tree806013999').innerHTML = '';"><i class="lni lni-chevron-right"></i>Prestaci&#243;n de servicios</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+            <div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos806013999" data-wow-delay=".5s">
+         
+<div class="grafico806013999 headmap " id="bar806013999" style="height:45vh">
+</div>
+ <script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 298000000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$298.000.000", color:"#B9BF04"},
+      ];
+
+  var datModalidad = [
+          {valor: 298000000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$298.000.000", color:"#B9BF04", porcentaje:"100,00%"},
+      ];
+
+  var datTipo = [
+          {valor: 298000000, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$298.000.000", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 298000000, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$298.000.000", color:"#B9BF04"},
+      ];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+    d3plus.viz()
+    .container("#bar806013999")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+ </script>
+ <!--FIN GRAFICOS EPA CARTAGENA-->
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+<!--INICIO GRAFICOS IDER-->
+                <div class="container-fluid element mt-10" id="nit800232726">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="wow fadeInDown" data-wow-delay=".05s">
+                                Contratación ejecutada de
+                            </span>
+                            <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                                INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER
+                            </h5>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <select name="anio800232726" id="anio800232726" style="background: #fff0; border:1px solid #fff0; font-size: 14px;" onchange="inicio('800232726','99','',$('#anio800232726').val(),'#leg800232726','contratacion/leg_modalidad.php'); ">
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <a href="../../twitter.com/intent/422275e9__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                            <a href="contratacion/8838c6d9__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                            <i class="lni lni-database pointer hide" onclick="inicio('Contrataci&#243;n directa','ejecucion','800232726','2022','#listContratos800232726','contratacion/datos.php');"></i>
+                            <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('800232726','','','2022','#listContratos800232726','contratacion/graficos.php');"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mx-auto" id="leg800232726">
+                                 
+                <div class="row">
+                    <!--Bloque grafico 6
+                    <div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%;">
+                        <div class="accordion " id="tipo800232726">
+                            2022
+                            <div class="faq-item mb-10 wow fadeInUp" data-wow-delay=".6s">
+                                <div class="faq-header" id="faq-heading-1">
+                                    <button class="faq-btn collapsed" type="button" data-toggle="collapse" data-target="#tipo1800232726" aria-expanded="false" aria-controls="tipo1">
+                                        Contratación directa
+                                    </button>
+                                </div>
+                            <div id="tipo1800232726" class="collapse" aria-labelledby="faq-heading-1" data-parent="#tipo800232726" style="">
+                                <div class="faq-body ">
+                                    <p>
+                                        <a class="action" href="#listContratos800232726" onclick="inicio('Contrataci&#243;n directa','Prestaci&#243;n de servicios','800232726','2022','#listContratos800232726','contratacion/leg_detalle.php'); getElementById('det_tree800232726').innerHTML = '';"><i class="lni lni-chevron-right"></i>Prestaci&#243;n de servicios                                </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            <div class="col-sm-8 col-lg-8 wow fadeInRight graficos" id="listContratos800232726" data-wow-delay=".5s">
+                <div class="grafico800232726 headmap " id="graficos_ider" style="height:45vh">
+                </div>
+ <script type="text/javascript">
+  // sample data array
+  
+    var datAnio = [
+          {valor: 92400000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$92.400.000", color:"#B9BF04"},
+      ];
+
+  var datModalidad = [
+          {valor: 92400000, modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$92.400.000", color:"#B9BF04", porcentaje:"100,00%"},
+      ];
+
+  var datTipo = [
+          {valor: 92400000, tipo: "Prestaci&#243;n de servicios - Contrataci&#243;n directa", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$92.400.000", color:"#B9BF04"},
+      ];
+  
+  var datJust = [
+          {valor: 92400000, justificacion: "ServiciosProfesionales", tipo: "Prestaci&#243;n de servicios", modalidad: "Contrataci&#243;n directa", anio: "2022", Valor: "$92.400.000", color:"#B9BF04"},
+      ];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+    d3plus.viz()
+    .container("#graficos_ider")
+    .data(datModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({value: "modalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+    .color({heatmap: ["#FFD900", "#F23E16"], value: "valor"})
+    //heatmap: ["#FFD900","#5F49F2", "#F23E16"]
+    .background({value:"none", strock:"none"})
+    .axes({strock: "#f00"})
+    .tooltip(["Valor"])
+    .text("porcentaje")
+    .font({ "family": "'Comfortaa', cursive", "weight":"500" })   
+    .resize(true)
+    .format("es_ES")
+    .draw()
+ </script>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+</section>
+
+        <section style=" background: #fff; padding: 3% 0px ; border-radius: 15px; border: 1px solid #0044cd;">
+            <div class="container-fluid" id="figuras">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="mb-15 wow fadeInUp" data-wow-delay=".1s"><b>CARTAGENA</b></h3>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Distribución por entidad de los procesos contractuales legalizados en la Alcald&#237;a de Cartagena</p>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> -->
+                    <div class="col-md-12 mt-30">
+                        <div id="treemap1_distribucion_entidad" class="wow fadeInUp" data-wow-delay=".5s" style="height: 60vh;"></div>
+    <script type="text/javascript">
+ 	// sample data array
+ 	var datEntidad = [
+					{valor: 67686911, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$67.686.911", entidad:"ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD Y CARCELARIO DE CARTAGENA", numero:8},
+					{valor: 87402562, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$87.402.562", entidad:"ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD Y CARCELARIO DE CARTAGENA", numero:7},
+					{valor: 90964688, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2020, Anio: "2020", Valor: "$90.964.688", entidad:"ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD Y CARCELARIO DE CARTAGENA", numero:1},
+					{valor: 258342395, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2021, Anio: "2021", Valor: "$258.342.395", entidad:"ESTABLECIMIENTO PENITENCIARIO DE MEDIANA SEGURIDAD Y CARCELARIO DE CARTAGENA", numero:2},
+					{valor: 1997456000, modalidad: "Contrataci&#243;n directa", anio: 2020, Anio: "2020", Valor: "$1.997.456.000", entidad:"ALCALDIA DE CARTAGENA LOCALIDAD DE LA VIRGEN Y TURISTICA", numero:1},
+					{valor: 856835700, modalidad: "Concurso de m&#233;ritos abierto", anio: 2021, Anio: "2021", Valor: "$856.835.700", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:2},
+					{valor: 84267342739, modalidad: "Contrataci&#243;n directa", anio: 2020, Anio: "2020", Valor: "$84.267.342.739", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:2603},
+					{valor: 246566382474, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$246.566.382.474", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:4503},
+					{valor: 4384528000, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$4.384.528.000", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:174},
+					{valor: 1138528400, modalidad: "Contrataci&#243;n Directa (con ofertas)", anio: 2020, Anio: "2020", Valor: "$1.138.528.400", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:2},
+					{valor: 2006291852, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2020, Anio: "2020", Valor: "$2.006.291.852", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:8},
+					{valor: 46394822270, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2021, Anio: "2021", Valor: "$46.394.822.270", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:23},
+					{valor: 54844771406, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas)", anio: 2020, Anio: "2020", Valor: "$54.844.771.406", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:7},
+					{valor: 1200088909, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas)", anio: 2021, Anio: "2021", Valor: "$1.200.088.909", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:7},
+					{valor: 6190201194, modalidad: "Licitaci&#243;n p&#250;blica", anio: 2021, Anio: "2021", Valor: "$6.190.201.194", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:4},
+					{valor: 10598997045, modalidad: "Licitaci&#243;n p&#250;blica Obra Publica", anio: 2021, Anio: "2021", Valor: "$10.598.997.045", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:3},
+					{valor: 1732654427, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$1.732.654.427", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:47},
+					{valor: 6512559469, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$6.512.559.469", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:134},
+					{valor: 2636887460, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$2.636.887.460", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:6},
+					{valor: 35649760366, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$35.649.760.366", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:70},
+					{valor: 896408114, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2022, Anio: "2022", Valor: "$896.408.114", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 278160000, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2020, Anio: "2020", Valor: "$278.160.000", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 5978062294, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2021, Anio: "2021", Valor: "$5.978.062.294", entidad:"ALCALD&#205;A DEL DISTRITO TUR&#205;STICO Y CULTURAL DE CARTAGENA DE INDIAS", numero:8},
+					{valor: 1539013634, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$1.539.013.634", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:83},
+					{valor: 298000000, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$298.000.000", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:13},
+					{valor: 41040000, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2020, Anio: "2020", Valor: "$41.040.000", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:1},
+					{valor: 3069632801, modalidad: "Licitaci&#243;n p&#250;blica Obra Publica", anio: 2021, Anio: "2021", Valor: "$3.069.632.801", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:1},
+					{valor: 78032946, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$78.032.946", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:7},
+					{valor: 202518511, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$202.518.511", entidad:"ESTABLECIMIENTO PUBLICO AMBIENTAL DE CARTAGENA", numero:2},
+					{valor: 1945826381, modalidad: "Contrataci&#243;n directa", anio: 2020, Anio: "2020", Valor: "$1.945.826.381", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:190},
+					{valor: 5966503763, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$5.966.503.763", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:315},
+					{valor: 1335562160, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$1.335.562.160", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:38},
+					{valor: 128929510, modalidad: "Contrataci&#243;n Directa (con ofertas)", anio: 2020, Anio: "2020", Valor: "$128.929.510", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:2},
+					{valor: 2886592065, modalidad: "Contrataci&#243;n Directa (con ofertas)", anio: 2021, Anio: "2021", Valor: "$2.886.592.065", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:11},
+					{valor: 431951242, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2020, Anio: "2020", Valor: "$431.951.242", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:11},
+					{valor: 0, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2021, Anio: "2021", Valor: "$0", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:1},
+					{valor: 293732800, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas)", anio: 2021, Anio: "2021", Valor: "$293.732.800", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:2},
+					{valor: 425992213, modalidad: "Licitaci&#243;n p&#250;blica Obra Publica", anio: 2021, Anio: "2021", Valor: "$425.992.213", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:1},
+					{valor: 38423969, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$38.423.969", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:6},
+					{valor: 265728295, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$265.728.295", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:18},
+					{valor: 176978191, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$176.978.191", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:1},
+					{valor: 276996430, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$276.996.430", entidad:"INSTITUTO DE PATRIMONIO Y CULTURAL DE CARTAGENA DE INDIAS - IPCC", numero:3},
+					{valor: 264393213, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$264.393.213", entidad:"DISTRISEGURIDAD", numero:19},
+					{valor: 2451245315, modalidad: "Contrataci&#243;n Directa (con ofertas)", anio: 2021, Anio: "2021", Valor: "$2.451.245.315", entidad:"DISTRISEGURIDAD", numero:1},
+					{valor: 10165402, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$10.165.402", entidad:"DISTRISEGURIDAD", numero:1},
+					{valor: 180400000, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2021, Anio: "2021", Valor: "$180.400.000", entidad:"DISTRISEGURIDAD", numero:1},
+					{valor: 933155520, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$933.155.520", entidad:"CONCEJO DISTRITAL DE CARTAGENA DE INDIAS", numero:150},
+					{valor: 165588100, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas)", anio: 2021, Anio: "2021", Valor: "$165.588.100", entidad:"CONCEJO DISTRITAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 8359797, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$8.359.797", entidad:"CONCEJO DISTRITAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 378987491, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$378.987.491", entidad:"PERSONERIA DISTRITAL DE CARTAGENA", numero:56},
+					{valor: 23611006, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$23.611.006", entidad:"PERSONERIA DISTRITAL DE CARTAGENA", numero:3},
+					{valor: 41870728, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$41.870.728", entidad:"PERSONERIA DISTRITAL DE CARTAGENA", numero:5},
+					{valor: 43387200, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2020, Anio: "2020", Valor: "$43.387.200", entidad:"PERSONERIA DISTRITAL DE CARTAGENA", numero:1},
+					{valor: 1, modalidad: "Concurso de m&#233;ritos abierto", anio: 2020, Anio: "2020", Valor: "$1", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:1},
+					{valor: 336137500, modalidad: "Contrataci&#243;n directa", anio: 2020, Anio: "2020", Valor: "$336.137.500", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:3},
+					{valor: 10490034834, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$10.490.034.834", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:470},
+					{valor: 92400000, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$92.400.000", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:6},
+					{valor: 989741000, modalidad: "Contrataci&#243;n Directa (con ofertas)", anio: 2021, Anio: "2021", Valor: "$989.741.000", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:1},
+					{valor: 11035083, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2021, Anio: "2021", Valor: "$11.035.083", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:3},
+					{valor: 4457630963, modalidad: "Licitaci&#243;n p&#250;blica Obra Publica", anio: 2021, Anio: "2021", Valor: "$4.457.630.963", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:2},
+					{valor: 354560302, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$354.560.302", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:22},
+					{valor: 298300567, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$298.300.567", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:16},
+					{valor: 99187444, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$99.187.444", entidad:"INSTITUTO DISTRITAL DE DEPORTE Y RECREACION DE CARTAGENA - IDER", numero:1},
+					{valor: 2522142381, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$2.522.142.381", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:351},
+					{valor: 1123259440, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$1.123.259.440", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:65},
+					{valor: 631104736, modalidad: "Contrataci&#243;n r&#233;gimen especial", anio: 2021, Anio: "2021", Valor: "$631.104.736", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:1},
+					{valor: 736612976, modalidad: "Licitaci&#243;n p&#250;blica", anio: 2021, Anio: "2021", Valor: "$736.612.976", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:1},
+					{valor: 5072140, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$5.072.140", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:1},
+					{valor: 251824782, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$251.824.782", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:22},
+					{valor: 224141158, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$224.141.158", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:2},
+					{valor: 288607843, modalidad: "Selecci&#243;n abreviada subasta inversa", anio: 2021, Anio: "2021", Valor: "$288.607.843", entidad:"ESCUELA TALLER CARTAGENA DE INDIAS", numero:1},
+					{valor: 1908277270, modalidad: "Contrataci&#243;n directa", anio: 2021, Anio: "2021", Valor: "$1.908.277.270", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:121},
+					{valor: 697200000, modalidad: "Contrataci&#243;n directa", anio: 2022, Anio: "2022", Valor: "$697.200.000", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:22},
+					{valor: 448381201, modalidad: "Licitaci&#243;n p&#250;blica", anio: 2021, Anio: "2021", Valor: "$448.381.201", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 3415330939, modalidad: "Licitaci&#243;n p&#250;blica Obra Publica", anio: 2021, Anio: "2021", Valor: "$3.415.330.939", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:1},
+					{valor: 168763257, modalidad: "M&#237;nima cuant&#237;a", anio: 2020, Anio: "2020", Valor: "$168.763.257", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:9},
+					{valor: 54763148, modalidad: "M&#237;nima cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$54.763.148", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:7},
+					{valor: 89953127, modalidad: "Selecci&#243;n Abreviada de Menor Cuant&#237;a", anio: 2021, Anio: "2021", Valor: "$89.953.127", entidad:"FONDO DE VIVIENDA DE INTERES SOCIAL Y REFORMA URBANA DISTRITAL DE CARTAGENA DE INDIAS", numero:1},
+			];
+ </script>
+
+  <!--------------------------------------TREEMAP------------------------------------------------->
+<script type="text/javascript">
+	var visualization = d3plus.viz()
+		.container("#treemap1_distribucion_entidad")
+		.data(datEntidad)
+		.type("tree_map")
+		.id(["entidad","modalidad"])
+		.size("valor")   
+		.labels({align: "center", valign: "top"})
+		.color({scale: ['#3ba3a2', '#0055ff','#F23E16','#0160a2','#8674fe','#fb707d','#18b73e','#FFD900'], value: "entidad"})
+		.background("none")
+		.tooltip({size: false, share: false, "children": 0, value:["entidad","valor","numero","modalidad","tipo","Anio"]}) 
+		.font({ "family": "'Comfortaa', cursive", "weight":"400", "size":14 })		
+		.resize(true)
+		//.text("entidad")
+		//.depth(1)
+		//.ui([{method: "size", type: "button", value: ["valor", "numero"] }])
+		.format("es_ES")
+		.order("valor")
+		.time({"value": "anio", "solo": 2022})
+		.draw()
+</script>
+            </div>
+            </div>
+            </div>
+</section>
+        <!--========================= contracting-section end========================= -->
+
+        <!--========================= contracting-section start========================= -->
+<!--INICIO SECCION DE PLANIFICACION-->
+<section id="planificacion" class="pt-100 pb-50 greenlite-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-lg-6 col-md-8 mxS-auto">
+                        <div class="section-title mb-5">
+                            <h4 class="mb-15 wow fadeInUp" data-wow-delay=".1s">PLAN ANUAL DE ADQUISICIONES 2021</h4>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">El Plan Anual de Adquisiciones (PAA), permite hacer un seguimiento cercano a la planeaci&#243;n y ejecuci&#243;n contractual de la Instituci&#243;n. El PAA est&#225; sujeto a actualizaciones durante la vigencia.</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+            <div class="container-fluid element mt-25">
+                <div class="row">
+                    <div class="col-md-8">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">
+                            Modalidades
+                        </span>
+                        <h5 class="mb-15 wow fadeInUp purple-color" data-wow-delay=".1s">
+                            PROCESOS CONTACTUALES PLANIFICADOS
+                        </h5>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <a href="../../twitter.com/intent/a8c356eb__tweet.html" target="_blank" style="color:#6B6F92"><i class="lni lni-twitter"></i></a>
+                        <a href="contratacion/d6aa6540__json.html" target="_black" style="color:#6B6F92"><i class="lni lni-code"></i></a>
+                        <i class="lni lni-database pointer hide" onclick="inicio('','planificacion','8904801841','listPAA','#listPAA8904801841','contratacion/datos.php');"></i>
+                        <i class="lni lni-bar-chart pointer mt-15" onclick="inicio('8904801841','1','','listPAA','#listPAA8904801841','contratacion/graficos.php');"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mx-auto">
+
+<div class="row" style="display: flex;">
+	<div class="col-sm-4 col-lg-4 mt-15" style="padding-right:2%; position: sticky; position: -webkit-sticky;">
+     	<div class="accordion" id="paa8904801841">
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-02','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Licitaci&#243;n p&#250;blica</a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-04','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Concurso de m&#233;ritos abierto</a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-05','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Contrataci&#243;n directa (con ofertas)</a>
+                </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-06','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Selecci&#243;n abreviada menor cuant&#237;a                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-07','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Selecci&#243;n abreviada subasta inversa                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-10','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>M&#237;nima cuant&#237;a                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-11||01','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Contrataci&#243;n r&#233;gimen especial - selecci&#243;n de comisionista                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-11||03','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Contrataci&#243;n r&#233;gimen especial - r&#233;gimen especial                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-15||01','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Contrataci&#243;n r&#233;gimen especial (con ofertas) - selecci&#243;n de comisionista                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-16','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Contrataci&#243;n directa.                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-17','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Licitaci&#243;n p&#250;blica (obra p&#250;blica)                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-18-Seleccion_Abreviada_Menor_Cuantia_Sin_Manifestacion_Interes','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Selecci&#243;n abreviada de menor cuantia sin manifestacion de inter&#233;s                    </a>
+            </p>
+            <p class="wow fadeInUp" data-wow-delay=".6s">
+                <a class="action" href="#listPAA8904801841" onclick="inicio('CCE-99','2022','8904801841','listPAA','#listPAA8904801841','contratacion/paa_detalle.php'); getElementById('det_tree8904801841').innerHTML = '';"><i class="lni lni-chevron-right"></i>Sel&#233;ccion abreviada - acuerdo marco                    </a>
+            </p>
+        </div>
+   	</div>    
+    <div class="col-sm-8 col-lg-8 wow fadeInRight" id="listPAA8904801841" data-wow-delay=".4s">
+        <div class="grafico8904801841 headmap " id="graficos_planificacion" style="height:80vh">
+        </div>
+ <script type="text/javascript">
+ 	
+ 	var paaModalidad = [
+					{valor: 7540733378, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$7.540.733.378"},
+					{valor: 61094451712, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$61.094.451.712"},
+					{valor: 314694374203, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$314.694.374.203"},
+					{valor: 17395870312, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas) - Selecci&#243;n de comisionista", codModalidad: "CCE-15", anio: "2021", Valor: "$17.395.870.312"},
+					{valor: 2750847978, modalidad: "Contrataci&#243;n r&#233;gimen especial - R&#233;gimen especial", codModalidad: "CCE-11", anio: "2021", Valor: "$2.750.847.978"},
+					{valor: 75192922098, modalidad: "Contrataci&#243;n r&#233;gimen especial - Selecci&#243;n de comisionista", codModalidad: "CCE-11", anio: "2021", Valor: "$75.192.922.098"},
+					{valor: 200023563171, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$200.023.563.171"},
+					{valor: 40903997390, modalidad: "Licitaci&#243;n p&#250;blica (Obra p&#250;blica)", codModalidad: "CCE-17", anio: "2021", Valor: "$40.903.997.390"},
+					{valor: 13981626971, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$13.981.626.971"},
+					{valor: 41669255297, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$41.669.255.297"},
+					{valor: 2393674936, modalidad: "Selecci&#243;n Abreviada de Menor Cuantia sin Manifestacion de Inter&#233;s", codModalidad: "CCE-18", anio: "2021", Valor: "$2.393.674.936"},
+					{valor: 39876895332, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$39.876.895.332"},
+					{valor: 19075018884, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$19.075.018.884"},
+			];
+
+ 	var paaFechaEstimada = [
+					{valor: 25880996431, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$25.880.996.431", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 252929473347, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$252.929.473.347", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 2343959258, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$2.343.959.258", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 21150146772, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$21.150.146.772", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 11950599009, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$11.950.599.009", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 4562486194, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$4.562.486.194", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 1679285669, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$1.679.285.669", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 3005523554, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$3.005.523.554", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 67635519409, modalidad: "Contrataci&#243;n r&#233;gimen especial - Selecci&#243;n de comisionista", codModalidad: "CCE-11", anio: "2021", Valor: "$67.635.519.409", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 17395870312, modalidad: "Contrataci&#243;n r&#233;gimen especial (con ofertas) - Selecci&#243;n de comisionista", codModalidad: "CCE-15", anio: "2021", Valor: "$17.395.870.312", fecEstimada:1, mes:"Enero",  unidad:"PAA"},
+					{valor: 4065141469, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$4.065.141.469", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 4856419875, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$4.856.419.875", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 7996766100, modalidad: "Licitaci&#243;n p&#250;blica (Obra p&#250;blica)", codModalidad: "CCE-17", anio: "2021", Valor: "$7.996.766.100", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 250000000, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$250.000.000", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 420000000, modalidad: "Contrataci&#243;n r&#233;gimen especial - R&#233;gimen especial", codModalidad: "CCE-11", anio: "2021", Valor: "$420.000.000", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 9775062908, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$9.775.062.908", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 157767750, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$157.767.750", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 29308241871, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$29.308.241.871", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 1331658866, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$1.331.658.866", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 74741459306, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$74.741.459.306", fecEstimada:2, mes:"Febrero",  unidad:"PAA"},
+					{valor: 12295744439, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$12.295.744.439", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 6117657568, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$6.117.657.568", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 103367573297, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$103.367.573.297", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 206200000, modalidad: "Contrataci&#243;n r&#233;gimen especial - R&#233;gimen especial", codModalidad: "CCE-11", anio: "2021", Valor: "$206.200.000", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 3339987922, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$3.339.987.922", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 6056508448, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$6.056.508.448", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 300000000, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$300.000.000", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 11108346271, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$11.108.346.271", fecEstimada:3, mes:"Marzo",  unidad:"PAA"},
+					{valor: 4300000000, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$4.300.000.000", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 6175264843, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$6.175.264.843", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 2193674936, modalidad: "Selecci&#243;n Abreviada de Menor Cuantia sin Manifestacion de Inter&#233;s", codModalidad: "CCE-18", anio: "2021", Valor: "$2.193.674.936", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 1470940424, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$1.470.940.424", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 3537763431, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$3.537.763.431", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 12034502820, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$12.034.502.820", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 63154748, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$63.154.748", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 525000000, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$525.000.000", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 1012548600, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$1.012.548.600", fecEstimada:4, mes:"Abril",  unidad:"PAA"},
+					{valor: 2124647978, modalidad: "Contrataci&#243;n r&#233;gimen especial - R&#233;gimen especial", codModalidad: "CCE-11", anio: "2021", Valor: "$2.124.647.978", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 4609239081, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$4.609.239.081", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 3013000000, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$3.013.000.000", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 690709365, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$690.709.365", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 520000000, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$520.000.000", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 2778079138, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$2.778.079.138", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 2844672769, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$2.844.672.769", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 622969836, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$622.969.836", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 200000000, modalidad: "Selecci&#243;n Abreviada de Menor Cuantia sin Manifestacion de Inter&#233;s", codModalidad: "CCE-18", anio: "2021", Valor: "$200.000.000", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 115000000, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$115.000.000", fecEstimada:5, mes:"Mayo",  unidad:"PAA"},
+					{valor: 1050600466, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$1.050.600.466", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 1350852000, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$1.350.852.000", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 2046073968, modalidad: "Licitaci&#243;n p&#250;blica (Obra p&#250;blica)", codModalidad: "CCE-17", anio: "2021", Valor: "$2.046.073.968", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 1628000000, modalidad: "Selecci&#243;n abreviada subasta inversa", codModalidad: "CCE-07", anio: "2021", Valor: "$1.628.000.000", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 3744163674, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$3.744.163.674", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 474942418, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$474.942.418", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 2694062635, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$2.694.062.635", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 1070856412, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$1.070.856.412", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 10784211063, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$10.784.211.063", fecEstimada:6, mes:"Junio",  unidad:"PAA"},
+					{valor: 1358497435, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$1.358.497.435", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 877465351, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$877.465.351", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 2486271540, modalidad: "Sel&#233;ccion abreviada - acuerdo marco", codModalidad: "CCE-99", anio: "2021", Valor: "$2.486.271.540", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 12323609454, modalidad: "Licitaci&#243;n p&#250;blica", codModalidad: "CCE-02", anio: "2021", Valor: "$12.323.609.454", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 8316918536, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$8.316.918.536", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 7557402689, modalidad: "Contrataci&#243;n r&#233;gimen especial - Selecci&#243;n de comisionista", codModalidad: "CCE-11", anio: "2021", Valor: "$7.557.402.689", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 16667405122, modalidad: "Licitaci&#243;n p&#250;blica (Obra p&#250;blica)", codModalidad: "CCE-17", anio: "2021", Valor: "$16.667.405.122", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 1800000000, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$1.800.000.000", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 3254126353, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$3.254.126.353", fecEstimada:7, mes:"Julio",  unidad:"PAA"},
+					{valor: 383200000, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$383.200.000", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 14193752200, modalidad: "Licitaci&#243;n p&#250;blica (Obra p&#250;blica)", codModalidad: "CCE-17", anio: "2021", Valor: "$14.193.752.200", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 1280000000, modalidad: "Contrataci&#243;n directa (con ofertas) ", codModalidad: "CCE-05", anio: "2021", Valor: "$1.280.000.000", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 652150680, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$652.150.680", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 380000000, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$380.000.000", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 2396712838, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$2.396.712.838", fecEstimada:8, mes:"Agosto",  unidad:"PAA"},
+					{valor: 80000000, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$80.000.000", fecEstimada:9, mes:"Septiembre",  unidad:"PAA"},
+					{valor: 1308521993, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$1.308.521.993", fecEstimada:9, mes:"Septiembre",  unidad:"PAA"},
+					{valor: 1750000000, modalidad: "Contrataci&#243;n directa.", codModalidad: "CCE-16", anio: "2021", Valor: "$1.750.000.000", fecEstimada:9, mes:"Septiembre",  unidad:"PAA"},
+					{valor: 989801208, modalidad: "Concurso de m&#233;ritos abierto", codModalidad: "CCE-04", anio: "2021", Valor: "$989.801.208", fecEstimada:9, mes:"Septiembre",  unidad:"PAA"},
+					{valor: 41197163, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$41.197.163", fecEstimada:10, mes:"Octubre",  unidad:"PAA"},
+					{valor: 12872450, modalidad: "M&#237;nima cuant&#237;a", codModalidad: "CCE-10", anio: "2021", Valor: "$12.872.450", fecEstimada:11, mes:"Noviembre",  unidad:"PAA"},
+					{valor: 130000000, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$130.000.000", fecEstimada:11, mes:"Noviembre",  unidad:"PAA"},
+					{valor: 450000000, modalidad: "Selecci&#243;n abreviada menor cuant&#237;a", codModalidad: "CCE-06", anio: "2021", Valor: "$450.000.000", fecEstimada:12, mes:"Diciembre",  unidad:"PAA"},
+			];
+ </script>
+
+<!--------------------------------------BAR------------------------------------------------->
+ <script type="text/javascript">
+		d3plus.viz()
+    .container("#graficos_planificacion")
+    .data(paaModalidad)
+    .type("bar")
+    .id("modalidad")
+    .y({"stacked": true, value: "valor", grid: true })
+    .x({ value: "codModalidad", grid: false })
+    .labels({"align": "center", "valign": "top"})
+	.color({ value: "modalidad", scale: ['#F23E16', "#5F49F2"]})
+	.background({value:"none", strock:"none"})
+	.axes({strock: "#f00"})
+	.tooltip(["Valor"])
+	.font({ "family": "'Comfortaa', cursive", "weight":"500" })		
+	.resize(true)
+	.format("es_ES")
+    .draw()
+ </script>
+ <!--FIN SECCION DE PLANIFICACION-->
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+ <!--INICIO SECCION DE FECHAS ESTIMADAS DE CONTRATACION-->
+            <div class="container-fluid element mt-25">
+                <div class="row">
+                     <div class="col-md-4">
+                        <h4 class="mb-15 wow fadeInUp" data-wow-delay=".1s">
+                            FECHAS ESTIMADAS DE CONTRATACI&#211;N
+                        </h4>
+                        <p class="wow fadeInUp" data-wow-delay=".4s">
+                            Cronograma y monto de lo procesos contractuales previstos por la Alcald&#237;a de Cartagena
+                        </p>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> -->
+                    <div id="line8904801841" class="col-md-8 mx-auto" style="height:60vh;">
+                      <script type="text/javascript">
+                            d3plus.viz()
+                        .container("#line8904801841")
+                        .data(paaFechaEstimada)
+                        .type("line")
+                        .id(["mes","modalidad"])
+                        .y({value: "valor", grid: true })
+                        .x({value: "fecEstimada", grid: false })
+                        .labels({"align": "center", "valign": "top"})
+                        .color({ value: "mes", heatmap: ['#F23E16', "#5F49F2"]})
+                        .background({value:"none", strock:"none"})
+                        .axes({strock: "#f00"})
+                        .tooltip(["Valor","mes","modalidad"])
+                        .size(10)
+                        .font({ "family": "'Comfortaa', cursive", "weight":"500" })  
+                        .depth(0)   
+                        .resize(true)
+                        .format("es_ES")
+                        .draw()
+                     </script>      
+                    </div>
+                </div>
+            </div>
+<!--FIN SECCION DE FECHAS ESTIMADAS DE CONTRATACION-->
+
+<!--INICIO SECCION DE FUENTES DE RECURSOS-->
+            <div class="container-fluid pb-150 mt-100 element" id="figuras">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-15 wow fadeInUp" data-wow-delay=".1s">FUENTE DE RECURSOS</h4>
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Planificaci&#243;n de la fuente de recursos estimada para la contrataci&#243;n de la Vigencia </p>
+                    </div>
+                    <!-- <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.</p>
+                    </div> -->
+                    <div class="col-md-12 mt-30">
+                        <div id="treemap2" class="wow fadeInUp" data-wow-delay=".4s" style="height: 60vh;"></div>
+                         <script type="text/javascript">
+ 	// sample data array
+ 	var datEntidad2 = [
+					{valor: 30668736531,  fuente: "No Aplica", anio: "2021", Valor: "$30.668.736.531", entidad:"No Aplica"},
+					{valor: 730018231,  fuente: "Presupuesto de entidad nacional", anio: "2021", Valor: "$730.018.231", entidad:"Presupuesto de entidad nacional"},
+					{valor: 45992428206,  fuente: "Regal&#237;as", anio: "2021", Valor: "$45.992.428.206", entidad:"Regal&#237;as"},
+					{valor: 87521413384,  fuente: "SGP", anio: "2021", Valor: "$87.521.413.384", entidad:"SGP"},
+			];
+ </script>
+
+  <!--------------------------------------TREEMAP------------------------------------------------->
+<script type="text/javascript">
+	var visualization = d3plus.viz()
+		.container("#treemap2")
+		.data(datEntidad2)
+		.type("tree_map")
+		.id("fuente")
+		.size("valor")   
+		.labels({align: "center", valign: "top"})
+		.color({scale: ["#FFD900",'#3ba3a2', '#F23E16',"#0055ff"], value: "entidad"})
+		.background("none")
+		.tooltip({size: true, share: false, "children": 0, value:["entidad","Valor","numero","fuente","tipo"]}) 
+		.font({ "family": "'Comfortaa', cursive", "weight":"400", "size":14 })		
+		.resize(true)
+		.depth(1)
+		//.ui([{method: "size", type: "button", value: ["valor", "numero"] }])
+		.format("es_ES")			
+		.draw()
+</script>
+<!--FIN SECCION DE FUENTES DE RECURSOS-->
+
+                    </div>
+                    </div>
+                    </div>
+
+    </section>
+        <!--========================= contracting-section end========================= -->
+
+       
+       
+
+        <!-- ========================= footer start ========================= -->
+        <footer class="footer pt-150 gray-bg">
+            <img src="{% static 'contratacion_abierta/assets/img/shape/9c910fdb__footer-bg.svg'%}" alt="" class="footer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="footer-links text-center">
+                            <a href="./4b8fee62__index.html" class="logo"><h1>CARTAGENA</h1></a>
+                            <div class="footer-social-links">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-facebook-filled"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-twitter-filled"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-linkedin-original"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-instagram-original"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--nav class="footer-menu">
+                                <ul>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#service">Service</a></li>
+                                    <li><a href="#process">Process</a></li>
+                                    <li><a href="#team">Team</a></li>
+                                    <li><a href="#blog">Blog</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                </ul>
+                            </nav-->
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area text-center">
+                    <p class="mb-0">Diseñado y desarrollado por la <a href="../../uideck.com/file_36ec40df.pwc" rel="nofollow" target="_blank">Oficina Asesora de Inform&#225;tica - Cartagena de Indias</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- ========================= footer end ========================= -->
+
+
+        <!-- ========================= scroll-top ========================= -->
+        <!--a href="#" class="scroll-top">
+            <i class="lni lni-chevron-up"></i>
+        </a-->
+
+        <!-- ========================= JS here ========================= -->
+       
+        <script src="{% static 'contratacion_abierta/assets/js/acdd2da7__bootstrap.bundle-5.0.0.alpha-1-min.js'%}"></script>
+        <script src="{% static 'contratacion_abierta/assets/js/64712271__count-up.min.js'%}"></script>
+        <script src="{% static 'contratacion_abierta/assets/js/2a0e4775__wow.min.js'%}"></script>
+        <script src="{% static 'contratacion_abierta/assets/js/4ffdb195__main.js'%}"></script>
+        <script src="{% static 'contratacion_abierta/assets/js/fc1c4c41__script.js'%}"></script>
+        <!--script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script-->
+        
+        <script>//document.oncontextmenu = function(){return false;}
+       
+        </script>
+        
+
+
+        <script async src="../../www.googletagmanager.com/gtag/8d137fd4__js.js"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-208669719-1');
+        </script>
+
+
+        
+        
+    </body>
+    </html>

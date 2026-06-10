@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--
+    <title>Propuestas Extensión</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPropuestaExtensionHTML">
+                <span id="spanIdPropuestaGeneral" class="ocultar" ></span>
+                <span id="spanConsecutivoPropuestaGeneral" class="ocultar" ></span>                
+                <span id="spanNombrePropuestaGeneral" class="ocultar" ></span>
+                <span id="spanFechaSuscMinutPropuestaGeneral" class="ocultar" ></span>
+                <span id="spanIdTipoPropuestaGeneral" class="ocultar" ></span>
+                <span id="spanidpropuesta_entidadPropuestaGeneral" class="ocultar" ></span>
+                <span id="spanpropuesta_entidadPropuestaGeneral" class="ocultar" ></span>
+                <span id="spantipopropuestaPropuestaGeneral" class="ocultar" ></span>
+
+<!-- #region tablapropuestas -->
+                <div class="row" id="dvPropuestaExtensionTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">REGISTRO Y CONTROL PROPUESTAS</div>
+                    <div class="col-md-6 text-center">
+                
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPropuestaExtension()">Nueva Propuesta</button>   
+                    </div>
+                  </div>
+
+                  <div class="row" id="tableDynamicPropuestaExtension">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaExtension" >
+                        <thead>
+                          <tr>                            
+                            <th>Id</th>
+                            <th>Consecutivo</th>
+                            <th>Objeto</th>
+                            <th>Radicación</th>
+                            <th>Entidad</th>
+                            <th>Estado</th>
+                            <th>Valor</th>
+                            <th>Responsable</th>
+                            <th>Nombre</th>
+                            <th>Opciones</th>
+                            <!--<th>Acciones</th> -->
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+<!-- endregion -->
+
+<!-- #region seguimientopropuesta -->
+                <div class="row ocultar col-md-10" id="dvPropuestaSegumiento">
+                  <div class="row">
+                    <div class="col-md-6 titletab">DETALLE SEGUIMIENTO PROPUESTA</div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group row mb-2">
+                      <span id="spanIdPropuestaSeguimiento" class="ocultar" ></span>
+                      <div class="col-md-3">
+                        <label class="form-label-iris" for="txtConsPropuestaSeguimiento">Consecutivo</label>
+                        <input type="text" class="form-control iris" id="txtConsPropuestaSeguimiento" disabled/>
+                      </div>
+                      <div class="col-md-8">
+                        <label class="form-label-iris" for="txtNombrePropuestaSeguimiento">Nombre Propuesta</label>
+                        <textarea class="form-control iris" id="txtNombrePropuestaSeguimiento" rows="3" disabled></textarea>                                
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 titletab"></div>
+                    <div class="col-md-6 text-center">                     
+                      <button type="button" class="btn-iris success small" onclick="VolverTablaPropuestasDesdeSeguimiento()">Volver Listado Propuestas</button>
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearSeguimientoPropuestaExtension()">Registrar Seguimiento</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableSeguimientoPropuestaExtension">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblSeguimientoPropuestaExtension" >
+                        <thead>
+                          <tr>                            
+                            <th>Fecha</th>
+                            <th>Detalle Seguimiento</th>
+                            <th>Funcionario</th>
+                            <!--<th>Opciones</th>-->
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+<!-- endregion -->
+
+<!-- #region minutapropuesta -->
+                <div class="row ocultar col-md-12 scroll" id="dvPropuestaMinuta">
+                  <div class="row">
+                    <div class="col-md-6 titletab">PROPUESTA SUSCRIPCIÓN MINUTA</div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group row mb-2">
+                    </div>
+                  </div>
+
+                  <form class="needs-validation" id="formMinutaPropuestaExtension" novalidate>
+                    <div class="row">
+                      <div class="form-group row mb-2">
+                        <span id="spanidsuscripcionminuta" class="ocultar" ></span>
+                        <span id="spanidpropuestaminuta" class="ocultar" ></span>
+
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtConsPropuestaMinuta">Consecutivo</label>
+                          <input type="text" class="form-control iris" id="txtConsPropuestaMinuta" disabled/>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label-iris" for="txtNombrePropuestaMinuta">Nombre Propuesta</label>
+                          <textarea class="form-control iris" id="txtNombrePropuestaMinuta" rows="1" disabled></textarea>                                
+                        </div>                          
+                        <!-- <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Aval Consejo</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidavalconfac-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidavalconfac" required></select>    
+                              <div class="invalid-feedback">
+                                Aval Consejo es un campo obligatorio
+                              </div>
+                          </div>
+                        </div> -->
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecrecepcion">Fecha Recepción</label>                                
+                          <input type="date" class="form-control iris" id="dtfecrecepcion" data-span="spanfecrecepcion" required/>
+                          <div class="invalid-feedback">
+                            Fecha Recepción es un campo obligatorio
+                          </div>
+                          <div id="spanfecrecepcion" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>
+                        <div class="col-md-3">
+                          <label class="form-label-iris" for="txtMinutaEntidadResponsable">Entidad Responsable</label>
+                          <input type="text" class="form-control iris" id="txtMinutaEntidadResponsable" disabled/>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Cargada SECOP</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cbominutacargadasecop-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cbominutacargadasecop" required>
+                                <!--<option value="">Seleccione</option>-->
+                                <option value="0">No Aplica</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                              </select> 
+                              <div class="invalid-feedback">
+                                Minuta en SECOP es un campo obligatorio
+                              </div>    
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecrevce">Revisión CE</label>                                
+                          <input type="date" class="form-control iris" id="dtfecrevce" data-span="spandtfecrevce" />
+                          <div id="spandtfecrevce" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Responsable CE</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidresponsablece-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsablece"></select>    
+                          </div>
+                        </div>
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecremisiondecanatura">Remisión A Decanatura</label>                                
+                          <input type="date" class="form-control iris" id="dtfecremisiondecanatura" title="FECHA REMISIÓN DE LA MINUTA A DECANATURA" data-span="spandtfecremisiondecanatura" />
+                          <div id="spandtfecremisiondecanatura" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtconsecutivoremisiondecanatura">Consec. Decanatura</label>
+                          <input type="text" class="form-control iris" id="txtconsecutivoremisiondecanatura" maxlength="50" title="CONSECUTIVO DE REMISIÓN DE MINUTA A DECANATURA" placeholder="Consecutivo" data-span="spanconsecutivoremisiondecanatura"/>
+                          <div id="spanconsecutivoremisiondecanatura" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                          </div>
+                        </div>                                    
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Responsable Envío DEC.</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidresponsabledecanatura-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsabledecanatura"></select>    
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecrespuestaobsdecanatura">Fecha Rpta. DEC.</label>                                
+                          <input type="date" class="form-control iris" id="dtfecrespuestaobsdecanatura" title="FECHA RESPUESTA A OBSERVACIONES DE LA DECANATURA" data-span="spanfecrespuestaobsdecanatura" />
+                          <div id="spanfecrespuestaobsdecanatura" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtobservacionesdecanatura">Observaciones Decanatura</label>
+                          <textarea class="form-control iris" id="txtobservacionesdecanatura" maxlength="1000" rows="1" placeholder="Observaciones Decanatura" data-span="spantxtobservacionesdecanatura"></textarea>                                
+                          <div id="spantxtobservacionesdecanatura" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Responsable Dec.</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidresponsableobsdec-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsableobsdec"></select>    
+                          </div>
+                        </div>
+                      </div>
+                      <hr style="color: #3333f8;">
+
+                      <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecintegracionaobsminuta">Integra Observ.</label>                                
+                          <input type="date" class="form-control iris" id="dtfecintegracionaobsminuta" title="INTEGRACIÓN DE LAS OBSERVACIONES A LA MINUTA" data-span="spandtfecintegracionaobsminuta" />
+                          <div id="spandtfecintegracionaobsminuta" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>        
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Resp. Integrar</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidresponsableintegraobs-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsableintegraobs"></select>    
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtconsecutivoremisionminutaent">Consec. Entidad</label>
+                          <input type="text" class="form-control iris" id="txtconsecutivoremisionminutaent" maxlength="50" title="CONSECUTIVO DE REMISIÓN DE MINUTA A ENTIDAD" placeholder="Consecutivo" data-span="spantxtconsecutivoremisionminutaent"/>
+                          <div id="spantxtconsecutivoremisionminutaent" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                          </div>
+                        </div>                                                          
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="nmtiemporevminuta">T. Revisión</label>
+                          <input type="number" class="form-control iris iris-number" id="nmtiemporevminuta" title="tiempo de revisión de minuta" data-span="spannmtiemporevminuta" />
+                          <div id="spannmtiemporevminuta" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>  
+                        </div>
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecrespobsminuta">Rpta. Observaciones</label>                                
+                          <input type="date" class="form-control iris" id="dtfecrespobsminuta" title="FECHA RESPUESTA A LAS OBSERVACIONES DE LA MINUTA" data-span="spandtfecrespobsminuta" />
+                          <div id="spandtfecrespobsminuta" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>        
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="nmtiemporemminutaobs">T. Rev. Observ.</label>
+                          <input type="number" class="form-control iris iris-number" id="nmtiemporemminutaobs" title="tiempo de remisión de minuta con observaciones y de respuesta a las observaciones" data-span="spannmtiemporemminutaobs" />
+                          <div id="spannmtiemporemminutaobs" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>  
+                        </div>
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="dtfecaprintminuta">Aprob. Interna</label>                                
+                          <input type="date" class="form-control iris" id="dtfecaprintminuta" title="FECHA APROBACIÓN INTERNA DE MINUTA" data-span="spandtfecaprintminuta" />
+                          <div id="spandtfecaprintminuta" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                        </div>        
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Avales Internos</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboavalesinternos-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboavalesinternos" required>
+                                <!--<option value="">Seleccione</option>-->
+                                <option value="0">No Aplica</option>
+                                <option value="1">Si</option>
+                                <option value="2">No</option>
+                              </select>    
+                              <div class="invalid-feedback">
+                                Avales Internos es un campo obligatorio
+                              </div>    
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Resp. Avales</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="cboidresponsableavales-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsableavales"></select>    
+                          </div>
+                        </div>
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                          <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfirmaunal">Firma UNAL</label>                                
+                            <input type="date" class="form-control iris" id="dtfirmaunal" data-span="spandtfirmaunal" />
+                            <div id="spandtfirmaunal" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                          </div>        
+                          <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfirmaminutasecop">Firma SECOP</label>                                
+                            <input type="date" class="form-control iris" id="dtfirmaminutasecop" data-span="spandtfirmaminutasecop" />
+                            <div id="spandtfirmaminutasecop" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                          </div>  
+                          <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Resp. Firma</label>
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="cboidresponsablefirma-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsablefirma"></select>    
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <label class="form-label-iris" for="dtfirmaentidad">Firma Entidad</label>                                
+                            <input type="date" class="form-control iris" id="dtfirmaentidad" data-span="spandtfirmaentidad" />
+                            <div id="spandtfirmaentidad" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                          </div>                                
+                      </div>
+                      <hr style="color: #3333f8;">
+                      <div class="form-group row mb-2">
+                          <div class="col-md-2">
+                            <label class="form-label-iris" for="txtnumminuta">No Minuta</label>
+                            <input type="text" class="form-control iris" id="txtnumminuta" maxlength="50" placeholder="No. Minuta" data-span="spantxtnumminuta" required/>
+                            <div class="invalid-feedback">
+                              No Minuta es un campo obligatorio
+                            </div>  
+                            <div id="spantxtnumminuta" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                          </div>           
+                          <div class="col-md-2">
+                            <label class="form-label-iris" for="txtnombreminutaproyecto">Nombre Minuta</label>
+                            <textarea class="form-control iris" id="txtnombreminutaproyecto" maxlength="250" rows="1" placeholder="Detalle" data-span="spantxtnombreminutaproyecto" required></textarea>
+                            <div class="invalid-feedback">
+                              Nombre Minuta es un campo obligatorio
+                            </div>                                                          
+                            <div id="spantxtnombreminutaproyecto" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                          </div>
+                          <div class="col-md-4">
+                            <label class="form-label-iris" for="txtenlacesoportes">Enlaces</label>
+                            <textarea class="form-control iris" id="txtenlacesoportes" maxlength="500" rows="1" placeholder="Enlace Archivos" data-span="spantxtenlacesoportes"></textarea>                                
+                            <div id="spantxtenlacesoportes" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                          </div>  
+                      </div>                      
+
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-md-6 titletab"></div>
+                    <div class="container container-fluid">                     
+                      <button type="button" class="btn-iris cancel small" onclick="VolverTablaPropuestasdesdeMinuta()">Cancelar</button>
+                      <button type="button" class="btn-iris success small" onclick="ValidatePostUpdateMinutaPropuestaExtension('formMinutaPropuestaExtension')">Grabar Datos Minuta</button>
+                    </div>
+                  </div>
+
+                </div>
+<!-- endregion -->
+
+<!-- #region tabla modificacionminutapropuesta -->
+                <div class="row ocultar col-md-10" id="dvPropuestaModificacionMinuta">
+                  <div class="row">
+                    <div class="col-md-6 titletab">MODIFICACIONES A LA MINUTA</div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group row mb-2">
+                      <span id="spanIdPropuestaModificaMinuta" class="ocultar" ></span>
+                      <span id="spanIdSucripcionMinutaModificaMinuta" class="ocultar" ></span>
+                      <div class="col-md-3">
+                        <label class="form-label-iris" for="txtConsPropuestaModificaMinuta">Consecutivo</label>
+                        <input type="text" class="form-control iris" id="txtConsPropuestaModificaMinuta" disabled/>
+                      </div>
+                      <div class="col-md-8">
+                        <label class="form-label-iris" for="txtNombrePropuestaModificaMinuta">Nombre Propuesta</label>
+                        <textarea class="form-control iris" id="txtNombrePropuestaModificaMinuta" rows="3" disabled></textarea>                                
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 titletab"></div>
+                    <div class="col-md-6 text-center">                     
+                      <button type="button" class="btn-iris success small" onclick="VolverTablaPropuestasDesdeModificaMinuta()">Volver Listado Propuestas</button>
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearModificacionMinutaPropuesta()">Nueva Modificación</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tablePropuestaModificaMinuta">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaModificacionMinuta" >
+                        <thead>
+                          <tr>                            
+                            <th>Fecha Solicitud</th>
+                            <th>Detalle Modificación</th>
+                            <th>Tipo</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+<!-- endregion -->
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- #region Modal Propuesta Extension 
+                  <div class="modal fade" id="ModalPropuestaExtension" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPropuestaExtension" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                -->
+                <div class="row ocultar col-md-12 scroll" id="ModalPropuestaExtension">
+                  <div class="row" >
+                    <div class="row">
+                      <div class="row">
+                        <div class="col-md-6 titletab">Datos Propuesta</div>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPropuestaExtension" novalidate>
+                            <div class="form-group row mb-2">
+                              <span id="spanIdPropuestaExtension" class="ocultar" ></span>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtConsPropuesta">Consecutivo</label>
+                                <input type="text" class="form-control iris" id="txtConsPropuesta" maxlength="40" placeholder="Consecutivo" data-span="spanConsPropuesta" required/>
+                                <div class="invalid-feedback">
+                                  Consecutivo es un campo obligatorio
+                                </div>
+                                <div id="spanConsPropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label-iris" for="txtNombrePropuesta">Nombre Propuesta</label>
+                                <textarea class="form-control iris" id="txtNombrePropuesta" rows="2" placeholder="Nombre Propuesta" data-span="spanNombrePropuesta" required></textarea>                                
+                                <div class="invalid-feedback">
+                                  Nombre Propuesta es un campo obligatorio
+                                </div>
+                                <div id="spanNombrePropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="dtFechaRadicaPropuesta">Fecha Radica</label>
+                                <input type="date" class="form-control iris" id="dtFechaRadicaPropuesta" data-span="spanFechaRadicaPropuesta" required/>
+                                <div class="invalid-feedback">
+                                  Fecha Radica es un campo obligatorio
+                                </div>
+                                <div id="spanFechaRadicaPropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>  
+                              </div>
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Contratante</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPropuestaContratante" required></select>    
+                                    <div class="invalid-feedback">
+                                      Tipo Entidad es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group row mb-2">
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="nmValorPropuesta">Valor Inicial</label>
+                                <input type="number" class="form-control iris iris-number" id="nmValorPropuesta" data-span="spanValorPropuesta" required/>
+                                <div class="invalid-feedback">
+                                  Valor Inicial es un campo obligatorio
+                                </div>
+                                <div id="spanValorPropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>  
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Tipo Usuario</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaTipoUsuario-select2 input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPropuestaTipoUsuario" required></select>    
+                                    <div class="invalid-feedback">
+                                      Tipo Usuario es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Modalidad</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaModalidad-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaModalidad" required></select>    
+                                    <div class="invalid-feedback">
+                                      Modalidad es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Origen</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaOrigen-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaOrigen" required></select>    
+                                    <div class="invalid-feedback">
+                                      Origen es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Tipo Propuesta</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaTipoPropuesta-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaTipoPropuesta" required></select>    
+                                    <div class="invalid-feedback">
+                                      Tipo Propuesta es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Responsable Seguimiento</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaResponsable-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaResponsable" required></select>    
+                                    <div class="invalid-feedback">
+                                      Responsable es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group row mb-2">
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Estado Propuesta</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboPropuestaEstado-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaEstado" required></select>    
+                                    <div class="invalid-feedback">
+                                      Estado Propuesta es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPropuestaOficioAprob">Oficio Aprobación</label>
+                                <input type="text" class="form-control iris" id="txtPropuestaOficioAprob" maxlength="255" placeholder="Oficio Aprobación" data-span="spantxtPropuestaOficioAprob"/>
+                                <div class="invalid-feedback">
+                                  Oficio Aprobación es un campo obligatorio
+                                </div>
+                                <div id="spantxtPropuestaOficioAprob" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPropuestaoficioaprobenlace">Archivo Oficio</label>
+                                <textarea class="form-control iris" id="txtPropuestaoficioaprobenlace" maxlength="500" rows="1" placeholder="Enlace Archivo Oficio" data-span="spantxtPropuestaoficioaprobenlace" ></textarea>
+                                <div id="spantxtPropuestaoficioaprobenlace" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>        
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPropuestaActaAprob">Acta Aprobación</label>
+                                <input type="text" class="form-control iris" id="txtPropuestaActaAprob" maxlength="255" placeholder="Acta Aprobación" data-span="spantxtPropuestaActaAprob"/>
+                                <div class="invalid-feedback">
+                                  Acta Aprobación es un campo obligatorio
+                                </div>
+                                <div id="spantxtPropuestaActaAprob" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPropuestaactaaprobenlace">Archivo Acta</label>
+                                <textarea class="form-control iris" id="txtPropuestaactaaprobenlace" maxlength="500" rows="1" placeholder="Enlace Archivo Acta" data-span="spantxtPropuestaactaaprobenlace" ></textarea>
+                                <div id="spantxtPropuestaactaaprobenlace" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+
+
+                              <!--
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Oficio Aprobación</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaOficioAprob"></select>    
+                                    <div class="invalid-feedback">
+                                      Estado Propuesta es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Acta Aprobación</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboPropuestaActaAprob"></select>    
+                                    <div class="invalid-feedback">
+                                      Estado Propuesta es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                            -->
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPropuestaContrato">Contrato/Convenio</label>
+                                <input type="text" class="form-control iris" id="txtPropuestaContrato" maxlength="50" placeholder="Contrato/Convenio" data-span="spanPropuestaContrato"/>
+                                <div class="invalid-feedback">
+                                  Contrato/Convenio es un campo obligatorio
+                                </div>
+                                <div id="spanPropuestaContrato" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </form>
+                        </div>
+                      </div>
+                      <div class="container container-fluid">
+                        <input type="button" value="Cancelar" onclick="VolverTablaPropuestasDesdeEdicion()" class="btn-iris cancel small"/>
+                        <input type="button" value="Guardar Datos Propuesta" onclick="ValidatePostUpdatePropuestaExtension('formPropuestaExtension', 'btnCloseModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- endregion -->
+
+                <!-- #region Modal Propuesta Seguimiento -->
+                <div class="row ocultar col-md-12 scroll" id="ModalSeguimientoPropuestaExtension">
+                  <div class="row">
+                    <div class="row">
+                      <div class="row">
+                        <div class="col-md-6 titletab">Datos Seguimiento</div>
+                      </div>
+
+                      <div class="row">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formSeguimientoPropuestaExtension" novalidate>
+                            <div class="form-group row mb-2">
+                              <span id="spanIdSeguimientoPropuestaExtension" class="ocultar" ></span>
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfechaseguimientoPropuesta">Fecha</label>                                
+                                <input type="date" class="form-control iris" id="dtfechaseguimientoPropuesta" data-span="spanfechaseguimientoPropuesta" required/>
+                                <div class="invalid-feedback">
+                                  Fecha Seguimiento es un campo obligatorio
+                                </div>
+                                <div id="spanfechaseguimientoPropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>
+                              <div class="col-md-4">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Funcionario</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboSeguimientoFuncionario-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboSeguimientoFuncionario" required></select>    
+                                    <div class="invalid-feedback">
+                                      Funcionario es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-10">
+                                <label class="form-label-iris" for="txtseguimientodetallePropuesta">Detalle Seguimiento</label>
+                                <textarea class="form-control iris" id="txtseguimientodetallePropuesta" rows="3" placeholder="Detalle" data-span="spanseguimientodetallePropuesta" required></textarea>                                
+                                <div class="invalid-feedback">
+                                  Detalle Seguimiento es un campo obligatorio
+                                </div>
+                                <div id="spanseguimientodetallePropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                            </div>
+
+                          </form>
+                        </div>
+                      </div>
+
+                      <div class="container container-fluid">
+                        <button type="button" class="btn-iris cancel small" onclick="VolverATablaSeguimientoPropuesta()">Cancelar</button>
+                        <button type="button" class="btn-iris success small" onclick="ValidatePostUpdateSeguimientoPropuestaExtension('formSeguimientoPropuestaExtension', 'btnCloseModalSeguimiento')">Guardar Datos Seguimiento</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <!-- endregion -->
+
+                <!-- #region Adiciona Modificacion Minuta -->
+                <div class="row ocultar col-md-12 scroll" id="dvAddModificacionMinutaPropuesta">
+                  <div class="row">
+                    <div class="row">
+                      <div class="row">
+                        <div class="col-md-6 titletab">Datos Modificación Minuta</div>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formAddModificacionMinutaPropuesta" novalidate>                            
+                            <div class="form-group row mb-2">
+                              <span id="spanidmodificacionminuta" class="ocultar" ></span>
+                              <span id="spanidsuscripcionaadmodificacionminuta" class="ocultar" ></span>
+                              <span id="spanidpropuestaaddmodificacionminuta" class="ocultar" ></span>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="dtFechaSolicitaModificacion">Fecha Solicitud</label>
+                                <input type="date" class="form-control iris" id="dtFechaSolicitaModificacion" data-span="spanFechaSolicitaModificacion" title="FECHA DE SOLICITUD DE MODIFICACIÓN DEL ACUERDO DE VOLUNTADES" required/>
+                                <div class="invalid-feedback">
+                                  Fecha Solicitud es un campo obligatorio
+                                </div>
+                                <div id="spanFechaSolicitaModificacion" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>  
+                              </div>
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Tipo Modificación</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoModificacionMinuta" required></select>    
+                                    <div class="invalid-feedback">
+                                      Tipo Modificación es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="col-md-7">
+                                <label class="form-label-iris" for="txtDescrModificacionMinuta">Descripción Modificación</label>
+                                <textarea class="form-control iris" id="txtDescrModificacionMinuta" rows="3" placeholder="Descripción" data-span="spanDescrModificacionMinuta" required></textarea>                                
+                                <div class="invalid-feedback">
+                                  Descripción Modificación es un campo obligatorio
+                                </div>
+                                <div id="spanDescrModificacionMinuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Resp. Revisa Solicitud</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboRespSolicitudModificacion-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboRespSolicitudModificacion"></select>    
+                                    <div class="invalid-feedback">
+                                      Responsable Solicitud es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>    
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfecrevisionsolicitud">Revisión Solicitud</label>                                
+                                <input type="date" class="form-control iris" id="dtfecrevisionsolicitud" data-span="spanfecrevisionsolicitud" />
+                                <div id="spanfecrevisionsolicitud" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>   
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Resp. remitir DEC.</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboidresponsableremitedecanatura-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsableremitedecanatura"></select>    
+                                </div>
+                              </div>   
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfecremsolmoddecanatura">F. Remite a DEC.</label>                                
+                                <input type="date" class="form-control iris" id="dtfecremsolmoddecanatura" data-span="spanfecremsolmoddecanatura" />
+                                <div id="spanfecremsolmoddecanatura" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>                                                                                   
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="txtconsecutivodecremisionmodificacionminuta">Consec. Remite DEC.</label>
+                                <input type="text" class="form-control iris" id="txtconsecutivodecremisionmodificacionminuta" maxlength="50" placeholder="Consecutivo" data-span="spanconsecutivodecremisionmodificacionminuta"/>
+                                <div id="spanconsecutivodecremisionmodificacionminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>  
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="nmtiemporevmodificacionminuta">T. Revisión</label>
+                                <input type="number" class="form-control iris iris-number" id="nmtiemporevmodificacionminuta" data-span="spannmtiemporevmodificacionminuta" />
+                                <div id="spannmtiemporevmodificacionminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>  
+                              </div>  
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Resp. Aprob. Modi</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboidresponsableaprobmodificacionminuta-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsableaprobmodificacionminuta"></select>    
+                                </div>
+                              </div> 
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfecrecepcionobsdecmodiminuta">F. Recibe Obs DEC.</label>                                
+                                <input type="date" class="form-control iris" id="dtfecrecepcionobsdecmodiminuta" data-span="spanfecrecepcionobsdecmodiminuta" />
+                                <div id="spanfecrecepcionobsdecmodiminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>                                                                                                                         
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfecremisionobsmodiminutaentidad">F. Remite Obs Entidad</label>                                
+                                <input type="date" class="form-control iris" id="dtfecremisionobsmodiminutaentidad" data-span="spanfecremisionobsmodiminutaentidad" />
+                                <div id="spanfecremisionobsmodiminutaentidad" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>   
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfecaprobacionobsmodiminutaentidad">F. Aprob. Entidad</label>                                
+                                <input type="date" class="form-control iris" id="dtfecaprobacionobsmodiminutaentidad" data-span="spanfecaprobacionobsmodiminutaentidad" />
+                                <div id="spanfecaprobacionobsmodiminutaentidad" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>       
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Avales Internos</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cboavalesinternosmodiminuta-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboavalesinternosmodiminuta">
+                                      <!--<option value="">Seleccione</option>-->
+                                      <option value="0">No Aplica</option>
+                                      <option value="1">Si</option>
+                                      <option value="2">No</option>
+                                    </select>    
+                                </div>
+                              </div>         
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="dtfechasuscripcionmodiminuta">F. Suscr. Modificación</label>                                
+                                <input type="date" class="form-control iris" id="dtfechasuscripcionmodiminuta" data-span="spanfechasuscripcionmodiminuta" />
+                                <div id="spanfechasuscripcionmodiminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                              </div>                                                                                                                       
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="nmvalorajustadomodificacionminuta">Valor Ajustado</label>
+                                <input type="number" class="form-control iris iris-number" id="nmvalorajustadomodificacionminuta" data-span="spanvalorajustadomodificacionminuta" />
+                                <div id="spanvalorajustadomodificacionminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>  
+                              </div>   
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="txtplazoajustadomodificacionminuta">Plazo Ejecución Ajustado</label>
+                                <input type="text" class="form-control iris" id="txtplazoajustadomodificacionminuta" maxlength="120" placeholder="Plazo Ajustado" data-span="spanplazoajustadomodificacionminuta"/>
+                                <div id="spanplazoajustadomodificacionminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>         
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtobligacionajustadamodiminuta">Obligaciones Compromisos Modificados</label>
+                                <textarea class="form-control iris" id="txtobligacionajustadamodiminuta" maxlength="900" rows="3" placeholder="Detalle" data-span="spanobligacionajustadamodiminuta"></textarea>                                
+                                <div id="spanobligacionajustadamodiminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>                                                                                                                  
+                            </div>
+                            <div class="form-group row mb-2">
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtproductoajustadamodiminuta">Productos Modificados</label>
+                                <textarea class="form-control iris" id="txtproductoajustadamodiminuta" maxlength="900" rows="3" placeholder="Detalle" data-span="spanproductoajustadamodiminuta"></textarea>                                
+                                <div id="spanproductoajustadamodiminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>   
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtenlacesoportemodiminuta">Enlace Archivos</label>
+                                <textarea class="form-control iris" id="txtenlacesoportemodiminuta" maxlength="500" rows="3" placeholder="Enlace Archivos" data-span="spanenlacesoportemodiminuta"></textarea>                                
+                                <div id="spanenlacesoportemodiminuta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>                                 
+                            </div>
+
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 titletab"></div>
+                      <div class="container container-fluid">                     
+                        <button type="button" class="btn-iris cancel small" onclick="VolverTablaModificacionesMinuta()">Cancelar</button>
+                        <button type="button" class="btn-iris success small" onclick="ValidatePostUpdateModificacionMinutaPropuesta('formAddModificacionMinutaPropuesta')">Grabar Datos Modificación</button>
+                      </div>
+                    </div>                    
+                  </div>
+
+                </div>
+                <!-- endregion -->                          
+
+<!-- #region garantiapropuesta -->
+    <div class="row ocultar col-md-12 scroll" id="dvPropuestaGarantia">
+      <div class="row">
+        <div class="col-md-6 titletab">PROPUESTA SUSCRIPCION GARANTÍA</div>
+      </div>     
+      <div class="row">
+        <div class="form-group row mb-2">
+          <div class="col-md-3">
+            <label class="form-label-iris" for="txtConsPropuestaGarantia">Consecutivo</label>
+            <input type="text" class="form-control iris" id="txtConsPropuestaGarantia" disabled/>
+          </div>
+          <div class="col-md-8">
+            <label class="form-label-iris" for="txtNombrePropuestaGarantia">Nombre Propuesta</label>
+            <textarea class="form-control iris" id="txtNombrePropuestaGarantia" rows="3" disabled></textarea>
+          </div>
+        </div>
+      </div> 
+      <form class="needs-validation" id="formGarantiaPropuestaExtension" novalidate>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <span id="spanidsuscripciongarantia" class="ocultar" ></span>
+            <span id="spanidpropuestagarantia" class="ocultar" ></span>
+
+            <div class="col-md-5">
+              <div class="col-md-12">
+                <label class="form-label-iris">Coberturas</label>
+              </div>
+              <div class="col-md-12 font-size-iris">
+                <select class="cbocoberturasgtiapropuesta-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cbocoberturasgtiapropuesta" required></select>    
+                <div class="invalid-feedback">
+                  Coberturas es un campo obligatorio
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <label class="form-label-iris" for="txtamparogtiapropuesta">Descripción Amparo</label>
+              <textarea class="form-control iris" id="txtamparogtiapropuesta" maxlength="500" rows="2" placeholder="Amparos" data-span="spantxtamparogtiapropuesta" required></textarea>                                
+              <div class="invalid-feedback">
+                Descripción Amparo es un campo obligatorio
+              </div>
+              <div id="spantxtamparogtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtfecsolaseguradoragtiapropuesta">Fecha Solicitud Póliza</label>                                
+              <input type="date" class="form-control iris" id="dtfecsolaseguradoragtiapropuesta" data-span="spandtfecsolaseguradoragtiapropuesta" required />
+              <div class="invalid-feedback">
+                Fecha Solicitud Póliza es un campo obligatorio
+              </div>
+              <div id="spandtfecsolaseguradoragtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtcdpgtiapropuesta">CDP</label>
+              <input type="text" class="form-control iris" id="txtcdpgtiapropuesta" maxlength="30" placeholder="CDP" data-span="spantxtcdpgtiapropuesta" />
+              <div id="spantxtcdpgtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtraggtiapropuesta">RAG</label>
+              <input type="text" class="form-control iris" id="txtraggtiapropuesta" maxlength="30" placeholder="RAG" data-span="spantxtraggtiapropuesta" />
+              <div id="spantxtraggtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtorpagtiapropuesta">ORPA</label>
+              <input type="text" class="form-control iris" id="txtorpagtiapropuesta" maxlength="30" placeholder="ORPA" data-span="spantxtorpagtiapropuesta" />
+              <div id="spantxtorpagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-3">
+              <div class="col-md-12">
+                  <label class="form-label-iris">Responsable</label>
+              </div>
+              <div class="col-md-12 font-size-iris">
+                  <select class="cboidresponsablesolaseguradoragtiaprop-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponsablesolaseguradoragtiaprop"></select>    
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtaseguradoragtiapropuesta">Aseguradora</label>
+              <input type="text" class="form-control iris" id="txtaseguradoragtiapropuesta" maxlength="100" placeholder="Aseguradora" data-span="spantxtaseguradoragtiapropuesta" />
+              <div class="invalid-feedback">
+                Aseguradora es un campo obligatorio
+              </div>
+              <div id="spantxtaseguradoragtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtfecapropolizagtiapropuesta">Fecha Aprueba Póliza</label>                                
+              <input type="date" class="form-control iris" id="dtfecapropolizagtiapropuesta" data-span="spandtfecapropolizagtiapropuesta" />
+              <div id="spandtfecapropolizagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtnumeropolizagtiapropuesta">No. Póliza</label>
+              <input type="text" class="form-control iris" id="txtnumeropolizagtiapropuesta" maxlength="50" placeholder="No. Póliza" data-span="spantxtnumeropolizagtiapropuesta" />
+              <div class="invalid-feedback">
+                No. Póliza es un campo obligatorio
+              </div>
+              <div id="spantxtnumeropolizagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtfecpagopolizagtiapropuesta">Fecha Pago Póliza</label>                                
+              <input type="date" class="form-control iris" id="dtfecpagopolizagtiapropuesta" data-span="spandtfecpagopolizagtiapropuesta" />
+              <div id="spandtfecpagopolizagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="nmvalorpolizagtiapropuesta">Valor Póliza</label>
+              <input type="number" class="form-control iris iris-number" id="nmvalorpolizagtiapropuesta" data-span="spannmvalorpolizagtiapropuesta" />
+              <div id="spannmvalorpolizagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>  
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtvigenciapolizainiciogtiapropuesta">Inicia Póliza</label>                                
+              <input type="date" class="form-control iris" id="dtvigenciapolizainiciogtiapropuesta" data-span="spandtvigenciapolizainiciogtiapropuesta" title="Fecha inicio cobertura de la póliza"/>
+              <div id="spandtvigenciapolizainiciogtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtvigenciapolizafingtiapropuesta">Finaliza Póliza</label>                                
+              <input type="date" class="form-control iris" id="dtvigenciapolizafingtiapropuesta" data-span="spandtvigenciapolizafingtiapropuesta" title="Fecha fin cobertura de la póliza"/>
+              <div id="spandtvigenciapolizafingtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-3">
+              <div class="col-md-12">
+                  <label class="form-label-iris">Responsable Pago</label>
+              </div>
+              <div class="col-md-12 font-size-iris">
+                  <select class="cboidresppagopolizagtiaprop-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresppagopolizagtiaprop"></select>    
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtfecrementidadgtiapropuesta">Póliza a Entidad</label>                                
+              <input type="date" class="form-control iris" id="dtfecrementidadgtiapropuesta" data-span="spandtfecrementidadgtiapropuesta" title="Fecha Remisión póliza a la entidad" />
+              <div id="spandtfecrementidadgtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtconsrempolizagtiapropuesta">No. Remisión</label>
+              <input type="text" class="form-control iris" id="txtconsrempolizagtiapropuesta" maxlength="50" placeholder="No. Póliza" data-span="spantxtconsrempolizagtiapropuesta" title="Consecutivo remisión póliza" />
+              <div id="spantxtconsrempolizagtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales o palabras restringidas
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="col-md-12">
+                  <label class="form-label-iris">Responsable Remisión</label>
+              </div>
+              <div class="col-md-12 font-size-iris">
+                  <select class="cboidresponrempolizagtiaprop-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresponrempolizagtiaprop"></select>    
+              </div>
+            </div>
+          </div>
+          <div class="form-group row mb-2">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="dtactupolsecopgtiapropuesta">Actualización SECOP</label>                                
+              <input type="date" class="form-control iris" id="dtactupolsecopgtiapropuesta" data-span="spandtactupolsecopgtiapropuesta" title="Actualización póliza en SECOP" />
+              <div id="spandtactupolsecopgtiapropuesta" class="color-required ocultar">
+                No se acepta el ingreso de caracteres especiales
+              </div>       
+            </div>
+            <div class="col-md-3">
+              <div class="col-md-12">
+                  <label class="form-label-iris">Responsable SECOP</label>
+              </div>
+              <div class="col-md-12 font-size-iris">
+                  <select class="cboidresppolizasecopgtiaprop-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidresppolizasecopgtiaprop"></select>    
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-6 titletab"></div>
+        <div class="container container-fluid">
+          <button type="button" class="btn-iris cancel small" onclick="VolverTablaPropuestasdesdeGarantia()">Cancelar</button>
+          <button type="button" class="btn-iris success small" onclick="ValidatePostUpdateGarantiaPropuestaExtension('formGarantiaPropuestaExtension')">Grabar Datos Garantía</button>
+        </div>
+      </div>
+
+    </div>
+<!-- endregion -->      
+
+<!-- #region tabla modificaciongarantiapropuesta -->
+    <div class="row ocultar col-md-10" id="dvPropuestaModificacionGarantia">
+      <div class="row">
+        <div class="col-md-6 titletab">MODIFICACIONES A LA GARANTÍA</div>
+      </div>
+      <div class="row">
+        <div class="form-group row mb-2">
+          <span id="spanIdPropuestaModificaGarantia" class="ocultar" ></span>
+          <span id="spanIdSucripcionGarantiaModificaGarantia" class="ocultar" ></span>
+          <div class="col-md-3">
+            <label class="form-label-iris" for="txtConsPropuestaModificaGarantia">Consecutivo Propuesta</label>
+            <input type="text" class="form-control iris" id="txtConsPropuestaModificaGarantia" disabled/>
+          </div>
+          <div class="col-md-8">
+            <label class="form-label-iris" for="txtNombrePropuestaModificaGarantia">Nombre Propuesta</label>
+            <textarea class="form-control iris" id="txtNombrePropuestaModificaGarantia" rows="3" disabled></textarea>                                
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 titletab"></div>
+        <div class="col-md-6 text-center">
+          <button type="button" class="btn-iris success small" onclick="VolverTablaPropuestasDesdeModificaGarantia()">Volver Listado Propuestas</button>
+          <button type="button" class="btn btn-primaryiris" onclick="CrearModificacionGarantiaPropuesta()">Nueva Modificación</button>
+        </div>
+      </div>
+      <div class="row scroll" id="tablePropuestaModificaGarantia">
+        <div class="table-responsive col-md-12">
+          <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaModificacionGarantia" >
+            <thead>
+              <tr>                            
+                <th>Fecha Solicitud</th>
+                <th>Tipo Modificación</th>
+                <th>Detalle Modificación</th>                
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+<!-- endregion -->
+
+<!-- #region Adiciona Modificacion Garantia -->
+    <div class="row ocultar col-md-12 scroll" id="dvAddModificacionGarantiaPropuesta">
+      <div class="row">
+        <div class="row">
+          <div class="row">
+            <div class="col-md-6 titletab">Datos Modificación Garantía</div>            
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="needs-validation" id="formAddModificacionGarantiaPropuesta" novalidate>
+                <div class="form-group row mb-2">
+                  <span id="spanIdModificacionGarantiaPropuesta" class="ocultar" ></span>
+                  <span id="spanIdSucripcionGarantiaFormModificaGarantia" class="ocultar" ></span>
+                  <div class="col-md-3">
+                    <label class="form-label-iris" for="dtFecSolicitaModificacionGarantiaPropuesta">Fecha Solicitud</label>
+                    <input type="date" class="form-control iris" id="dtFecSolicitaModificacionGarantiaPropuesta" data-span="spandtFecSolicitaModificacionGarantiaPropuesta" title="FECHA DE SOLICITUD DE MODIFICACIÓN GARANTÍA" required/>
+                    <div class="invalid-feedback">
+                      Fecha Solicitud es un campo obligatorio
+                    </div>
+                    <div id="spandtFecSolicitaModificacionGarantiaPropuesta" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales
+                    </div>  
+                  </div>
+                  <div class="col-md-3">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Tipo Modificación</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoModificacionGarantiaPropuesta" required></select>    
+                        <div class="invalid-feedback">
+                          Tipo Modificación es un campo obligatorio
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-iris" for="txtDescrModificacionGarantiaPropuesta">Descripción Modificación</label>
+                    <textarea class="form-control iris" id="txtDescrModificacionGarantiaPropuesta" rows="3" placeholder="Descripción" data-span="spantxtDescrModificacionGarantiaPropuesta" required></textarea>                                
+                    <div class="invalid-feedback">
+                      Descripción Modificación es un campo obligatorio
+                    </div>
+                    <div id="spantxtDescrModificacionGarantiaPropuesta" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="container container-fluid">                     
+            <button type="button" class="btn-iris cancel small" onclick="VolverTablaModificacionesGarantiaPropuesta()">Cancelar</button>
+            <button type="button" class="btn-iris success small" onclick="ValidatePostUpdateModificacionGarantiaPropuesta('formAddModificacionGarantiaPropuesta')">Grabar Modificación Garantía</button>
+          </div>
+        </div>                    
+
+      </div>
+
+    </div>
+
+<!-- endregion -->
+
+<div class="row ocultar col-md-10 offset-md-1 scroll" id="dvPropuestaTareas"></div>
+
+<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetallePropuesta"></div>
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/PropuestaExtension.js"></script>    
+
+  </body>
+
+
+</html>

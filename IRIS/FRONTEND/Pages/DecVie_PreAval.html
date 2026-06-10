@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>PREAVALES</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_PreAvalHTML">
+                <span id="spanIdDecVie_PreAval" class="ocultar" ></span>
+                <span id="spanConsecutivoDecVie_PreAval" class="ocultar" ></span>
+                <span id="spanTipoSolicitudDecVie_PreAval" class="ocultar" ></span>
+                <span id="spanMacroprocesoDecVie_PreAval" class="ocultar" ></span>
+                <span id="spanDependenciaDecVie_PreAval" class="ocultar" ></span>
+                <span id="spanEstadoDecVie_PreAval" class="ocultar" ></span>                 
+                <div class="row" id="dvDecVie_PreAvalTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">PREAVALES </div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_PreAval()">Solicitar Preaval</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_PreAval">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_PreAval" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Consecutivo</th>
+                            <th>Tipo Solicitud</th>
+                            <th>Macroproceso</th>
+                            <th>Dependencia</th>
+                            <th>Estado Solicitud</th>                                                      
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>                
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <div class="modal fade" id="ModalDecVie_PreAval_Revision" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_PreAval_Revision" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header iris-modal-header">
+            <h6 class="modal-title" id="ModalLabelDecVie_PreAval_Revision">Revisión</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="needs-validation" id="formDecVie_PreAval_RevisionDetalle" novalidate>
+
+              </form>
+            </div>
+          </div>
+
+          <div class="modal-footer iris-modal-footer">
+            <button type="button" id="btnCloseModalDecVie_PreAval_Revision" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+            <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_PreAval_RevisionForm('formDecVie_PreAval_RevisionDetalle', 'btnCloseModalDecVie_PreAval_Revision')" class="btn-iris success small"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal fade" id="ModalDecVie_PreAval_ConceptoDecanatura" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_PreAval_ConceptoDecanatura" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-fullscreen-md-down modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header iris-modal-header">
+            <h6 class="modal-title" id="ModalLabelDecVie_PreAval_ConceptoDecanatura">Concepto Decanatura</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="needs-validation" id="formDecVie_PreAval_ConceptoDecanaturaDetalle" novalidate>
+
+              </form>
+            </div>
+          </div>
+
+          <div class="modal-footer iris-modal-footer">
+            <button type="button" id="btnCloseModalDecVie_PreAval_ConceptoDecanatura" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+            <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_PreAval_ConceptoDecanaturaForm('formDecVie_PreAval_ConceptoDecanaturaDetalle', 'btnCloseModalDecVie_PreAval_ConceptoDecanatura')" class="btn-iris success small"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_PreAvalDetalle"></div>
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_PreAval.js"></script>
+    <script src="../js/iris//models/DecVie_PreAvalModel.js " ></script>
+
+  </body>
+
+
+</html>
+

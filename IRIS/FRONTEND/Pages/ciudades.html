@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+  </head>
+
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-6">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divCiudadHTML">
+                <div class="container" id="dvCiudadTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">CIUDADES</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" data-bs-toggle="modal" data-bs-target="#ModalCiudad">Crear Ciudad</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicCiudad">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblCiudad" >
+                        <thead>
+                          <tr>                            
+                            <th>Código</th>
+                            <th>Ciudad</th>
+                            <th>Departamento</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="ModalCiudad" tabindex="-1" aria-labelledby="ModalLabelCiudad" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabelCiudad">Ciudad</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form class="bootstrap-form needs-validation" id="formCiudad" novalidate>
+                <div class="form-group row mb-3">
+                    <span id="spanIdCiudad" class="ocultar" ></span>
+                  <div class="col-md-12>
+                    <label for="txtCiudad">Nombre Ciudad</label>
+                    <input type="text" class="form-control" id="txtCiudad" maxlength="120" placeholder="Ciudad" data-span="spanCiudad"/>
+                    <div class="invalid-feedback">
+                      Este campo es obligatorio
+                    </div>
+                    <div
+                      id="spanCiudad"
+                      class="color-required ocultar"
+                    >
+                      No se acepta el ingreso de caracteres
+                      especiales
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="btnCloseModal" class="btn btn-white" data-bs-dismiss="modal">Cancelar</button>
+            <input type="button" value="Guardar" onclick="ValidatePostUpdateCiudad('formContactos', 'Contactos')" class="btn btn-success"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/ciudades.js"></script>
+
+  </body>
+
+
+</html>

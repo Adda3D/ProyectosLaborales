@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>DERECHOS DE PETICIÓN</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_DerechosPeticionHTML">
+                <span id="spanIdDecVie_DerechosPeticion" class="ocultar" ></span>
+                <span id="spanRadicadoDecVie_DerechosPeticion" class="ocultar" ></span>
+                <span id="spanFechaDecVie_DerechosPeticion" class="ocultar" ></span>
+                <span id="spanSolicitudDecVie_DerechosPeticion" class="ocultar" ></span>
+                <span id="spanDependenciaDecVie_DerechosPeticion" class="ocultar" ></span>                
+                <div class="row" id="dvDecVie_DerechosPeticionTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">DERECHOS DE PETICIÓN</div>
+                    <div class="col-md-6 text-center">
+                   
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_DerechosPeticion()">Nuevo Derecho Petición</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_DerechosPeticion">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_DerechosPeticion" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>N° Radicado</th>
+                            <th>Solicitud</th>
+                            <th>Dependencia Solicitante</th>                                                       
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_DerechosPeticionDetalle"></div>
+
+<!--<div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObligaciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTablaProductos"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoExtensionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaAcuerdos"></div>-->
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_DerechosPeticion.js"></script>
+    <script src="../js/iris//models/DecVie_DerechosPeticionModel.js" ></script>
+
+  </body>
+
+
+</html>
+

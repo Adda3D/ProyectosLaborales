@@ -1,0 +1,31 @@
+﻿div#encabezado {
+    margin: 78px 0px 30px 0px;
+}
+
+div#title {
+    width: 33%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+label#senoores {
+    margin: 17px 0px;
+    margin-top: 6%;
+}   
+        
+.textocertificado {
+    margin: 2% 0px;
+}
+
+div#cetificado {
+    margin: 6px 0px 30px 0pc;
+}
+
+.divfirmas {
+    padding-top: 4%;
+    width: 20%;
+}
+
+.ocultar {
+    display: none !important;
+}

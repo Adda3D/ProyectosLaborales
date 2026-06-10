@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_CertificadosTecHTML">
+                <span id="spanIdDecVie_CertificadosTec" class="ocultar" ></span>
+                <span id="spanConsecutivoDecVie_CertificadosTec" class="ocultar" ></span>
+                <span id="spanFechaDecVie_CertificadosTec" class="ocultar" ></span>
+                <span id="spanAsuntoDecVie_CertificadosTec" class="ocultar" ></span>
+                <span id="spanDependenciaDecVie_CertificadosTec" class="ocultar" ></span>                
+                <div class="row" id="dvDecVie_CertificadosTecTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">CERTIFICADOS</div>
+                    <div class="col-md-6 text-center">
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_CertificadosTec()">Nuevo Certificado</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_CertificadosTec">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_CertificadosTec">
+                        <thead>
+                          <tr>                            
+                            <th>ID</th> <!-- Se queda -->
+                            <th>Fecha</th> <!-- Se queda -->
+                            <th>Radicador</th> <!-- Se queda -->
+                            <th>Asunto</th> <!-- Se queda -->
+                            <th>Solicitante</th> <!-- Se queda -->
+                            <th>Tipo</th>
+                            <th>Estado Pago</th> <!-- Reemplaza Dependencia Destino -->
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_CertificadosTecDetalle"></div>
+    <script src="../js/iris/models/DecVie_CertificadosTecModel.js"></script>
+    <script src="../js/iris/DecVie_CertificadosTec.js"></script>    
+
+  </body>
+</html>

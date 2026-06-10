@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle Solicitud de Certificado</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .formulario-detalle-compacto {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e3e6f0;
+        }
+
+        .formulario-detalle-compacto .form-group {
+            margin-bottom: 1rem;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #4e73df;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .formulario-detalle-compacto label {
+            font-weight: 600;
+            color: #2e59d9;
+            margin-bottom: 6px;
+            font-size: 13px;
+            display: block;
+        }
+
+        .formulario-detalle-compacto .form-control-static {
+            min-height: 34px;
+            padding: 6px 10px;
+            background-color: #f8f9fc;
+            border: 1px solid #d1d3e2;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #6e707e;
+            line-height: 1.4;
+        }
+
+        .formulario-detalle-compacto .form-control {
+            border-radius: 4px;
+            border: 1px solid #d1d3e2;
+            padding: 6px 10px;
+            font-size: 13px;
+            height: 34px;
+        }
+
+        .formulario-detalle-compacto textarea.form-control {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .formulario-detalle-compacto .seccion-titulo {
+            font-weight: 600;
+            color: #2e59d9;
+            margin: 20px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e3e6f0;
+            font-size: 15px;
+        }
+
+        .ocultar-filtros {
+            display: none !important;
+        }
+
+        .formulario-detalle-compacto h4 {
+            color: #2e59d9;
+            font-weight: 600;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2e59d9;
+        }
+
+        
+        .btn-close {
+            background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+            border: 0;
+            border-radius: 0.375rem;
+            opacity: 0.5;
+            width: 1em;
+            height: 1em;
+        }
+        .btn-close:hover {
+            opacity: 0.75;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .formulario-detalle-compacto {
+                padding: 15px;
+            }
+            
+            .formulario-detalle-compacto .form-group {
+                padding: 10px;
+            }
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              
+              <!-- Formulario generado dinámicamente -->
+              <div class="row">
+                <div class="modal-body">
+                  <div class="container-fluid">
+                    <form class="needs-validation" id="formSolicitud_CertificadoDetalle" novalidate>
+                      <!-- Los campos se crean dinámicamente desde el modelo JS -->
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botones de acción -->
+              <div class="row text-right m-t-sm">
+                <div class="col-md-12">
+                  <input
+                    type="button"
+                    value="Cancelar"
+                    onclick="CerrarSolicitud_CertificadoDesdeEdicion()"
+                    class="btn-iris cancel small"
+                  />
+                  <input type="button"
+                    value="Guardar Datos"
+                    onclick="ValidatePostUpdateSolicitud_CertificadoForm()"
+                    class="btn-iris success small" />
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega esto antes de tus scripts -->
+
+    <!-- Scripts del módulo - AHORA SÍ incluir el modelo -->
+    <script src="../js/iris/models/Solicitud_CertificadoModel.js"></script>
+    <script src="../js/iris/Solicitud_CertificadoDetalle.js"></script>
+  </body>
+</html>

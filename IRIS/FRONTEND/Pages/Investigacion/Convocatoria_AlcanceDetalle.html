@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Alcance Convocatoria</title>
+-->
+
+  </head>
+
+  <body>
+
+
+        <div class="row" >
+          <div class="row"id="dvConvocatoria_AlcanceDetalle">
+            <div class="row">
+              <div class="col-md-6 titletab">ALCANCE CONVOCATORIA</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formConvocatoria_AlcanceDetalle" novalidate>
+                 
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="CerrarConvocatoria_AlcanceDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos" onclick="ValidatePostUpdateConvocatoria_Alcance('formConvocatoria_AlcanceDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Convocatoria_AlcanceModel.js"></script>
+    <script src="../../js/iris/Investigacion/Convocatoria_AlcanceDetalle.js"></script>    
+
+  </body>
+
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Realización Conceptos</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Publicación Concepto Evaluación</div>
+            </div>
+            <div class="modal-body">
+                <div  class="row container-fluid">
+                    <form class="needs-validation" id="formPublicacionRealizacionConceptos" novalidate>
+                                                
+                        <span id="spanIdEvalConceptoFormRealizaConcepto" class="ocultar" ></span>
+
+                        <div class="form-group row mb-2">
+                            <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Evaluación No.</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionConceptoNumero" required></select>    
+                                    <div class="invalid-feedback">
+                                        Evaluación No. es un campo obligatorio
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Estado Concepto</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionConceptoEstado" required></select>    
+                                    <div class="invalid-feedback">
+                                        Estado Concepto es un campo obligatorio
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="col-md-2">
+                                <label class="form-label-iris" for="dtfecPublicacionConceptoAceptado">Fecha Aceptado</label>                                
+                                <input type="date" class="form-control iris" id="dtfecPublicacionConceptoAceptado" data-span="spandtfecPublicacionConceptoAceptado" />
+                                <div id="spandtfecPublicacionConceptoAceptado" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label-iris" for="dtfecPublicacionConceptoFinaliza">Fecha Finalización</label>                                
+                                <input type="date" class="form-control iris" id="dtfecPublicacionConceptoFinaliza" title="Fecha Estimada de Finalización" data-span="spandtfecPublicacionConceptoFinaliza" />
+                                <div id="spandtfecPublicacionConceptoFinaliza" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label-iris" for="dtfecPublicacionConceptoEntrega">Fecha Entrega</label>                                
+                                <input type="date" class="form-control iris" id="dtfecPublicacionConceptoEntrega" data-span="spandtfecPublicacionConceptoEntrega" />
+                                <div id="spandtfecPublicacionConceptoEntrega" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>       
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Concepto</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionConceptoFinal"> </select>    
+                                    <div class="invalid-feedback">
+                                        Estado Concepto es un campo obligatorio
+                                    </div>
+                                </div>
+                            </div>            
+                            <div class="col-md-2">
+                                <label class="form-label-iris" for="txtPublicacionConceptoEnlace">Enlace Documento</label>
+                                <input type="text" class="form-control iris" id="txtPublicacionConceptoEnlace" maxlength="1000" placeholder="Link Drive" data-span="spantxtPublicacionConceptoEnlace"/>
+                                <div id="spantxtPublicacionConceptoEnlace" class="color-required ocultar">
+                                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                            </div>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaPublicacionEvaluadoresDesdeRealizarConcepto()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Concepto Evaluación" onclick="ValidatePostUpdatePublicacionEvaluacionConcepto('formPublicacionRealizacionConceptos')" class="btn-iris success small"/>
+            </div>
+            
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicacionPUBEVAL_Conceptos.js"></script>
+
+  </body>
+
+
+</html>

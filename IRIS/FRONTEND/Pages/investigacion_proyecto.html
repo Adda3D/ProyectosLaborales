@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Investigación</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divProyectoInvestigacionHTML">
+                <span id="spanIdProyectoInvestigacion" class="ocultar" ></span>
+                <span id="spanHermesProyectoInvestigacion" class="ocultar" ></span>
+                <span id="spanQuipuProyectoInvestigacion" class="ocultar" ></span>
+                <span id="spanNombreProyectoInvestigacion" class="ocultar" ></span>
+                
+                <div class="row" id="dvProyectoInvestigacionTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">PROYECTOS INVESTIGACIÓN</div>
+                    <div class="col-md-6 text-center">                    
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearProyectoInvestigacion()">Nuevo Proyecto</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicProyectoInvestigacion">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoInvestigacion" >
+                        <thead>
+                          <tr>                            
+                            <th>Id</th>
+                            <th>HERMES ID</th>
+                            <th>Nombre Proyecto</th>
+                            <th>Entidad</th>
+                            <th>Naturaleza</th>
+                            <th>QUIPU</th>
+                            <th>Director</th>
+                            <th>Inicia</th>
+                            <th>Finaliza</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionDetalle"></div>
+    
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoInvestigacionTablaObligaciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoInvestigacionTablaResoluciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoInvestigacionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoInvestigacionTablaProductos"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoInvestigacionTablaTareas"></div>
+<!--
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionTablaAcuerdos"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoInvestigacionTareas"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionModificacionMinuta"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionModificacionGarantia"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoInvestigacionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoInvestigacionLiquidacionFinalizacion"></div>
+    -->
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Investigacion/investigacion_proyecto.js"></script>
+    <script src="../js/iris/Investigacion/investigacion_helper.js"></script>
+
+  </body>
+
+
+</html>
+

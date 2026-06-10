@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>AvalConsejo</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divAvalConsejoHTML">
+                <div class="row" id="dvAvalConsejoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">AVAL CONSEJO FACULTAD</div>
+                    <div class="col-md-6 text-center">                    
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearAvalConsejo()" data-bs-toggle="modal" data-bs-target="#ModalAvalConsejo" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Aval Consejo</button>
+                      <!--<button type="button" class="btn btn-primaryiris" onclick="CrearAvalConsejo()" data-bs-toggle="modal" data-bs-target="#ModalAvalConsejo" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Aval Consejo</button>-->
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicAvalConsejo">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblAvalConsejo" >
+                        <thead>
+                          <tr>                            
+                            <th>Número Aval</th>
+                            <th>Descripción</th>
+                            <th>Enlaces</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal AvalConsejo -->
+                <div class="modal fade" id="ModalAvalConsejo" tabindex="-1" role="dialog" aria-labelledby="ModalLabelAvalConsejo" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" role="document" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelAvalConsejo">Datos Aval Consejo</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formAvalConsejo" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdAvalConsejo" class="ocultar" ></span>
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="txtNroAvalConsejo">No. Aval</label>
+                                <input type="text" class="form-control iris" id="txtNroAvalConsejo" maxlength="50" placeholder="No. Aval" data-span="spanNroAvalConsejo" required/>
+                                <div class="invalid-feedback">
+                                    No. Aval es un campo obligatorio
+                                </div>
+                                <div id="spanNroAvalConsejo" class="color-required ocultar">
+                                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                              <div class="col-md-9">
+                                <label class="form-label-iris" for="txtDescrAvalConsejo">Descripción</label>
+                                <input type="text" class="form-control iris" id="txtDescrAvalConsejo" maxlength="300" placeholder="Descripción" data-span="spanDescrAvalConsejo" required/>                                
+                                <div class="invalid-feedback">
+                                    Descripción es un campo obligatorio
+                                </div>
+                                <div id="spanDescrAvalConsejo" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris" for="txtObservacionAvalConsejo">Observaciones</label>
+                                    <textarea class="form-control iris" id="txtObservacionAvalConsejo" rows="3" placeholder="Observaciones" data-span="spanObservacionAvalConsejo"></textarea>                                
+                                    <div class="invalid-feedback">
+                                      Observaciones es un campo obligatorio
+                                    </div>
+                                    <div id="spanObservacionAvalConsejo" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris" for="txtEnlaceAvalConsejo">Enlaces</label>
+                                    <textarea class="form-control iris" id="txtEnlaceAvalConsejo" rows="3" placeholder="Enlaces" data-span="spanEnlaceAvalConsejo"></textarea>                                
+                                    <div class="invalid-feedback">
+                                      Enlaces es un campo obligatorio
+                                    </div>
+                                    <div id="spanEnlaceAvalConsejo" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                                    </div>
+                                </div>
+                            </div>
+                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalAvalConsejo" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateAvalConsejo('formAvalConsejo', 'btnCloseModalAvalConsejo')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/avalconsejo.js"></script>    
+
+  </body>
+
+
+</html>

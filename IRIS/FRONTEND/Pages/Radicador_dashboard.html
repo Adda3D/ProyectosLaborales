@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+  </head>
+  <body>
+    <style>
+      .apx-card {
+        max-width: 80%;
+        margin: 24px auto 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 20px 24px;
+      }
+      .apx-filter {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 16px;
+      }
+      .apx-filter label { font-size: 13px; color: #555; margin: 0; }
+      .apx-filter select, .apx-filter input[type="date"] {
+        padding: 4px 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      .apx-filter button {
+        padding: 5px 16px;
+        border-radius: 4px;
+        font-size: 13px;
+        cursor: pointer;
+        border: none;
+        color: #fff;
+      }
+      .btn-consultar { background: #4f46e5; }
+      .btn-consultar:hover { background: #4338ca; }
+      .btn-excel { background: #10b981; }
+      .btn-excel:hover { background: #059669; }
+      #rad-resumen { font-size: 12px; color: #6b7280; margin-bottom: 8px; }
+      #rad-tabla { overflow-x: auto; max-height: 400px; overflow-y: auto; }
+      #rad-tabla table { font-size: 12px; }
+    </style>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+
+              <div class="row">
+                <div class="col-md-12 titletab">SEGUIMIENTO RADICADOS</div>
+              </div>
+
+              <!-- Filtros -->
+              <div class="apx-card">
+                <div class="apx-filter">
+                  <label>Tipo de fecha:</label>
+                  <select id="rad-tipofecha">
+                    <option value="fecha">Fecha Creación</option>
+                    <option value="fecha_vencimiento">Fecha Vencimiento</option>
+                  </select>
+                  <label>Desde:</label>
+                  <input id="rad-inicio" type="date">
+                  <label>Hasta:</label>
+                  <input id="rad-fin" type="date">
+                  <button class="btn-consultar" onclick="radDash.consultar()">Consultar</button>
+                  <button class="btn-excel" onclick="radDash.exportarExcel()">Exportar Excel</button>
+                </div>
+                <div id="rad-resumen"></div>
+                <div id="rad-tabla"></div>
+              </div>
+
+              <!-- Gráfico 1: Por Estado -->
+              <div class="apx-card">
+                <div id="rad-estados"></div>
+              </div>
+
+              <!-- Gráfico 2: Por Dependencia -->
+              <div class="apx-card">
+                <div id="rad-dependencias"></div>
+              </div>
+
+              <!-- Gráfico 3: Por Responsable -->
+              <div class="apx-card">
+                <div id="rad-responsables"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.0/dist/apexcharts.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="../../js/iris/radicador/radicador_apexcharts.js"></script>
+  </body>
+</html>

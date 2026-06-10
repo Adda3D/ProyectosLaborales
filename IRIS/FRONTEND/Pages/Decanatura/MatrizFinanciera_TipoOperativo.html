@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Tipo Gasto Operativo</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row" id="dvMatrizFinanciera_TipoOperativo">
+          <div class="col-md-6 titletab">Tipo Gasto Operativo</div>
+        </div>
+        <div class="row">
+   <div class="form-group row mb-3">
+            <div class="col-md-6 titletab"></div>
+            <div class="col-md-6 text-center">                     
+          <!--  <button type="button" class="btn-iris success " onclick="VolverMatrizFinancieraDesdeGastoOperativo()">Volver Matriz</button>-->
+                <button type="button" class="btn btn-primaryiris" onclick="CrearMatrizFinanciera_TipoOperativo()" data-bs-toggle="modal" data-bs-target="#ModalMatrizFinanciera_TipoOperativo" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Tipo</button>
+              </div>    
+          </div>
+        </div>
+     
+
+        <div class="row scroll" id="tableMatrizFinanciera_TipoOperativo">
+          <div class="table-responsive col-md-8 offset-md-2">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblMatrizFinanciera_TipoOperativo" >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Código</th>
+                  <th>Nombre Gasto Operativo</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalMatrizFinanciera_TipoOperativo" tabindex="-1" role="dialog" aria-labelledby="ModalLabelMatrizFinanciera_TipoOperativo" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-fullscreen-md-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelMatrizFinanciera_TipoOperativo">Tipo Gasto Operativo</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formMatrizFinanciera_TipoOperativoDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalLabelMatrizFinanciera_TipoOperativo" class="btn-iris white small" onclick="CerrarModalMatrizFinanciera_TipoOperativo()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateMatrizFinanciera_TipoOperativoForm('formMatrizFinanciera_TipoOperativoDetalle', 'btnCloseModalLabelMatrizFinanciera_TipoOperativo')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Decanatura/MatrizFinanciera_TipoOperativoModel.js" ></script>
+    <script src="../../js/iris/Decanatura/MatrizFinanciera_TipoOperativo.js"></script>
+
+  </body>
+
+
+</html>

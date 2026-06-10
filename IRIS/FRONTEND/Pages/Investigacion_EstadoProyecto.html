@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Estado Proyeto</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divInvestigacion_EstadoProyectoHTML">
+                  <span id="spanIdInvestigacion_EstadoProyecto" class="ocultar" ></span>
+                  <span id="spanNombreInvestigacion_EstadoProyecto" class="ocultar" ></span>                                                  
+                  <div class="row" id="dvInvestigacion_EstadoProyectoTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">Estado Proyecto</div>
+                      <div class="col-md-6 text-center">
+                    
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearInvestigacion_EstadoProyecto()">Nuevo Estado</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicInvestigacion_EstadoProyecto">
+                      <div class="table-responsive col-md-6 offset-md-3">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblInvestigacion_EstadoProyecto" >
+                        <thead>
+                          <tr>
+                            <th>Estado Proyecto</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvInvestigacion_EstadoProyectoDetalle"></div>              
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Investigacion_EstadoProyecto.js"></script>
+    <script src="../js/iris/models/Investigacion_EstadoProyectoModel.js" ></script>
+
+
+  </body>
+
+
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--
+    <title>Propuestas Extensión</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvPrestadorServicioDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Datos Prestador Servicio</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPrestadorServicioDetalle" novalidate>
+                  <div class="form-group row mb-2">
+                    <span id="spanIdpersona" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Naturaleza</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboNaturalezaPersona" required></select>    
+                            <div class="invalid-feedback">
+                              Naturaleza es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Entidad</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoEntidadPersona" required></select>    
+                            <div class="invalid-feedback">
+                              Naturaleza es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Documento</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoDocumentoPersona" required></select>    
+                            <div class="invalid-feedback">
+                                Tipo Documento es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnumidentificacionPersona">No. Identificación</label>
+                        <input type="text" class="form-control iris" id="txtnumidentificacionPersona" maxlength="15" placeholder="# Identificación" data-span="spantxtnumidentificacionPersona" required/>
+                        <div class="invalid-feedback">
+                            No. Identificación es un campo obligatorio
+                        </div>
+                        <div id="spantxtnumidentificacionPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                                   
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtNombreCompletoPersona">Nombre / Razón Social</label>
+                        <input type="text" class="form-control iris" id="txtNombreCompletoPersona" maxlength="150" placeholder="Nombre Completo / Razón Social" data-span="spantxtNombreCompletoPersona" required/>
+                        <div class="invalid-feedback">
+                            Nombre / Razón Social es un campo obligatorio
+                        </div>
+                        <div id="spantxtNombreCompletoPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Genero</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboGeneroPersona" ></select>    
+                            <div class="invalid-feedback">
+                                Genero es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnacionalidadPersona">Nacionalidad</label>
+                        <input type="text" class="form-control iris" id="txtnacionalidadPersona" maxlength="20" placeholder="Nacionalidad" data-span="spantxtnacionalidadPersona" required/>
+                        <div class="invalid-feedback">
+                            Nacionalidad es un campo obligatorio
+                        </div>
+                        <div id="spantxtnacionalidadPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txttelefonoPersona">Teléfono</label>
+                        <input type="number" class="form-control iris" id="txttelefonoPersona" maxlength="15" placeholder="Teléfono" data-span="spantxttelefonoPersona" required/>
+                        <div class="invalid-feedback">
+                            Teléfono es un campo obligatorio
+                        </div>
+                        <div id="spantxttelefonoPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcelularPersona">Celular</label>
+                        <input type="number" class="form-control iris" id="txtcelularPersona" maxlength="15" placeholder="Celular" data-span="spantxtcelularPersona"/>
+                        <div id="spantxtcelularPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtdireccionPersona">Dirección</label>
+                        <input type="text" class="form-control iris" id="txtdireccionPersona" maxlength="150" placeholder="Dirección" data-span="spantxtdireccionPersona" required/>
+                        <div class="invalid-feedback">
+                            Dirección es un campo obligatorio
+                        </div>
+                        <div id="spantxtdireccionPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtciudadPersona">Ciudad</label>
+                        <input type="text" class="form-control iris" id="txtciudadPersona" maxlength="50" placeholder="Ciudad" data-span="spantxtciudadPersona"/>
+                        <div id="spantxtciudadPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcorreoPersona">Correo Electrónico</label>
+                        <input type="email" class="form-control iris" id="txtcorreoPersona" maxlength="100" placeholder="Correo Electrónico" data-span="spantxtcorreoPersona" required/>
+                        <div class="invalid-feedback">
+                            Correo Electrónico es un campo obligatorio
+                        </div>
+                        <div id="spantxtcorreoPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtinstitucionPersona">Institución</label>
+                        <input type="text" class="form-control iris" id="txtinstitucionPersona" maxlength="100" placeholder="Institución" data-span="spantxtinstitucionPersona" />
+                        <div id="spantxtinstitucionPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcargoPersona">Cargo</label>
+                        <input type="text" class="form-control iris" id="txtcargoPersona" maxlength="100" placeholder="Cargo" data-span="spantxtcargoPersona" />
+                        <div id="spantxtcargoPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="col-md-12">
+                          <label class="form-label-iris">Dependencia</label>
+                      </div>
+                      <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboDependenciaPersona" ></select>    
+                          <div class="invalid-feedback">
+                            Dependencia es un campo obligatorio
+                          </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Servicio</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboTipoServicioPersona" required></select>    
+                            <div class="invalid-feedback">
+                              Tipo Servicio es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>  
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="txtareainterespersona">Área Interes</label>
+                        <textarea class="form-control iris" id="txtareainterespersona" maxlength="300" rows="2" placeholder="Área Interes" data-span="spantxtareainterespersona"></textarea>                                
+                        <div id="spantxtareainterespersona" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtenlacecvlacpersona">Contrato/Convenio</label>
+                        <input type="text" class="form-control iris" id="txtenlacecvlacpersona" maxlength="50" placeholder="Enlace CVLAC" data-span="spantxtenlacecvlacpersona"/>
+                        <div id="spantxtenlacecvlacpersona" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="txtperfilpersona">Perfil</label>
+                        <textarea class="form-control iris" id="txtperfilpersona" maxlength="300" rows="2" placeholder="Perfil" data-span="spantxtperfilpersona"></textarea>                                
+                        <div id="spantxtperfilpersona" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Formación</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboFormacionPersona" ></select>    
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Título más alto</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboTituloaltoPersona" ></select>    
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txttituloposgradospersona">Título Posgrado</label>
+                        <input type="text" class="form-control iris" id="txttituloposgradospersona" maxlength="100" placeholder="Enlace CVLAC" data-span="spantxttituloposgradospersona"/>
+                        <div id="spantxttituloposgradospersona" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Calificación</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboidcalificacionPersona" ></select>    
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="txtobservacionespersona">Observaciones</label>
+                        <textarea class="form-control iris" id="txtobservacionespersona" maxlength="500" rows="2" placeholder="Observaciones" data-span="spantxtobservacionespersona"></textarea>                                
+                        <div id="spantxtobservacionespersona" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2 d-flex justify-content-center align-items-center">
+                        <label class="form-label-iris" for="chkEvaluadorPublicacionPersona"><input type="checkbox" onchange="EnableDatosEvaluadorPersona();" class="form-check-input iris-check" id="chkEvaluadorPublicacionPersona"/>Es Evaluador Publicación</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Evaluador</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboTipoEvaluadorPersona" disabled></select>    
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcvlacEvaluadorPersona">Proyecto Extensión</label>
+                        <input type="text" class="form-control iris" id="txtcvlacEvaluadorPersona" maxlength="100" placeholder="Minciencias CVLAC" data-span="spantxtcvlacEvaluadorPersona" disabled/>
+                        <div id="spantxtcvlacEvaluadorPersona" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaPersonasDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Prestador" onclick="ValidatePostUpdatePrestadorServicio('formPrestadorServicioDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/prestadorservicio/detalle_prestadorservicio.js"></script>    
+
+  </body>
+
+
+</html>

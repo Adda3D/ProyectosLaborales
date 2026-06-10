@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>CUERPOS COLEGIADOS</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">CUERPOS COLEGIADOS</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecVie_CuerposColegiadosDetalle" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanIdDecVie_CuerposColegiadosForm" class="ocultar" ></span>  
+                    <input type="text" class="ocultar" id="txtid_cuerposcolegiados_DecVie_CuerposColegiados"/>                  
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="dtano_DecVie_CuerposColegiados">Año</label>                        
+                        <input type="date" class="form-control iris" id="dtano_DecVie_CuerposColegiados" data-span="spandtano_DecVie_CuerposColegiados" required/>
+                        <div class="invalid-feedback">
+                          Año es un campo obligatorio
+                        </div>
+                        <div id="spandtano_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="dtfecha_DecVie_CuerposColegiados">Fecha</label>                        
+                        <input type="date" class="form-control iris" id="dtfecha_DecVie_CuerposColegiados" data-span="spandtfecha_DecVie_CuerposColegiados" required/>
+                        <div class="invalid-feedback">
+                          Fecha es un campo obligatorio
+                        </div>
+                        <div id="spandtano_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnumacta_DecVie_CuerposColegiados">Número Acta</label>
+                        <input type="text" class="form-control iris" id="txtnumacta_DecVie_CuerposColegiados" maxlength="250" placeholder="N° Acta" data-span="spantxtnumacta_DecVie_CuerposColegiados" required/>                                
+                        <div class="invalid-feedback">
+                            Número Acta es un campo obligatorio
+                        </div>
+                        <div id="spantxtnumacta_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Colegiados</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_colegiado_DecVie_CuerposColegiados" required></select>    
+                            <div class="invalid-feedback">
+                                Colegiados es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Macroproceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decviemacroproceso_DecVie_CuerposColegiados" required></select>    
+                            <div class="invalid-feedback">
+                                Macroproceso es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtdecisionrecomendacion_DecVie_CuerposColegiados">Decisión/Recomendación</label>                                
+                        <textarea class="form-control iris" id="txtdecisionrecomendacion_DecVie_CuerposColegiados" maxlength="2000" rows="3" placeholder="Decisión" data-span="spantxtdecisionrecomendacion_DecVie_CuerposColegiados"></textarea>
+                        <div id="spantxtdecisionrecomendacion_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Dependencias</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_depend_DecVie_CuerposColegiados" required></select>    
+                            <div class="invalid-feedback">
+                                Dependencia es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                   <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtchasqui_DecVie_CuerposColegiados">Número Chasqui</label>
+                        <input type="text" class="form-control iris" id="txtchasqui_DecVie_CuerposColegiados" maxlength="30"  placeholder="Chasqui" data-span="spantxtchasqui_DecVie_CuerposColegiados"></input>
+                        <div id="spantxtchasqui_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div> 
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnumconsecutivosecretaria_DecVie_CuerposColegiados">Consecutivo Secretaría</label>
+                        <input type="text" class="form-control iris" id="txtnumconsecutivosecretaria_DecVie_CuerposColegiados" maxlength="30"  placeholder="Consecutivo" data-span="spantxtnumconsecutivosecretaria_DecVie_CuerposColegiados"></input>
+                        <div id="spantxtnumconsecutivosecretaria_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtobservaciones_DecVie_CuerposColegiados">Observaciones</label>
+                        <input type="text" class="form-control iris" id="txtobservaciones_DecVie_CuerposColegiados" maxlength="500"  placeholder="Observaciones" data-span="spantxtobservaciones_DecVie_CuerposColegiados"></input>
+                        <div id="spantxtobservaciones_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txturl_DecVie_CuerposColegiados">Link Acta</label>
+                        <input type="text" class="form-control iris" id="txturl_DecVie_CuerposColegiados" maxlength="300"  placeholder="Link Acta" data-span="spantxturl_DecVie_CuerposColegiados"></input>
+                        <div id="spantxturl_DecVie_CuerposColegiados" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                   
+                    </div>
+
+                     <!-- <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Macroproceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decviemacroproceso_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                                Macroproceso es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="chkinterno_DecVie_Consecutivo">Interno</label> 
+                            <input type="checkbox" class="form-check-input iris-check" id="chkinterno_DecVie_Consecutivo"/>
+                        <div id="spanchkinterno_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="chkexterno_DecVie_Consecutivo">Externo</label> 
+                            <input type="checkbox" class="form-check-input iris-check" id="chkexterno_DecVie_Consecutivo"/>
+                        <div id="spanchkexterno_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                         
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Responsable Solicitud</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboidfuncionario_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                              Responsable Solicitud es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtobservaciones_DecVie_Consecutivo">Observaciones</label>
+                        <textarea class="form-control iris" id="txtobservaciones_DecVie_Consecutivo" maxlength="500" rows="3" placeholder="Consecutivo" data-span="spantxtobservaciones_DecVie_Consecutivo"></textarea>
+                        <div id="spantxtobservaciones_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>     -->                  
+                  
+                  
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="CerrarDecVie_CuerposColegiadosDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Cuerpo Colegiado" onclick="ValidatePostUpdateDecVie_CuerposColegiados('formDecVie_CuerposColegiadosDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Vie/DecVie_CuerposColegiadosDetalle.js"></script>    
+
+  </body>
+
+
+</html>

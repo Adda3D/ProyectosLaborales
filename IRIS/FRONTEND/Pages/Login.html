@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRIDENT ERP | Login</title>
+
+    <link rel="shortcut icon" href="TridentIco.ico" />
+    <link href="../lib/bootstrap/dist/css/" rel="stylesheet">
+    <!--<link href="../Content/Template/css/bootstrap-dialog.min.css" rel="stylesheet" />-->
+
+    <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="../lib/css/animate.css" rel="stylesheet">
+    <link href="../lib/css/style.css" rel="stylesheet">
+
+    <link href="../lib/select2-4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body class="gray-bg">
+    <div id="banner" class="container" style="margin-top: 3em;"></div>
+    <!--<div class="middle-box text-center loginscreen animated fadeInDown">-->
+    <div class="col-md-12">
+        <div class="w3l-login-form col-md-6 col-sm-8 col-xs-8 col-lg-4 col-xl-3 centred">
+            <div class="w3l-form-group">
+                <div class="imgbanner text-center">
+                    <svg width="93%" height="93%">
+                        <image xlink:href="/images/escudoUnal.svg" width="100%" height="100%" class="hidden-print"></image>
+                      </svg>
+                    <img width="200" height="94" src="/images/escudoUnal.svg" class="img-responsive" />
+                </div>
+                <h5 class="text-center titleLoguin"><b>TRIDENT CLOUD ERP</b></h5>
+            </div>
+            
+            <form class="bootstrap-form needs-validation m-t" id="formLoginV" novalidate>
+                <div id="formLogin" class="dvLogin">
+                    <div class="form-group">
+                        <input type="email" id="txtEmail" class="form-control" style="border-radius: 4px;" placeholder="Correo / Usuario" required>
+                    </div>
+                    <div class="form-group dvPass">
+                        <input type="password" id="txtPassword" class="form-control" style="border-radius: 4px;" placeholder="Contraseña" required>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8 centred">
+                        <input type="button" value="INGRESAR" onclick="ValidateLogin()" class="btn btn-primary block full-width m-b btnlogin" />
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-8 centred">
+                        <p><a href="#">¿Olvidó su contraseña?</a></p>
+                    </div>
+                </div>
+                <div id="formEmpresas" class="dvLogin ocultar">
+                    <div class="">
+                        <label class="col-form-label">Empresas Autorizadas</label>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control m-b" id="cbEmpresas"></select>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 centred">
+                        <input type="button" value="Continuar" onclick="LoadUrlEmpresa()" class="btn btn-primary block full-width m-b btnlogin" />
+                        <input type="button" value="Volver" onclick="VolverLogin()" class="btn btn-info block full-width m-b btnloginvolver" />
+                    </div>
+                </div>
+            </form>
+            <form class="bootstrap-form needs-validation m-t" id="formCrearEmpresa" novalidate>
+                <div id="formCrearEmpresas" class="dvLogin ocultar">
+                    <span id="spanIdSuscripcion" class="ocultar"></span>
+                    <div class="form-group">
+                        <input type="text" id="txtIdentificacion" class="form-control" maxlength="15" style="border-radius: 4px;" placeholder="Identificación" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtRazonSocial" class="form-control" maxlength="120" style="border-radius: 4px;" placeholder="Razón Social" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtAlias" class="form-control" maxlength="30" style="border-radius: 4px;" placeholder="Alias" required>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 centred">
+                        <input type="button" value="Crear" onclick="validateCrearEmpresa()" class="btn btn-primary block full-width m-b btnlogin" />
+                        <input type="button" value="Volver" onclick="VolverLogin()" class="btn btn-info block full-width m-b btnloginvolver" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div align="center">
+            <h5 style="margin-top: 30px">© 2019 TRIDENT. Todos los derechos reservados</h5>
+        </div>
+        <div id="LoadPage">
+        </div>
+    </div>
+
+    <div id="dvLoader" class="transbox dvLoaderClass"></div>
+
+    <!-- Mainly scripts -->
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script src="../lib/js/popper.min.js"></script>
+    <script src="../lib/bootstrap/dist/js/bootstrap.js"></script>
+    <!--<script src="../Content/Template/js/bootstrap-dialog.min.js"></script>-->
+
+    <!-- Select 2 -->
+    <script src="../lib/select2-4.0.13/dist/js/select2.min.js"></script>
+    <!--<script src="../JS/GetFunctions.js"></script>-->
+    <!-- Validator.js -->
+    <script src="../lib/js/validator.js"></script>
+    <script src="../lib/js/validator2.js"></script>
+
+    <!-- Proyecto scripts -->
+    <!--<script src="../JS/UpdateFiles/AddFileLogin.js"></script>-->
+
+    <script src="../lib/pace-js/pace.min.js"></script>
+</body>
+
+</html>

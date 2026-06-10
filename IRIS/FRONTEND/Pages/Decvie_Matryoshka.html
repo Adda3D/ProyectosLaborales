@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Matryoshka</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecvie_MatryoshkaHTML">
+                <span id="spanIdDecvie_Matryoshka" class="ocultar" ></span>
+                <span id="spanAlcancePoliticaDecvie_Matryoshka" class="ocultar" ></span>
+                <span id="spanDependenciaDecvie_Matryoshka" class="ocultar" ></span>
+                <div class="row" id="dvDecvie_MatryoshkaTable">
+                  <div class="row">
+                    <div class="col-md-4 titletab">MATRYOSHKA</div>
+                    <div class="col-md-3 text-center">     
+                      <div class="col-md-4">
+                        <label class="form-label-iris">Filtro Dependencia:</label>
+                      </div>  
+                      <div class="col-md-6 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboFiltroDependenciaUsuario" onchange="ActualizarFiltroDependenciaMatryoshkaUsuario();"></select>
+                      </div>
+                    </div>              
+                    <div class="col-md-4 text-center">                 
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecvie_Matryoshka()">Nueva Matryoshka</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecvie_Matryoshka">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecvie_Matryoshka" >
+                        <thead>
+                          <tr>  
+                            <th>Alcance</th>
+                            <th>Dependencia</th> 
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecvie_MatryoshkaDetalle"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecvie_MatryoshkaEjesEstrategicos"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecvie_MatryoshkaProgramaPgd"></div>
+
+   <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvDecvie_MatryoshkaEstrategia"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvDecvie_MatryoshkaObjetivoPgd"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvDecvie_MatryoshkaObjetivoDep"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecvie_MatryoshkaMetaDep"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecvie_MatryoshkaActividadDep"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecvie_MatryoshkaIndicadorEstrategico"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecvie_MatryoshkaNuevoIndicador"></div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/models/Decvie_MatryoshkaModel.js" ></script>    
+    <script src="../js/iris/Decvie_Matryoshka.js"></script>    
+
+  </body>
+
+
+</html>
+

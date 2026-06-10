@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divSemestreHTML">
+                <div class="container" id="dvSemestreTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Semestre</div>
+                    <div class="col-md-6 text-center">                     
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearSemestre()" data-bs-toggle="modal" data-bs-target="#ModalSemestre" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Semestre</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicSemestre">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblSemestre" >
+                        <thead>
+                          <tr>
+                            <th>Detalle Semestre</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalSemestre" tabindex="-1" role="dialog" aria-labelledby="ModalLabelSemestre" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelSemestre">Semestre</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formSemestre" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdSemestre" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdSemestre">Nuevo Semestre</label>
+                                <input type="text" class="form-control iris" id="txtCdSemestre" maxlength="30"placeholder="Semestre" data-span="spanCdSemestre" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Semestre es un campo obligatorio
+                                </div>
+                                <div id="spanCdSemestre" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseSemestreModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateSemestre('formSemestre', 'btnCloseSemestreModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Semestre.js"></script>
+
+
+  </body>
+
+
+</html>

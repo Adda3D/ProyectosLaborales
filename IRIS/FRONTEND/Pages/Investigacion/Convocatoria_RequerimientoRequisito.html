@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Requerimientos Requisitos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row" id="dvConvocatoria_RequerimientoRequisito">
+          <div class="col-md-6 titletab">REQUERIMIENTOS REQUISITOS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtTituloConvocatoria_RequerimientoRequisito">Titulo Convocatoria</label>
+              <input type="text" class="form-control iris" id="txtTituloConvocatoria_RequerimientoRequisito" disabled/>
+            </div>
+            <!-- <div class="col-md-3">
+              <label class="form-label-iris" for="txtDependenciaConvocatoria_RequerimientoRequisito">Dependencia</label>
+              <input type="text" class="form-control iris" id="txtDependenciaConvocatoria_RequerimientoRequisito" disabled/>
+            </div> -->
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaConvocatoria_RequerimientoRequisitoDesdeRequisitos()">Volver Convocatorias</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearConvocatoria_RequerimientoRequisito()" data-bs-toggle="modal" data-bs-target="#ModalConvocatoria_RequerimientoRequisito" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Requerimiento</button>
+              </div>    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeEjes()">Volver Matryoshka</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearMatryoshkaEjesEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalMatryoshkaEjesEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Eje</button>
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableConvocatoria_RequerimientoRequisito">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblConvocatoria_RequerimientoRequisito" >
+              <thead>
+                <tr>                                              
+                  <th>Requerimientos</th>
+                  <th>Link Documentos</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalConvocatoria_RequerimientoRequisito" tabindex="-1" role="dialog" aria-labelledby="ModalLabelConvocatoria_RequerimientoRequisito" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelConvocatoria_RequerimientoRequisito">Requerimientos / Requisitos</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formConvocatoria_RequerimientoRequisitoDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalModalLabelConvocatoria_RequerimientoRequisito" class="btn-iris white small" onclick="CerrarConvocatoria_RequerimientoRequisito()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateConvocatoria_RequerimientoRequisitoForm('formConvocatoria_RequerimientoRequisitoDetalle', 'btnCloseModalModalLabelConvocatoria_RequerimientoRequisito')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Convocatoria_RequerimientoRequisitoModel.js" ></script>
+    <script src="../../js/iris/Investigacion/Convocatoria_RequerimientoRequisito.js"></script>
+
+  </body>
+
+
+</html>

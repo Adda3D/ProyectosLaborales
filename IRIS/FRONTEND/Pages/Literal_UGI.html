@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divLiteral_UGIHTML">
+                <div class="container" id="dvLiteral_UGITable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Literal U.G.I.</div>
+                    <div class="col-md-6 text-center">
+                    
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearLiteral_UGI()" data-bs-toggle="modal" data-bs-target="#ModalLiteral_UGI" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Literal</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicLiteral_UGI">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblLiteral_UGI" >
+                        <thead>
+                          <tr>
+                            <th>Literales</th>
+                            <th>Descripción</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalLiteral_UGI" tabindex="-1" role="dialog" aria-labelledby="ModalLabelLiteral_UGI" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelLiteral_UGI">Literal U.G.I.</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formLiteral_UGI" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdLiteral_UGI" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdLiteralUGI">Nuevo Literal</label>
+                                <input type="text" class="form-control iris" id="txtCdLiteralUGI" maxlength="10"placeholder="Literal" data-span="spanCdLiteralUGI" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Literal es un campo obligatorio
+                                </div>
+                                <div id="spanCdLiteralUGI" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtLiteral_UGI">Descripción</label>
+                                <input type="text" class="form-control iris" id="txtLiteral_UGI" maxlength="250" placeholder="Descripción" data-span="spanLiteral_UGI" required/>
+                                <div class="invalid-feedback">
+                                  Descripción es un campo obligatorio
+                                </div>
+                                <div id="spanLiteral_UGI" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseLiteral_UGIModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateLiteral_UGI('formLiteral_UGI', 'btnCloseLiteral_UGIModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Literal_UGI.js"></script>
+
+
+  </body>
+
+
+</html>

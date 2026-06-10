@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Plan Acción Objetivo Dependencia</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_PlanAccionObjetivoDependenciaHTML">
+                <div class="container" id="dvDecVie_PlanAccionObjetivoDependenciaTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Objetivos Dependencias</div>
+                    <div class="col-md-6 text-center">
+                    
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_PlanAccionObjetivoDependencia()" data-bs-toggle="modal" data-bs-target="#ModalDecVie_PlanAccionObjetivoDependencia" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Objetivo</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_PlanAccionObjetivoDependencia">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblDecVie_PlanAccionObjetivoDependencia" >
+                        <thead>
+                          <tr>
+                            <th>Objetivos Dependencias</th>
+                            <th>Descripción</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos COntractuales -->
+                <div class="modal fade" id="ModalDecVie_PlanAccionObjetivoDependencia" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecVie_PlanAccionObjetivoDependencia" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelDecVie_PlanAccionObjetivoDependencia">Objetivos Dependencias</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formDecVie_PlanAccionObjetivoDependencia" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdDecVie_PlanAccionObjetivoDependencia" class="ocultar" ></span>
+                              <span id="spanIdDependenciaPlanAccionObjetivoDependencia" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdDecViePlanAccionObjetivoDependencia">Objetivos Dependencias</label>
+                                <input type="text" class="form-control iris" id="txtCdDecViePlanAccionObjetivoDependencia" maxlength="250"placeholder="Objetivo" data-span="spanCdDecViePlanAccionObjetivoDependencia" required/>
+                                <div class="invalid-feedback">
+                                    Objetivo  Dependencia es un campo obligatorio
+                                </div>
+                                <div id="spanCdDecViePlanAccionObjetivoDependencia" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtDecVie_PlanAccionObjetivoDependencia">Observacinoes</label>
+                                <input type="text" class="form-control iris" id="txtDecVie_PlanAccionObjetivoDependencia" maxlength="120" placeholder="Observaciones" data-span="spanDecVie_PlanAccionObjetivoDependencia" required/>
+                                <div class="invalid-feedback">
+                                  Observaciones es un campo obligatorio
+                                </div>
+                                <div id="spanDecVie_PlanAccionObjetivoDependencia" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseDecVie_PlanAccionObjetivoDependenciaModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateDecVie_PlanAccionObjetivoDependencia('formDecVie_PlanAccionObjetivoDependencia', 'btnCloseDecVie_PlanAccionObjetivoDependenciaModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/DecVie_PlanAccionObjetivoDependencia.js"></script>
+
+
+  </body>
+
+
+</html>

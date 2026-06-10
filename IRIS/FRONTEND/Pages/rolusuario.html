@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Roles de Usuario</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divRolesUsuarioHTML">
+                <span id="spanIdRolUsuario" class="ocultar" ></span>
+                <span id="spanNombreRolUsuario" class="ocultar" ></span>
+
+                <div class="container" id="dvRolesUsuarioTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Roles Usuario</div>
+                    <div class="col-md-6 text-center">                     
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearRolesUsuario()" data-bs-toggle="modal" data-bs-target="#ModalRolesUsuario" data-bs-keyboard="false" data-bs-backdrop="static">Crear Rol</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicRolesUsuario">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblRolesUsuario" >
+                        <thead>
+                          <tr>
+                            <th>Nombre Rol</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Roles -->
+                <div class="modal fade" id="ModalRolesUsuario" tabindex="-1" role="dialog" aria-labelledby="ModalLabelRolesUsuario" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelRolesUsuario">Datos Rol</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formRolesUsuario" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseRolesUsuarioModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateRolesUsuario('formRolesUsuario', 'btnCloseRolesUsuarioModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row ocultar col-md-12 scroll" id="dvRolUsuarioAccesos"></div>                
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris//models/rolusuarioModel.js"></script>
+    <script src="../JS/iris/rolusuario.js"></script>
+
+
+  </body>
+
+
+</html>

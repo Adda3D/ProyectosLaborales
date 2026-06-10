@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>MAtryoshka Programa PGD</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">MATRYOSHKA PROGRAMAS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtAlcanceDecvie_MatryoshkaProgramaPgd">Alcance</label>
+              <input type="text" class="form-control iris" id="txtAlcanceDecvie_MatryoshkaProgramaPgd" disabled/>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtDependenciaDecvie_MatryoshkaProgramaPgd">Dependencia</label>
+              <input type="text" class="form-control iris" id="txtDependenciaDecvie_MatryoshkaProgramaPgd" disabled/>
+            </div>
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeProgramas()">Volver Matryoshka</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearDecvie_MatryoshkaProgramaPgd()" data-bs-toggle="modal" data-bs-target="#ModalDecvie_MatryoshkaProgramaPgd" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Programa</button>
+              </div>    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeEjes()">Volver Matryoshka</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearMatryoshkaEjesEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalMatryoshkaEjesEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Eje</button>
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableDecvie_MatryoshkaProgramaPgd">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecvie_MatryoshkaProgramaPgd" >
+              <thead>
+                <tr>                                              
+                  <th>Programa</th>
+                  <th>Descripción</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalDecvie_MatryoshkaProgramaPgd" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecvie_MatryoshkaProgramaPgd" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelDecvie_MatryoshkaProgramaPgd">Programas</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecvie_MatryoshkaProgramaPgdDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalModalLabelDecvie_MatryoshkaProgramaPgd" class="btn-iris white small" onclick="CerrarModalDecvie_MatryoshkaProgramaPgd()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateDecvie_MatryoshkaProgramaPgdForm('formDecvie_MatryoshkaProgramaPgdDetalle', 'btnCloseModalModalLabelDecvie_MatryoshkaProgramaPgd')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Decvie_MatryoshkaProgramaPgdModel.js" ></script>
+    <script src="../../js/iris/Vie/Decvie_MatryoshkaProgramaPgd.js"></script>
+
+  </body>
+
+
+</html>

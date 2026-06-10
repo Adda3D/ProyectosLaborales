@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Matryoshka Actividades Dependencia</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">ACTIVIDADES DEPENDENCIA</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtAlcanceDecvie_MatryoshkaActividadDep">Alcance</label>
+              <input type="text" class="form-control iris" id="txtAlcanceDecvie_MatryoshkaActividadDep" disabled/>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtDependenciaDecvie_MatryoshkaActividadDep">Dependencia</label>
+              <input type="text" class="form-control iris" id="txtDependenciaDecvie_MatryoshkaActividadDep" disabled/>
+            </div>
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeActividades()">Volver Matryoshka</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearDecvie_MatryoshkaActividadDep()" data-bs-toggle="modal" data-bs-target="#ModalDecvie_MatryoshkaActividadDep" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Actividad</button>
+              </div>    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeEjes()">Volver Matryoshka</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearMatryoshkaEjesEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalMatryoshkaEjesEstrategicos" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Eje</button>
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableDecvie_MatryoshkaActividadDep">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecvie_MatryoshkaActividadDep" >
+              <thead>
+                <tr>                                              
+                  <th>Meta</th>
+                  <th>Actividades</th>                                  
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalDecvie_MatryoshkaActividadDep" tabindex="-1" role="dialog" aria-labelledby="ModalLabelDecvie_MatryoshkaActividadDep" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelDecvie_MatryoshkaActividadDep">Actividades Dependencia</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecvie_MatryoshkaActividadDepDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalModalLabelDecvie_MatryoshkaActividadDep" class="btn-iris white small" onclick="CerrarModalDecvie_MatryoshkaActividadDep()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateDecvie_MatryoshkaActividadDepForm('formDecvie_MatryoshkaActividadDepDetalle', 'btnCloseModalModalLabelDecvie_MatryoshkaActividadDep')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Decvie_MatryoshkaActividadDepModel.js" ></script>
+    <script src="../../js/iris/Vie/Decvie_MatryoshkaActividadDep.js"></script>
+
+  </body>
+
+
+</html>

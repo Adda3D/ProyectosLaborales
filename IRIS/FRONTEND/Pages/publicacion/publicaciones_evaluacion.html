@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Evaluación</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIONES SEGUIMIENTO EVALUACIÓN</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtKardexPublicacionEvaluacion">Kardex</label>
+              <input type="text" class="form-control iris" id="txtKardexPublicacionEvaluacion" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtHermesPublicacionEvaluacion">Hermes</label>
+              <input type="text" class="form-control iris" id="txtHermesPublicacionEvaluacion" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombrePublicacionEvaluacion">Nombre Publicación</label>
+              <textarea class="form-control iris" id="txtNombrePublicacionEvaluacion" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 titletab"></div>
+          <div class="col-md-6 text-center" id="dvVolverTablaPublicacionesDesdeEvaluacion">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeEvaluacion()">Volver Listado Publicaciones</button>            
+          </div>
+        </div>
+
+        <div class="row scroll" id="tablePublicacionEvaluacion">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionEvaluacion">
+                <li class="liopcion selected" id="liPUBEVAL_Evaluadores">
+                    <a class="nav-link tabPrin active show" id="navPUBEVAL_Evaluadores" data-toggle="tab" href="#PUBEVAL_Evaluadores" onclick="onclickTabPublicacionEvaluacion('PUBEVAL_Evaluadores',0)">EVALUADORES</a>
+                </li>
+                <!--
+                <li class="liopcion selected" id="liPUBEVAL_Conceptos">
+                    <a class="nav-link tabPrin active " id="navPUBEVAL_Conceptos" data-toggle="tab" href="#PUBEVAL_Conceptos" onclick="onclickTabPublicacionEvaluacion('PUBEVAL_Conceptos',1)">REALIZACION CONCEPTOS</a>
+                </li>
+                -->
+                <li class="liopcion selected" id="liPUBEVAL_Evaluacion">
+                    <a class="nav-link tabPrin active " id="navPUBEVAL_Evaluacion" data-toggle="tab" href="#PUBEVAL_Evaluacion" onclick="onclickTabPublicacionEvaluacion('PUBEVAL_Evaluacion',2)">EVALUACIÓN INICIAL</a>
+                </li>
+                <li class="liopcion selected" id="liPUBEVAL_Aprobacion">
+                    <a class="nav-link tabPrin active " id="navPUBEVAL_Aprobacion" data-toggle="tab" href="#PUBEVAL_Aprobacion" onclick="onclickTabPublicacionEvaluacion('PUBEVAL_Aprobacion',3)">APROBACIONES</a>
+                </li>
+                <li class="liopcion selected" id="liPUBEVAL_Observacion">
+                  <a class="nav-link tabPrin active " id="navPUBEVAL_Observacion" data-toggle="tab" href="#PUBEVAL_Observacion" onclick="onclickTabPublicacionEvaluacion('PUBEVAL_Observacion',3)">OBSERVACIONES</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionEvaluacion">
+                <div role="tabpanel" id="tabPUBEVAL_Evaluadores" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBEVAL_Evaluadores">
+                        
+                    </div>
+                </div>
+                <!--
+                <div role="tabpanel" id="tabPUBEVAL_Conceptos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBEVAL_Conceptos">
+                        
+                    </div>
+                </div>
+                -->
+                <div role="tabpanel" id="tabPUBEVAL_Evaluacion" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBEVAL_Evaluacion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBEVAL_Aprobacion" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBEVAL_Aprobacion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBEVAL_Observacion" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBEVAL_Observacion">
+                      
+                  </div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicaciones_evaluacion.js"></script>
+
+  </body>
+
+
+</html>
+

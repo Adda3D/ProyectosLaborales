@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Gastos Impuestos, Contribuciones y Multas</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">DETALLE GASTOS IMPUESTOS, CONTRIBUCIONES Y MULTAS</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                                             
+            <button type="button" class="btn btn-primaryiris" onclick="CrearGastoImpuestosPublicacion()">Crear Gasto</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tablePublicacionGastosImpuestos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicacionGastosImpuestos" >
+              <thead>
+                <tr>                            
+                  <th>Descripción</th>
+                  <th>Concepto</th>
+                  <th>F. Legalización</th>
+                  <th>Tipo</th>
+                  <th>No. Orden</th>
+                  <th>Inicio</th>
+                  <th>Final</th>
+                  <th>Estado</th>
+                  <th>Valor Total</th>
+                  <th>T. Con 4*1000</th>
+                  <th>Valor Pagado</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicaciontablaPUBFinancieroImpuestos.js"></script>
+
+  </body>
+
+
+</html>
+

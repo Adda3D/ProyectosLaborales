@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Edicion Cesión Derechos</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Publicación Edicion - Cesión Derechos</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionEdicionCesionDerechos" novalidate>
+                    <div class="form-group row mb-2">
+                        <span id="spanPublicacionEdicionIdCesionDerechos" class="ocultar" ></span>
+                        <input type="text" class="ocultar" id="txtid_cesionderechos_Publicaciones_CesionDerechos"/>
+                        <input type="text" class="ocultar" id="txtid_crearpublicacion_Publicaciones_CesionDerechos"/>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                            <label class="form-label-iris" for="chkfirmaautores_Publicaciones_CesionDerechos"><input type="checkbox" class="form-check-input iris-check" id="chkfirmaautores_Publicaciones_CesionDerechos"/>Firma Autores</label>
+                        </div>
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">                            
+                            <label class="form-label-iris" for="chkfirmadecano_Publicaciones_CesionDerechos"><input type="checkbox" class="form-check-input iris-check" id="chkfirmadecano_Publicaciones_CesionDerechos" title="si es de colección Gerardo Molina o PJP director Editorial"/>Firma Decano</label>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Licencias Reproducción</label>
+                            </div>
+                            <div class="col-md-12 font-size-iris">                                
+                                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cbolicrepro_Publicaciones_CesionDerechos" required></select>
+                                <div class="invalid-feedback">
+                                    Licencias Reproducción es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>    
+                        <div class="col-md-2 d-flex justify-content-center align-items-center">                            
+                            <label class="form-label-iris" for="chklicrepo_Publicaciones_CesionDerechos"><input type="checkbox" class="form-check-input iris-check" id="chklicrepo_Publicaciones_CesionDerechos" title="Licencias del Repositorio"/>Licencias Repositorio</label>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtestado_Publicaciones_CesionDerechos">Estado</label>
+                            <input type="text" class="form-control iris" id="txtestado_Publicaciones_CesionDerechos" maxlength="50" title="Estado Cesión Derechos" data-span="spantxtestado_Publicaciones_CesionDerechos"/>
+                            <div id="spantxtestado_Publicaciones_CesionDerechos" class="color-required ocultar">
+                                No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label-iris" for="txtobservaciones_Publicaciones_CesionDerechos">Observaciones</label>
+                            <textarea class="form-control iris" id="txtobservaciones_Publicaciones_CesionDerechos" maxlength="500" rows="3" placeholder="Observaciones" data-span="spantxtobservaciones_Publicaciones_CesionDerechos" ></textarea>
+                            <div class="invalid-feedback">
+                                Observaciones es un campo obligatorio
+                            </div>
+                            <div id="spantxtobservaciones_Publicaciones_CesionDerechos" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>                        
+                        <div class="col-md-4">
+                            <label class="form-label-iris" for="txtenlacesdrive_Publicaciones_CesionDerechos">Enlaces Drive</label>
+                            <textarea class="form-control iris" id="txtenlacesdrive_Publicaciones_CesionDerechos" maxlength="500" rows="3" placeholder="Enlaces Drive" data-span="spantxtenlacesdrive_Publicaciones_CesionDerechos" ></textarea>
+                            <div class="invalid-feedback">
+                                Enlaces Drive es un campo obligatorio
+                            </div>
+                            <div id="spantxtenlacesdrive_Publicaciones_CesionDerechos" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" id="btnVolver12" value="Cancelar" onclick="VolverTablaPublicacionesDesdeCesionDerechos()" class="btn-iris cancel small"/>              
+              <input type="button" value="Guardar Datos Cesión Derechos" onclick="ValidatePostUpdatePublicacionEdicionCesionDerechosForm('formPublicacionEdicionCesionDerechos')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+        
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Publicaciones_CesionDerechosModel.js"></script>
+    <script src="../../js/iris/publicacion/publicacionPUBEDIT_CesionDerechos.js"></script>
+    
+    
+
+  </body>
+
+
+</html>

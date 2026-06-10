@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Control Financiero</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIÓN SEGUIMIENTO FINANCIERO Y ADMINISTRATIVO</div>
+        </div>
+        <div class="row">
+            <div class="form-group row mb-2">            
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtKardexPublicacionControlFinanciero">Kardex</label>
+                  <input type="text" class="form-control iris" id="txtKardexPublicacionControlFinanciero" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtHermesPublicacionControlFinanciero">Hermes</label>
+                  <input type="text" class="form-control iris" id="txtHermesPublicacionControlFinanciero" disabled/>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label-iris" for="txtNombrePublicacionControlFinanciero">Nombre Publicación</label>
+                  <textarea class="form-control iris" id="txtNombrePublicacionControlFinanciero" rows="2" disabled></textarea>                                
+                </div>
+                <div class="col-md-4 text-center" id="dvVolverTablaPublicacionesDesdeControlFinanciero">                  
+                    <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeControlFinanciero()">Volver Listado Publicaciones</button>         
+                    <button type="button" class="btn-iris success " onclick="GenerarExcelPublicacionControlFinanciero()">Exportar Excel</button>   
+                </div>        
+              </div>    
+        </div>
+
+        <div class="row scroll" id="tablePublicacionControlFinanciero">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionControlFinanciero">
+                <li class="liopcion liselected" id="liPUBFinancieroIngresos">
+                    <a class="nav-link tabPrin active show" id="navPUBFinancieroIngresos" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroIngresos',0)">INGRESOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroGastos">
+                    <a class="nav-link tabPrin active " id="navPUBFinancieroGastos" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroGastos',1)">GASTOS PERSONAL</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroBienes">
+                    <a class="nav-link tabPrin active " id="navPUBFinancieroBienes" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroBienes',2)">BIENES</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroServicios">
+                    <a class="nav-link tabPrin active " id="navPUBFinancieroServicios" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroServicios',3)">SERVICIOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroImpuestos">
+                    <a class="nav-link tabPrin active " id="navPUBFinancieroImpuestos" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroImpuestos',4)">IMPUESTOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroTransferencias">
+                    <a class="nav-link tabPrin active " id="navPUBFinancieroTransferencias" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroTransferencias',5)">TRANSFERENCIAS</a>
+                </li>
+                <li class="liopcion liselected" id="liPUBFinancieroTotalPagos">
+                  <a class="nav-link tabPrin active " id="navPUBFinancieroTotalPagos" data-toggle="tab" href="#" onclick="onclickTabPUBFinanciero('PUBFinancieroTotalPagos',6)">PAGOS REALIZADOS</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionControlFinanciero">
+                <div role="tabpanel" id="tabPUBFinancieroIngresos" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBFinancieroIngresos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroGastos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBFinancieroGastos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroBienes" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBFinancieroBienes">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroServicios" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBFinancieroServicios">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroImpuestos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBFinancieroImpuestos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroTransferencias" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBFinancieroTransferencias">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBFinancieroTotalPagos" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBFinancieroTotalPagos">
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvCrearGastoPublicacionControlFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvCrearGastoPublicacionControlFinanciero">Datos Crear Gasto</div>          
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formPublicacionControlFinancieroCrearGasto" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanPublicacionid_publicaciongasto" class="ocultar" ></span>
+                <span id="spanPublicacionGastoIdPartida" class="ocultar" ></span>
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Rubro *</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPublicacionGastoRubro" onchange="CargarConceptosPublicacionCrearGasto();" required></select>    
+                        <div class="invalid-feedback">
+                            Rubro es un campo obligatorio
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Concepto *</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPublicacionGastoConcepto" required></select>    
+                      <div class="invalid-feedback">
+                        Concepto es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtPublicacionGastoNombre">Objeto Contractual *</label>
+                  <textarea class="form-control iris" id="txtPublicacionGastoNombre" maxlength="300" rows="2" placeholder="Objeto Contractual" data-span="spantxtPublicacionGastoNombre" required></textarea>
+                  <div class="invalid-feedback">
+                    Objeto Contractual es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionGastoNombre" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Prestador *</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPublicacionGastoPrestador" required></select>    
+                      <div class="invalid-feedback">
+                        Prestador es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Vínculo *</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPublicacionGastoVinculo" required></select>    
+                      <div class="invalid-feedback">
+                        Vínculo es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmPublicacionGastoTotal">Valor Total *</label>
+                  <input type="text" class="form-control iris iris-number" id="nmPublicacionGastoTotal" data-type="currency" min="1" onchange="GastoTotal4milPRJINV('nmPublicacionGastoTotal', 'txtPublicacionGastoTotal4mil')" data-span="spannmPublicacionGastoTotal" required/>
+                  <div class="invalid-feedback">
+                      Valor Total es un campo obligatorio
+                  </div>
+                  <div id="spannmPublicacionGastoTotal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionGastoTotal4mil">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="txtPublicacionGastoTotal4mil" required/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtPublicacionGastoFLegalizacion">Fecha Legalización *</label>                                
+                  <input type="date" class="form-control iris" id="dtPublicacionGastoFLegalizacion" data-span="spandtPublicacionGastoFLegalizacion" required/>
+                  <div class="invalid-feedback">
+                      Fecha Legalización es un campo obligatorio
+                  </div>
+                  <div id="spandtPublicacionGastoFLegalizacion" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionGastoTipo">Tipo</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionGastoTipo" maxlength="20" placeholder="Tipo" data-span="spantxtPublicacionGastoTipo" />
+                  <div class="invalid-feedback">
+                    Tipo es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionGastoTipo" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionGastoNorden">No. Orden *</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionGastoNorden" maxlength="20" placeholder="No. Orden" data-span="spantxtPublicacionGastoNorden" required />
+                  <div class="invalid-feedback">
+                    No. Orden es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionGastoNorden" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtPublicacionGastoFInicio">Fecha Inicio *</label>                                
+                  <input type="date" class="form-control iris" id="dtPublicacionGastoFInicio" data-span="spandtPublicacionGastoFInicio" required/>
+                  <div class="invalid-feedback">
+                      Fecha Inicio es un campo obligatorio
+                  </div>
+                  <div id="spandtPublicacionGastoFInicio" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtPublicacionGastoFFinal">Fecha Final *</label>                                
+                  <input type="date" class="form-control iris" id="dtPublicacionGastoFFinal" data-span="spandtPublicacionGastoFFinal" required/>
+                  <div class="invalid-feedback">
+                      Fecha Final es un campo obligatorio
+                  </div>
+                  <div id="spandtPublicacionGastoFFinal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionGastoEstado">Estado *</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionGastoEstado" maxlength="20" placeholder="Estado" data-span="spantxtPublicacionGastoEstado" required />
+                  <div class="invalid-feedback">
+                    Estado es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionGastoEstado" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label-iris" for="txtPublicacionGastoObservaciones">Observaciones</label>
+                    <textarea class="form-control iris" id="txtPublicacionGastoObservaciones" maxlength="150" rows="2" placeholder="Observaciones" data-span="spantxtPublicacionGastoObservaciones"></textarea>
+                    <div id="spantxtPublicacionGastoObservaciones" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                    </div>
+                </div>  
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosPublicacionControlFinancieroDesdeEdicion()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdatePublicacionControlFinancieroCrearGasto('formPublicacionControlFinancieroCrearGasto')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvAplicarPagoPublicacionControlFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvAplicarPagoPublicacionControlFinanciero">Datos para aplicar Pago</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formPublicacionControlFinancieroAplicarPago" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanPublicacionPagoIdGasto" class="ocultar" ></span>
+                <span id="spanPublicacionPagoGastoIdPartida" class="ocultar" ></span>
+                <span id="spanPublicacionPagoIdPublicacion" class="ocultar" ></span>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoNombreRubro">Rubro</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionPagoNombreRubro" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoPrestador">Prestador</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionPagoPrestador" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoDescrGasto">Descripción Gasto</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionPagoDescrGasto" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtPublicacionPagoFecha">Fecha Pago</label>                                
+                  <input type="date" class="form-control iris" id="dtPublicacionPagoFecha" data-span="spandtPublicacionPagoFecha" required/>
+                  <div class="invalid-feedback">
+                      Fecha Pago es un campo obligatorio
+                  </div>
+                  <div id="spandtPublicacionPagoFecha" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmPublicacionPagoValor">Valor Neto</label>
+                  <input type="text" class="form-control iris iris-number" id="nmPublicacionPagoValor" data-type="currency" min="1" onchange="GastoTotal4milPRJINV('nmPublicacionPagoValor', 'txtPublicacionPagoTotal')" data-span="spannmPublicacionPagoValor" required/>
+                  <div class="invalid-feedback">
+                      Valor Neto es un campo obligatorio
+                  </div>
+                  <div id="spannmPublicacionPagoValor" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoTotal">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="txtPublicacionPagoTotal" required/>
+                </div>
+              </div>
+
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Período</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboPublicacionPagoPeriodo" required></select>    
+                      <div class="invalid-feedback">
+                        Período es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoOrpa">ORPA</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionPagoOrpa" maxlength="20" placeholder="ORPA" data-span="spantxtPublicacionPagoOrpa" required/>
+                  <div class="invalid-feedback">
+                    ORPA es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionPagoOrpa" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtPublicacionPagoEgreso">C. Egreso</label>
+                  <input type="text" class="form-control iris" id="txtPublicacionPagoEgreso" maxlength="20" placeholder="C. Egreso" data-span="spantxtPublicacionPagoEgreso" required />
+                  <div class="invalid-feedback">
+                    C. Egreso es un campo obligatorio
+                  </div>
+                  <div id="spantxtPublicacionPagoEgreso" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtPublicacionPagoNotas">Notas / Enlaces</label>
+                  <textarea class="form-control iris" id="txtPublicacionPagoNotas" maxlength="150" rows="2" placeholder="Observaciones" data-span="spantxtPublicacionPagoNotas" ></textarea>
+                  <div id="spantxtPublicacionPagoNotas" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosPublicacionControlFinancieroDesdePago()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdatePublicacionControlFinancieroPagoGasto('formPublicacionControlFinancieroAplicarPago')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicaciones_controlfinanciero.js"></script>
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">      
+    <!--
+    <title>Informes Actos Administrativos</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divInformesActosAdministrativosHTML">
+                <span id="spanIdInformesActosAdministrativos" class="ocultar" ></span>
+                <div class="row" id="dvInformesActosAdministrativosTable">
+                  <div class="row">
+                    <div class="col-md-12 titletab">INFORMES ACTOS ADMINISTRATIVOS</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Informe</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboFiltroTipoInformeActosAdministrativos" onchange="ActualizarFiltroTipoInformeActosAdministrativos();"></select>    
+                            <div class="invalid-feedback">
+                              Aval Consejo es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfeciniInformeActosAdministrativos">Fecha Inicial</label>                                
+                        <input type="date" class="form-control iris" id="dtfeciniInformeActosAdministrativos" data-span="spanfecrecepcion" required/>
+                        <div class="invalid-feedback">
+                          Fecha Recepción es un campo obligatorio
+                        </div>
+                        <div id="spanfecrecepcion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfecFinInformeActosAdministrativos">Fecha Final</label>                                
+                        <input type="date" class="form-control iris" id="dtfecFinInformeActosAdministrativos" data-span="spanfecrecepcion" required/>
+                        <div class="invalid-feedback">
+                          Fecha Recepción es un campo obligatorio
+                        </div>
+                        <div id="spanfecrecepcion" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">                
+                        <button type="button" class="btn btn-primaryiris" onclick="CargarInformesActosAdministrativos()">Ver Informe</button>
+                    </div>  
+                  </div>
+
+                </div>
+
+
+                <div class="row ocultar" id="tableDynamicINFACTADMxTipo">
+                    <div class="row">
+                      <div class="col-md-12 titletab" id="dvTituloINFACTADMxTipo">INFORME ACTOS ADMINISTRATIVOS</div>
+                    </div>
+
+                    <div class="table-responsive col-md-4">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblINFACTADMxTipo" >
+                        <thead>
+                          <tr>
+                            <th>Tipo</th>
+                            <th>Cantidad</th>
+                          </tr>
+                        </thead>
+                        <tbody> 
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="row">
+                        <div class="col-md-6 text-center">                
+                          <button type="button" class="btn btn-primaryiris" onclick="LoadGraphInformeActosAdministrativos('bar')">Barras</button>
+                          <button type="button" class="btn btn-primaryiris" onclick="LoadGraphInformeActosAdministrativos('pie')">Torta</button>
+                        </div>  
+                      </div>  
+                      <div class="row">
+                        <canvas id="chartINFACTADMxTipo"></canvas>
+                      </div>
+
+                    </div>
+                </div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvInformesActosAdministrativosDetalle"></div>
+
+    <!-- Postgrados: gráficos de seguimiento -->
+    <style>
+      .pg-card {
+        max-width: 80%;
+        margin: 24px auto 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 20px 24px;
+      }
+    </style>
+    <div class="wrapper wrapper-content">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div class="row">
+                <div class="col-md-12 titletab">SEGUIMIENTO POSTGRADOS</div>
+              </div>
+              <div class="pg-card"><div id="pg-inscritos"></div></div>
+              <div class="pg-card"><div id="pg-matriculados"></div></div>
+              <div class="pg-card" style="margin-bottom: 24px;"><div id="pg-costo"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Decanatura/InformeActosAdministrativos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.0/dist/apexcharts.min.js"></script>
+    <script src="../../js/iris/postgrados/postgrados_apexcharts.js"></script>
+  </body>
+</html>
+

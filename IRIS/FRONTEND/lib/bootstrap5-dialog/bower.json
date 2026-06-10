@@ -1,0 +1,37 @@
+{
+    "name": "bootstrap5-dialog",
+    "description": "Make use of Bootstrap Modal more monkey-friendly. https://github.com/GedMarc/bootstrap4-dialog",
+    "version": "5.0.0",
+    "keywords": [
+        "css",
+        "js",
+        "less",
+        "mobile-first",
+        "responsive",
+        "front-end",
+        "framework",
+        "web"
+    ],
+    "homepage": "https://github.com/fklee/bootstrap5-dialog",
+    "main": [
+        "dist/less/bootstrap-dialog.less",
+        "dist/css/bootstrap-dialog.min.css",
+        "dist/js/bootstrap-dialog.min.js"
+    ],
+    "ignore": [
+        "source",
+        "spec",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc",
+        "bower.json",
+        "gruntfile.js",
+        "package.json",
+        "README.md"
+    ],
+    "dependencies": {
+        "bootstrap": ">=5.0.0-alpha.0",
+        "jquery": ">= 3.4.0"
+    }
+}

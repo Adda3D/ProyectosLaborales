@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    <title>Proyectos Investigación Gastos Compra Servicios</title>
+-->
+  <style>
+    /* Estilos con la máxima especificidad posible */
+    #tblProyectoInvestigacionGastosServicios tbody tr.fila-protegida {
+      background-color: var(--fila-color) !important;
+    }
+
+    #tblProyectoInvestigacionGastosServicios tbody tr.fila-protegida.fila-color-roja {
+      background-color: #f8d7da !important;
+      --fila-color: #f8d7da !important;
+    }
+
+    #tblProyectoInvestigacionGastosServicios tbody tr.fila-protegida.fila-color-amarilla {
+      background-color: #fff3cd !important;
+      --fila-color: #fff3cd !important;
+    }
+
+    #tblProyectoInvestigacionGastosServicios tbody tr.fila-protegida.fila-color-verde {
+      background-color: #d4edda !important;
+      --fila-color: #d4edda !important;
+    }
+
+    /* Anula cualquier efecto hover */
+    #tblProyectoInvestigacionGastosServicios tbody tr.fila-protegida:hover {
+      background-color: inherit !important;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="row">
+    <div class="row">
+      <div class="col-md-6 titletab">DETALLE GASTOS ADQUISICÓN DE SERVICIOS</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 titletab"></div>
+      <div class="col-md-6 text-center">
+        <button type="button" class="btn btn-primaryiris" onclick="CrearGastoServiciosProyectoInvestigacion()">Crear
+          Gasto</button>
+      </div>
+    </div>
+
+    <div class="row scroll" id="tableProyectoInvestigacionGastosServicios">
+      <div class="table-responsive col-md-12">
+        <table class="table table-bordered table-hover dataTables-example" width="100%"
+          id="tblProyectoInvestigacionGastosServicios">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Concepto</th>
+              <th>F. Legalización</th>
+              <th>Tipo</th>
+              <th>No. Orden</th>
+              <th>Inicio</th>
+              <th>Final</th>
+              <th>Estado</th>
+              <th>Valor Total</th>
+              <th>T. Con 4*1000</th>
+              <th>Valor Pagado</th>
+              <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proyecto scripts -->
+  <script src="../../js/iris/Investigacion/proyectoinvestigaciontablaPRJINVFinServicios.js"></script>
+
+</body>
+
+
+</html>

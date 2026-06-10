@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {% if is_approved %}Pago Aprobado{% else %}Pago en Proceso{% endif %} - MiniLibros
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  .confirmation-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+  .confirmation-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    max-width: 520px;
+    width: 100%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .status-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .confirmation-card h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+  }
+  .confirmation-card .subtitle {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  .order-detail-box {
+    background: #f7f8fa;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.2rem 0;
+    text-align: left;
+  }
+  .order-detail-box p {
+    margin: 0.3rem 0;
+    font-size: 0.97rem;
+    color: #444;
+  }
+  .order-detail-box strong {
+    color: #1a1a2e;
+  }
+  .badge-approved {
+    display: inline-block;
+    background: #d4f2e0;
+    color: #1a7a45;
+    border-radius: 20px;
+    padding: 0.25rem 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .badge-pending {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    border-radius: 20px;
+    padding: 0.25rem 0.9rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .info-box {
+    background: #eef3fb;
+    border-left: 4px solid #4A90D9;
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    margin: 1.2rem 0;
+    text-align: left;
+    font-size: 0.93rem;
+    color: #2d4a6e;
+  }
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+  }
+  .btn-primary-custom {
+    background: linear-gradient(90deg, #4A90D9, #7B5EA7);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    transition: opacity 0.2s;
+  }
+  .btn-primary-custom:hover { opacity: 0.88; color: #fff; }
+  .btn-secondary-custom {
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.97rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s;
+  }
+  .btn-secondary-custom:hover { background: #e2e2e2; color: #333; }
+  .divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1.2rem 0;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="confirmation-page">
+  <div class="confirmation-card">
+
+    {% if is_approved %}
+      <span class="status-icon">✅</span>
+      <span class="badge-approved">Pago Aprobado</span>
+      <h1>¡Recibimos tu pago!</h1>
+      <p class="subtitle">Tu pedido está confirmado. Te enviaremos un email con los detalles.</p>
+    {% else %}
+      <span class="status-icon">⏳</span>
+      <span class="badge-pending">En Proceso</span>
+      <h1>Tu pago está siendo procesado</h1>
+      <p class="subtitle">Estamos procesando tu pedido. Te notificaremos cuando sea confirmado.</p>
+    {% endif %}
+
+    <div class="order-detail-box">
+      <p><strong>Número de orden:</strong><br>{{ order.order_number }}</p>
+      <p style="margin-top:0.6rem;"><strong>Email de contacto:</strong> {{ order.email }}</p>
+      <p><strong>Total:</strong> ${{ order.total|floatformat:0 }}</p>
+      {% for item in order.items.all %}
+        <p>• {{ item.content_object }} × {{ item.quantity }}</p>
+      {% endfor %}
+    </div>
+
+    {% if is_approved %}
+      <div class="info-box">
+        📚 Tus libros/productos estarán disponibles en tu biblioteca una vez inicies sesión o crees tu cuenta con el correo <strong>{{ order.email }}</strong>.
+      </div>
+    {% else %}
+      <div class="info-box">
+        🔔 Recibirás un email en <strong>{{ order.email }}</strong> cuando confirmemos tu pago. El tiempo puede variar según tu banco.
+      </div>
+    {% endif %}
+
+    <hr class="divider">
+
+    {% if user_authenticated %}
+      <div class="action-buttons">
+        <a href="{% url 'library:my_library' %}" class="btn-primary-custom">📚 Ir a Mi Biblioteca</a>
+        <a href="{% url 'core:home' %}" class="btn-secondary-custom">Volver al inicio</a>
+      </div>
+    {% else %}
+      <p style="font-size:0.95rem; color:#555; margin-bottom:0.5rem;">
+        Crea una cuenta o inicia sesión con <strong>{{ order.email }}</strong> para acceder a tus compras.
+      </p>
+      <div class="action-buttons">
+        <a href="{% url 'orders:post_purchase_register' order_number=order.order_number %}" class="btn-primary-custom">
+          🆕 Crear mi cuenta
+        </a>
+        <a href="{% url 'core:login' %}?next={% url 'library:my_library' %}" class="btn-secondary-custom">
+          Ya tengo cuenta — Iniciar sesión
+        </a>
+        <a href="{% url 'core:home' %}" class="btn-secondary-custom">Volver al inicio</a>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>CUERPOS COLEGIADOS</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_CuerposColegiadosHTML">
+                <span id="spanIdDecVie_CuerposColegiados" class="ocultar" ></span>
+                <span id="spanNumeroActaDecVie_CuerposColegiados" class="ocultar" ></span>
+                <span id="spanFechaDecVie_CuerposColegiados" class="ocultar" ></span>
+                <span id="spanAnoDecVie_CuerposColegiados" class="ocultar" ></span>
+                <span id="spanColegiadoDecVie_CuerposColegiados" class="ocultar" ></span>                
+                <div class="row" id="dvDecVie_CuerposColegiadosTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">CUERPOS COLEGIADOS</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_CuerposColegiados()">Nuevo Cuerpo colegiado</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_CuerposColegiados">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_CuerposColegiados" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Año</th>
+                            <th>Fecha</th>
+                            <th>Número Acta</th>
+                            <th>Colegiado</th>                                                                                 
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_CuerposColegiadosDetalle"></div>
+
+<!--<div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObligaciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTablaProductos"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoExtensionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaAcuerdos"></div>-->
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_CuerposColegiados.js"></script>
+    <script src="../js/iris//models/DecVie_CuerposColegiadosModel.js" ></script>
+
+  </body>
+
+
+</html>
+

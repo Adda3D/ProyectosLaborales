@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>CONSECUTIVOS</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">CONSECUTIVOS</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecVie_ConsecutivoDetalle" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanIdDecVie_ConsecutivoForm" class="ocultar" ></span>  
+                    <input type="text" class="ocultar" id="txtid_decvieconsecutivo_DecVie_Consecutivo"/>                  
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfecha_DecVie_Consecutivo">Fecha Solicitud</label>                                
+                        <input type="date" class="form-control iris" id="dtfecha_DecVie_Consecutivo" data-span="spandtFechaDecVie_Consecutivo"  required/>
+                        <div class="invalid-feedback">
+                          Fecha Solicitud es un campo obligatorio
+                        </div>
+                        <div id="spandtFechaDecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                      <div class="col-md-12">
+                          <label class="form-label-iris">Dependencia Solicitante</label>
+                      </div>
+                      <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_depend_DecVie_Consecutivo" onchange="CargarPrefijosDependencia_ConsecutivoDtalle();"></select>    
+                          <div class="invalid-feedback">
+                              Dependencia es un campo obligatorio
+                          </div>
+                      </div>
+                    </div> 
+                    <div class="col-md-2">
+                      <div class="col-md-12">
+                          <label class="form-label-iris">Prefijo</label>
+                      </div>
+                      <div class="col-md-12 font-size-iris">
+                        <!--<select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_prefijoconsecutivo_DecVie_Consecutivo" onchange="GenerarConsecutivoDctoDependencia('dtfecha_DecVie_Consecutivo', 'cboid_prefijoconsecutivo_DecVie_Consecutivo', 'txtnumconsecutivo_DecVie_Consecutivo')" required></select>    -->  
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_prefijoconsecutivo_DecVie_Consecutivo"></select>    
+                          <div class="invalid-feedback">
+                              Prefijo es un campo obligatorio
+                          </div>
+                      </div>
+                    </div>
+                    <!-- //Cambio ADDAVARGAS 18/04/2024 -->
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnumconsecutivo_DecVie_Consecutivo">Consecutivo</label>
+                        <input type="text" class="form-control iris" id="txtnumconsecutivo_DecVie_Consecutivo" maxlength="250" placeholder="Consecutivo" data-span="spantxtnumconsecutivo_DecVie_Consecutivo" disabled/>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Concepto</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decvieconcepto_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                                Concepto es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txttsersubserdocu_DecVie_Consecutivo">Tipo/Serie/Subserie/Documental</label>
+                        <textarea class="form-control iris" id="txttsersubserdocu_DecVie_Consecutivo" maxlength="500" rows="2" placeholder="Consecutivo" data-span="spantxttsersubserdocu_DecVie_Consecutivo"></textarea>
+                        <div id="spantxttsersubserdocu_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div> 
+                  </div> 
+                  
+                    
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                      <label class="form-label-iris" for="txtasunto_DecVie_Consecutivo">Asunto</label>
+                      <textarea class="form-control iris" id="txtasunto_DecVie_Consecutivo" maxlength="500" rows="3" 
+                        placeholder="Asunto" data-span="spantxtasunto_DecVie_Consecutivo" required></textarea>
+                      <div class="invalid-feedback">
+                        Asunto es un campo obligatorio.
+                      </div>
+                      <div id="spantxtasunto_DecVie_Consecutivo" class="color-required ocultar">
+                        No se acepta el ingreso de caracteres especiales.
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Dependencia Destino</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cbodependenciadestino_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                                Dependencia Destino es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                         <label class="form-label-iris">Funcionario Destino</label>
+                        </div>
+                         <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cbodirigidoa_DecVie_Consecutivo" required></select>    
+                           <div class="invalid-feedback">
+                           Dependencia Solicitante es un campo obligatorio
+                           </div>
+                         </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Macroproceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decviemacroproceso_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                                Macroproceso es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="chkinterno_DecVie_Consecutivo">Interno</label> 
+                            <input type="checkbox" class="form-check-input iris-check" id="chkinterno_DecVie_Consecutivo"/>
+                        <div id="spanchkinterno_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="form-label-iris" for="chkexterno_DecVie_Consecutivo">Externo</label> 
+                            <input type="checkbox" class="form-check-input iris-check" id="chkexterno_DecVie_Consecutivo"/>
+                        <div id="spanchkexterno_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Responsable Solicitud</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboidfuncionario_DecVie_Consecutivo" required></select>    
+                            <div class="invalid-feedback">
+                              Responsable Solicitud es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtobservaciones_DecVie_Consecutivo">Observaciones</label>
+                        <textarea class="form-control iris" id="txtobservaciones_DecVie_Consecutivo" maxlength="500" rows="2" placeholder="Consecutivo" data-span="spantxtobservaciones_DecVie_Consecutivo"></textarea>
+                        <div id="spantxtobservaciones_DecVie_Consecutivo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                      
+                  </div>
+                </div>
+                  
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <!--Se añade el 17 de abril del 2024 para solucionar Bug de salto de consecutivo-->
+               <!-- <input type="button" value="Generar Consecutivo" onclick="GenerarConsecutivoDctoDependencia('dtfecha_DecVie_Consecutivo', 'cboid_prefijoconsecutivo_DecVie_Consecutivo', 'txtnumconsecutivo_DecVie_Consecutivo')" class="btn-iris cancel small"/>  -->
+              <input type="button" value="Cancelar" onclick="CerrarDecVie_ConsecutivoDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Consecutivo" onclick="ValidatePostUpdateDecVie_Consecutivo('formDecVie_ConsecutivoDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Vie/DecVie_ConsecutivoDetalle.js"></script>    
+
+  </body>
+
+
+</html>

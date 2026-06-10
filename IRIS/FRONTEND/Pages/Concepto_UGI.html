@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Concepto_UGI</title>
+-->
+
+  </head>
+
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-6 offset-md-2">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divConcepto_UGIHTML">
+                  <div class="row" id="dvConcepto_UGITable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">CONCEPTO UGI</div>
+                      <div class="col-md-6 text-center">
+                      
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearConcepto_UGI()" data-bs-toggle="modal" data-bs-target="#ModalConcepto_UGI" data-bs-keyboard="false" data-bs-backdrop="static">Registrar Concepto UGI</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicConcepto_UGI">
+                      <div class="table-responsive col-md-12">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblConcepto_UGI" >
+                          <thead>
+                            <tr>                                                        
+                              <th>Detalle Concepto</th>                              
+                              <th>Opciones</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+  
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+
+
+                <!-- Modal Concepto UGI -->
+                <div class="modal fade" id="ModalConcepto_UGI" tabindex="-1" role="dialog" aria-labelledby="ModalLabelModalConcepto_UGI" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-fullscreen-md-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelModalConcepto_UGI">Datos Concepto_UGI</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                            <form class="needs-validation" id="formConcepto_UGIDatos" novalidate>
+                              <div class="form-group row mb-3">
+                                <span id="spanIDConcepto_UGI" class="ocultar" ></span>
+                                <div class="col-md-8">
+                                    <label class="form-label-iris" for="txtConcepto_UGI">Detalle Concepto</label>
+                                    <input type="text" class="form-control iris" id="txtConcepto_UGI" maxlength="500" placeholder="Descripción" data-span="spantxtConcepto_UGI" required/>
+                                    <div class="invalid-feedback">
+                                      Detalle Concepto es un campo obligatorio
+                                    </div>
+                                    <div id="spantxtConcepto_UGI" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales
+                                    </div>
+                                </div>
+                              <!--  <div class="col-md-2">
+                                    <div class="col-md-12">
+                                        <label class="form-label-iris">Literal</label>
+                                    </div>
+                                    <div class="col-md-12 font-size-iris">
+                                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboliteralConcepto_UGI" required></select>    
+                                        <div class="invalid-feedback">
+                                          Literal es un campo obligatorio
+                                        </div>
+                                    </div>
+                                </div>-->
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                            <button type="button" id="btnCloseModalConcepto_UGI" class="btn-iris white small" onclick="CerrarModalConcepto_UGI()" data-bs-dismiss="modal">Cancelar</button>
+                            <input type="button" value="Guardar" onclick="ValidatePostUpdateConcepto_UGI('formConcepto_UGIDatos', 'btnCloseModalConcepto_UGI')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Concepto_UGI.js"></script>
+
+  </body>
+
+
+</html>
+

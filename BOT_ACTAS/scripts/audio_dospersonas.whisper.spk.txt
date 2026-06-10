@@ -1,0 +1,6 @@
+Persona 1: ¡Hola! ¡Esto es una prueba de audio 1!
+Persona 2: ¡Hola! ¡Esto es una prueba de audio 2!
+Persona 1: ¡Hola! ¡Ahora no sé qué decir!
+Persona 2: ¡Yo tampoco sé qué decir!
+Persona 1: ¡Hola, hola, hola! ¡Por favor! ¡Identifica mi voz! ¡Yo soy la voz 1!
+Persona 2: ¡Y yo soy la voz 2!

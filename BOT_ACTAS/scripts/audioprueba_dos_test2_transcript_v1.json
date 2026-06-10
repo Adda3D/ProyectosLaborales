@@ -1,0 +1,238 @@
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "Hola, esto es una prueba, te abrió uno. Hola, esto es una prueba de audio dos ahora no sé qué decir yo tampoco sé qué decir hola, hola, hola, por favor, identifica mi voz. Yo soy la voz 1 y yo soy la 22.",
+          "confidence": 0.9312012,
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "1.900s",
+              "word": "Hola,"
+            },
+            {
+              "start_time": "1.900s",
+              "end_time": "2.600s",
+              "word": "esto"
+            },
+            {
+              "start_time": "2.600s",
+              "end_time": "2.600s",
+              "word": "es"
+            },
+            {
+              "start_time": "2.600s",
+              "end_time": "3s",
+              "word": "una"
+            },
+            {
+              "start_time": "3s",
+              "end_time": "3.100s",
+              "word": "prueba,"
+            },
+            {
+              "start_time": "3.100s",
+              "end_time": "3.900s",
+              "word": "te"
+            },
+            {
+              "start_time": "3.900s",
+              "end_time": "4.300s",
+              "word": "abrió"
+            },
+            {
+              "start_time": "4.300s",
+              "end_time": "4.700s",
+              "word": "uno."
+            },
+            {
+              "start_time": "4.700s",
+              "end_time": "6.200s",
+              "word": "Hola,"
+            },
+            {
+              "start_time": "6.200s",
+              "end_time": "6.900s",
+              "word": "esto"
+            },
+            {
+              "start_time": "6.900s",
+              "end_time": "7s",
+              "word": "es"
+            },
+            {
+              "start_time": "7s",
+              "end_time": "7.400s",
+              "word": "una"
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "7.500s",
+              "word": "prueba"
+            },
+            {
+              "start_time": "7.500s",
+              "end_time": "7.900s",
+              "word": "de"
+            },
+            {
+              "start_time": "7.900s",
+              "end_time": "8.400s",
+              "word": "audio"
+            },
+            {
+              "start_time": "8.400s",
+              "end_time": "8.900s",
+              "word": "dos"
+            },
+            {
+              "start_time": "8.900s",
+              "end_time": "12.300s",
+              "word": "ahora"
+            },
+            {
+              "start_time": "12.300s",
+              "end_time": "12.400s",
+              "word": "no"
+            },
+            {
+              "start_time": "12.400s",
+              "end_time": "12.600s",
+              "word": "sé"
+            },
+            {
+              "start_time": "12.600s",
+              "end_time": "12.800s",
+              "word": "qué"
+            },
+            {
+              "start_time": "12.800s",
+              "end_time": "13.200s",
+              "word": "decir"
+            },
+            {
+              "start_time": "13.200s",
+              "end_time": "14.500s",
+              "word": "yo"
+            },
+            {
+              "start_time": "14.500s",
+              "end_time": "15s",
+              "word": "tampoco"
+            },
+            {
+              "start_time": "15s",
+              "end_time": "15.500s",
+              "word": "sé"
+            },
+            {
+              "start_time": "15.500s",
+              "end_time": "15.700s",
+              "word": "qué"
+            },
+            {
+              "start_time": "15.700s",
+              "end_time": "16.500s",
+              "word": "decir"
+            },
+            {
+              "start_time": "16.500s",
+              "end_time": "17.800s",
+              "word": "hola,"
+            },
+            {
+              "start_time": "17.800s",
+              "end_time": "18s",
+              "word": "hola,"
+            },
+            {
+              "start_time": "18s",
+              "end_time": "18.400s",
+              "word": "hola,"
+            },
+            {
+              "start_time": "18.400s",
+              "end_time": "19.100s",
+              "word": "por"
+            },
+            {
+              "start_time": "19.100s",
+              "end_time": "19.300s",
+              "word": "favor,"
+            },
+            {
+              "start_time": "19.300s",
+              "end_time": "20.500s",
+              "word": "identifica"
+            },
+            {
+              "start_time": "20.500s",
+              "end_time": "20.600s",
+              "word": "mi"
+            },
+            {
+              "start_time": "20.600s",
+              "end_time": "21s",
+              "word": "voz."
+            },
+            {
+              "start_time": "21s",
+              "end_time": "21.300s",
+              "word": "Yo"
+            },
+            {
+              "start_time": "21.300s",
+              "end_time": "21.500s",
+              "word": "soy"
+            },
+            {
+              "start_time": "21.500s",
+              "end_time": "21.600s",
+              "word": "la"
+            },
+            {
+              "start_time": "21.600s",
+              "end_time": "21.800s",
+              "word": "voz"
+            },
+            {
+              "start_time": "21.800s",
+              "end_time": "22.200s",
+              "word": "1"
+            },
+            {
+              "start_time": "22.200s",
+              "end_time": "23.100s",
+              "word": "y"
+            },
+            {
+              "start_time": "23.100s",
+              "end_time": "23.400s",
+              "word": "yo"
+            },
+            {
+              "start_time": "23.400s",
+              "end_time": "23.700s",
+              "word": "soy"
+            },
+            {
+              "start_time": "23.700s",
+              "end_time": "23.700s",
+              "word": "la"
+            },
+            {
+              "start_time": "23.700s",
+              "end_time": "24.800s",
+              "word": "22."
+            }
+          ]
+        }
+      ],
+      "result_end_time": "25.470s",
+      "language_code": "es-es"
+    }
+  ],
+  "total_billed_time": "26s",
+  "request_id": "7528024000670685584"
+}

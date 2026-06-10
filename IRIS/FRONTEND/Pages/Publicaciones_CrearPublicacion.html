@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicacionesHTML">
+                <span id="spanIdPublicacion" class="ocultar" ></span>
+                <span id="spanKardexPublicacion" class="ocultar" ></span>
+                <span id="spanHermesPublicacion" class="ocultar" ></span>
+                <span id="spanNombrePublicacion" class="ocultar" ></span>
+
+                <div class="row" id="dvPublicacionesTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">PUBLICACIONES</div>
+                    <div class="col-md-6 text-center">
+               
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPublicacion()">Crear Publicación</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPublicaciones">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPublicaciones" >
+                        <thead>
+                          <tr>                            
+                            <th>Kardex</th>
+                            <th>Título</th>
+                            <th>Fecha Registro</th>
+                            <th>Responsable</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionDetalle"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionConceptoEditorial"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvPublicacionTablaAutores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionEvaluacion"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionCesionDerechos"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionCorreccion"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionDiagramacion"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionImpresionDigitalizacion"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionDepositosVentas"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvPublicacionDivulgacion"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvPublicacionTareas"></div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/publicaciones_crearpublicacion.js"></script>
+    <script src="../js/iris/publicacion/publicaciones_helper.js"></script>
+
+  </body>
+
+
+</html>
+

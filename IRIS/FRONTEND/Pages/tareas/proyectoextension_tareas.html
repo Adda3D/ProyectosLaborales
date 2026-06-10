@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>GESTION TAREAS PROYECTO EXTENSION</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">TAREAS DEL PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">            
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtConsProyectoExtensionTareas">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionTareas" disabled/>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionTareas">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionTareas" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center">                     
+              <button type="button" class="btn-iris success " onclick="VolverTablaProyectosExtensionDesdeTareasForm()">Volver Listado Proyectos</button>
+              <button type="button" class="btn btn-primaryiris" onclick="CrearProyectoExtensionTareas()" data-bs-toggle="modal" data-bs-target="#ModalProyectoExtensionTareas" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Tarea</button>
+            </div>  
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionTareas">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionTareas" >
+              <thead>
+                <tr> 
+                    <th>Vencimiento</th>
+                    <th>Tarea</th>                    
+                    <th>Responsable</th>
+                    <th>Estado</th>
+                    <th>Avance</th>
+                    <th>Finalización</th>
+                    <th>Asignado Por</th>
+                    <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+
+                <!-- Modal Asignación Tarea -->
+                <div class="modal fade" id="ModalProyectoExtensionTareas" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoExtensionTareas" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelProyectoExtensionTareas">Datos Asignación <Tarea></Tarea></h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formProyectoExtensionTareas" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnCloseProyectoExtensionTareasModal" onclick="CerrarProyectoExtensionTareasDesdeEdicion()" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoExtensionTareasForm('formProyectoExtensionTareas', 'btnCloseProyectoExtensionTareasModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/tareas/tarea_crearModuloModel.js" ></script>
+    <script src="../../js/iris/tareas/proyectoextension_tareas.js"></script>
+
+  </body>
+
+
+</html>
+
+

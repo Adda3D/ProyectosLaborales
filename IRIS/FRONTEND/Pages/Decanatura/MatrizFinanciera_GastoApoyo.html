@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Gastos Apoyo</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <span id="spanIdMatrizFinanciera_GastoApoyo" class="ocultar" ></span>
+        <div class="row" id="dvMatrizFinanciera_GastoApoyo">
+          <div class="col-md-6 titletab">Gastos Apoyo</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtVigenciaMatrizFinanciera_GastoApoyo">Vigencia</label>
+              <input type="text" class="form-control iris" id="txtVigenciaMatrizFinanciera_GastoApoyo" disabled/>
+            </div>
+            <div class="col-md-3 titletab"></div> 
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverMatrizFinancieraDesdeGastoApoyo()">Volver Matriz</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearMatrizFinanciera_GastoApoyo()" data-bs-toggle="modal" data-bs-target="#ModalMatrizFinanciera_GastoApoyo" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Gasto</button>
+              </div>
+          </div>
+        </div>        
+
+        <div class="row scroll" id="tableMatrizFinanciera_GastoApoyo">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblMatrizFinanciera_GastoApoyo" >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Dependencia</th>
+                  <th>Total Personas Contratadas</th>
+                  <th>Valor Total</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalMatrizFinanciera_GastoApoyo" tabindex="-1" role="dialog" aria-labelledby="ModalLabelMatrizFinanciera_GastoApoyo" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelMatrizFinanciera_GastoApoyo">Gastos Apoyo</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formMatrizFinanciera_GastoApoyoDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalLabelMatrizFinanciera_GastoApoyo" class="btn-iris white small" onclick="CerrarModalMatrizFinanciera_GastoApoyo()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateMatrizFinanciera_GastoApoyoForm('formMatrizFinanciera_GastoApoyoDetalle', 'btnCloseModalLabelMatrizFinanciera_GastoApoyo')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Decanatura/MatrizFinanciera_GastoApoyoModel.js" ></script>
+    <script src="../../js/iris/Decanatura/MatrizFinanciera_GastoApoyo.js"></script>
+
+  </body>
+
+
+</html>

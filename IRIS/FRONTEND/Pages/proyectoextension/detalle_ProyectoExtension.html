@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <!--
+    <title>Proyecto Extensión</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Datos Proyecto</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formProyectoExtensionDetalle" novalidate>
+                  <div class="form-group row mb-2">
+                    <span id="spanIdProyectoExtensionForm" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <input type="text" class="ocultar" id="txtid_propuesta_ProyectoExtension" maxlength="50" />
+                        
+                        <label class="form-label-iris" for="txtConsecutivoProyectoExtension">Consecutivo Proyecto</label>
+                        <input type="text" class="form-control iris" id="txtConsecutivoProyectoExtension" maxlength="50" placeholder="Consecutivo" data-span="spantxtConsecutivoProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Consecutivo Proyecto es un campo obligatorio
+                        </div>
+                        <div id="spantxtConsecutivoProyectoExtension" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtAnnioSuscripcionProyectoExtension">Fecha Suscripción</label>                                
+                        <input type="date" class="form-control iris" id="dtAnnioSuscripcionProyectoExtension" data-span="spandtAnnioSuscripcionProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                          Fecha Suscripción es un campo obligatorio
+                        </div>
+                        <div id="spandtAnnioSuscripcionProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Proyecto</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboTipoProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Tipo Proyecto es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Naturaleza Proyecto</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboNaturalezaProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                              Naturaleza Proyecto es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Entidad</label>
+                            <label class="form-label-iris cambiarMouse"  onclick="CargarOpcionExterna('21')">Crear Entidad</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboEntidadProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                              Entidad es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtNombreProyectoExtension">Nombre Proyecto</label>
+                        <textarea class="form-control iris" id="txtNombreProyectoExtension" maxlength="500" rows="3" placeholder="Nombre Proyecto" data-span="spantxtNombreProyectoExtension" required></textarea>                                
+                        <div class="invalid-feedback">
+                            Nombre Proyecto es un campo obligatorio
+                        </div>
+                        <div id="spantxtNombreProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtPoblObjetivoProyectoExtension">Población Objetivo</label>
+                        <textarea class="form-control iris" id="txtPoblObjetivoProyectoExtension" maxlength="200" rows="3" placeholder="Población Objetivo" data-span="spantxtPoblObjetivoProyectoExtension" required></textarea>                                
+                        <div class="invalid-feedback">
+                            Población Objetivo es un campo obligatorio
+                        </div>
+                        <div id="spantxtPoblObjetivoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Director</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboDirectorProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Director es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Supervisor</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboSupervisorProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Supervisor es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Asistente Administrativo</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboAsistenteProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Asistente Administrativo es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtContratoProyectoExtension">Contrato/Convenio</label>
+                        <input type="text" class="form-control iris" id="txtContratoProyectoExtension" maxlength="50" placeholder="Contrato/Convenio" data-span="spantxtContratoProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Contrato/Convenio es un campo obligatorio
+                        </div>
+                        <div id="spantxtContratoProyectoExtension" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcontratoconvenioenlaceProyectoExtension">Enlace Archivos</label>
+                        <textarea class="form-control iris" id="txtcontratoconvenioenlaceProyectoExtension" maxlength="500" rows="1" placeholder="Enlace Archivo Contrato" data-span="spantxtcontratoconvenioenlaceProyectoExtension" ></textarea>
+                        <div id="spantxtcontratoconvenioenlaceProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtFInicioProyectoExtension">Fecha Inicia</label>                                
+                        <input type="date" class="form-control iris" id="dtFInicioProyectoExtension" data-span="spandtFInicioProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Fecha Inicio es un campo obligatorio
+                        </div>
+                        <div id="spandtFInicioProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtFFinalizaProyectoExtension">Fecha Finaliza</label>                                
+                        <input type="date" class="form-control iris" id="dtFFinalizaProyectoExtension" data-span="spandtFFinalizaProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Fecha Finaliza es un campo obligatorio
+                        </div>
+                        <div id="spandtFFinalizaProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtQuipuProyectoExtension">Ficha QUIPU</label>
+                        <input type="text" class="form-control iris" id="txtQuipuProyectoExtension" maxlength="20" placeholder="No. QUIPU" data-span="spantxtQuipuProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Ficha QUIPU es un campo obligatorio
+                        </div>
+                        <div id="spantxtQuipuProyectoExtension" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtHermesProyectoExtension">Código HERMES</label>
+                        <input type="text" class="form-control iris" id="txtHermesProyectoExtension" maxlength="20" placeholder="Correo Electrónico" data-span="spantxtHermesProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Código HERMES es un campo obligatorio
+                        </div>
+                        <div id="spantxtHermesProyectoExtension" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label-iris" for="txtObjetoContratoProyectoExtension">Objeto Contrato</label>
+                        <textarea class="form-control iris" id="txtObjetoContratoProyectoExtension" maxlength="800" rows="3" placeholder="Objeto Contrato" data-span="spantxtObjetoContratoProyectoExtension" required></textarea>
+                        <div class="invalid-feedback">
+                            Objeto Contrato es un campo obligatorio
+                        </div>
+                        <div id="spantxtObjetoContratoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Alcance</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboAlcanceProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Alcance es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmValorIniProyectoExtension">Valor Inicial</label>
+                        <input type="number" class="form-control iris iris-number" id="nmValorIniProyectoExtension" min="0" onchange="CalculaValorTotal();" data-span="spanmValorIniProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Valor Inicial es un campo obligatorio
+                        </div>
+                        <div id="spanmValorIniProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmAdicDismProyectoExtension">Adición/Dism.</label>
+                        <input type="number" class="form-control iris iris-number" id="nmAdicDismProyectoExtension" min="0" onchange="CalculaValorTotal();" data-span="spannmAdicDismProyectoExtension" />
+                        <div id="spannmAdicDismProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmContrapartidaProyectoExtension">Contrapartida</label>
+                        <input type="number" class="form-control iris iris-number" id="nmContrapartidaProyectoExtension" min="0" onchange="CalculaValorTotal();" data-span="spannmContrapartidaProyectoExtension" />
+                        <div id="spannmContrapartidaProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtvalortotalProyectoExtension">Valor Total</label>
+                        <input type="text" class="form-control iris iris-number" id="txtvalortotalProyectoExtension" disabled/>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="col-md-12">
+                          <label class="form-label-iris">Área Académica</label>   
+                      </div>
+                      <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboAreaAcadProyectoExtension" required></select>    
+                          <div class="invalid-feedback">
+                            Área Académica es un campo obligatorio
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmEstDerechoProyectoExtension"># Estud. Derecho</label>
+                        <input type="number" class="form-control iris" id="nmEstDerechoProyectoExtension" data-span="spannmEstDerechoProyectoExtension" />
+                        <div id="spannmEstDerechoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmEstCienciaPolProyectoExtension"># Estud. Ciencia Política</label>
+                        <input type="number" class="form-control iris" id="nmEstCienciaPolProyectoExtension" data-span="spannmEstCienciaPolProyectoExtension" />
+                        <div id="spannmEstCienciaPolProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmEstPosgradoProyectoExtension"># Estud. Posgrado</label>
+                        <input type="number" class="form-control iris" id="nmEstPosgradoProyectoExtension" data-span="spannmEstPosgradoProyectoExtension" />
+                        <div id="spannmEstPosgradoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtNumeroSarProyectoExtension">No. SAR</label>
+                        <input type="text" class="form-control iris" id="txtNumeroSarProyectoExtension" maxlength="30" placeholder="# SAR" data-span="spantxtNumeroSarProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            No. SAR es un campo obligatorio
+                        </div>
+                        <div id="spantxtNumeroSarProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtNumeroODSProyectoExtension">No. ODS/OPS</label>
+                        <input type="text" class="form-control iris" id="txtNumeroODSProyectoExtension" maxlength="30" placeholder="# SAR" data-span="spantxtNumeroODSProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            No. ODS/OPS es un campo obligatorio
+                        </div>
+                        <div id="spantxtNumeroODSProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Estado Contrato</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboEstadoContratoProyectoExtension" required></select>    
+                        </div>
+                        <div class="invalid-feedback">
+                            Estado Contrato es un campo obligatorio
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row mb-2">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Registro RUP</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboRegistroRUPProyectoExtension" ></select>    
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Entrega Archivo</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboArchivoProyectoExtension" ></select>    
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtentregaarchivoenlaceProyectoExtension">Enlace Archivo Entregado</label>
+                        <textarea class="form-control iris" id="txtentregaarchivoenlaceProyectoExtension" maxlength="500" rows="1" placeholder="Enlace Archivo Entregado" data-span="spantxtentregaarchivoenlaceProyectoExtension" ></textarea>
+                        <div id="spantxtentregaarchivoenlaceProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaProyectoExtensionsDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Proyecto" onclick="ValidatePostUpdateProyectoExtension('formProyectoExtensionDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/detalle_proyectoextension.js"></script>    
+
+  </body>
+
+
+</html>

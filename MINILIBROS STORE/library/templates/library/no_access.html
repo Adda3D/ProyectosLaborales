@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}Libro no encontrado — MiniLibros{% endblock %}
+
+{% block extra_css %}
+<style>
+    .no-access-wrapper {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #f5f7ff 0%, #ffeef8 100%);
+    }
+    .no-access-card {
+        background: #fff;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(102,126,234,0.15);
+        padding: 3rem 2.5rem;
+        max-width: 520px;
+        width: 100%;
+        text-align: center;
+    }
+    .no-access-emoji {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        display: block;
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50%       { transform: translateY(-12px); }
+    }
+    .no-access-card h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a202c;
+        margin-bottom: 0.5rem;
+    }
+    .no-access-card p {
+        color: #718096;
+        line-height: 1.7;
+        margin-bottom: 0.5rem;
+    }
+    .book-name {
+        font-weight: 600;
+        color: #667eea;
+    }
+    .no-access-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+    .btn-primary-purple {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary-purple:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(102,126,234,0.4);
+        color: #fff;
+    }
+    .btn-whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-whatsapp:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+        color: #fff;
+    }
+    .btn-outline {
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #4a5568;
+        text-decoration: none;
+        display: inline-block;
+        transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover {
+        border-color: #667eea;
+        color: #667eea;
+    }
+    .divider {
+        border: none;
+        border-top: 1px solid #e2e8f0;
+        margin: 1.5rem 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="no-access-wrapper">
+    <div class="no-access-card">
+        <span class="no-access-emoji">📚</span>
+        <h1>¡Ups! No encontramos tu libro</h1>
+
+        {% if book %}
+        <p>No tienes acceso a <span class="book-name">{{ book.title }}</span> en tu cuenta.</p>
+        {% else %}
+        <p>No tienes acceso a este libro en tu cuenta.</p>
+        {% endif %}
+
+        <p>Si crees que esto es un error, escríbenos por WhatsApp y lo resolvemos enseguida 🙌</p>
+
+        <hr class="divider">
+
+        <div class="no-access-actions">
+            <a href="https://wa.me/543107648781?text=Hola%2C+no+puedo+acceder+a+mi+libro+{% if book %}{{ book.title|urlencode }}{% endif %}+en+MiniLibros."
+               class="btn-whatsapp"
+               target="_blank" rel="noopener">
+                💬 Contactar por WhatsApp
+            </a>
+            <a href="{% url 'library:my_library' %}" class="btn-primary-purple">
+                📖 Ir a Mi Biblioteca
+            </a>
+            <a href="{% url 'core:home' %}" class="btn-outline">
+                ← Volver al inicio
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

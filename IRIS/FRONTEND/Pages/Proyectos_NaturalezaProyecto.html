@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">    
+
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divProyectos_NaturalezaProyectoHTML">
+                <div class="container" id="dvProyectos_NaturalezaProyectoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Naturaleza Proyecto</div>
+                    <div class="col-md-6 text-center">
+                     
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearProyectos_NaturalezaProyecto()" data-bs-toggle="modal" data-bs-target="#ModalProyectos_NaturalezaProyecto" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Naturaleza</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicProyectos_NaturalezaProyecto">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblProyectos_NaturalezaProyecto" >
+                        <thead>
+                          <tr>
+                            <th>Naturaleza Proyecto</th>
+                            <th>Detalles</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalProyectos_NaturalezaProyecto" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectos_NaturalezaProyecto" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelProyectos_NaturalezaProyecto">Naturaleza Proyecto</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formProyectos_NaturalezaProyecto" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdProyectos_NaturalezaProyecto" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdProyectosNaturalezaProyecto">Nueva Naturaleza</label>
+                                <input type="text" class="form-control iris" id="txtCdProyectosNaturalezaProyecto" maxlength="200"placeholder="Natualeza" data-span="spanCdProyectosNaturalezaProyecto" required/>
+                                <div class="invalid-feedback">
+                                    Nueva Naturaleza es un campo obligatorio
+                                </div>
+                                <div id="spanCdProyectosNaturalezaProyecto" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                              <div class="col-md-12">
+                                <label class="form-label-iris" for="txtProyectos_NaturalezaProyecto">Detalles</label>
+                                <input type="text" class="form-control iris" id="txtProyectos_NaturalezaProyecto" maxlength="500" placeholder="Detalles" data-span="spanProyectos_NaturalezaProyecto" required/>
+                                <div class="invalid-feedback">
+                                    Detalles es un campo obligatorio
+                                </div>
+                                <div id="spanProyectos_NaturalezaProyecto" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseProyectos_NaturalezaProyectoModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectos_NaturalezaProyecto('formProyectos_NaturalezaProyecto', 'btnCloseProyectos_NaturalezaProyectoModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Proyectos_NaturalezaProyecto.js"></script>
+
+
+  </body>
+
+
+</html>

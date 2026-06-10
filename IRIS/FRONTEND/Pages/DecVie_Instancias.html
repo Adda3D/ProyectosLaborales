@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Correspondencia Instancias</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divDecVie_InstanciasHTML">
+                  <span id="spanIdDecVie_Instancias" class="ocultar" ></span>
+                  <span id="spanNombreDecVie_Instancias" class="ocultar" ></span>
+                  <span id="spanIdentificacionDecVie_Instancias" class="ocultar" ></span>
+                  <span id="spanResponsableDecVie_Instancias" class="ocultar" ></span>                                 
+                  <div class="row" id="dvDecVie_InstanciasTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">CORRESPONDENCIA INSTANCIA</div>
+                      <div class="col-md-6 text-center">
+                    
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_Instancias()">Nueva Instancia</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicDecVie_Instancias">
+                      <div class="table-responsive col-md-8 offset-md-2">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_Instancias" >
+                        <thead>
+                          <tr>                            
+                            <th>Instancia</th>
+                            <th>Identificación</th>
+                            <th>Responsable</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvDecVie_InstanciasDetalle"></div>              
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_Instancias.js"></script>
+    <script src="../js/iris/models/DecVie_InstanciasModel.js" ></script>
+
+
+  </body>
+
+
+</html>

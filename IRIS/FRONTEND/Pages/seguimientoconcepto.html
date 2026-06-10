@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Conceptos Gastos</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-8 offset-md-2">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divSeguimientoConceptoHTML">
+                <div class="row" id="dvSeguimientoConceptoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Conceptos de Gasto</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearSeguimiento_Concepto()" data-bs-toggle="modal" data-bs-target="#ModalSeguimientoConcepto" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Concepto</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicSeguimientoConcepto">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblSeguimientoConcepto" >
+                        <thead>
+                          <tr>                            
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Partida</th>
+                            <th>Rubro</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal SeguimientoConcepto -->
+                <div class="modal fade" id="ModalSeguimientoConcepto" tabindex="-1" role="dialog" aria-labelledby="ModalLabelSeguimientoConcepto" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" role="document" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelSeguimientoConcepto">Datos Concepto</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formSeguimientoConcepto" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdSeguimientoConcepto" class="ocultar" ></span>
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtCodigoSeguimientoConcepto">Código</label>
+                                <input type="text" class="form-control iris" id="txtCodigoSeguimientoConcepto" maxlength="10" placeholder="Código Interno" data-span="spantxtCodigoSeguimientoConcepto" required/>
+                                <div class="invalid-feedback">
+                                    Código Interno es un campo obligatorio
+                                </div>
+                                <div id="spantxtCodigoSeguimientoConcepto" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label-iris" for="txtNombreSeguimientoConcepto">Descripción</label>
+                                <input type="text" class="form-control iris" id="txtNombreSeguimientoConcepto" maxlength="50" placeholder="Descripción" data-span="spantxtNombreSeguimientoConcepto" required/>                                
+                                <div class="invalid-feedback">
+                                    Descripción es un campo obligatorio
+                                </div>
+                                <div id="spantxtNombreSeguimientoConcepto" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Partida</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboIdPartidaSeguimientoConcepto" onchange="CargarRubros();" required></select>    
+                                    <div class="invalid-feedback">
+                                        Partida es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-3">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Rubro</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboIdRubroSeguimientoConcepto" required></select>    
+                                    <div class="invalid-feedback">
+                                        Rubro es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+                            </div>                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalSeguimientoConcepto" class="btn-iris white small" onclick="CerrarModalUpdateSeguimientoConcepto()" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateSeguimientoConcepto('formSeguimientoConcepto', 'btnCloseModalSeguimientoConcepto')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/seguimientoconcepto.js"></script>
+
+  </body>
+
+
+</html>

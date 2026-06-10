@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+ -->
+    <style>
+      .divContainer {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divExtensionDashBoardHTML">
+                <span id="spanIdExtensionDashBoard" class="ocultar"></span>
+                <div class="row" id="dvExtensionDashBoardTable">
+                  <div class="row">
+                    <div class="col-md-12 titletab">SEGUIMIENTO EXTENSION</div>
+                  </div>
+                  <div>
+                    <label class="form-label-iris">Grafico</label>
+                    <select name="optionSelectedChart" id="optionSelectedChart">
+                      <option value="">Seleccione</option>
+                      <option value="1">Numero de Propuestas</option>
+                      <option value="2">Numero de Propuestas Modalidad</option>
+                      <option value="3">
+                        Numero de Propuestas Tipo Usuario
+                      </option>
+                      <option value="4">
+                        Numero de Propuestas de Acuerdo a su Origen
+                      </option>
+                      <option value="5">Propuestas por Entidades</option>
+                      <option value="6">Total Proyectos en Ejecucion</option>
+                      <option value="7">
+                        Modalidad Proyectos en Ejecucion
+                      </option>
+                      <option value="8">Estado Proyectos</option>
+
+                      <option value="9">Ver Todas</option>
+                    </select>
+
+                    <!--    <label class="form-label-iris">Tipo Grafico</label>
+                    <select name="tipoGrafico" id="tipoGrafico">
+                      <option value="">Seleccione</option>
+                      <option value="bar">Barras</option>
+                      <option value="pie">Torta</option>
+                    </select> -->
+                    <select name="semestreFiltrado" id="semestreFiltrado">
+                      <option style="margin-bottom: 20px;" value="">Semestre</option>
+                    </select>
+                    <button type="button" onclick="btnShowChart()">
+                      Ver Grafico
+                    </button>
+                  </div>
+
+                  <div class="row" id="divcontainerAppendDivcanvaschart"></div>
+                </div>
+                <div style="margin-top: 60px" id="excelReports" class="row">
+                  <div class="col-md-12 titletab">REPORTES</div>
+                  <div id="_divButtonInputsReports" class="col">
+                    <label class="form-label-iris">Reportes</label>
+                    <select
+                      id="optionSelectedReport"
+                      name="optionSelectedReport"
+                    >
+                      <option value="">Seleccione</option>
+                      <option value="1">Balance de Propuestas</option>
+                      <option value="2">Listado de Entidades</option>
+                      <option value="3">Proyección Proximos Proyectos</option>
+                      <option value="4">
+                        Proyectos PEC Abiertos al Público
+                      </option>
+                      <option value="5">Matriz cono propuestas</option>
+                      <option value="6">
+                        Matriz Liquidacion Finalizacion Proyectos
+                      </option>
+                      <option value="7">Matriz Asignación Proyectos</option>
+                      <option value="8">
+                        Seguimiento Proyectos en Ejecucion
+                      </option>
+                      <option value="9">
+                        Tabla Seguimiento Proyectos en Ejecucion
+                      </option>
+                      <option value="10">
+                        Seguimiento y Cumplimiento Contrapartidas
+                      </option>
+                      <option value="11">
+                        Proyectos Pendientes por Ingreso
+                      </option>
+                      <option value="12">
+                        Seguimiento Suscripcion Actas Liquidacion
+                      </option>
+                      <option value="13">Seguimiento Estado Proyectos</option>
+                    </select>
+                    <button type="button" onclick="btnDownloadReport()">Descargar Reporte</button>            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/iris/proyectoextension_Dashboard.js"></script>
+    <script src="../lib/chart.js/dist/chartjs-plugin-datalabels.js"></script>
+  </body>
+</html>

@@ -1,0 +1,629 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} - Lector{% endblock %}
+
+{% block extra_css %}
+{% if file_type == 'pdf' %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf_viewer.min.css">
+{% endif %}
+<style>
+    /* ── Layout ── */
+    .reader-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 64px);
+        background: #1a1a2e;
+    }
+
+    /* ── Toolbar ── */
+    .reader-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+        background: linear-gradient(135deg, #1f1c2c 0%, #2d2b55 100%);
+        color: white;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        z-index: 10;
+    }
+
+    .reader-toolbar .book-title {
+        font-weight: 700;
+        font-size: 1rem;
+        flex: 1;
+        min-width: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #c4b5fd;
+    }
+
+    .toolbar-group {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        background: rgba(255,255,255,0.07);
+        border-radius: 8px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .toolbar-group span {
+        font-size: 0.85rem;
+        color: #a0aec0;
+        white-space: nowrap;
+    }
+
+    .tb-btn {
+        background: rgba(255,255,255,0.1);
+        border: none;
+        color: white;
+        padding: 0.35rem 0.7rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+        font-family: inherit;
+    }
+
+    .tb-btn:hover { background: rgba(102, 126, 234, 0.5); }
+    .tb-btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* Theme buttons */
+    .theme-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: border-color 0.2s, transform 0.2s;
+    }
+    .theme-dot:hover, .theme-dot.active { border-color: #667eea; transform: scale(1.15); }
+
+    /* ── Main reading area ── */
+    .reader-body {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    /* PDF canvas area */
+    .pdf-area {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 2rem;
+        background: #e0e0e0;
+    }
+
+    #pdfCanvas {
+        max-width: 100%;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    /* ePub area */
+    .epub-area {
+        flex: 1;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    #epub-viewer {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Annotations sidebar */
+    .annotations-sidebar {
+        width: 280px;
+        background: #16213e;
+        color: white;
+        padding: 1rem;
+        overflow-y: auto;
+        border-left: 1px solid rgba(255,255,255,0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .annotations-sidebar h3 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #a0aec0;
+        margin-bottom: 0.5rem;
+    }
+
+    .annotation-item {
+        background: rgba(255,255,255,0.06);
+        padding: 0.75rem;
+        border-radius: 8px;
+        border-left: 3px solid var(--ann-color, #FFFF00);
+        font-size: 0.85rem;
+    }
+
+    .annotation-item button {
+        background: rgba(255,80,80,0.2);
+        border: none;
+        color: #fc8181;
+        border-radius: 4px;
+        padding: 2px 8px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        margin-top: 0.4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .annotations-sidebar { display: none; }
+        .reader-toolbar { gap: 0.35rem; }
+        .book-title { display: none; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="reader-wrapper">
+
+    <!-- ══ TOOLBAR ══ -->
+    <div class="reader-toolbar">
+        <span class="book-title">{{ title }}</span>
+
+        {% if file_type == 'pdf' %}
+        <!-- PDF controls -->
+        <div class="toolbar-group">
+            <button class="tb-btn" id="btn-prev" onclick="prevPage()" title="Página anterior">◀</button>
+            <span>Pág. <strong id="pageNum">1</strong> / <strong id="pageCount">…</strong></span>
+            <button class="tb-btn" id="btn-next" onclick="nextPage()" title="Siguiente">▶</button>
+        </div>
+
+        <div class="toolbar-group">
+            <button class="tb-btn" onclick="zoomOut()" title="Reducir">−</button>
+            <span id="zoomLevel">100</span>%
+            <button class="tb-btn" onclick="zoomIn()" title="Ampliar">+</button>
+        </div>
+
+        <div class="toolbar-group">
+            <button class="tb-btn" onclick="enableHighlight()">🖍 Resaltar</button>
+            <button class="tb-btn" onclick="addNote()">📝 Nota</button>
+        </div>
+
+        {% else %}
+        <!-- ePub controls -->
+        <div class="toolbar-group">
+            <button class="tb-btn" id="btn-epub-prev" onclick="epubPrev()" title="Capítulo anterior">◀</button>
+            <span id="epub-chapter">Capítulo</span>
+            <button class="tb-btn" id="btn-epub-next" onclick="epubNext()" title="Siguiente">▶</button>
+        </div>
+
+        <div class="toolbar-group">
+            <button class="tb-btn" onclick="epubFontDecrease()">A−</button>
+            <button class="tb-btn" onclick="epubFontIncrease()">A+</button>
+        </div>
+
+        <div class="toolbar-group">
+            <button class="tb-btn" onclick="addEpubNote()">📝 Nota</button>
+        </div>
+        {% endif %}
+
+        <!-- Themes (shared) -->
+        <div class="toolbar-group">
+            <button class="theme-dot active" style="background:#ffffff;" onclick="setTheme('LIGHT')" title="Claro"></button>
+            <button class="theme-dot" style="background:#2b2b2b;" onclick="setTheme('DARK')" title="Oscuro"></button>
+            <button class="theme-dot" style="background:#f4ecd8;" onclick="setTheme('SEPIA')" title="Sepia"></button>
+        </div>
+
+        <a href="{% url 'library:my_library' %}" class="tb-btn" title="Volver a Mi Biblioteca">← Biblioteca</a>
+    </div>
+
+    <!-- ══ BODY ══ -->
+    <div class="reader-body">
+
+        {% if file_type == 'pdf' %}
+        <div class="pdf-area" id="pdf-area">
+            <canvas id="pdfCanvas"></canvas>
+        </div>
+
+        <!-- Annotations sidebar (PDF only) -->
+        <div class="annotations-sidebar">
+            <h3>📌 Anotaciones</h3>
+            <div id="annotationsList"></div>
+        </div>
+
+        {% else %}
+        <div class="epub-area">
+            <div id="epub-viewer"></div>
+        </div>
+
+        <!-- Notes sidebar for ePub -->
+        <div class="annotations-sidebar" id="epub-sidebar">
+            <h3>📌 Notas</h3>
+            <div id="epubNotesList"></div>
+        </div>
+        {% endif %}
+
+    </div><!-- /reader-body -->
+</div><!-- /reader-wrapper -->
+{% endblock %}
+
+
+{% block extra_js %}
+{% if file_type == 'pdf' %}
+<!-- ══ PDF.js ══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+    const pdfUrl   = '{{ file_url }}';
+    const accessId = {{ access_id }};
+    let annotations = {{ annotations|safe }};
+    let pdfDoc      = null;
+    let pageNum     = 1;
+    let scale       = 1.0;
+    let highlightMode = false;
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+        pdfDoc = pdf;
+        document.getElementById('pageCount').textContent = pdf.numPages;
+        renderPage(pageNum);
+    });
+
+    function renderPage(num) {
+        pdfDoc.getPage(num).then(page => {
+            const viewport = page.getViewport({ scale });
+            const canvas   = document.getElementById('pdfCanvas');
+            const ctx      = canvas.getContext('2d');
+            canvas.height  = viewport.height;
+            canvas.width   = viewport.width;
+            page.render({ canvasContext: ctx, viewport });
+            document.getElementById('pageNum').textContent = num;
+            loadAnnotationsForPage(num);
+        });
+    }
+
+    function prevPage() { if (pageNum > 1) { pageNum--; renderPage(pageNum); } }
+    function nextPage() { if (pageNum < pdfDoc.numPages) { pageNum++; renderPage(pageNum); } }
+
+    function zoomIn()  { scale += 0.15; document.getElementById('zoomLevel').textContent = Math.round(scale * 100); renderPage(pageNum); }
+    function zoomOut() { if (scale > 0.4) { scale -= 0.15; document.getElementById('zoomLevel').textContent = Math.round(scale * 100); renderPage(pageNum); } }
+
+    const themes = {
+        LIGHT: { bg: '#e0e0e0', canvas: '#ffffff' },
+        DARK:  { bg: '#1a1a2e', canvas: '#2b2b2b' },
+        SEPIA: { bg: '#c9b99a', canvas: '#f4ecd8' },
+    };
+    function setTheme(t) {
+        const area = document.getElementById('pdf-area');
+        area.style.background = themes[t].bg;
+        document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+        event.target.classList.add('active');
+        saveSettings({ theme: t });
+    }
+
+    function enableHighlight() {
+        highlightMode = !highlightMode;
+        alert(highlightMode ? '🖍 Modo resaltado activado. Selecciona texto.' : 'Modo resaltado desactivado.');
+    }
+
+    function addNote() {
+        const content = prompt(`📝 Nota en página ${pageNum}:\n`);
+        if (content) saveAnnotation({ type: 'NOTE', page: pageNum, content, color: '#FFFF00' });
+    }
+
+    function saveAnnotation(data) {
+        fetch('/library/api/annotations/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken') },
+            body: JSON.stringify({ access_id: accessId, ...data })
+        }).then(r => r.json()).then(res => {
+            if (res.success) { annotations.push({ id: res.annotation_id, ...data }); loadAnnotationsForPage(pageNum); }
+        });
+    }
+
+    function loadAnnotationsForPage(page) {
+        const list = document.getElementById('annotationsList');
+        const allNotes = annotations.filter(a => a.type === 'NOTE');
+        // Show current page notes at top, then all others
+        const current  = allNotes.filter(a => a.page === page);
+        const others   = allNotes.filter(a => a.page !== page);
+        const sorted   = [...current, ...others];
+        if (sorted.length === 0) {
+            list.innerHTML = '<p style="color:#718096;font-size:0.8rem;">Sin notas aún. Pulsa 📝 para añadir.</p>';
+            return;
+        }
+        list.innerHTML = sorted.map(ann => `
+            <div class="annotation-item" style="--ann-color:${ann.color};${ann.page === page ? 'border-left-color:#667eea;background:rgba(102,126,234,0.12)' : ''}">
+                <small style="color:#a0aec0">Pág. ${ann.page}${ann.page === page ? ' ← actual' : ''}</small>
+                <p style="margin:0.3rem 0">${ann.content || ''}</p>
+                <button onclick="deleteAnnotation(${ann.id})">Eliminar</button>
+            </div>`).join('');
+    }
+
+    function deleteAnnotation(id) {
+        fetch('/library/api/annotations/' + id + '/', {
+            method: 'POST',
+            headers: { 'X-CSRFToken': getCookie('csrftoken') }
+        }).then(r => r.json()).then(res => {
+            if (res.success) { annotations = annotations.filter(a => a.id !== id); loadAnnotationsForPage(pageNum); }
+        });
+    }
+
+    function saveSettings(data) {
+        fetch('/library/api/settings/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken') },
+            body: JSON.stringify(data)
+        });
+    }
+
+    function getCookie(name) {
+        let v = null;
+        if (document.cookie) {
+            document.cookie.split(';').forEach(c => {
+                c = c.trim();
+                if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+            });
+        }
+        return v;
+    }
+</script>
+
+{% else %}
+<!-- ══ epub.js ══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
+<script>
+    const epubUrl     = '{{ file_url }}';
+    const storageKey  = 'epub_' + epubUrl.replace(/[^a-zA-Z0-9]/g, '_');
+    let book, rendition, epubFontSize = 100;
+    let activeThemeName = 'LIGHT';
+
+    // ── localStorage helpers ──────────────────────────
+    function loadState() {
+        try { return JSON.parse(localStorage.getItem(storageKey)) || {}; }
+        catch(e) { return {}; }
+    }
+    function saveState(patch) {
+        const s = loadState();
+        localStorage.setItem(storageKey, JSON.stringify(Object.assign(s, patch)));
+    }
+
+    // ── Theme map ─────────────────────────────────────
+    const THEMES = {
+        LIGHT: { bg: '#ffffff', fg: '#1a202c' },
+        DARK:  { bg: '#1a1a2e', fg: '#e2e8f0' },
+        SEPIA: { bg: '#f4ecd8', fg: '#5b4636' },
+    };
+
+    function applyTheme(name) {
+        if (!THEMES[name] || !rendition) return;
+        activeThemeName = name;
+        // override() fuerza los estilos sin depender del sistema de clases
+        rendition.themes.override('background', THEMES[name].bg);
+        rendition.themes.override('color',      THEMES[name].fg);
+        // También actualizar el fondo del área contenedora
+        viewerEl.style.background = THEMES[name].bg;
+        // Actualizar botones activos
+        document.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+        const idx = { LIGHT: 0, DARK: 1, SEPIA: 2 };
+        const dots = document.querySelectorAll('.theme-dot');
+        if (dots[idx[name]]) dots[idx[name]].classList.add('active');
+        saveState({ theme: name });
+    }
+
+    // ── Viewer sizing ──────────────────────────────────
+    const viewerEl = document.getElementById('epub-viewer');
+    const toolbar  = document.querySelector('.reader-toolbar');
+
+    function setViewerSize() {
+        const h = window.innerHeight - (toolbar ? toolbar.offsetHeight : 60);
+        viewerEl.style.height = h + 'px';
+        viewerEl.style.width  = '100%';
+    }
+    setViewerSize();
+    window.addEventListener('resize', () => {
+        setViewerSize();
+        if (rendition) rendition.resize('100%', viewerEl.offsetHeight);
+    });
+
+    // ── Check JSZip & epub.js loaded ──────────────────
+    if (typeof JSZip === 'undefined' || typeof ePub === 'undefined') {
+        viewerEl.innerHTML = '<div style="padding:2rem;color:red;">❌ Librería no cargó (JSZip/epub.js). Verifica conexión a internet.</div>';
+        throw new Error('Libs not loaded');
+    }
+
+    // ── Start ─────────────────────────────────────────
+    fetch(epubUrl, { method: 'HEAD' })
+        .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return fetch(epubUrl);
+        })
+        .then(r => r.arrayBuffer())
+        .then(buffer => {
+            const state = loadState();
+
+            book = ePub(buffer, { replacements: 'blobUrl' });
+
+            rendition = book.renderTo(viewerEl, {
+                width:  viewerEl.offsetWidth,
+                height: viewerEl.offsetHeight,
+                spread: 'none',
+                flow:   'paginated',
+            });
+
+            // ── Restore saved state ──
+            epubFontSize = state.fontSize || 100;
+            if (epubFontSize !== 100) rendition.themes.fontSize(epubFontSize + '%');
+
+            // ── Chapter label ──
+            book.loaded.navigation
+                .then(nav => {
+                    if (nav.toc && nav.toc[0]) {
+                        document.getElementById('epub-chapter').textContent = nav.toc[0].label.trim();
+                    }
+                }).catch(() => {});
+
+            // ── Save position on page turn + refresh notes ──
+            rendition.on('relocated', location => {
+                saveState({ cfi: location.start.cfi });
+                currentCfi     = location.start.cfi;
+                currentChapter = document.getElementById('epub-chapter').textContent;
+                book.loaded.navigation.then(nav => {
+                    const ch = nav.get(location.start.href);
+                    if (ch) {
+                        currentChapter = ch.label.trim();
+                        document.getElementById('epub-chapter').textContent = currentChapter;
+                    }
+                    renderEpubNotes();
+                }).catch(() => { renderEpubNotes(); });
+            });
+
+            // ── Re-apply theme after each content load (fixes cycling) ──
+            rendition.hooks.content.register(() => {
+                applyTheme(activeThemeName);
+                if (epubFontSize !== 100) rendition.themes.fontSize(epubFontSize + '%');
+            });
+
+            // ── Display: restore saved CFI or start from beginning ──
+            return rendition.display(state.cfi || undefined);
+        })
+        .then(() => {
+            // Apply saved theme after display completes
+            const state = loadState();
+            applyTheme(state.theme || 'LIGHT');
+        })
+        .catch(err => {
+            console.error('[EPUB] Error:', err);
+            viewerEl.innerHTML = '<div style="padding:2rem;color:#e53e3e;text-align:center;">❌ ' + err + '<br><small>' + epubUrl + '</small></div>';
+        });
+
+    // ── Controls ──────────────────────────────────────
+    function epubPrev() { if (rendition) rendition.prev(); }
+    function epubNext() { if (rendition) rendition.next(); }
+
+    function epubFontIncrease() {
+        epubFontSize = Math.min(epubFontSize + 10, 200);
+        if (rendition) rendition.themes.fontSize(epubFontSize + '%');
+        saveState({ fontSize: epubFontSize });
+    }
+    function epubFontDecrease() {
+        epubFontSize = Math.max(epubFontSize - 10, 60);
+        if (rendition) rendition.themes.fontSize(epubFontSize + '%');
+        saveState({ fontSize: epubFontSize });
+    }
+    function setTheme(t) { applyTheme(t); }
+
+    // ── ePub Notes (DB — misma tabla PDFAnnotation) ────
+    const accessId = {{ access_id }};
+    let epubNotes  = {{ annotations|safe }};   // pre-loaded from server
+    let currentCfi     = null;
+    let currentChapter = 'Inicio';
+
+    function getCookie(name) {
+        let v = null;
+        if (document.cookie) {
+            document.cookie.split(';').forEach(c => {
+                c = c.trim();
+                if (c.startsWith(name + '=')) v = decodeURIComponent(c.slice(name.length + 1));
+            });
+        }
+        return v;
+    }
+
+    function addEpubNote() {
+        if (!currentCfi) {
+            alert('Navega al menos una página antes de añadir notas.');
+            return;
+        }
+        // Intentar obtener el capítulo: variable > span del toolbar > genérico
+        const chapterEl = document.getElementById('epub-chapter');
+        const chapter   = (currentChapter && currentChapter !== 'Inicio' && currentChapter !== 'Capítulo')
+                          ? currentChapter
+                          : (chapterEl && chapterEl.textContent.trim() && chapterEl.textContent.trim() !== 'Capítulo')
+                            ? chapterEl.textContent.trim()
+                            : 'Posición actual';
+        const content = prompt(`📝 Nota en "${chapter}":\n`);
+        if (!content) return;
+
+        fetch('/library/api/annotations/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken') },
+            body: JSON.stringify({
+                access_id: accessId,
+                type:      'NOTE',
+                page:      0,                   // ePub no tiene número de página
+                content:   content,
+                color:     '#667eea',
+                position:  { cfi: currentCfi, chapter: chapter },
+            })
+        }).then(r => r.json()).then(res => {
+            if (res.success) {
+                epubNotes.push({
+                    id:       res.annotation_id,
+                    type:     'NOTE',
+                    page:     0,
+                    content:  content,
+                    color:    '#667eea',
+                    position: { cfi: currentCfi, chapter: chapter },
+                });
+                renderEpubNotes();
+            }
+        }).catch(err => console.error('Error guardando nota:', err));
+    }
+
+    function deleteEpubNote(id) {
+        fetch('/library/api/annotations/' + id + '/', {
+            method: 'POST',
+            headers: { 'X-CSRFToken': getCookie('csrftoken') }
+        }).then(r => r.json()).then(res => {
+            if (res.success) {
+                epubNotes = epubNotes.filter(n => n.id !== id);
+                renderEpubNotes();
+            }
+        }).catch(err => console.error('Error eliminando nota:', err));
+    }
+
+    function goToNote(cfi) {
+        if (rendition && cfi) rendition.display(cfi);
+    }
+
+    function renderEpubNotes() {
+        const list = document.getElementById('epubNotesList');
+        if (!list) return;
+        const notes = epubNotes.filter(n => n.type === 'NOTE');
+        if (notes.length === 0) {
+            list.innerHTML = '<p style="color:#718096;font-size:0.8rem;">Sin notas aún. Pulsa 📝 para añadir.</p>';
+            return;
+        }
+        // Notas de la posición actual primero
+        const sorted = [...notes].sort((a, b) => {
+            const aCfi = a.position && a.position.cfi;
+            const bCfi = b.position && b.position.cfi;
+            return aCfi === currentCfi ? -1 : bCfi === currentCfi ? 1 : 0;
+        });
+        list.innerHTML = sorted.map(n => {
+            const cfi     = n.position && n.position.cfi;
+            const chapter = (n.position && n.position.chapter) || '—';
+            const isCur   = cfi === currentCfi;
+            return `<div class="annotation-item" style="--ann-color:#667eea;${
+                isCur ? 'border-left-color:#667eea;background:rgba(102,126,234,0.12)' : ''}">
+                <small style="color:#a0aec0">${chapter}${isCur ? ' ← actual' : ''}</small>
+                <p style="margin:0.3rem 0;cursor:pointer" onclick="goToNote('${cfi}')"
+                   title="Ir a esta posición">${n.content}</p>
+                <button onclick="deleteEpubNote(${n.id})">Eliminar</button>
+            </div>`;
+        }).join('');
+    }
+
+    document.addEventListener('keyup', e => {
+        if (e.key === 'ArrowLeft')  epubPrev();
+        if (e.key === 'ArrowRight') epubNext();
+    });
+
+    renderEpubNotes();
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,232 @@
+[
+  {
+    "id": "94392167-2a5f-4f4b-8b09-e3772a808281",
+    "name": "Hola",
+    "recipients": [
+      {
+        "id": "573202323547@c.us",
+        "type": "contact",
+        "name": "Adda"
+      },
+      {
+        "id": "34631035703@c.us",
+        "type": "contact",
+        "name": "Malak"
+      },
+      {
+        "id": "Hnlh33zlzEm7CxfHgJeqU7@g.us",
+        "type": "group",
+        "name": "EspFra"
+      }
+    ],
+    "message": "Son las 7;30 de la noche",
+    "schedule": {
+      "days": [
+        4
+      ],
+      "time": "19:30"
+    },
+    "isActive": false,
+    "lastSentAt": "2026-04-09T19:30:00.000Z",
+    "createdAt": "2026-04-09T00:13:39.772Z"
+  },
+  {
+    "id": "c9a0c316-4523-49d9-9a88-a3ff17da2cfb",
+    "name": "Prueba",
+    "recipients": [
+      {
+        "name": "EspFra",
+        "id": "120363424270776652@g.us",
+        "type": "group"
+      }
+    ],
+    "message": "Malak está mejor y Adda es muy pecosa",
+    "schedule": {
+      "days": [
+        4
+      ],
+      "time": "18:00"
+    },
+    "isActive": false,
+    "lastSentAt": "2026-04-09T18:00:00.000Z",
+    "createdAt": "2026-04-09T00:46:15.501Z"
+  },
+  {
+    "id": "b523343f-fb25-4546-a30e-181a32dbf44f",
+    "name": "TEMPERATURA CARNE",
+    "recipients": [
+      {
+        "name": "EG BK JUAN CARLOS",
+        "id": "120363425989988331@g.us",
+        "type": "group"
+      }
+    ],
+    "message": "Zenput: Temperatura carne",
+    "schedule": {
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "time": "11:30"
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-15T11:30:00.000Z",
+    "createdAt": "2026-04-11T22:41:55.391Z"
+  },
+  {
+    "id": "9a1f0551-3be1-4675-93dd-6ea6240ba173",
+    "name": "Temperatura Carne",
+    "recipients": [
+      {
+        "id": "120363425989988331@g.us",
+        "name": "EG BK JUAN CARLOS",
+        "type": "group"
+      }
+    ],
+    "message": "ZENPUT: Temperatura Carne",
+    "schedule": {
+      "time": "13:00",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-15T13:00:00.000Z",
+    "createdAt": "2026-04-11T22:43:16.619Z"
+  },
+  {
+    "id": "d39d469f-d2f9-4722-8b30-77b492515472",
+    "name": "Zenput",
+    "recipients": [
+      {
+        "id": "120363425989988331@g.us",
+        "name": "EG BK JUAN CARLIS",
+        "type": "group"
+      }
+    ],
+    "message": "ZENPUT: Temperatura Carne",
+    "schedule": {
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "time": "19:00"
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-14T19:00:00.000Z",
+    "createdAt": "2026-04-11T22:44:03.058Z"
+  },
+  {
+    "id": "8805893f-3a73-44f0-ba05-562e49238fb8",
+    "name": "REVISIÓN",
+    "recipients": [
+      {
+        "name": "EG BK JUAN CARLOS",
+        "type": "group",
+        "id": "120363425989988331@g.us"
+      }
+    ],
+    "message": "Revisar Caducidades: Pan, verdura, salsas y demás",
+    "schedule": {
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "time": "09:30"
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-15T09:30:00.000Z",
+    "createdAt": "2026-04-11T22:45:22.045Z"
+  },
+  {
+    "id": "3dd60803-9f61-4541-9d80-550d9fa5e3d1",
+    "name": "REVISIÓN",
+    "recipients": [
+      {
+        "type": "contact",
+        "name": "EG BK JUAN CARLOS",
+        "id": "120363425989988331@g.us"
+      }
+    ],
+    "message": "Enviarme Diferencia de inventario por coste \n\n",
+    "schedule": {
+      "time": "09:45",
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-15T09:45:00.000Z",
+    "createdAt": "2026-04-11T22:46:33.416Z"
+  },
+  {
+    "id": "7167a66a-7794-478d-81a5-3551445476cc",
+    "name": "Pedidos",
+    "recipients": [
+      {
+        "type": "group",
+        "id": "120363425989988331@g.us",
+        "name": "EG BK JUAN CARLOS"
+      }
+    ],
+    "message": "PEDIDO PAN\n\n",
+    "schedule": {
+      "time": "09:00",
+      "days": [
+        2,
+        5
+      ]
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-14T09:00:00.000Z",
+    "createdAt": "2026-04-11T22:49:40.752Z"
+  },
+  {
+    "id": "94f73d5b-33e0-48fe-afc8-bd8ab5ce143b",
+    "name": "Pedidos",
+    "recipients": [
+      {
+        "id": "120363425989988331@g.us",
+        "name": "EG BK JUAN CARLOS",
+        "type": "group"
+      }
+    ],
+    "message": "CONWAY FRESCO\n",
+    "schedule": {
+      "days": [
+        0
+      ],
+      "time": "09:00"
+    },
+    "isActive": true,
+    "lastSentAt": "2026-04-12T09:00:00.000Z",
+    "createdAt": "2026-04-11T22:50:17.200Z"
+  }
+]

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Extensión Productos</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">DETALLE PRODUCTOS PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <span id="spanIdProyectoExtensionProductos" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsProyectoExtensionProducto">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionProducto" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtContratoProyectoExtensionProducto">Contrato/Convenio</label>
+              <input type="text" class="form-control iris" id="txtContratoProyectoExtensionProducto" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionProducto">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionProducto" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeProductos()">Volver Listado Proyectos</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearProductoProyectoExtension()" data-bs-toggle="modal" data-bs-target="#ModalProyectoExtensionProducto" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Producto</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionProductos">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionProductos" >
+              <thead>
+                <tr>                                              
+                  <th>Detalle Producto</th>
+                  <th>Tipo</th>  
+                  <th>Fecha Fin</th>
+                  <th>Estado</th>
+                  <th>No. Personas</th>
+                  <th>No. Horas</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalProyectoExtensionProducto" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoExtensionProducto" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelProyectoExtensionProducto">Datos Producto</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formProyectoExtensionProductoDatos" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanProyectoExtensionIdProducto" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Tipo Producto</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboTipoProductoProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Tipo Producto es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-md-6">
+                      <label class="form-label-iris" for="txtProductoProyectoExtension">Detalle Producto</label>
+                      <input type="text" class="form-control iris" id="txtProductoProyectoExtension" maxlength="100" placeholder="Descripción" data-span="spantxtProductoProyectoExtension" required/>
+                      <div class="invalid-feedback">
+                        Detalle Producto es un campo obligatorio
+                      </div>
+                      <div id="spantxtProductoProyectoExtension" class="color-required ocultar">
+                        No se acepta el ingreso de caracteres especiales
+                      </div>
+                    </div>                   
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtFechaProductoProyectoExtension">Fecha Finaliza</label>                                
+                        <input type="date" class="form-control iris" id="dtFechaProductoProyectoExtension" data-span="spandtFechaProductoProyectoExtension" required/>
+                        <div class="invalid-feedback">
+                            Fecha Finaliza es un campo obligatorio
+                        </div>
+                        <div id="spandtFechaProductoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                      <div class="col-md-12">
+                          <label class="form-label-iris">Estado Producto</label>
+                      </div>
+                      <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboEstadoProductoProyectoExtension" required></select>    
+                          <div class="invalid-feedback">
+                            Estado Producto es un campo obligatorio
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmpersonasproductoProyectoExtension">Nro. Personas</label>
+                        <input type="number" class="form-control iris" id="nmpersonasproductoProyectoExtension" data-span="spanmpersonasproductoProyectoExtension" />
+                        <div id="spanmpersonasproductoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmhorasproductoProyectoExtension">Nro. Horas</label>
+                        <input type="number" class="form-control iris" id="nmhorasproductoProyectoExtension" data-span="spanmhorasproductoProyectoExtension" />
+                        <div id="spanmhorasproductoProyectoExtension" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>  
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalProyectoExtensionProducto" class="btn-iris white small" onclick="CerrarModalProyectoExtensionProducto()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoExtensionProducto('formProyectoExtensionProductoDatos', 'btnCloseModalProyectoExtensionProducto')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextensionProductos.js"></script>
+
+  </body>
+
+
+</html>
+

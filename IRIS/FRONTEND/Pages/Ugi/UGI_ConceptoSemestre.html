@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Conceptos Semestre</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">CONCEPTOS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtEjecucion_UGIConceptoSemestre">Semestre</label>
+              <input type="text" class="form-control iris" id="txtEjecucion_UGIConceptoSemestre" disabled/>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtNombreLiteral_UGIConceptoSemestre">Literal</label>
+              <input type="text" class="form-control iris" id="txtNombreLiteral_UGIConceptoSemestre" disabled/>
+            </div>
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverLiteralesDesdeConcepto()">Volver Literales Semestre</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearUGIConceptoSemestre()" data-bs-toggle="modal" data-bs-target="#ModalUGIConceptoSemestre" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Concepto</button>
+              </div>    
+          </div>
+        </div>
+        
+        <div class="row scroll" id="tableModalUGIConceptoSemestre">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblModalUGIConceptoSemestre" >
+              <thead>
+                <tr>
+                  <th>Semestre</th>                                                            
+                  <th>Literal</th>
+                  <th>Concepto</th>
+                  <th>Valor Proyectado</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalUGIConceptoSemestre" tabindex="-1" role="dialog" aria-labelledby="ModalLabelUGIConceptoSemestre" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelUGIConceptoSemestre">Concepto</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formUGIConceptoSemestreDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalUGIConceptoSemestre" class="btn-iris white small" onclick="CerrarUGIConceptoSemestre()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateUGIConceptoSemestreForm('formUGIConceptoSemestreDetalle', 'btnCloseModalUGIConceptoSemestre')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>      
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvUGI_ConceptoSemestre"></div>
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Ugi/UGI_ConceptoSemestreModel.js" ></script>
+    <script src="../../js/iris/Ugi/UGI_ConceptoSemestre.js"></script>
+
+  </body>
+
+
+</html>
+

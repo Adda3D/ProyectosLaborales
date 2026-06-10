@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Investigación Crear Grupo</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divInvestigacion_CrearGrupoHTML">
+                <span id="spanIdGrupoInvestigacion" class="ocultar" ></span>
+                <div class="row" id="dvInvestigacion_CrearGrupoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Crear Grupo</div>
+                    <div class="col-md-6 text-center">
+                   
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearInvestigacion_CrearGrupo()">Nuevo Grupo</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicInvestigacion_CrearGrupo">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblInvestigacion_CrearGrupo" >
+                        <thead>
+                          <tr>                            
+                            <th>Código Hermes</th>
+                            <th>Código Minciencias</th>
+                            <th>Nombre Grupo</th>
+                            <th>Lider</th>
+                            <th>Área Académica</th>
+                            <th>Correos</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvGrupoInvestigacionDetalle"></div>
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Investigacion_CrearGrupo.js"></script>
+
+  </body>
+
+
+</html>
+

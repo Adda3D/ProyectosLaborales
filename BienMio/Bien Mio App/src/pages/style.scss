@@ -1,0 +1,189 @@
+.action-user-col {
+  position: absolute;
+  margin-left: 5vh;
+  margin-top: 10vh;
+  max-height: 90vh;
+  max-width: max-content;
+}
+
+.user-padding {
+  // position: relative;
+  // margin-left: 30vh;
+  padding-left: 2rem;
+}
+
+.event-padding {
+  // position: relative;
+  // margin-left: 30vh;
+  padding-left: 2rem;
+}
+
+.home-padding {
+  // position: relative;
+  // margin-left: 30vh;
+
+}
+
+
+
+.box-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.action-user-col .col3 {
+  width: 40%;
+}
+
+.action-user-col .col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.6%;
+  padding: 2%;
+}
+
+.action-user-col .col:first-child {
+  margin-left: 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  margin: 10px 0;
+  font-weight: bold;
+}
+.w3-wide {
+  letter-spacing: 4px;
+}
+.button-3 {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.button-3 {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container3:after,
+.container3:before,
+.container3 {
+  padding: 0.01em 16px;
+}
+.w3-panel {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.card-grey-4 {
+  margin-top: 16px;
+  margin-left: 20px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.center-3 {
+  text-align: center !important;
+}
+.section-3 {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+.button-3:hover {
+  color: #000 !important;
+  background-color: #ccc !important;
+}
+
+.blog-container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: hsla(0, 0, 0, 0.2) 0 4px 2px -2px;
+  font-family: "adelle-sans", sans-serif;
+  font-weight: 100;
+  margin: 48px auto;
+}
+
+.blog-cover {
+  background: url("http://cdn.cnn.com/cnnnext/dam/assets/190820104325-01-things-to-do-cartagena-colombia.jpg");
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+  height: 15rem;
+  box-shadow: inset hsla(0, 0, 0, 0.2) 0 64px 64px 16px;
+}
+.blog-author,
+.blog-author--no-cover {
+  margin: 0 auto;
+  padding-top: 0.125rem;
+  width: 80%;
+}
+.blog-author h3::before,
+.blog-author h3 {
+  color: #fff;
+  font-weight: 100;
+}
+.blog-author--no-cover h3 {
+  color: lighten(#333, 40%);
+  font-weight: 100;
+}
+.blog-body {
+  margin: 0 auto;
+  width: 80%;
+}
+.blog-title h1 a {
+  color: #333;
+  font-weight: 100;
+}
+.blog-summary p {
+  color: lighten(#333, 10%);
+}
+
+.iframe{
+  width: max-content;
+  padding: 2rem;
+}
+
+.button-login{
+  width: 100%;
+  // height: 4vh;
+  padding: 0.7rem;
+  border-radius: 15%;
+}
+
+.notFound{
+  background: url("../img/404-notfound.png") center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+
+}

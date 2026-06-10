@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Propuesta Modalidad</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-6 offset-md-2">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPropuestaModalidadHTML">
+                <div class="row" id="dvPropuestaModalidadTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">MODALIDAD PROPUESTA</div>
+                    <div class="col-md-6 text-center">
+                  
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPropuestaModalidad()" data-bs-toggle="modal" data-bs-target="#ModalPropuestaModalidad" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Modalidad</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPropuestaModalidad">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaModalidad" >
+                        <thead>
+                          <tr>                            
+                            <th>Modalidad</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Modalidad -->
+                <div class="modal fade" id="ModalPropuestaModalidad" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPropuestaModalidad" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPropuestaModalidad">Modalidad</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPropuestaModalidad" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdPropuestaModalidad" class="ocultar" ></span>
+                              <div>
+                                <label class="form-label-iris" for="txtnmmodalidad">Modalidad</label>
+                                <input type="text" class="form-control iris" id="txtnmmodalidad" maxlength="255" placeholder="Modalidad" data-span="spannmmodalidad" required/>
+                                <div class="invalid-feedback">
+                                    Modalidad es un campo obligatorio
+                                </div>
+                                <div id="spannmmodalidad" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalPropuestaModalidad" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePropuestaModalidad('formPropuestaModalidad', 'btnCloseModalPropuestaModalidad')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/PropuestaModalidad.js"></script>    
+
+
+  </body>
+
+
+</html>

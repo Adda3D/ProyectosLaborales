@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adda Daisy Vargas | Portafolio Profesional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+:root {
+  --bg: #0a0f1e;
+  --bg2: #111827;
+  --bg3: #0d1526;
+  --cyan: #00d4ff;
+  --purple: #7c3aed;
+  --gold: #f59e0b;
+  --text: #f1f5f9;
+  --text2: #94a3b8;
+  --border: #1e293b;
+  --card: #131d30;
+  --glow: 0 0 20px rgba(0,212,255,0.3);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif}
+code,.mono{font-family:'JetBrains Mono',monospace}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
+
+/* CURSOR */
+.cursor{width:8px;height:8px;background:var(--cyan);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transition:transform .1s}
+.cursor-halo{width:32px;height:32px;border:1px solid rgba(0,212,255,0.4);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transition:transform .15s,opacity .3s}
+
+/* NAVBAR */
+nav{position:fixed;top:0;width:100%;z-index:1000;transition:all .3s;padding:16px 0}
+nav.scrolled{background:rgba(10,15,30,0.92);backdrop-filter:blur(12px);padding:10px 0;border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo i{font-size:1rem;opacity:.8}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:all .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);background:rgba(0,212,255,0.08)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* HERO */
+#inicio{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#particles-canvas{position:absolute;inset:0;z-index:0}
+.hero-content{position:relative;z-index:2;text-align:center;padding:120px 24px 60px;max-width:900px;margin:0 auto}
+.hero-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:2.2rem;font-weight:700;font-family:'Space Grotesk',sans-serif;color:#fff;margin:0 auto 28px;border:3px solid rgba(0,212,255,0.5);box-shadow:0 0 30px rgba(0,212,255,0.4)}
+.hero-name{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;background:linear-gradient(135deg,#fff 0%,var(--cyan) 50%,var(--purple) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;line-height:1.1}
+.hero-typewriter{font-size:clamp(1.1rem,3vw,1.5rem);color:var(--cyan);font-weight:600;min-height:2rem;margin-bottom:16px}
+.cursor-blink{border-right:2px solid var(--cyan);animation:blink .7s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{color:var(--text2);font-size:1rem;line-height:1.7;max-width:600px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.4)}
+.btn-outline{background:transparent;color:var(--cyan);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;border:1.5px solid var(--cyan);transition:all .3s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{background:rgba(0,212,255,0.1);transform:translateY(-2px)}
+.hero-socials{display:flex;gap:16px;justify-content:center}
+.hero-socials a{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text2);text-decoration:none;transition:all .3s;font-size:1.1rem}
+.hero-socials a:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:var(--glow)}
+
+/* SECTIONS */
+section{padding:80px 24px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-title{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:8px;text-align:center}
+.section-title span{color:var(--cyan)}
+.section-sub{color:var(--text2);text-align:center;margin-bottom:48px;font-size:.95rem}
+.section-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));margin:12px auto 48px;border-radius:2px}
+
+/* SOBRE MÍ */
+#sobre-mi{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start}
+.about-avatar-wrap{text-align:center}
+.about-avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:700;color:#fff;margin:0 auto 20px;border:4px solid transparent;background-clip:padding-box;position:relative}
+.about-avatar::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));z-index:-1}
+.about-contacts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.about-contacts a{color:var(--text2);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border);border-radius:20px;transition:all .2s}
+.about-contacts a:hover{border-color:var(--cyan);color:var(--cyan)}
+.about-text p{color:var(--text2);line-height:1.8;margin-bottom:12px;font-size:.95rem}
+.about-text p strong{color:var(--text)}
+.about-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center;transition:all .3s}
+.metric-card:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+.metric-num{font-size:1.6rem;font-weight:700;color:var(--cyan);font-family:'Space Grotesk',sans-serif}
+.metric-label{color:var(--text2);font-size:.8rem;margin-top:4px}
+
+/* SKILLS */
+.skills-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:40px;flex-wrap:wrap}
+.tab-btn{padding:10px 24px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;font-size:.9rem;font-family:'Inter',sans-serif;transition:all .2s}
+.tab-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,0.08)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.skill-cat h4{color:var(--cyan);font-size:.9rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.skill-badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.2);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:.78rem;font-family:'JetBrains Mono',monospace;transition:all .2s}
+.badge:hover{background:rgba(0,212,255,0.15);color:var(--text)}
+.power-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.power-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .3s;display:flex;gap:16px;align-items:flex-start}
+.power-card:hover{border-color:var(--purple);box-shadow:0 0 20px rgba(124,58,237,0.25);transform:translateY(-3px)}
+.power-icon{width:44px;height:44px;min-width:44px;background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,212,255,0.2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--purple)}
+.power-text h4{font-size:.92rem;margin-bottom:4px;color:var(--text)}
+.power-text p{font-size:.8rem;color:var(--text2);line-height:1.5}
+
+/* LENGUAJES */
+#lenguajes{background:var(--bg2)}
+.lang-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.lang-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px 16px;text-align:center;transition:all .3s}
+.lang-card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:var(--glow)}
+.lang-icon{font-size:2.8rem;margin-bottom:12px;display:block}
+.lang-name{font-weight:600;font-size:.9rem;margin-bottom:6px}
+.lang-level{font-size:.75rem;padding:3px 10px;border-radius:20px;display:inline-block}
+.level-avanzado{background:rgba(0,212,255,0.15);color:var(--cyan);border:1px solid rgba(0,212,255,0.3)}
+.level-intermedio{background:rgba(124,58,237,0.15);color:#a78bfa;border:1px solid rgba(124,58,237,0.3)}
+.level-basico{background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.3)}
+
+/* EXPERIENCIA */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--cyan),var(--purple))}
+.timeline-item{position:relative;margin-bottom:36px}
+.timeline-dot{position:absolute;left:-26px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--cyan);border:3px solid var(--bg);box-shadow:0 0 12px rgba(0,212,255,0.6)}
+.timeline-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all .3s}
+.timeline-card:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+.timeline-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap;gap:8px}
+.timeline-title{font-size:1.05rem;font-weight:600;color:var(--text)}
+.timeline-company{color:var(--cyan);font-size:.85rem;font-weight:500;margin-bottom:8px}
+.timeline-duration{background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.2);color:var(--cyan);padding:4px 12px;border-radius:20px;font-size:.8rem;white-space:nowrap}
+.timeline-desc{color:var(--text2);font-size:.88rem;line-height:1.7}
+
+/* ESTUDIOS */
+#estudios{background:var(--bg2)}
+.studies-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.studies-section h3{color:var(--text);font-size:1.1rem;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:8px}
+.studies-section h3 i{color:var(--cyan)}
+.study-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin-bottom:12px;transition:all .2s;display:flex;gap:14px;align-items:flex-start}
+.study-card:hover{border-color:var(--border);background:var(--bg3)}
+.study-icon{width:40px;height:40px;min-width:40px;border-radius:8px;background:rgba(0,212,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:1rem}
+.study-info h4{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:3px}
+.study-info p{font-size:.8rem;color:var(--text2)}
+.study-info span{font-size:.75rem;color:var(--gold);font-weight:500}
+.cert-card.featured{border-color:var(--gold);background:rgba(245,158,11,0.05)}
+.cert-card.featured .study-icon{background:rgba(245,158,11,0.15);color:var(--gold)}
+.cert-card.featured h4{color:var(--gold)}
+
+/* PROYECTOS */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.project-card:hover{border-color:var(--cyan);transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,212,255,0.2)}
+.project-thumb{height:160px;background:linear-gradient(135deg,#0d1a2e,#1a2744);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+.project-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,15,30,0.8))}
+.project-thumb.video-thumb{cursor:pointer}
+.project-thumb.video-thumb::before{content:'\f144';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;font-size:3rem;color:rgba(255,255,255,0.8);z-index:2}
+.project-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.project-body h3{font-size:.95rem;font-weight:600;margin-bottom:8px;line-height:1.4}
+.project-body p{color:var(--text2);font-size:.82rem;line-height:1.6;flex:1;margin-bottom:14px}
+.project-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.stack-badge{background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.15);color:var(--text2);padding:3px 8px;border-radius:4px;font-size:.72rem;font-family:'JetBrains Mono',monospace}
+.project-footer{display:flex;gap:8px;flex-wrap:wrap}
+.btn-sm{padding:7px 14px;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s;cursor:pointer;border:none}
+.btn-sm-primary{background:rgba(0,212,255,0.15);color:var(--cyan);border:1px solid rgba(0,212,255,0.3)}
+.btn-sm-primary:hover{background:rgba(0,212,255,0.25)}
+.btn-sm-gold{background:rgba(245,158,11,0.12);color:var(--gold);border:1px solid rgba(245,158,11,0.3)}
+.btn-sm-gold:hover{background:rgba(245,158,11,0.22)}
+.confidential-card{border-color:var(--gold) !important}
+.confidential-badge{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:var(--gold);padding:3px 10px;border-radius:4px;font-size:.75rem;display:inline-flex;align-items:center;gap:4px;margin-bottom:8px}
+
+/* RECONOCIMIENTOS */
+#reconocimientos{background:var(--bg2)}
+.awards-list{display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto}
+.award-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;display:flex;gap:20px;align-items:flex-start;transition:all .3s}
+.award-card:hover{border-color:var(--gold);box-shadow:0 0 20px rgba(245,158,11,0.15)}
+.award-icon{font-size:1.8rem;min-width:40px;text-align:center}
+.award-year{color:var(--gold);font-weight:700;font-family:'Space Grotesk',sans-serif;font-size:1.1rem}
+.award-title{font-weight:600;color:var(--text);margin-bottom:3px}
+.award-org{color:var(--cyan);font-size:.85rem;margin-bottom:4px}
+.award-desc{color:var(--text2);font-size:.83rem;line-height:1.5}
+
+/* INVESTIGACIONES */
+.research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.research-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all .3s}
+.research-card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,0.2)}
+.research-card h4{font-size:.88rem;font-weight:600;margin-bottom:8px;color:var(--text);line-height:1.4}
+.research-card p{color:var(--text2);font-size:.78rem;line-height:1.5;margin-bottom:14px}
+.research-card .btn-sm{font-size:.75rem}
+
+/* MODAL */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-backdrop.open{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px;max-width:600px;width:100%;max-height:85vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-header{padding:24px 24px 16px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border);flex-shrink:0}
+.modal-header h3{font-size:1.05rem;color:var(--text);line-height:1.4;padding-right:16px}
+.modal-close{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem;padding:4px;line-height:1;transition:color .2s;flex-shrink:0}
+.modal-close:hover{color:var(--text)}
+.modal-body{padding:20px 24px;overflow-y:auto;flex:1}
+.modal-body p{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:20px}
+.modal-footer{padding:16px 24px;border-top:1px solid var(--border);flex-shrink:0}
+
+/* DOCUMENTOS */
+#documentos{background:var(--bg2)}
+.docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:700px;margin:0 auto}
+.doc-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;transition:all .3s}
+.doc-card:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+.doc-card i{font-size:2.5rem;color:var(--cyan);margin-bottom:14px;display:block}
+.doc-card h3{font-size:1rem;margin-bottom:16px;color:var(--text)}
+
+/* FOOTER */
+footer{background:#050a14;border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+.footer-name{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:12px}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.footer-links a{color:var(--text2);text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-links a:hover{color:var(--cyan)}
+.footer-copy{color:var(--text2);font-size:.8rem;opacity:.6}
+
+/* BACK TO TOP */
+#back-top{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;font-size:1rem;z-index:500;opacity:0;transform:translateY(20px);transition:all .3s;border:none}
+#back-top.visible{opacity:1;transform:translateY(0)}
+#back-top:hover{box-shadow:var(--glow);transform:translateY(-3px)}
+
+/* VIDEO MODAL */
+.video-modal .modal{max-width:400px}
+.video-modal video{width:100%;border-radius:8px;background:#000;max-height:60vh;display:block}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .lang-grid{grid-template-columns:repeat(4,1fr)}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .research-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:60px;left:0;width:100%;background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);flex-direction:column;padding:16px;border-bottom:1px solid var(--border);gap:4px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 16px;border-radius:8px;font-size:.95rem}
+  .hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr}
+  .about-metrics{grid-template-columns:repeat(2,1fr)}
+  .lang-grid{grid-template-columns:repeat(3,1fr)}
+  .studies-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .research-grid{grid-template-columns:repeat(2,1fr)}
+  .docs-grid{grid-template-columns:1fr}
+  section{padding:60px 16px}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;align-items:center}
+  .lang-grid{grid-template-columns:repeat(2,1fr)}
+  .about-metrics{grid-template-columns:1fr 1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .research-grid{grid-template-columns:1fr}
+  .modal{max-width:95vw}
+  .power-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-halo" id="cursorHalo"></div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#inicio" class="nav-logo"><i class="fas fa-microchip"></i> ADV</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre Mí</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#lenguajes">Lenguajes</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#estudios">Estudios</a></li>
+      <li><a href="#desarrollos">Desarrollos</a></li>
+      <li><a href="#reconocimientos">Reconocimientos</a></li>
+      <li><a href="#investigaciones">Investigaciones</a></li>
+      <li><a href="#documentos">Documentos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio">
+  <canvas id="particles-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-avatar">ADV</div>
+    <h1 class="hero-name">ADDA DAISY VARGAS</h1>
+    <div class="hero-typewriter"><span id="typewriter"></span><span class="cursor-blink"></span></div>
+    <p class="hero-desc">Ingeniera con más de 6 años construyendo soluciones tecnológicas en industria, gobierno y academia. Especialista en IoT, IA y desarrollo de software de alto impacto.</p>
+    <div class="hero-btns">
+      <a href="#desarrollos" class="btn-primary"><i class="fas fa-code"></i> Ver Proyectos</a>
+      <a href="mailto:adda.1507@gmail.com" class="btn-outline"><i class="fas fa-envelope"></i> Contáctame</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://www.linkedin.com/in/adda-vargas-197308215/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Adda3D" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:adda.1507@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="sobre-mi">
+  <div class="section-inner">
+    <h2 class="section-title">Sobre <span>Mí</span></h2>
+    <div class="section-divider"></div>
+    <div class="about-grid" data-aos="fade-up">
+      <div class="about-avatar-wrap">
+        <div class="about-avatar">
+          <img src="Foto.jpg" alt="Foto de Adda Daisy Vargas" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
+        </div>
+        <div class="about-contacts">
+          <a href="mailto:adda.1507@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/adda-vargas-197308215/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>Soy <strong>Ingeniera Mecatrónica</strong> egresada del Instituto Técnico Central, con formación complementaria en <strong>Desarrollo de Software (UDES)</strong> y actualmente cursando la <strong>Especialización en Inteligencia Artificial (UNIMINUTO, 2026)</strong>. Cuento con Tarjeta Profesional de Ingeniería vigente.</p>
+        <p>Mi nivel de inglés es <strong>B1</strong> — con capacidad para lectura técnica, documentación y manejo fluido de herramientas en inglés.</p>
+        <p>Con <strong>más de 6 años de experiencia</strong> en roles de liderazgo TI, coordinación de software IoT, desarrollo de soluciones de IA y docencia en innovación tecnológica. He trabajado en sectores tan diversos como industria manufacturera, aeroportuaria, academia, gobierno y emprendimiento.</p>
+        <p>Cuento con <strong>Certificación Scrum Master (PSM)</strong> y formación en <strong>Gestión de Proyectos PMI</strong>. Soy <strong>Auditora Interna certificada ISO/IEC 27001:2022 e ISO 27005:2022</strong> en Seguridad de la Información, Ciberseguridad y Protección de la Privacidad.</p>
+        <p>Apasionada por construir puentes entre lo técnico y lo estratégico, entre el hardware y el software, entre los datos y las decisiones.</p>
+        <div class="about-metrics">
+          <div class="metric-card"><div class="metric-num">6+</div><div class="metric-label">Años de experiencia</div></div>
+          <div class="metric-card"><div class="metric-num">15+</div><div class="metric-label">Proyectos desarrollados</div></div>
+          <div class="metric-card"><div class="metric-num">3+</div><div class="metric-label">Sectores industriales</div></div>
+          <div class="metric-card"><div class="metric-num">ISO</div><div class="metric-label">Auditora 27001</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <h2 class="section-title"><span>Skills</span> & Competencias</h2>
+    <div class="section-divider"></div>
+    <div class="skills-tabs">
+      <button class="tab-btn active" onclick="switchTab('tecnicas',this)"><i class="fas fa-code"></i> Habilidades Técnicas</button>
+      <button class="tab-btn" onclick="switchTab('power',this)"><i class="fas fa-star"></i> Power Skills</button>
+    </div>
+    <div id="tab-tecnicas" class="tab-pane active" data-aos="fade-up">
+      <div class="skills-grid">
+        <div class="skill-cat"><h4><i class="fas fa-cloud"></i> Infraestructura Cloud</h4><div class="skill-badges"><span class="badge">Azure IoT Hub</span><span class="badge">Azure Edge</span><span class="badge">Azure Storage</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-terminal"></i> Lenguajes</h4><div class="skill-badges"><span class="badge">Python</span><span class="badge">JavaScript</span><span class="badge">Node.js</span><span class="badge">C#</span><span class="badge">SQL</span><span class="badge">Dart</span><span class="badge">Flutter</span><span class="badge">Java</span><span class="badge">Swift</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-layer-group"></i> Frameworks & Tools</h4><div class="skill-badges"><span class="badge">Angular</span><span class="badge">React</span><span class="badge">Node-RED</span><span class="badge">Django</span><span class="badge">Spring Boot</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-database"></i> Bases de Datos</h4><div class="skill-badges"><span class="badge">SQL Server</span><span class="badge">PostgreSQL</span><span class="badge">SQLite</span><span class="badge">Firebase</span><span class="badge">MongoDB</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-microchip"></i> IoT & Hardware</h4><div class="skill-badges"><span class="badge">ESP8266</span><span class="badge">Arduino</span><span class="badge">RFID</span><span class="badge">Raspberry Pi</span><span class="badge">PLCs</span><span class="badge">Sensores industriales</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-brain"></i> IA & ML</h4><div class="skill-badges"><span class="badge">Prompt Engineering</span><span class="badge">OpenAI API</span><span class="badge">DeepSeek</span><span class="badge">Gemini</span><span class="badge">OpenCV</span><span class="badge">CNN</span><span class="badge">Whisper</span><span class="badge">Google STT</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-server"></i> DevOps & Infra</h4><div class="skill-badges"><span class="badge">Git</span><span class="badge">GitHub</span><span class="badge">Docker</span><span class="badge">Portainer</span><span class="badge">Windows Server</span><span class="badge">Ubuntu Server</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-robot"></i> RPA & Automatización</h4><div class="skill-badges"><span class="badge">n8n</span><span class="badge">pyAutoGUI</span><span class="badge">win32com</span><span class="badge">Selenium</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-tasks"></i> Metodologías</h4><div class="skill-badges"><span class="badge">Scrum PSM</span><span class="badge">PMI</span><span class="badge">Design Thinking</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-shield-alt"></i> Seguridad</h4><div class="skill-badges"><span class="badge">ISO 27001 Auditora</span><span class="badge">ISO 27005</span><span class="badge">Protección de datos</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-mobile-alt"></i> Mobile</h4><div class="skill-badges"><span class="badge">Flutter/Dart</span><span class="badge">Android Studio</span><span class="badge">Java Android</span><span class="badge">SwiftUI</span></div></div>
+        <div class="skill-cat"><h4><i class="fas fa-plug"></i> Otros</h4><div class="skill-badges"><span class="badge">Google Sheets API</span><span class="badge">Telegram Bot API</span><span class="badge">NFC</span><span class="badge">LoRa</span><span class="badge">Bluetooth BLE</span></div></div>
+      </div>
+    </div>
+    <div id="tab-power" class="tab-pane" data-aos="fade-up">
+      <div class="power-grid">
+        <div class="power-card"><div class="power-icon"><i class="fas fa-users"></i></div><div class="power-text"><h4>Liderazgo de Equipos</h4><p>Coordinación de equipos multidisciplinarios en proyectos de alta complejidad</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-comments"></i></div><div class="power-text"><h4>Comunicación Estratégica</h4><p>Puente entre áreas técnicas y directivas</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-sitemap"></i></div><div class="power-text"><h4>Pensamiento Sistémico</h4><p>Visión integral del ciclo de vida de soluciones tecnológicas</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-chalkboard-teacher"></i></div><div class="power-text"><h4>Docencia e Innovación</h4><p>Diseño de programas formativos y metodologías pedagógicas innovadoras</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-puzzle-piece"></i></div><div class="power-text"><h4>Resolución de Problemas</h4><p>Diseño de algoritmos y arquitecturas bajo presión</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-project-diagram"></i></div><div class="power-text"><h4>Gestión de Proyectos</h4><p>Planificación, ejecución y entrega bajo metodologías ágiles y PMI</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-handshake"></i></div><div class="power-text"><h4>Orientación al Cliente</h4><p>Acompañamiento en campo, capacitación y adopción de soluciones</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-sync-alt"></i></div><div class="power-text"><h4>Adaptabilidad</h4><p>Experiencia en sectores industriales, aeroportuarios, académicos y gubernamentales</p></div></div>
+        <div class="power-card"><div class="power-icon"><i class="fas fa-balance-scale"></i></div><div class="power-text"><h4>Integridad y Ética</h4><p>Reconocida públicamente por MATEC en 2025</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LENGUAJES -->
+<section id="lenguajes">
+  <div class="section-inner">
+    <h2 class="section-title">Lenguajes de <span>Programación</span></h2>
+    <div class="section-divider"></div>
+    <div class="lang-grid" data-aos="fade-up">
+      <div class="lang-card"><span class="lang-icon">🐍</span><div class="lang-name">Python</div><span class="lang-level level-avanzado">Avanzado</span></div>
+      <div class="lang-card"><span class="lang-icon">🟨</span><div class="lang-name">JavaScript / Node.js</div><span class="lang-level level-avanzado">Avanzado</span></div>
+      <div class="lang-card"><span class="lang-icon">🗄️</span><div class="lang-name">SQL (T-SQL / PostgreSQL)</div><span class="lang-level level-avanzado">Avanzado</span></div>
+      <div class="lang-card"><span class="lang-icon">💙</span><div class="lang-name">Dart / Flutter</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">☕</span><div class="lang-name">Java (Android)</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">💜</span><div class="lang-name">C# (.NET)</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">🌐</span><div class="lang-name">HTML5 / CSS3</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">⚡</span><div class="lang-name">Arduino / C++ Embebido</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">🔷</span><div class="lang-name">TypeScript</div><span class="lang-level level-intermedio">Intermedio</span></div>
+      <div class="lang-card"><span class="lang-icon">🍎</span><div class="lang-name">Swift (iOS)</div><span class="lang-level level-basico">Básico</span></div>
+      <div class="lang-card"><span class="lang-icon">📝</span><div class="lang-name">Markdown / Shell Script</div><span class="lang-level level-basico">Básico</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="section-inner">
+    <h2 class="section-title">Experiencia <span>Profesional</span></h2>
+    <div class="section-divider"></div>
+    <div class="timeline" data-aos="fade-up">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Líder TI</h3><span class="timeline-duration">~4 años 8 meses</span></div>
+          <div class="timeline-company"><i class="fas fa-university"></i> Universidad Nacional de Colombia</div>
+          <p class="timeline-desc">Diseño, desarrollo e implementación de aplicaciones y herramientas digitales para la optimización de procesos académicos y administrativos. Construcción de soluciones de automatización e IA. Desarrollo de APIs REST. Gobernanza de datos institucionales con SQL. Asesoría tecnológica con enfoque en seguridad y protección de datos.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Coordinadora de Software IoT</h3><span class="timeline-duration">~3 años 2 meses</span></div>
+          <div class="timeline-company"><i class="fas fa-industry"></i> CI MATEC Logística SAS</div>
+          <p class="timeline-desc">Liderazgo en diseño de arquitecturas IoT para sistemas de control de bandas transportadoras en entornos industriales y aeroportuarios. Coordinación de equipos multidisciplinarios. Gestión completa del ciclo de despliegue de soluciones IoT. Enlace técnico con clientes de alto nivel: Smurfit Kappa, Aeropuerto de Tulum, Palmerola, Quiport, José María Córdova, Leonisa, Prebel, Novaventa.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Docente — Analítica de Datos Avanzada</h3><span class="timeline-duration">2 meses</span></div>
+          <div class="timeline-company"><i class="fas fa-graduation-cap"></i> TECNALIA</div>
+          <p class="timeline-desc">Diseño e impartición de programas formativos en analítica de datos avanzada, machine learning y ciencia de datos aplicada. Acompañamiento de equipos en proyectos analíticos con Python.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Desarrolladora de Soluciones IA</h3><span class="timeline-duration">~1 año 2 meses</span></div>
+          <div class="timeline-company"><i class="fas fa-landmark"></i> Alcaldía de Cartagena</div>
+          <p class="timeline-desc">Diseño e implementación de soluciones de IA y RPA para optimización de procesos administrativos en el sector público. Estrategias IoT para turismo. Asistentes virtuales y automatización de flujos. Contribución al Gobierno Digital local.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Directora de Innovación</h3><span class="timeline-duration">~1 año</span></div>
+          <div class="timeline-company"><i class="fas fa-lightbulb"></i> Centro de Innovación para Motociclistas</div>
+          <p class="timeline-desc">Liderazgo de la estrategia de innovación y desarrollo tecnológico. Dirección de equipos en proyectos de prototipado y mejora de procesos para la industria automotriz y de movilidad.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header"><h3 class="timeline-title">Docente y Formadora</h3><span class="timeline-duration">~1 año 8 meses</span></div>
+          <div class="timeline-company"><i class="fas fa-chalkboard-teacher"></i> Universidad CUN</div>
+          <p class="timeline-desc">Diseño de programas formativos en desarrollo de software, pensamiento computacional e innovación tecnológica. Docente Innovador del Año 2021.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTUDIOS -->
+<section id="estudios">
+  <div class="section-inner">
+    <h2 class="section-title">Formación <span>Académica</span></h2>
+    <div class="section-divider"></div>
+    <div class="studies-grid" data-aos="fade-up">
+      <div class="studies-section">
+        <h3><i class="fas fa-university"></i> Formación Académica Formal</h3>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-brain"></i></div><div class="study-info"><h4>Especialización en Inteligencia Artificial</h4><p>Universidad Minuto de Dios (UNIMINUTO)</p><span>2026 — En curso</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-laptop-code"></i></div><div class="study-info"><h4>Desarrollo de Software</h4><p>Universidad de Santander (UDES)</p><span>2021 – 2022</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-cogs"></i></div><div class="study-info"><h4>Ingeniería Mecatrónica</h4><p>Escuela Tecnológica – Instituto Técnico Central</p><span>2019 · Tarjeta Profesional vigente</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-code"></i></div><div class="study-info"><h4>Técnico Profesional en Programación de Software</h4><p>SENA</p><span>2014</span></div></div>
+      </div>
+      <div class="studies-section">
+        <h3><i class="fas fa-certificate"></i> Certificaciones y Complementaria</h3>
+        <div class="study-card cert-card featured"><div class="study-icon"><i class="fas fa-shield-alt"></i></div><div class="study-info"><h4>⭐ Auditora Interna ISO/IEC 27001:2022 e ISO 27005:2022</h4><p>Seguridad de la Información, Ciberseguridad y Protección de la Privacidad</p><span>2026</span></div></div>
+        <div class="study-card cert-card featured"><div class="study-icon"><i class="fas fa-sync-alt"></i></div><div class="study-info"><h4>⭐ Certificación Scrum Foundation — PSM</h4><p>SCRUM Professional Scrum Master</p><span>2022</span></div></div>
+        <div class="study-card cert-card featured"><div class="study-icon"><i class="fas fa-project-diagram"></i></div><div class="study-info"><h4>⭐ Innovación en Políticas Públicas y Gerencia PMI</h4><p>ESAP</p><span>2025</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-robot"></i></div><div class="study-info"><h4>Prompt Engineering</h4><p>Platzi</p><span>2026</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-magic"></i></div><div class="study-info"><h4>RPA e Hiperautomatización con AI</h4><p>Platzi</p><span>2026</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-lightbulb"></i></div><div class="study-info"><h4>Innovación Empresarial</h4><p>Universidad Distrital Francisco José de Caldas</p><span>2024</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-chart-bar"></i></div><div class="study-info"><h4>Gestión de Inteligencia Estratégica y Big Data</h4><p>SENA / Federación Colombiana de Municipios</p><span>2022</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-users"></i></div><div class="study-info"><h4>Inteligencia Colectiva en Acción</h4><p>Academia de Innovación Política – Asuntos del Sur</p><span>2022</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-pencil-alt"></i></div><div class="study-info"><h4>Design Thinking</h4><p>Universidad CUN</p><span>2021</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-mobile"></i></div><div class="study-info"><h4>Modelos de Negocio</h4><p>Universidad Nacional de Colombia</p><span>2023</span></div></div>
+        <div class="study-card"><div class="study-icon"><i class="fas fa-mobile-alt"></i></div><div class="study-info"><h4>Programación de Dispositivos Móviles</h4><p>Udemy</p><span>2017</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESARROLLOS -->
+<section id="desarrollos">
+  <div class="section-inner">
+    <h2 class="section-title"><span>Desarrollos</span> & Proyectos</h2>
+    <div class="section-divider"></div>
+    <div class="projects-grid" data-aos="fade-up">
+
+      <!-- 1. Bien Mío -->
+      <div class="project-card">
+        <div class="project-thumb">🏛️</div>
+        <div class="project-body">
+          <h3>¡Bien Mío! — Plataforma IPCC Cartagena</h3>
+          <p>Plataforma web para la gestión integral del patrimonio material de Cartagena. Digitaliza procesos de atención ciudadana, visitas técnicas y procedimientos legales. Dashboard con mapa en tiempo real y seguimiento de intervenciones a inmuebles del centro histórico.</p>
+          <div class="project-stack"><span class="stack-badge">Angular Material</span><span class="stack-badge">Java 8</span><span class="stack-badge">Spring Boot</span><span class="stack-badge">MySQL</span><span class="stack-badge">Scrum</span></div>
+          <div class="project-footer">
+            <a href="https://drive.google.com/drive/folders/1mCUZd0le_NjJfwt9zIo8DRVQS6iUT_LC" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a>
+            <a href="https://drive.google.com/file/d/1dVD8jR82WnBUn03E06Esc88-nt2mLM2r/view?usp=sharing" target="_blank" class="btn-sm btn-sm-gold"><i class="fas fa-book"></i> Ver Manual</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Bienesmart 360 -->
+      <div class="project-card">
+        <div class="project-thumb">💡</div>
+        <div class="project-body">
+          <h3>Bienesmart 360</h3>
+          <p>Aplicación web desarrollada en el marco de un MBA en la Universidad Javeriana. Aliado digital para el bienestar en la vida profesional, con onboarding personalizado basado en perfil fisiológico y encuestas de rutinas.</p>
+          <div class="project-stack"><span class="stack-badge">Web App</span><span class="stack-badge">Firebase</span><span class="stack-badge">Formularios adaptativos</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1q9-Fd4aVlvmYaRn6_Q_mjtlKTn303wCc" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 3. Bot Actas -->
+      <div class="project-card">
+        <div class="project-thumb">🎙️</div>
+        <div class="project-body">
+          <h3>Bot Actas — Generador Automático desde Audio</h3>
+          <p>Herramienta de IA que transcribe reuniones, identifica hablantes (diarización) y genera actas universitarias formateadas automáticamente. Produce documentos DOCX listos para firmar.</p>
+          <div class="project-stack"><span class="stack-badge">Python</span><span class="stack-badge">Google Cloud STT</span><span class="stack-badge">Whisper</span><span class="stack-badge">DeepSeek API</span><span class="stack-badge">DOCX</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1k1qatgMUMKv8eCg8mai6uZr7YEUnR7X6" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 4. Bot Archivos -->
+      <div class="project-card">
+        <div class="project-thumb">🤖</div>
+        <div class="project-body">
+          <h3>Bot Archivos — RPA Centro de Conciliación</h3>
+          <p>Robot RPA en Python para el Centro de Conciliación 'Jaime Pardo Leal' de la UNAL. Automatiza la descarga, conversión a PDF y organización de expedientes. Incluye interfaz gráfica para operación sin conocimiento técnico.</p>
+          <div class="project-stack"><span class="stack-badge">Python</span><span class="stack-badge">Tkinter</span><span class="stack-badge">win32com</span><span class="stack-badge">Selenium</span><span class="stack-badge">PDF</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1GrZ6Vow3QgyyPRsTGwEIZngiOQ2JB0va" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 5. ChatBot Telegram -->
+      <div class="project-card">
+        <div class="project-thumb">📱</div>
+        <div class="project-body">
+          <h3>ChatBot Telegram — Registro Trámites Doble O</h3>
+          <p>Bot de Telegram para registro y seguimiento de trámites vehiculares. Integrado con Google Sheets y Drive para almacenamiento de datos y n8n para automatización de flujos. Control de usuarios autorizados y registro multi-paso.</p>
+          <div class="project-stack"><span class="stack-badge">Python</span><span class="stack-badge">Telegram API</span><span class="stack-badge">Google Sheets</span><span class="stack-badge">n8n</span><span class="stack-badge">OAuth2</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/136QOiF4oloipqPLRL_NPPFdAfGrlag94" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 6. Control Acceso RFID -->
+      <div class="project-card">
+        <div class="project-thumb">🔐</div>
+        <div class="project-body">
+          <h3>Control de Acceso RFID — Sistema 3 Puertas</h3>
+          <p>Sistema IoT de control de acceso para 3 puertas usando RFID, ESP8266 y Firebase. Incluye app de escritorio C# (Windows Forms) para administrar usuarios, asignar permisos por puerta, días y rangos horarios.</p>
+          <div class="project-stack"><span class="stack-badge">C#</span><span class="stack-badge">.NET</span><span class="stack-badge">Firebase</span><span class="stack-badge">ESP8266</span><span class="stack-badge">RFID</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1hEdQuTwDTkE6c2RPUOjtpzvv-trUbUUp" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 7. DTI Turismo -->
+      <div class="project-card">
+        <div class="project-thumb">🗺️</div>
+        <div class="project-body">
+          <h3>DTI Turismo — App Móvil Android</h3>
+          <p>Aplicación móvil Android para turismo inteligente con geolocalización, autenticación y mapas. Integración con Firebase y Google Maps. Soporte Bluetooth para interacción con dispositivos IoT de proximidad.</p>
+          <div class="project-stack"><span class="stack-badge">Android Studio</span><span class="stack-badge">Kotlin</span><span class="stack-badge">Firebase</span><span class="stack-badge">Google Maps</span><span class="stack-badge">Bluetooth</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1wndrLirPmGlErKcUWtLlrVhRxqO4t-Zx" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 8. Dupper -->
+      <div class="project-card">
+        <div class="project-thumb">✈️</div>
+        <div class="project-body">
+          <h3>Dupper — Planificador de Viajes Personal</h3>
+          <p>App Flutter para Android que permite planificar viajes: mapa interactivo con OpenStreetMap, itinerario por días, registro de costos, wishlist y modo ruta. Datos almacenados 100% local con Hive.</p>
+          <div class="project-stack"><span class="stack-badge">Flutter</span><span class="stack-badge">Dart</span><span class="stack-badge">Hive</span><span class="stack-badge">OpenStreetMap</span><span class="stack-badge">PDF</span></div>
+          <div class="project-footer">
+            <a href="https://drive.google.com/drive/folders/1Ycy6oBr3vJX596rVleidx8H1YkDGQJFw" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a>
+            <a href="https://drive.google.com/file/d/1jKQJBkY_xCV3TvNrDNZXGE34ecYRWvmG/view?usp=drive_link" target="_blank" class="btn-sm btn-sm-gold"><i class="fas fa-download"></i> Descargar APK</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Gestor BK (VIDEO) -->
+      <div class="project-card">
+        <div class="project-thumb video-thumb" onclick="openVideoModal('https://drive.google.com/file/d/17onbRB7-Mr0qosv1zRae1-BNczTRRt44/view?usp=sharing')">🍽️</div>
+        <div class="project-body">
+          <h3>Gestor BK — App iOS para Restaurante</h3>
+          <p>Aplicación iOS (SwiftUI) con backend Node.js + SQLite para gestión integral de restaurante. Módulos de inventario, recordatorios, pedidos, mantenimiento y contactos WhatsApp.</p>
+          <div class="project-stack"><span class="stack-badge">SwiftUI</span><span class="stack-badge">Node.js</span><span class="stack-badge">Express</span><span class="stack-badge">SQLite</span><span class="stack-badge">iOS</span></div>
+          <div class="project-footer">
+            <a href="https://drive.google.com/drive/folders/1BfFIHx6zJCqVTgE6d9NFTcmSurKonW9D" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a>
+            <button onclick="openVideoModal('https://drive.google.com/file/d/17onbRB7-Mr0qosv1zRae1-BNczTRRt44/view?usp=sharing')" class="btn-sm btn-sm-gold"><i class="fas fa-play"></i> Ver Demo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Gobierno Abierto -->
+      <div class="project-card">
+        <div class="project-thumb">🏛️</div>
+        <div class="project-body">
+          <h3>Gobierno Abierto — Transparencia Cartagena</h3>
+          <p>App web Django para la Alcaldía de Cartagena con módulos de Gestión y Contratación Abierta. Informes de gestión del Gabinete alineados con ODS. Tareas asíncronas con Celery y backups en AWS S3.</p>
+          <div class="project-stack"><span class="stack-badge">Django</span><span class="stack-badge">PostgreSQL</span><span class="stack-badge">Celery</span><span class="stack-badge">AWS S3</span><span class="stack-badge">Python</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1Ks6ZgpdDSU9_Z1d304CgjKdvWhNvb5dx" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 11. IRIS UNAL -->
+      <div class="project-card">
+        <div class="project-thumb">🎓</div>
+        <div class="project-body">
+          <h3>IRIS UNAL — Gestión Académica e Investigativa</h3>
+          <p>Backend robusto en .NET para la Universidad Nacional (iris.unal.edu.co). Sistema de gestión con módulos de Investigación, Publicaciones, Extensión, Decanatura y control financiero. Múltiples roles de usuario.</p>
+          <div class="project-stack"><span class="stack-badge">C#</span><span class="stack-badge">.NET</span><span class="stack-badge">API REST</span><span class="stack-badge">PostgreSQL</span><span class="stack-badge">HTML/CSS</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1eeeVYXuOE81f0IM_LB9wmZiXu6aoesUS" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 12. MiniLibros Store -->
+      <div class="project-card">
+        <div class="project-thumb">📚</div>
+        <div class="project-body">
+          <h3>MiniLibros Store — E-commerce con NFC</h3>
+          <p>E-commerce para venta de productos físicos con contenido digital NFC. Personalización de minilibros, mini CDs y vinilos que al escanearse redirigen a contenido digital. Biblioteca digital personal con lector PDF y MercadoPago.</p>
+          <div class="project-stack"><span class="stack-badge">Django</span><span class="stack-badge">Firebase Auth</span><span class="stack-badge">JavaScript</span><span class="stack-badge">MercadoPago</span><span class="stack-badge">NFC</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1Xo-TbkmgvMZIwcu4lmDi7kwO40Z0j2CZ" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 13. MATEC (confidencial) -->
+      <div class="project-card confidential-card">
+        <div class="project-thumb" onclick="openVideoModal('https://drive.google.com/file/d/1RVnZvsDKHRiIVejrMFMVNARPZDcjq7og/view?usp=sharing')" style="cursor:pointer">🏭</div>
+        <div class="project-body">
+          <span class="confidential-badge"><i class="fas fa-lock"></i> Proyecto Confidencial</span>
+          <h3>MATEC — Proyectos IoT Industriales</h3>
+          <p>3 años como Coordinadora de Software IoT: WCS Cartonera (gestión de carros de transferencia), WCS Pick to Light integrado con WMS, y WCS Aeropuertos con visualización 3D, control de maletas y app móvil. Clientes: Smurfit Kappa, aeropuertos de Tulum, Palmerola, Quiport, José María Córdova, Leonisa, Prebel, Novaventa.</p>
+          <div class="project-stack"><span class="stack-badge">Node-RED</span><span class="stack-badge">Angular</span><span class="stack-badge">React</span><span class="stack-badge">SQL Server</span><span class="stack-badge">Docker</span><span class="stack-badge">IoT</span></div>
+          <div class="project-footer"><button onclick="openVideoModal('https://drive.google.com/file/d/1RVnZvsDKHRiIVejrMFMVNARPZDcjq7og/view?usp=sharing')" class="btn-sm btn-sm-gold"><i class="fas fa-play"></i> Ver Video</button></div>
+        </div>
+      </div>
+
+      <!-- 14. Zonas Amarillas -->
+      <div class="project-card">
+        <div class="project-thumb">🚕</div>
+        <div class="project-body">
+          <h3>Zonas Amarillas — App Android (MVP Hackathon)</h3>
+          <p>Aplicación Android desarrollada en 2 días como MVP para el Hackathon de Taxis Libres. Plataforma de movilidad con autenticación Firebase, mapas Google, asignación de roles y geolocalización en tiempo real.</p>
+          <div class="project-stack"><span class="stack-badge">Android Studio</span><span class="stack-badge">Java</span><span class="stack-badge">Kotlin</span><span class="stack-badge">Firebase</span><span class="stack-badge">Google Maps</span></div>
+          <div class="project-footer"><a href="https://drive.google.com/drive/folders/1a3myYZ0IWd5HLGaVydqLEEz1aeEvJopu" target="_blank" class="btn-sm btn-sm-primary"><i class="fab fa-google-drive"></i> Ver Código</a></div>
+        </div>
+      </div>
+
+      <!-- 15. Sitio Web Facultad de Derecho UNAL -->
+      <div class="project-card">
+        <div class="project-thumb">⚖️</div>
+        <div class="project-body">
+          <h3>Sitio Web Facultad de Derecho — UNAL</h3>
+          <p>Portal web institucional oficial de la Facultad de Derecho UNAL Bogotá. Carrusel responsive, panel de accesibilidad completo (tamaño de letra, contraste, inversión de colores), soporte multiidioma, segmentación por perfiles de usuario, biblioteca de acceso abierto.</p>
+          <div class="project-stack"><span class="stack-badge">Django</span><span class="stack-badge">Python</span><span class="stack-badge">Bootstrap</span><span class="stack-badge">WCAG</span><span class="stack-badge">Multiidioma</span></div>
+          <div class="project-footer"><a href="https://derecho.bogota.unal.edu.co/" target="_blank" class="btn-sm btn-sm-primary"><i class="fas fa-external-link-alt"></i> Ver Sitio</a></div>
+        </div>
+      </div>
+
+      <!-- 16. Aplicacion SmartCar -->
+      <div class="project-card">
+        <div class="project-thumb">🛒</div>
+        <div class="project-body">
+          <h3>SMART CAR - AppMovil para Supermercados Euro</h3>
+          <p>Desarrollo para una aplicación móvil en Android, para tabletas instaladas en los carritos de mercados. Cuenta con lectura de inventario por API, conexión a datafono RedeBank, solitud de turnos en zonas como carnicería, lectura código de barras y un diseño fácil para el usuario.</p>
+          <div class="project-stack"><span class="stack-badge">JAVA</span><span class="stack-badge">XML</span><span class="stack-badge">Bootstrap</span><span class="stack-badge">AndroidStudio</span></div>
+          <div class="project-footer"><a href="#" target="_blank" class="btn-sm btn-sm-primary"><i class="fas fa-external-link-alt"></i> Ver Codigo</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECONOCIMIENTOS -->
+<section id="reconocimientos">
+  <div class="section-inner">
+    <h2 class="section-title"><span>Reconocimientos</span></h2>
+    <div class="section-divider"></div>
+    <div class="awards-list" data-aos="fade-up">
+      <div class="award-card"><div class="award-icon">🏆</div><div><div class="award-year">2025</div><div class="award-title">Reconocimiento Integridad</div><div class="award-org">CI MATEC Logística SAS</div><div class="award-desc">Por actuar con coherencia entre lo que se piensa, dice y hace.</div></div></div>
+      <div class="award-card"><div class="award-icon">🥇</div><div><div class="award-year">2022</div><div class="award-title">Reconocimiento por Trabajo en Innovación</div><div class="award-org">AIROBAG — Centro de Innovación para Motociclistas</div><div class="award-desc">Por avances significativos en proyectos de innovación.</div></div></div>
+      <div class="award-card"><div class="award-icon">🎓</div><div><div class="award-year">2021</div><div class="award-title">Docente Innovador del Año</div><div class="award-org">Universidad CUN</div><div class="award-desc">Por implementación de nuevas metodologías innovadoras en el aula.</div></div></div>
+      <div class="award-card"><div class="award-icon">💻</div><div><div class="award-year">2021</div><div class="award-title">Hackathon Anticorrupción</div><div class="award-org"><a href="https://hackcorruption.org/team/" target="_blank" style="color:var(--cyan);text-decoration:none">hackcorruption.org</a></div><div class="award-desc">Construcción de aplicativo web para análisis de datos del SECOP II e identificación de anomalías en contratos.</div></div></div>
+      <div class="award-card"><div class="award-icon">🚀</div><div><div class="award-year">2021</div><div class="award-title">Hackathon Taxis Libres</div><div class="award-org">Taxis Libres</div><div class="award-desc">Construcción de MVP en 2 días — App móvil ZonasAmarillas en Android Studio con Java.</div></div></div>
+      <div class="award-card"><div class="award-icon">🌿</div><div><div class="award-year">2018</div><div class="award-title">Ganadora Labitur</div><div class="award-org">Alcaldía de La Candelaria</div><div class="award-desc">Programa de Laboratorio de Innovación. Aplicación móvil para fomentar el turismo en bicicleta.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIGACIONES -->
+<section id="investigaciones" style="background:var(--bg2)">
+  <div class="section-inner">
+    <h2 class="section-title"><span>Investigaciones</span> & Documentos</h2>
+    <div class="section-divider"></div>
+    <div class="research-grid" data-aos="fade-up">
+
+      <div class="research-card" onclick="openModal('Arquitectura de Software IQ','Diseño de arquitectura limpia para aplicación móvil de investigación y emprendimiento con Firebase, convocatorias, chatbots y panel de administrador. Propuesta arquitectónica que integra patrones de diseño modernos con servicios en la nube para escalar una plataforma académica.','https://drive.google.com/file/d/1iXZMgRoz3NRUe3WEiq7_j2QSBP1iPdTt/view')">
+        <h4>Arquitectura de Software IQ</h4>
+        <p>Arquitectura limpia para app de investigación y emprendimiento con Firebase y chatbots.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Control de Robots por Reconocimiento de Gestos (IA)','Red neuronal convolucional para reconocer 4 gestos de mano con sensor Leap Motion y controlar un robot móvil con Raspberry Pi. El sistema implementa procesamiento en tiempo real y alcanza alta precisión en la clasificación de gestos para navegación autónoma del robot.','https://drive.google.com/file/d/1pP3JfphOQaU8Kg4zWcaLZRvHEw1aBRN1/view')">
+        <h4>Control de Robots por Reconocimiento de Gestos</h4>
+        <p>CNN para reconocer gestos de mano con Leap Motion y controlar robot con Raspberry Pi.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Robots Autónomos por Algoritmos Genéticos','Evitación de obstáculos en tiempo real con algoritmos evolutivos para el robot Khepera3 simulado en Webots. El enfoque genético permite que el robot evolucione comportamientos de navegación óptimos sin programación explícita de reglas.','https://drive.google.com/file/d/1Gbdvs5wrOWqe0Wxple7u_JoQfE8AVEH-/view')">
+        <h4>Robots Autónomos por Algoritmos Genéticos</h4>
+        <p>Evitación de obstáculos en tiempo real con algoritmos evolutivos en Webots.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Robots Autónomos por Lógica Difusa','Simulación de robot móvil con lógica difusa para la tarea Seguir Pared en Webots. El sistema de inferencia difusa permite al robot mantener una distancia constante respecto a paredes con comportamiento suave y adaptativo frente a irregularidades del entorno.','https://drive.google.com/file/d/1L1Idf3gg_OqujXxiFtNsdwcEi8QmVlvQ/view')">
+        <h4>Robots Autónomos por Lógica Difusa</h4>
+        <p>Robot móvil con lógica difusa para tarea 'Seguir Pared' en Webots.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Reconocimiento de Patrones para Apertura de Puertas','Software de reconocimiento facial con OpenCV comparando métodos EigenFaces, FisherFaces, LBPH, SVM y Algoritmos Genéticos para apertura residencial. El estudio compara rendimiento, precisión y robustez de cada enfoque en condiciones de iluminación variable.','https://drive.google.com/file/d/1vJ7zkEEMmFupo6SGgmTU-QdIIbPzfhzc/view')">
+        <h4>Reconocimiento de Patrones para Apertura de Puertas</h4>
+        <p>Reconocimiento facial con OpenCV comparando EigenFaces, FisherFaces y SVM.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Libro mBlock: Iniciación a Programación y Robótica','Guía práctica para niños de programación por bloques con mBlock (Scratch/Arduino). Incluye prácticas didácticas con LEDs, sensores y motores, diseñadas para introducir conceptos de pensamiento computacional de forma lúdica y progresiva.','https://drive.google.com/file/d/19sXTFGmcFSGu4xYOdjn163eytWgja_EP/view')">
+        <h4>Libro mBlock: Iniciación a Programación y Robótica</h4>
+        <p>Guía práctica para niños con mBlock, LEDs, sensores y motores.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Mapa de Recorrido','Documento que presenta la trazabilidad y recorrido metodológico de investigación. Visualización del proceso investigativo y las fases de desarrollo abordadas.','https://drive.google.com/file/d/1pLwrX5O9TO8cKx7YDDH1UKS2nX-J6iot/view')">
+        <h4>Mapa de Recorrido</h4>
+        <p>Trazabilidad y recorrido metodológico de investigación.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Domótica con Ilusión de Magia — Magic Home','Sistema domótico con control por voz y diseño de sistema distribuido usando Raspberry Pi, Firebase y dispositivos móviles como suscriptores. La interfaz emplea metáforas visuales mágicas para ocultar la complejidad técnica al usuario final.','https://drive.google.com/file/d/14a69i1pE4G37LWj2YTxG_qY5fMjth7Qj/view')">
+        <h4>Domótica: Magic Home (Sistemas Distribuidos)</h4>
+        <p>Sistema domótico con control por voz, Raspberry Pi y Firebase.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Smart Parking: IoT con Edge Computing','Prototipo de parqueadero inteligente usando Azure IoT Edge, Docker y Raspberry Pi con computación en el borde. El sistema procesa datos de sensores localmente para reducir latencia y dependencia de conectividad, habilitando decisiones en tiempo real.','https://drive.google.com/file/d/1yuBHCt0DGgDzR3un-SFKmHooLtGf/view')">
+        <h4>Smart Parking: IoT con Edge Computing</h4>
+        <p>Parqueadero inteligente con Azure IoT Edge, Docker y Raspberry Pi.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Proyecto LoRa: Optimización de Recolección de Basuras','Propuesta IoT con tecnología LoRa y sensores Tekelek para optimizar rutas de recolección de residuos en Bogotá. El sistema monitorea el nivel de llenado de los contenedores en tiempo real y genera rutas óptimas dinámicamente.','https://drive.google.com/file/d/1QZza1CPZdLOrthfaKMp-Lj31exuVgkSm/view')">
+        <h4>Proyecto LoRa: Optimización Recolección de Basuras</h4>
+        <p>IoT con LoRa y sensores Tekelek para optimizar rutas en Bogotá.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Reconocimiento de Patrones — Documento Final','Documento final de investigación sobre reconocimiento de patrones. Compendio de resultados, conclusiones y análisis comparativo de los diferentes algoritmos evaluados en el proceso de investigación.','https://drive.google.com/file/d/1D7Us5FpiN9HrXr6kSLCf_iUrnljh0wXv/view')">
+        <h4>Reconocimiento de Patrones (Documento Final)</h4>
+        <p>Compendio de resultados y análisis comparativo de algoritmos evaluados.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('SDD: Turismo Inteligente con IoT','Especificación de sistema de guía turístico con beacons IoT, Firebase, Bluetooth y GPS en La Candelaria, Bogotá. El sistema proporciona experiencias personalizadas a los visitantes mediante puntos de interés activados por proximidad.','https://drive.google.com/file/d/1rlMXBtAKxzK4Xc6GQiMKWoJXQ7f/view')">
+        <h4>SDD: Turismo Inteligente con IoT</h4>
+        <p>Sistema de guía turístico con beacons IoT y GPS en La Candelaria.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+      <div class="research-card" onclick="openModal('Esquema de Sistemas Distribuidos','Esquema y modelado de arquitectura para sistemas distribuidos. Visualización de componentes, patrones de comunicación y flujos de datos en entornos de computación distribuida.','https://drive.google.com/file/d/1dMdu1yzwXtGmIInSwksoGqhjSeMty5Cp/view')">
+        <h4>Esquema de Sistemas Distribuidos</h4>
+        <p>Modelado de arquitectura para sistemas distribuidos.</p>
+        <span class="btn-sm btn-sm-primary"><i class="fas fa-eye"></i> Ver Documento</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section id="documentos">
+  <div class="section-inner">
+    <h2 class="section-title"><span>Documentos</span></h2>
+    <div class="section-divider"></div>
+    <div class="docs-grid" data-aos="fade-up">
+      <div class="doc-card">
+        <i class="fas fa-file-pdf"></i>
+        <h3>Portafolio Desarrollo de Software<br><small style="color:var(--text2);font-weight:400">Adda Vargas</small></h3>
+        <a href="https://drive.google.com/file/d/1uvRY7PeYqVu3aMHkc8-f_fJs8wIDdhrG/view" target="_blank" class="btn-primary" style="justify-content:center"><i class="fas fa-eye"></i> Ver Portafolio</a>
+      </div>
+      <div class="doc-card">
+        <i class="fas fa-cube"></i>
+        <h3>Portafolio 3D</h3>
+        <a href="https://drive.google.com/file/d/18375sNv5uXW1wCney66vAb2C7-YF8cgQ/view" target="_blank" class="btn-primary" style="justify-content:center"><i class="fas fa-eye"></i> Ver Portafolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Adda Daisy Vargas</div>
+  <div class="footer-links">
+    <a href="mailto:adda.1507@gmail.com"><i class="fas fa-envelope"></i> adda.1507@gmail.com</a>
+    <a href="https://www.linkedin.com/in/adda-vargas" target="_blank"><i class="fab fa-linkedin-in"></i>https://www.linkedin.com/in/adda-vargas-197308215/</a>
+  </div>
+  <p class="footer-copy">© 2026 Adda Daisy Vargas. Todos los derechos reservados.</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
+<!-- RESEARCH MODAL -->
+<div class="modal-backdrop" id="researchModal" onclick="closeModalOnBackdrop(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+      <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <p id="modalDesc"></p>
+    </div>
+    <div class="modal-footer">
+      <a id="modalLink" href="#" target="_blank" class="btn-primary"><i class="fas fa-external-link-alt"></i> Visualizar Documento</a>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="modal-backdrop video-modal" id="videoModal" onclick="closeModalOnBackdrop(event)">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-header">
+      <h3>Video Demostrativo</h3>
+      <button class="modal-close" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body" style="padding:16px">
+      <p style="color:var(--text2);font-size:.85rem;margin-bottom:12px">Este video está alojado en Google Drive.</p>
+      <a id="videoLink" href="#" target="_blank" class="btn-primary" style="justify-content:center;display:flex"><i class="fab fa-google-drive"></i> Abrir Video en Drive</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:700,once:true,offset:60});
+
+// CURSOR
+const cursor=document.getElementById('cursor');
+const halo=document.getElementById('cursorHalo');
+if(window.innerWidth>768){
+  document.addEventListener('mousemove',e=>{
+    cursor.style.left=e.clientX-4+'px';cursor.style.top=e.clientY-4+'px';
+    halo.style.left=e.clientX-16+'px';halo.style.top=e.clientY-16+'px';
+  });
+}
+
+// NAVBAR
+const nav=document.getElementById('navbar');
+const hamburger=document.getElementById('hamburger');
+const navLinks=document.getElementById('navLinks');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  document.getElementById('back-top').classList.toggle('visible',window.scrollY>300);
+  updateActiveNav();
+});
+hamburger.addEventListener('click',()=>{
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+}));
+
+function updateActiveNav(){
+  const sections=document.querySelectorAll('section[id]');
+  const links=document.querySelectorAll('.nav-links a');
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)current='#'+s.id});
+  links.forEach(l=>{l.classList.toggle('active',l.getAttribute('href')===current)});
+}
+
+// TYPEWRITER
+const phrases=['Líder TI & Innovación','Especialista IoT & IA','Coordinadora de Software','Transformación Digital'];
+let pi=0,ci=0,del=false;
+const tw=document.getElementById('typewriter');
+function typeLoop(){
+  const phrase=phrases[pi];
+  if(!del){
+    tw.textContent=phrase.slice(0,ci+1);ci++;
+    if(ci===phrase.length){del=true;setTimeout(typeLoop,1800);return;}
+  }else{
+    tw.textContent=phrase.slice(0,ci-1);ci--;
+    if(ci===0){del=false;pi=(pi+1)%phrases.length;}
+  }
+  setTimeout(typeLoop,del?50:80);
+}
+typeLoop();
+
+// PARTICLES
+(function(){
+  const canvas=document.getElementById('particles-canvas');
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',()=>{resize();init();});
+  function Particle(){
+    this.x=Math.random()*W;this.y=Math.random()*H;
+    this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;
+    this.r=Math.random()*2+1;this.a=Math.random();
+  }
+  function init(){particles=[];for(let i=0;i<90;i++)particles.push(new Particle());}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(0,212,255,${p.a*.6})`;ctx.fill();
+    });
+    particles.forEach((p,i)=>{
+      for(let j=i+1;j<particles.length;j++){
+        const d=Math.hypot(p.x-particles[j].x,p.y-particles[j].y);
+        if(d<120){
+          ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle=`rgba(0,212,255,${.15*(1-d/120)})`;ctx.lineWidth=.5;ctx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  init();draw();
+})();
+
+// TABS
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// MODALS
+function openModal(title,desc,link){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalDesc').textContent=desc;
+  document.getElementById('modalLink').href=link;
+  document.getElementById('researchModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('researchModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function openVideoModal(link){
+  document.getElementById('videoLink').href=link;
+  document.getElementById('videoModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeVideoModal(){
+  document.getElementById('videoModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOnBackdrop(e){
+  if(e.target===e.currentTarget){
+    closeModal();closeVideoModal();
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeVideoModal();}});
+</script>
+</body>
+</html>

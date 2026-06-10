@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Investigación Control Financiero</title>
+-->
+
+
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROYECTO INVESTIGACIÓN SEGUIMIENTO FINANCIERO Y ADMINISTRATIVO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtHermesPRJINVControlFinanciero">Hermes ID</label>
+                <input type="text" class="form-control iris" id="txtHermesPRJINVControlFinanciero" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtQuipuPRJINVControlFinanciero">Quipu</label>
+                <input type="text" class="form-control iris" id="txtQuipuPRJINVControlFinanciero" disabled/>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label-iris" for="txtNombrePRJINVControlFinanciero">Nombre Proyecto</label>
+                <textarea class="form-control iris" id="txtNombrePRJINVControlFinanciero" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center" id="dvVolverTablaProyectoInvestigacionDesdeFinanciero">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaProyectoInvestigacionDesdeControlFinancieroForm()">Volver Listado Proyectos</button>                
+                <button type="button" class="btn-iris success " onclick="GenerarExcelProyectoInvestigacionFinanciero()">Exportar Excel</button>
+            </div>    
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoInvestigacionFinanciero">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsProyectoInvestigacionFinanciero">
+                <li class="liopcion liselected" id="liPRJINVFinIngresos">
+                    <a class="nav-link tabPrin active show" id="navPRJINVFinIngresos" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinIngresos',0)">INGRESOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinGastos">
+                    <a class="nav-link tabPrin active " id="navPRJINVFinGastos" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinGastos',1)">GASTOS PERSONAL</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinBienes">
+                    <a class="nav-link tabPrin active " id="navPRJINVFinBienes" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinBienes',2)">BIENES</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinServicios">
+                    <a class="nav-link tabPrin active " id="navPRJINVFinServicios" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinServicios',3)">SERVICIOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinImpuestos">
+                    <a class="nav-link tabPrin active " id="navPRJINVFinImpuestos" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinImpuestos',4)">IMPUESTOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinTransferencias">
+                    <a class="nav-link tabPrin active " id="navPRJINVFinTransferencias" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinTransferencias',5)">TRANSFERENCIAS</a>
+                </li>
+                <li class="liopcion liselected" id="liPRJINVFinTotalPagos">
+                  <a class="nav-link tabPrin active " id="navPRJINVFinTotalPagos" data-toggle="tab" href="#" onclick="onclickTabPRJINVFin('PRJINVFinTotalPagos',6)">PAGOS REALIZADOS</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsProyectoInvestigacionFinanciero">
+                <div role="tabpanel" id="tabPRJINVFinIngresos" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPRJINVFinIngresos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinGastos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPRJINVFinGastos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinBienes" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPRJINVFinBienes">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinServicios" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPRJINVFinServicios">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinImpuestos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPRJINVFinImpuestos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinTransferencias" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPRJINVFinTransferencias">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPRJINVFinTotalPagos" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPRJINVFinTotalPagos">
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvCrearGastoProyectoInvestigacionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvCrearGastoProyectoInvestigacionFinanciero">Datos Crear Gasto</div>          
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoInvestigacionFinancieroCrearGasto" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanProyectoInvestigacionid_investigaciongasto" class="ocultar" ></span>
+                <span id="spanProyectoInvestigacionGastoIdPartida" class="ocultar" ></span>
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Rubro</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoRubro" onchange="CargarConceptosProyectoInvestigacionCrearGasto();" required></select>    
+                        <div class="invalid-feedback">
+                            Rubro es un campo obligatorio
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Concepto</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoConcepto" required></select>    
+                      <div class="invalid-feedback">
+                        Concepto es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoNombre">Objeto Contractual</label>
+                  <textarea class="form-control iris" id="txtProyectoInvestigacionGastoNombre" maxlength="1000" rows="2" placeholder="Objeto Contractual" data-span="spantxtProyectoInvestigacionGastoNombre" required></textarea>
+                  <div class="invalid-feedback">
+                    Objeto Contractual es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionGastoNombre" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Prestador</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <!-- <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoPrestador" required></select>    
+                      modificacion ADDA -->
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoPrestador" onchange="ActualizarIdentificacion();" required></select>
+
+                      <div class="invalid-feedback">
+                        Prestador es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+
+                <!-- CAMBIO ADDA PARA VER LA IDENTIFICACION-->
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                    <label class="form-label-iris" for="txtProyectoInvestigacionGastoIdentificacion">Identificación</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                    <input type="text" class="form-control iris" id="txtProyectoInvestigacionGastoIdentificacion" readonly />
+                  </div>
+                </div>
+                
+              </div> 
+              
+              <div class="form-group row mb-3">
+
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Vínculo</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoVinculo" required></select>    
+                      <div class="invalid-feedback">
+                        Vínculo es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+              
+                <!-- <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoInvestigacionGastoTotal">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoInvestigacionGastoTotal" data-type="currency" min="1" onchange="ValorTotalPago4xmilPRJINV('nmProyectoInvestigacionGastoTotal', 'txtProyectoInvestigacionGastoTotal4mil')" data-span="spannmProyectoInvestigacionGastoTotal" required/>
+                  <div class="invalid-feedback">
+                      Valor Total es un campo obligatorio
+                  </div>
+                  <div id="spannmProyectoInvestigacionGastoTotal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoTotal4mil">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="txtProyectoInvestigacionGastoTotal4mil" required/>
+                </div> -->
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoInvestigacionPagoValor">Valor Neto</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoInvestigacionPagoValor" data-type="currency" min="1" onchange="ValorTotalPago4xmilPRJINV('nmProyectoInvestigacionPagoValor', 'txtProyectoInvestigacionPagoTotal')" data-span="spannmProyectoInvestigacionPagoValor" required/>
+                  <div class="invalid-feedback">
+                      Valor Neto es un campo obligatorio
+                  </div>
+                  <div id="spannmProyectoInvestigacionPagoValor" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoTotal">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="txtProyectoInvestigacionPagoTotal" required/>
+                </div>
+
+
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoInvestigacionGastoFLegalizacion">Fecha Legalización</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoInvestigacionGastoFLegalizacion" data-span="spandtProyectoInvestigacionGastoFLegalizacion" required/>
+                  <div class="invalid-feedback">
+                      Fecha Legalización es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoInvestigacionGastoFLegalizacion" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoTipo">Tipo</label>
+                  <select class="form-control iris" id="txtProyectoInvestigacionGastoTipo">
+                    <option value="">Seleccione</option>
+                    <option value="SAR">SAR</option>
+                    <option value="OSE">OSE</option>
+                    <option value="RAG">RAG</option>
+                    <option value="OPSOSE">OPSOSE</option>
+                    <option value="OPS">OPS</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Tipo es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionGastoTipo" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                
+                
+              </div>
+
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoNorden">No. Orden</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionGastoNorden" maxlength="20" placeholder="No. Orden" data-span="spantxtProyectoInvestigacionGastoNorden" required />
+                  <div class="invalid-feedback">
+                    No. Orden es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionGastoNorden" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoInvestigacionGastoFInicio">Fecha Inicio</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoInvestigacionGastoFInicio" data-span="spandtProyectoInvestigacionGastoFInicio" required/>
+                  <div class="invalid-feedback">
+                      Fecha Inicio es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoInvestigacionGastoFInicio" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoInvestigacionGastoFFinal">Fecha Final</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoInvestigacionGastoFFinal" data-span="spandtProyectoInvestigacionGastoFFinal" required/>
+                  <div class="invalid-feedback">
+                      Fecha Final es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoInvestigacionGastoFFinal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoEstado">Estado</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionGastoEstado" maxlength="20" placeholder="Estado" data-span="spantxtProyectoInvestigacionGastoEstado" required />
+                  <div class="invalid-feedback">
+                    Estado es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionGastoEstado" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+
+                <!-- //CAMBIO ADDA PARA AÑADIR RESOLUCIONES -->
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Resolución</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionGastoResolucion" required></select>    
+                      <div class="invalid-feedback">
+                          Resolución es un campo obligatorio
+                      </div>
+                  </div>
+              </div>
+              
+
+                
+              </div>
+
+              <div class="form-group row mb-3">
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionGastoObservaciones">Observaciones</label>
+                  <textarea class="form-control iris" id="txtProyectoInvestigacionGastoObservaciones" maxlength="150" rows="2" placeholder="Observaciones" data-span="spantxtProyectoInvestigacionGastoObservaciones"></textarea>
+                  <div id="spantxtProyectoInvestigacionGastoObservaciones" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+              </div>  
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosProyectoInvestigacionFinancieroDesdeEdicion()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdateProyectoInvestigacionFinancieroCrearGasto('formProyectoInvestigacionFinancieroCrearGasto')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvAplicarPagoProyectoInvestigacionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvAplicarPagoProyectoInvestigacionFinanciero">Datos para aplicar Pago</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoInvestigacionFinancieroAplicarPago" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanProyectoInvestigacionPagoIdGasto" class="ocultar" ></span>
+                <span id="spanProyectoInvestigacionPagoGastoIdPartida" class="ocultar" ></span>
+                <span id="spanProyectoInvestigacionPagoIdProyecto" class="ocultar" ></span>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoNombreRubro">Rubro</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionPagoNombreRubro" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoPrestador">Prestador</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionPagoPrestador" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoDescrGasto">Descripción Gasto</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionPagoDescrGasto" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoInvestigacionPagoFecha">Fecha Pago</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoInvestigacionPagoFecha" data-span="spandtProyectoInvestigacionPagoFecha" required/>
+                  <div class="invalid-feedback">
+                      Fecha Pago es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoInvestigacionPagoFecha" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoInvestigacionPagoValor1">Valor Neto</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoInvestigacionPagoValor1" data-type="currency" min="1" onchange="ValorTotalPago4xmilPRJINV1('nmProyectoInvestigacionPagoValor1', 'txtProyectoInvestigacionPagoTotal1')" data-span="spannmProyectoInvestigacionPagoValor" required/>
+
+                  <div class="invalid-feedback">
+                      Valor Neto es un campo obligatorio
+                  </div>
+                  <div id="spannmProyectoInvestigacionPagoValor" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoTotal1">Valor Total con 4 x 1000</label>
+                  <input type="text" class="form-control iris iris-number" id="txtProyectoInvestigacionPagoTotal1" required/>
+                </div>
+
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Período</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoInvestigacionPagoPeriodo" required></select>    
+                      <div class="invalid-feedback">
+                        Período es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoOrpa">ORPA</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionPagoOrpa" maxlength="20" placeholder="ORPA" data-span="spantxtProyectoInvestigacionPagoOrpa" required/>
+                  <div class="invalid-feedback">
+                    ORPA es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionPagoOrpa" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoEgreso">C. Egreso</label>
+                  <input type="text" class="form-control iris" id="txtProyectoInvestigacionPagoEgreso" maxlength="20" placeholder="C. Egreso" data-span="spantxtProyectoInvestigacionPagoEgreso" required />
+                  <div class="invalid-feedback">
+                    C. Egreso es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoInvestigacionPagoEgreso" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtProyectoInvestigacionPagoNotas">Notas / Enlaces</label>
+                  <textarea class="form-control iris" id="txtProyectoInvestigacionPagoNotas" maxlength="150" rows="2" placeholder="Observaciones" data-span="spantxtProyectoInvestigacionPagoNotas" ></textarea>
+                  <div id="spantxtProyectoInvestigacionPagoNotas" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosProyectoInvestigacionFinancieroDesdePago()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdateProyectoInvestigacionFinancieroPagoGasto('formProyectoInvestigacionFinancieroAplicarPago')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Investigacion/proyectoinvestigacioncontrolfinanciero.js"></script>
+
+  </body>
+
+
+</html>
+

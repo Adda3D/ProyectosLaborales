@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Libro Personalizado - MiniLibros{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Subir Libro Personalizado</h1>
+    <p>Precio: ${{ price|floatformat:0 }} (sin envío)</p>
+
+    <form method="post" enctype="multipart/form-data" class="product-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="pdf_file">Archivo del Libro:</label>
+            <input type="file" id="pdf_file" name="pdf_file" accept=".pdf,.epub" required>
+            <small>Sube tu libro en formato PDF o ePub</small>
+        </div>
+
+        <div class="form-group">
+            <label for="cover_image">Imagen de Portada:</label>
+            <input type="file" id="cover_image" name="cover_image" accept="image/*" required>
+            <small>Imagen que se usará como portada del mini libro</small>
+        </div>
+
+        <div class="form-group">
+            <label for="custom_message">Mensaje en la primera hoja del libro digital:</label>
+            <textarea id="custom_message" name="custom_message" rows="4"
+                placeholder="Ej: Para ti con carillo de: tu nombre"></textarea>
+            <small>(opcional)</small>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Cantidad:</label>
+
+            <input type="number" id="quantity" name="quantity" value="1" min="1" required style="width: 100px;">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg">Subir y Añadir al Carrito</button>
+    </form>
+
+    <div class="info-box">
+        <h3>ℹ️ Información</h3>
+        <p>Nuestros mini libros son objetos físicos de plástico impresos en 3D — no contienen hojas ni páginas internas. Una vez completado el pago, recibirás tu mini libro con un código NFC/QR en la contraportada que te permitirá acceder a la versión digital completa en cualquier momento.</p>
+    </div>
+</div>
+{% endblock %}

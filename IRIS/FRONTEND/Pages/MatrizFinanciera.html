@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Matriz Financiera</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divMatrizFinancieraHTML">
+                <span id="spanIdMatrizFinanciera" class="ocultar" ></span>
+                <span id="spanIdVigenciaMatrizFinanciera" class="ocultar" ></span>
+                <span id="spanNombreVigenciaMatrizFinanciera" class="ocultar" ></span>
+                <span id="spanIdDependenciaMatrizFinanciera" class="ocultar" ></span>
+                <span id="spanNombreDependenciaMatrizFinanciera" class="ocultar" ></span>                
+                <div class="row" id="dvMatrizFinancieraTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">MATRIZ FINANCIERA</div>
+                    <div class="col-md-6 text-center">
+                 
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearMatrizFinanciera()">Nueva MatrizFinanciera</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicMatrizFinanciera">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblMatrizFinanciera" >
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Vigencia</th>
+                            <th>Presupuesto General Regulado</th>
+                            <th>Presupuesto General Regulado Comprometido</th>
+                            <th>Presupuesto General Regulado por Comprometer</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvMatrizFinancieraDetalle"></div>
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvMatrizFinanciera_GastoApoyo"></div>
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvMatrizFinanciera_GastoOperativo"></div>
+  
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/models/Decanatura/MatrizFinancieraModel.js" ></script>    
+    <script src="../js/iris/MatrizFinanciera.js"></script>  
+  </body>
+</html>
+

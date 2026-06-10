@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrito - MiniLibros{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Tu Carrito</h1>
+
+    {% if cart_items %}
+    <div class="cart-items">
+        <form id="cart-form">
+            {% for item in cart_items %}
+            <div class="cart-item">
+                <div class="item-image">
+                    {% if item.cover_image %}
+                    <img src="{{ item.cover_image }}" alt="{{ item.title }}">
+                    {% else %}
+                    <div class="placeholder">📦</div>
+                    {% endif %}
+                </div>
+                <div class="item-info">
+                    <h3>{{ item.title }}</h3>
+                    <p class="price">${{ item.price|floatformat:0 }}</p>
+                    <div style="margin: 10px 0;">
+                        <label for="qty_{{ item.type }}_{{ item.id }}">Cantidad:</label>
+                        <input type="number" id="qty_{{ item.type }}_{{ item.id }}" name="{{ item.type }}_{{ item.id }}"
+                            value="{{ item.quantity }}" min="1"
+                            style="width: 70px; padding: 5px; text-align: center; border: 1px solid #ddd; border-radius: 4px;"
+                            onchange="updateCartQuantity(this)">
+                    </div>
+                    <p class="item-total">Total: ${{ item.total|floatformat:0 }}</p>
+                </div>
+                <div class="item-actions">
+                    <a href="{% url 'core:remove_from_cart' item.type item.id %}"
+                        class="btn btn-danger btn-sm">Eliminar</a>
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+
+    <div class="cart-summary">
+        <h3>Resumen del Pedido</h3>
+        <p>Subtotal: $<span id="cart-subtotal">{{ subtotal|floatformat:0 }}</span></p>
+
+        <form method="post" action="{% url 'payments:checkout' %}" class="checkout-form">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="full_name">Nombre Completo</label>
+                <input type="text" id="full_name" name="full_name" required class="form-control"
+                    placeholder="Tu nombre completo">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono / Celular</label>
+                <input type="tel" id="phone" name="phone" required class="form-control"
+                    placeholder="Para contactarte sobre el envío">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required
+                    value="{% if user.is_authenticated %}{{ user.email }}{% endif %}">
+                <small class="form-text text-muted">A este correo llegarán tus productos digitales y
+                    confirmación.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Ubicación de Envío</label>
+                <select name="shipping_location" id="shipping_location" required onchange="updateShipping()">
+                    <option value="">Seleccione...</option>
+                    <option value="BOGOTA">Bogotá (Envío gratis)</option>
+                    <option value="OUTSIDE">Fuera de Bogotá (+$8,000)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Dirección de Entrega</label>
+                <textarea id="address" name="address" required class="form-control" rows="2"
+                    placeholder="Calle, Carrera, Número, Barrio..."></textarea>
+            </div>
+
+            <div class="form-group" id="city-group">
+                <label for="city">Ciudad</label>
+                <input type="text" id="city" name="city" required class="form-control">
+            </div>
+
+            <div class="form-group" id="dept-group" style="display:none;">
+                <label for="department">Departamento</label>
+                <input type="text" id="department" name="department" class="form-control"
+                    placeholder="Ej: Antioquia, Valle...">
+            </div>
+
+            <p id="shipping-cost">Costo de envío: $0</p>
+            <p class="total" id="total-amount">Total: ${{ subtotal|floatformat:0 }}</p>
+
+            <button type="submit" class="btn btn-primary btn-lg">Proceder al Pago</button>
+        </form>
+    </div>
+    {% else %}
+    <p>Tu carrito está vacío.</p>
+    <a href="{% url 'core:home' %}" class="btn btn-primary">Continuar Comprando</a>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Usar stringformat:'f' para obtener solo el número sin formato local
+    let currentSubtotal = parseFloat("{{ subtotal|stringformat:'f' }}");
+
+    // Definir funciones globalmente
+    window.updateShipping = function () {
+        const location = document.getElementById('shipping_location').value;
+        const deptGroup = document.getElementById('dept-group');
+        const deptInput = document.getElementById('department');
+        const cityInput = document.getElementById('city');
+
+        let shipping = 0;
+
+        if (location === 'OUTSIDE') {
+            shipping = 8000;
+            // Mostrar departamento y hacerlo obligatorio
+            deptGroup.style.display = 'block';
+            deptInput.required = true;
+
+            // Permitir editar ciudad
+            if (cityInput.value === 'Bogotá D.C.') cityInput.value = '';
+            cityInput.readOnly = false;
+        } else {
+            // Ocultar departamento
+            deptGroup.style.display = 'none';
+            deptInput.required = false;
+            deptInput.value = ''; // Limpiar si se oculta
+
+            if (location === 'BOGOTA') {
+                shipping = 0;
+                cityInput.value = 'Bogotá D.C.';
+                cityInput.readOnly = true;
+            } else {
+                // Caso "Seleccione..."
+                cityInput.value = '';
+                cityInput.readOnly = false;
+            }
+        }
+
+        const total = currentSubtotal + shipping;
+
+        // Formatear números para mostrar (con separadores de miles)
+        const formatNumber = (num) => num.toLocaleString('es-CO');
+
+        document.getElementById('shipping-cost').textContent = 'Costo de envío: $' + formatNumber(shipping);
+        document.getElementById('total-amount').textContent = 'Total: $' + formatNumber(total);
+    }
+
+    window.updateCartQuantity = function (input) {
+        const name = input.name;
+        const quantity = input.value;
+        const data = {};
+        data[name] = quantity;
+
+        fetch('{% url "core:update_cart" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Reload page to reflect new totals
+                    location.reload();
+                } else {
+                    alert('Error al actualizar: ' + data.message);
+                    // Restaurar valor anterior si falla
+                    location.reload();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error de conexión');
+            });
+    }
+
+    window.getCookie = function (name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+{% endblock %}

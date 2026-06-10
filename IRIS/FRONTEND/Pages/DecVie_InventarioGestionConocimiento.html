@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Inventario Gestión del Conocimiento</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_InventarioGestionConocimientoHTML">
+                <span id="spanIdDecVie_InventarioGestionConocimiento" class="ocultar" ></span>
+                <span id="spanSoporteDecVie_InventarioGestionConocimiento" class="ocultar" ></span>
+                <span id="spanVigenciaDecVie_InventarioGestionConocimiento" class="ocultar" ></span>
+                <span id="spanContratanteDecVie_InventarioGestionConocimiento" class="ocultar" ></span>
+                <span id="spanBeneficiariosDecVie_InventarioGestionConocimiento" class="ocultar" ></span>                
+                <div class="row" id="dvDecVie_InventarioGestionConocimientoTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">INVENTARIO GESTIÓN DEL CONOCIMIENTO </div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearDecVie_InventarioGestionConocimiento()">Nuevo Inventario</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicDecVie_InventarioGestionConocimiento">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblDecVie_InventarioGestionConocimiento" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Soporte</th>
+                            <th>N° Vigencia</th>
+                            <th>Contratante</th>
+                            <th>Beneficiarios</th>                                                       
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvDecVie_InventarioGestionConocimientoDetalle"></div>
+
+<!--<div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObligaciones"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTablaProductos"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoExtensionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaAcuerdos"></div>-->
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/DecVie_InventarioGestionConocimiento.js"></script>
+    <script src="../js/iris//models/DecVie_InventarioGestionConocimientoModel.js" ></script>
+
+  </body>
+
+
+</html>
+

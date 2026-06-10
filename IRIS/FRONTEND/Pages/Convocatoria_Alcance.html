@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Alcance Convocatoria</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-12">
+          <div class="col-md-12">
+            <div class="ibox">
+              <div class="ibox-content p-md">
+                <div id="divConvocatoria_AlcanceHTML">
+                  <span id="spanIdConvocatoria_Alcance" class="ocultar" ></span>
+                  <span id="spanNombreProgramaConvocatoria_Alcance" class="ocultar" ></span>
+                  <span id="spanObservacionesConvocatoria_Alcance" class="ocultar" ></span>                                                
+                  <div class="row" id="dvConvocatoria_AlcanceTable">
+                    <div class="row">
+                      <div class="col-md-6 titletab">Alcance Convocatoria</div>
+                      <div class="col-md-6 text-center">
+                    
+                        <button type="button" class="btn btn-primaryiris" onclick="CrearConvocatoria_Alcance()">Nuevo Alcance</button>
+                      </div>
+                    </div>
+  
+                    <div class="row scroll" id="tableDynamicConvocatoria_Alcance">
+                      <div class="table-responsive col-md-12">
+                        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblConvocatoria_Alcance" >
+                        <thead>
+                          <tr>                            
+                            <th>Alcance Convocatoria</th>                            
+                            <th>Observaciones</th>                                                      
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row ocultar col-md-12 scroll" id="dvConvocatoria_AlcanceDetalle"></div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/Convocatoria_Alcance.js"></script>
+    <script src="../js/iris/models/Convocatoria_AlcanceModel.js" ></script>
+
+
+  </body>
+
+
+</html>

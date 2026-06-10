@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicaciones Divulgación</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PUBLICACIONES SEGUIMIENTO DIVULGACIÓN</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">            
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtKardexPublicacionDivulgacion">Kardex</label>
+              <input type="text" class="form-control iris" id="txtKardexPublicacionDivulgacion" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtHermesPublicacionDivulgacion">Hermes</label>
+              <input type="text" class="form-control iris" id="txtHermesPublicacionDivulgacion" disabled/>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label-iris" for="txtNombrePublicacionDivulgacion">Nombre Publicación</label>
+              <textarea class="form-control iris" id="txtNombrePublicacionDivulgacion" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-2 text-center" id="dvVolverTablaPublicacionesDesdeDivulgacion">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaPublicacionesDesdeDivulgacion()">Volver Listado Publicaciones</button>            
+            </div>
+    
+          </div>
+        </div>
+
+        <div class="row scroll" id="tablePublicacionDivulgacion">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsPublicacionDivulgacion">
+                <li class="liopcion selected" id="liPUBDivulgacion_Inicio">
+                    <a class="nav-link tabPrin active show" id="navPUBDivulgacion_Inicio" title="Datos Iniciales Divulgación" data-toggle="tab" href="#" onclick="onclickTabPublicacionDivulgacion('PUBDivulgacion_Inicio',0)">INICIO</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDivulgacion_Plan">
+                  <a class="nav-link tabPrin active " id="navPUBDivulgacion_Plan" title=" Plan de divulgación" data-toggle="tab" href="#" onclick="onclickTabPublicacionDivulgacion('PUBDivulgacion_Plan',2)">PLAN</a>
+                </li>
+                <li class="liopcion selected" id="liPUBDivulgacion_Medios">
+                    <a class="nav-link tabPrin active " id="navPUBDivulgacion_Medios" title="Medios de Divulgación" data-toggle="tab" href="#" onclick="onclickTabPublicacionDivulgacion('PUBDivulgacion_Medios',2)">MEDIOS</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDivulgacion_Herramientas">
+                  <a class="nav-link tabPrin active " id="navPUBDivulgacion_Herramientas" title="Herramientas de Divulgación" data-toggle="tab" href="#" onclick="onclickTabPublicacionDivulgacion('PUBDivulgacion_Herramientas',2)">HERRAMIENTAS</a>
+                </li>  
+                <li class="liopcion selected" id="liPUBDivulgacion_Cierre">
+                  <a class="nav-link tabPrin active " id="navPUBDivulgacion_Cierre" title="Pos evento - Cierre Administrativo" data-toggle="tab" href="#" onclick="onclickTabPublicacionDivulgacion('PUBDivulgacion_Cierre',2)">CIERRE</a>
+                </li>  
+
+            </ul>
+            <div class="tab-content" id="dvTabsPublicacionDivulgacion">
+                <div role="tabpanel" id="tabPUBDivulgacion_Inicio" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPUBDivulgacion_Inicio">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDivulgacion_Plan" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDivulgacion_Plan">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPUBDivulgacion_Medios" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPUBDivulgacion_Medios">
+                        
+                    </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDivulgacion_Herramientas" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDivulgacion_Herramientas">
+                      
+                  </div>
+                </div>  
+                <div role="tabpanel" id="tabPUBDivulgacion_Cierre" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPUBDivulgacion_Cierre">
+                      
+                  </div>
+                </div>  
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->    
+    <script src="../../js/iris/publicacion/publicaciones_divulgacion.js"></script>
+
+  </body>
+
+
+</html>
+

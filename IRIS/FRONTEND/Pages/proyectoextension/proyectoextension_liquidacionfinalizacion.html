@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">    
+    <!--
+    <title>Proyecto Extensión Liquidación - Finalización</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROYECTO LIQUIDACIÓN - FINALIZACIÓN</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <div class="form-group row mb-3">
+                <span id="spanIdProyectoExtensionLiquidacion" class="ocultar" ></span>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtConsProyectoExtensionLiquidacion">Consecutivo</label>
+                  <input type="text" class="form-control iris" id="txtConsProyectoExtensionLiquidacion" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtContratoProyectoExtensionLiquidacion">Contrato/Convenio</label>
+                  <input type="text" class="form-control iris" id="txtContratoProyectoExtensionLiquidacion" disabled/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtNombreProyectoExtensionLiquidacion">Nombre Proyecto</label>
+                  <textarea class="form-control iris" id="txtNombreProyectoExtensionLiquidacion" rows="2" disabled></textarea>                                
+                </div>
+                <div class="col-md-1">
+                  <label class="form-label-iris" for="txtFechaInicioProyectoExtensionLiquidacion">F. Inicio</label>
+                  <input type="text" class="form-control iris" id="txtFechaInicioProyectoExtensionLiquidacion" disabled/>                  
+                </div>
+                <div class="col-md-1">
+                  <label class="form-label-iris" for="txtFechaFinProyectoExtensionLiquidacion">F. Finalización</label>
+                  <input type="text" class="form-control iris" id="txtFechaFinProyectoExtensionLiquidacion" disabled/>
+                </div>
+                <div class="col-md-2 text-center" id="dvVolverTablaProyectoExtensionDesdeLiquidacion">                     
+                    <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeLiquidacion()">Volver Listado Proyectos</button>            
+                </div>      
+            </div>        
+          </div>
+        </div>
+        <!--
+        <div class="row">
+            <div class="col-md-3 titletab"></div>
+            <div class="col-md-6 text-center" id="dvVolverTablaProyectoExtensionDesdeLiquidacion">                     
+              <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeLiquidacion()">Volver Listado Proyectos</button>            
+            </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableProyectoExtensionLiquidacion">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsProyectoExtensionLiquidacion">
+                <li class="liopcion selected" id="liPEL_Liquidacion">
+                    <a class="nav-link tabPrin active show" id="navPEL_Liquidacion" data-toggle="tab" href="#" title="LIQUIDACIÓN Y FINALIZACIÓN PROYECTO" onclick="onclickTabProyectoExtensionLiquidacion('PEL_Liquidacion')">LIQUIDACIÓN</a>
+                </li>
+                <li class="liopcion selected" id="liPEL_SuscripcionActa">
+                  <a class="nav-link tabPrin active " id="navPEL_SuscripcionActa" data-toggle="tab" href="#" title="SUSCRIPCIÓN ACTA DE LIQUIDACIÓN" onclick="onclickTabProyectoExtensionLiquidacion('PEL_SuscripcionActa')">ACTA</a>
+                </li>
+                <li class="liopcion selected" id="liPEL_ModuloRUP">
+                  <a class="nav-link tabPrin active " id="navPEL_ModuloRUP" data-toggle="tab" href="#" title="ACTUALIZACIÓN MÓDULO RUP" onclick="onclickTabProyectoExtensionLiquidacion('PEL_ModuloRUP')">MÓDULO RUP</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsProyectoExtensionLiquidacion">
+                <div role="tabpanel" id="tabPEL_Liquidacion" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPEL_Liquidacion">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEL_SuscripcionActa" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPEL_SuscripcionActa">
+                      
+                  </div>
+                </div>
+                <div role="tabpanel" id="tabPEL_ModuloRUP" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPEL_ModuloRUP">
+                      
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextension_liquidacionfinalizacion.js"></script>
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ejecución Semestre</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divUGI_SemestreHTML">
+                <span id="spanIdUGI_Semestre" class="ocultar" ></span>
+                <span id="spanSemestreUGI_Semestre" class="ocultar" ></span>
+                <span id="spanNombreSemestreUGI_Semestre" class="ocultar" ></span>
+                <span id="spanResoluciónUGI_Semestre" class="ocultar" ></span>
+                <span id="spanFecResolucionUGI_Semestre" class="ocultar" ></span>
+                <span id="spanValorTotalUGI_Semestre" class="ocultar" ></span>               
+                <div class="row" id="dvUGI_SemestreTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Ejecución Semestre</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearUGI_Semestre()">Nueva Proyección</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicUGI_Semestre">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblUGI_Semestre" >
+                        <thead>
+                          <tr>                            
+                            <th>ID</th>
+                            <th>Semestre</th>
+                            <th>N° Resolución</th>
+                            <th>Fecha Resolución</th>
+                            <th>Valor Total Semestre</th>                                                     
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row ocultar col-md-12 scroll" id="dvUGI_SemestreDetalle"></div>
+
+    <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvUGI_LiteralSemestre"></div>
+
+ <!--   <div class="row ocultar col-md-8 offset-md-2 scroll" id="dvProyectoExtensionTablaObservaciones"></div>
+
+    <div class="row ocultar col-md-10 offset-md-1 scroll" id="dvProyectoExtensionTablaProductos"></div>
+
+    <div class="row ocultar col-md-6 offset-md-3 scroll" id="dvProyectoExtensionTablaProfesores"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaFinanciero"></div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionTablaAcuerdos"></div>-->
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/UGI_Semestre.js"></script>
+    <script src="../js/iris/models/Ugi/UGI_SemestreModel.js" ></script>
+
+  </body>
+
+
+</html>

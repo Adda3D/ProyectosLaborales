@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Propuesta Tipo Aprobación</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-6 offset-md-2">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPropuestaTipoAprobacionHTML">
+                <div class="row" id="dvPropuestaTipoAprobacionTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">TIPO APROBACIÓN</div>
+                    <div class="col-md-6 text-center">
+                  
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPropuestaTipoAprobacion()" data-bs-toggle="modal" data-bs-target="#ModalPropuestaTipoAprobacion" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Tipo</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPropuestaTipoAprobacion">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaTipoAprobacion" >
+                        <thead>
+                          <tr>                            
+                            <th>Tipo Aprobación</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Tipo Aprobación -->
+                <div class="modal fade" id="ModalPropuestaTipoAprobacion" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPropuestaTipoAprobacion" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPropuestaTipoAprobacion">Tipo Aprobación</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPropuestaTipoAprobacion" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdPropuestaTipoAprobacion" class="ocultar" ></span>
+                              <div>
+                                <label class="form-label-iris" for="txtnmaprconfac">Tipo Aprobación</label>
+                                <input type="text" class="form-control iris" id="txtnmaprconfac" maxlength="50" placeholder="Tipo Aprobación" data-span="spannmaprconfac" required/>
+                                <div class="invalid-feedback">
+                                    Tipo Aprobación es un campo obligatorio
+                                </div>
+                                <div id="spannmaprconfac" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalPropuestaTipoAprobacion" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePropuestaTipoAprobacion('formPropuestaTipoAprobacion', 'btnCloseModalPropuestaTipoAprobacion')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/PropuestaTipoAprobacion.js"></script>    
+
+
+  </body>
+
+
+</html>

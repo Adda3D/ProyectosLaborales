@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Propuesta Origen</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row col-md-6 offset-md-2">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPropuestaOrigenHTML">
+                <div class="row" id="dvPropuestaOrigenTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">ORIGEN PROPUESTA</div>
+                    <div class="col-md-6 text-center">
+                  
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearPropuestaOrigen()" data-bs-toggle="modal" data-bs-target="#ModalPropuestaOrigen" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Origen</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicPropuestaOrigen">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblPropuestaOrigen" >
+                        <thead>
+                          <tr>                            
+                            <th>Origen</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Origen -->
+                <div class="modal fade" id="ModalPropuestaOrigen" tabindex="-1" role="dialog" aria-labelledby="ModalLabelPropuestaOrigen" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelPropuestaOrigen">Origen</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formPropuestaOrigen" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdPropuestaOrigen" class="ocultar" ></span>
+                              <div>
+                                <label class="form-label-iris" for="txtnmorigenpropuesta">Origen</label>
+                                <input type="text" class="form-control iris" id="txtnmorigenpropuesta" maxlength="40" placeholder="Origen" data-span="spannmorigenpropuesta" required/>
+                                <div class="invalid-feedback">
+                                    Origen es un campo obligatorio
+                                </div>
+                                <div id="spannmorigenpropuesta" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalPropuestaOrigen" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdatePropuestaOrigen('formPropuestaOrigen', 'btnCloseModalPropuestaOrigen')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/PropuestaOrigen.js"></script>    
+
+  </body>
+
+
+</html>

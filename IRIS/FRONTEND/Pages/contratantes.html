@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Contratante</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divContratanteHTML">
+                <div class="row" id="dvContratanteTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">CONTRATANTES</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearContratante()" data-bs-toggle="modal" data-bs-target="#ModalContratante" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Contratante</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicContratante">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblContratante" >
+                        <thead>
+                          <tr>                            
+                            <th>Razón Social</th>
+                            <th>Identificación</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Contratantees -->
+                <div class="modal fade" id="ModalContratante" tabindex="-1" role="dialog" aria-labelledby="ModalLabelContratante" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" role="document" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelContratante">Datos Contratante</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formContratante" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdContratante" class="ocultar" ></span>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Tipo Documento</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cbotipodocContratante-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboTipoDocContratante" required></select>    
+                                    <div class="invalid-feedback">
+                                        Tipo Documento es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-2">
+                                <label class="form-label-iris" for="txtNroIdContratante">No. Identificación</label>
+                                <input type="text" class="form-control iris" id="txtNroIdContratante" maxlength="12" placeholder="No. Identificación" data-span="spanNroIdContratante" required/>
+                                <div class="invalid-feedback">
+                                    No. Identificación es un campo obligatorio
+                                </div>
+                                <div id="spanNroIdContratante" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtRSocialContratante">Razón Social</label>
+                                <input type="text" class="form-control iris" id="txtRSocialContratante" maxlength="300" placeholder="Razón Social" data-span="spanRSocialContratante" required/>                                
+                                <div class="invalid-feedback">
+                                    Razón Social es un campo obligatorio
+                                </div>
+                                <div id="spanRSocialContratante" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="col-md-12">
+                                    <label class="form-label-iris">Tipo Entidad</label>
+                                </div>
+                                <div class="col-md-12 font-size-iris">
+                                    <select class="cbotipoContratanteContratante-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cbotipoContratanteContratante" required></select>    
+                                    <div class="invalid-feedback">
+                                      Tipo Entidad es un campo obligatorio
+                                    </div>
+                                </div>
+                              </div>
+
+
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-md-5">
+                                    <label class="form-label-iris" for="txtDireccionContratante">Dirección</label>
+                                    <input type="text" class="form-control iris" id="txtDireccionContratante" maxlength="200" placeholder="Dirección" data-span="spanDireccionContratante" required/>
+                                    <div class="invalid-feedback">
+                                        Dirección es un campo obligatorio
+                                    </div>
+                                    <div id="spanDireccionContratante" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label-iris" for="txtTelefonoContratante">Teléfono</label>
+                                    <input type="number" class="form-control iris" id="txtTelefonoContratante" maxlength="20" placeholder="Teléfono" data-span="spanTelefonoContratante" required/>
+                                    <div class="invalid-feedback">
+                                        Teléfono es un campo obligatorio
+                                    </div>
+                                    <div id="spanTelefonoContratante" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label-iris" for="txtEmailContratante">Correo Electrónico</label>
+                                    <input type="email" class="form-control iris" id="txtEmailContratante" maxlength="100" placeholder="E-mail" data-span="spanEmailContratante" required/>
+                                    <div class="invalid-feedback">
+                                        Correo Electrónico es un campo obligatorio
+                                    </div>
+                                    <div id="spanEmailContratante" class="color-required ocultar">
+                                      No se acepta el ingreso de caracteres especiales
+                                    </div>
+                                </div>
+                            </div>
+                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalContratante" class="btn-iris white small" onclick="CerrarModalUpdateContratante()" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateContratante('formContratante', 'btnCloseModalContratante')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/contratantes.js"></script>
+
+  </body>
+
+
+</html>

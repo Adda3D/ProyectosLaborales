@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>GESTION OBSERVACIONES PROYECTO INVESTIGACION</title>
+-->
+
+  </head>
+
+  <body>
+
+    <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">OBSERVACIONES PROYECTO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-2">
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtHermesPRJINVObservaciones">Hermes ID</label>
+                <input type="text" class="form-control iris" id="txtHermesPRJINVObservaciones" disabled/>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label-iris" for="txtQuipuPRJINVObservaciones">Quipu</label>
+                <input type="text" class="form-control iris" id="txtQuipuPRJINVObservaciones" disabled/>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label-iris" for="txtNombrePRJINVObservaciones">Nombre Proyecto</label>
+                <textarea class="form-control iris" id="txtNombrePRJINVObservaciones" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverTablaProyectoInvestigacionDesdeObservacionesForm()">Volver Listado Proyectos</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearProyectoInvestigacionObservaciones()" data-bs-toggle="modal" data-bs-target="#ModalProyectoInvestigacionObservaciones" data-bs-keyboard="false" data-bs-backdrop="static">Nueva Observación</button>
+            </div>    
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoInvestigacionObservaciones">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoInvestigacionObservaciones" >
+              <thead>
+                <tr> 
+                    <th>Obligación</th>
+                    <th>Estado</th>                    
+                    <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+
+
+                <!-- Modal Obligación -->
+                <div class="modal fade" id="ModalProyectoInvestigacionObservaciones" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoInvestigacionObservaciones" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                      <div class="modal-content">
+                        <div class="modal-header iris-modal-header">
+                          <h6 class="modal-title" id="ModalLabelProyectoInvestigacionObservaciones">Datos Observación</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <form class="needs-validation" id="formProyectoInvestigacionObservaciones" novalidate>
+  
+                              </form>
+                          </div>
+                        </div>
+                        <div class="modal-footer iris-modal-footer">
+                          <button type="button" id="btnCloseProyectoInvestigacionObservacionesModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                          <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoInvestigacionObservacionesForm('formProyectoInvestigacionObservaciones', 'btnCloseProyectoInvestigacionObservacionesModal')" class="btn-iris success small"/>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+  
+  
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/investigacion/Investigacion_ObservacionModel.js" ></script>
+    <script src="../../js/iris/Investigacion/proyectoinvestigaciontablaobservaciones.js"></script>
+
+  </body>
+
+
+</html>
+
+

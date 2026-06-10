@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--
+    <title>Proyectos Extensión Control Financiero</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROYECTO EXTENSIÓN SEGUIMIENTO FINANCIERO Y ADMINISTRATIVO</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <span id="spanIdProyectoExtensionFinanciero" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsProyectoExtensionFinanciero">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionFinanciero" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtContratoProyectoExtensionFinanciero">Contrato/Convenio</label>
+              <input type="text" class="form-control iris" id="txtContratoProyectoExtensionFinanciero" disabled/>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionFinanciero">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionFinanciero" rows="2" disabled></textarea>                                
+            </div>
+            <div class="col-md-4 text-center" id="dvVolverTablaProyectoExtensionDesdeFinanciero">                     
+              <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeFinanciero()">Volver Listado Proyectos</button>
+              <button type="button" class="btn-iris success " onclick="GenerarExcelProyectoExtensionFinanciero()">Exportar Excel</button>
+            </div>  
+          </div>
+        </div> 
+
+        <div class="row scroll" id="tableProyectoExtensionFinanciero">
+            <ul class="nav nav-tabs" role="tablist" id="ulTabsProyectoExtensionFinanciero">
+                <li class="liopcion liselected" id="liPEFinIngresos">
+                    <a class="nav-link tabPrin active show" id="navPEFinIngresos" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinIngresos',0)">INGRESOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinGastos">
+                    <a class="nav-link tabPrin active " id="navPEFinGastos" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinGastos',1)">GASTOS PERSONAL</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinBienes">
+                    <a class="nav-link tabPrin active " id="navPEFinBienes" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinBienes',2)">BIENES</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinServicios">
+                    <a class="nav-link tabPrin active " id="navPEFinServicios" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinServicios',3)">SERVICIOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinImpuestos">
+                    <a class="nav-link tabPrin active " id="navPEFinImpuestos" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinImpuestos',4)">IMPUESTOS</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinTransferencias">
+                    <a class="nav-link tabPrin active " id="navPEFinTransferencias" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinTransferencias',5)">TRANSFERENCIAS</a>
+                </li>
+                <li class="liopcion liselected" id="liPEFinTotalPagos">
+                  <a class="nav-link tabPrin active " id="navPEFinTotalPagos" data-toggle="tab" href="#" onclick="onclickTabPEFin('PEFinTotalPagos',6)">PAGOS REALIZADOS</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="dvTabsProyectoExtensionFinanciero">
+                <div role="tabpanel" id="tabPEFinIngresos" class="tab-pane tabPrin active show">
+                    <div class="panel-body" id="dvContPEFinIngresos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinGastos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPEFinGastos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinBienes" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPEFinBienes">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinServicios" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPEFinServicios">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinImpuestos" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPEFinImpuestos">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinTransferencias" class="tab-pane tabPrin ">
+                    <div class="panel-body" id="dvContPEFinTransferencias">
+                        
+                    </div>
+                </div>
+                <div role="tabpanel" id="tabPEFinTotalPagos" class="tab-pane tabPrin ">
+                  <div class="panel-body" id="dvContPEFinTotalPagos">
+                      
+                  </div>
+                </div>
+
+            </div>
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvCrearGastoProyectoExtensionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvCrearGastoProyectoExtensionFinanciero">Datos Crear Gasto</div>          
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoExtensionFinancieroCrearGasto" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanProyectoExtensionIdGasto" class="ocultar" ></span>
+                <span id="spanProyectoExtensionGastoIdPartida" class="ocultar" ></span>
+                <div class="col-md-2">
+                    <div class="col-md-12">
+                        <label class="form-label-iris">Rubro</label>
+                    </div>
+                    <div class="col-md-12 font-size-iris">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoExtensionGastoRubro" onchange="CargarConceptosProyectoExtensionCrearGasto();" required></select>    
+                        <div class="invalid-feedback">
+                            Rubro es un campo obligatorio
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Concepto</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoExtensionGastoConcepto" required></select>    
+                      <div class="invalid-feedback">
+                        Concepto es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtProyectoExtensionGastoNombre">Objeto Contractual</label>
+                  <textarea class="form-control iris" id="txtProyectoExtensionGastoNombre" maxlength="500" rows="2" placeholder="Objeto Contractual" data-span="spantxtProyectoExtensionGastoNombre" required></textarea>
+                  <div class="invalid-feedback">
+                    Objeto Contractual es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionGastoNombre" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Contratista</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris" style="display:flex; gap:4px; align-items:flex-start;">
+                      <div style="flex:1; min-width:0;">
+                        <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoExtensionGastoPrestador" required></select>
+                        <div class="invalid-feedback">Contratista es un campo obligatorio</div>
+                      </div>
+                      <button type="button" class="btn btn-primaryiris" style="padding:2px 8px; font-size:16px; line-height:1.5; flex-shrink:0;" onclick="AbrirModalNuevoContratista()" title="Crear nuevo contratista">+</button>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Vínculo</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoExtensionGastoVinculo" required></select>    
+                      <div class="invalid-feedback">
+                        Vínculo es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoExtensionGastoTotal">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoExtensionGastoTotal"  min="1" onchange="ValorTotalPago4xmilPRJINV('nmProyectoExtensionGastoTotal', 'nmProyectoExtensionGastoTotal4mil')" data-span="spannmProyectoExtensionGastoTotal" required/>
+                  <div class="invalid-feedback">
+                      Valor Total es un campo obligatorio
+                  </div>
+                  <div id="spannmProyectoExtensionGastoTotal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoExtensionGastoTotal4mil">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoExtensionGastoTotal4mil" required/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoExtensionGastoFLegalizacion">Fecha Legalización</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoExtensionGastoFLegalizacion" data-span="spandtProyectoExtensionGastoFLegalizacion" required/>
+                  <div class="invalid-feedback">
+                      Fecha Legalización es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoExtensionGastoFLegalizacion" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionGastoTipo">Tipo</label>
+                  <select class="form-control iris" id="txtProyectoExtensionGastoTipo">
+                  </select>
+                  <div class="invalid-feedback">
+                    Tipo es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionGastoTipo" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionGastoNorden">No. Orden</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionGastoNorden" maxlength="20" placeholder="No. Orden" data-span="spantxtProyectoExtensionGastoNorden" required />
+                  <div class="invalid-feedback">
+                    No. Orden es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionGastoNorden" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoExtensionGastoFInicio">Fecha Inicio</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoExtensionGastoFInicio" data-span="spandtProyectoExtensionGastoFInicio" required/>
+                  <div class="invalid-feedback">
+                      Fecha Inicio es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoExtensionGastoFInicio" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+              </div>
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoExtensionGastoFFinal">Fecha Final</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoExtensionGastoFFinal" data-span="spandtProyectoExtensionGastoFFinal" required/>
+                  <div class="invalid-feedback">
+                      Fecha Final es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoExtensionGastoFFinal" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionGastoEstado">Estado</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionGastoEstado" maxlength="20" placeholder="Estado" data-span="spantxtProyectoExtensionGastoEstado" required />
+                  <div class="invalid-feedback">
+                    Estado es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionGastoEstado" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosProyectoExtensionFinancieroDesdeEdicion()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdateProyectoExtensionFinancieroCrearGasto('formProyectoExtensionFinancieroCrearGasto')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+      <div class="row ocultar col-md-12 scroll" id="dvAplicarPagoProyectoExtensionFinanciero">
+        <div class="row">
+          <div class="col-md-6 titletab" id="LabeldvAplicarPagoProyectoExtensionFinanciero">Datos para aplicar Pago</div>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="needs-validation" id="formProyectoExtensionFinancieroAplicarPago" novalidate>
+              <div class="form-group row mb-3">
+                <span id="spanProyectoExtensionPagoIdGasto" class="ocultar" ></span>
+                <span id="spanProyectoExtensionPagoGastoIdPartida" class="ocultar" ></span>
+                <span id="spanProyectoExtensionPagoIdProyecto" class="ocultar" ></span>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoNombreRubro">Rubro</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionPagoNombreRubro" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoPrestador">Contratista</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionPagoPrestador" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoDescrGasto">Descripción Gasto</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionPagoDescrGasto" disabled/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="dtProyectoExtensionPagoFecha">Fecha Pago</label>                                
+                  <input type="date" class="form-control iris" id="dtProyectoExtensionPagoFecha" data-span="spandtProyectoExtensionPagoFecha" required/>
+                  <div class="invalid-feedback">
+                      Fecha Pago es un campo obligatorio
+                  </div>
+                  <div id="spandtProyectoExtensionPagoFecha" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>       
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoExtensionPagoValor">Valor Neto</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoExtensionPagoValor" data-type="currency"  min="1" onchange="ValorTotalPago4xmilPRJINV('nmProyectoExtensionPagoValor', 'nmProyectoExtensionPagoTotal')" data-span="spannmProyectoExtensionPagoValor" required/>
+                  <div class="invalid-feedback">
+                      Valor Neto es un campo obligatorio
+                  </div>
+                  <div id="spannmProyectoExtensionPagoValor" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales
+                  </div>  
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="nmProyectoExtensionPagoTotal">Valor Total</label>
+                  <input type="text" class="form-control iris iris-number" id="nmProyectoExtensionPagoTotal" required/>
+                </div>
+              </div>
+
+              <div class="form-group row mb-3">
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                      <label class="form-label-iris">Período</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                      <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProyectoExtensionPagoPeriodo" required></select>    
+                      <div class="invalid-feedback">
+                        Período es un campo obligatorio
+                      </div>
+                  </div>
+                </div>  
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoOrpa">ORPA</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionPagoOrpa" maxlength="20" placeholder="ORPA" data-span="spantxtProyectoExtensionPagoOrpa" required/>
+                  <div class="invalid-feedback">
+                    ORPA es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionPagoOrpa" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoEgreso">C. Egreso</label>
+                  <input type="text" class="form-control iris" id="txtProyectoExtensionPagoEgreso" maxlength="20" placeholder="C. Egreso" data-span="spantxtProyectoExtensionPagoEgreso" required />
+                  <div class="invalid-feedback">
+                    C. Egreso es un campo obligatorio
+                  </div>
+                  <div id="spantxtProyectoExtensionPagoEgreso" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="txtProyectoExtensionPagoNotas">Notas / Enlaces</label>
+                  <textarea class="form-control iris" id="txtProyectoExtensionPagoNotas" maxlength="150" rows="2" placeholder="Observaciones" data-span="spantxtProyectoExtensionPagoNotas" ></textarea>
+                  <div id="spantxtProyectoExtensionPagoNotas" class="color-required ocultar">
+                    No se acepta el ingreso de caracteres especiales o palabras restringidas
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container container-fluid">          
+          <input type="button" value="Cancelar" onclick="VolverTablaGastosProyectoExtensionFinancieroDesdePago()" class="btn-iris cancel small"/>
+          <input type="button" value="Guardar Datos Gasto" onclick="ValidatePostUpdateProyectoExtensionFinancieroPagoGasto('formProyectoExtensionFinancieroAplicarPago')" class="btn-iris success small"/>          
+        </div>
+      </div>
+
+
+    <!-- Modal Crear Contratista -->
+    <div class="modal fade" id="ModalCrearContratista" tabindex="-1" aria-labelledby="ModalLabelCrearContratista" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabelCrearContratista">Nuevo Contratista</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" id="formModalCrearContratista" novalidate>
+              <div class="form-group row mb-2">
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Naturaleza</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width:100%;" id="mcpNaturaleza" required></select>
+                    <div class="invalid-feedback">Naturaleza es un campo obligatorio</div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Tipo Entidad</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width:100%;" id="mcpTipoEntidad" required></select>
+                    <div class="invalid-feedback">Tipo Entidad es un campo obligatorio</div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Tipo Documento</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width:100%;" id="mcpTipoDocumento" required></select>
+                    <div class="invalid-feedback">Tipo Documento es un campo obligatorio</div>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpNumIdentificacion">No. Identificación</label>
+                  <input type="text" class="form-control iris" id="mcpNumIdentificacion" maxlength="15" placeholder="# Identificación" data-span="spanmcpNumIdentificacion" required/>
+                  <div class="invalid-feedback">No. Identificación es un campo obligatorio</div>
+                  <div id="spanmcpNumIdentificacion" class="color-required ocultar">No se acepta el ingreso de caracteres especiales o palabras restringidas</div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpNombre">Nombre / Razón Social</label>
+                  <input type="text" class="form-control iris" id="mcpNombre" maxlength="150" placeholder="Nombre Completo / Razón Social" data-span="spanmcpNombre" required/>
+                  <div class="invalid-feedback">Nombre / Razón Social es un campo obligatorio</div>
+                  <div id="spanmcpNombre" class="color-required ocultar">No se acepta el ingreso de caracteres especiales o palabras restringidas</div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Género</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width:100%;" id="mcpGenero"></select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpNacionalidad">Nacionalidad</label>
+                  <input type="text" class="form-control iris" id="mcpNacionalidad" maxlength="20" placeholder="Nacionalidad" data-span="spanmcpNacionalidad" required/>
+                  <div class="invalid-feedback">Nacionalidad es un campo obligatorio</div>
+                  <div id="spanmcpNacionalidad" class="color-required ocultar">No se acepta el ingreso de caracteres especiales o palabras restringidas</div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpTelefono">Teléfono</label>
+                  <input type="number" class="form-control iris" id="mcpTelefono" maxlength="15" placeholder="Teléfono" required/>
+                  <div class="invalid-feedback">Teléfono es un campo obligatorio</div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpCelular">Celular</label>
+                  <input type="number" class="form-control iris" id="mcpCelular" maxlength="15" placeholder="Celular"/>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label-iris" for="mcpDireccion">Dirección</label>
+                  <input type="text" class="form-control iris" id="mcpDireccion" maxlength="150" placeholder="Dirección" data-span="spanmcpDireccion" required/>
+                  <div class="invalid-feedback">Dirección es un campo obligatorio</div>
+                  <div id="spanmcpDireccion" class="color-required ocultar">No se acepta el ingreso de caracteres especiales o palabras restringidas</div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpCiudad">Ciudad</label>
+                  <input type="text" class="form-control iris" id="mcpCiudad" maxlength="50" placeholder="Ciudad"/>
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpCorreo">Correo Electrónico</label>
+                  <input type="email" class="form-control iris" id="mcpCorreo" maxlength="100" placeholder="Correo Electrónico" required/>
+                  <div class="invalid-feedback">Correo Electrónico es un campo obligatorio</div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpInstitucion">Institución</label>
+                  <input type="text" class="form-control iris" id="mcpInstitucion" maxlength="100" placeholder="Institución"/>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpCargo">Cargo</label>
+                  <input type="text" class="form-control iris" id="mcpCargo" maxlength="100" placeholder="Cargo"/>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Dependencia</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpDependencia"></select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="col-md-12"><label class="form-label-iris">Tipo Servicio</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpTipoServicio" required></select>
+                    <div class="invalid-feedback">Tipo Servicio es un campo obligatorio</div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="mcpAreaInteres">Área Interés</label>
+                  <textarea class="form-control iris" id="mcpAreaInteres" maxlength="300" rows="2" placeholder="Área Interés"></textarea>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpContrato">Contrato/Convenio</label>
+                  <input type="text" class="form-control iris" id="mcpContrato" maxlength="50" placeholder="Contrato/Convenio"/>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="mcpPerfil">Perfil</label>
+                  <textarea class="form-control iris" id="mcpPerfil" maxlength="300" rows="2" placeholder="Perfil"></textarea>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Formación</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpFormacion"></select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Título más alto</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpTituloAlto"></select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpTituloPosgrado">Título Posgrado</label>
+                  <input type="text" class="form-control iris" id="mcpTituloPosgrado" maxlength="100" placeholder="Título Posgrado"/>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Calificación</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpCalificacion"></select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label-iris" for="mcpObservaciones">Observaciones</label>
+                  <textarea class="form-control iris" id="mcpObservaciones" maxlength="500" rows="2" placeholder="Observaciones"></textarea>
+                </div>
+              </div>
+              <div class="form-group row mb-2">
+                <div class="col-md-2 d-flex justify-content-center align-items-center">
+                  <label class="form-label-iris" for="mcpChkEvaluador"><input type="checkbox" onchange="_EnableDatosEvaluadorMcp();" class="form-check-input iris-check" id="mcpChkEvaluador"/> Es Evaluador Publicación</label>
+                </div>
+                <div class="col-md-2">
+                  <div class="col-md-12"><label class="form-label-iris">Tipo Evaluador</label></div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100" style="width:100%;" id="mcpTipoEvaluador" disabled></select>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label-iris" for="mcpCvlac">Proyecto Extensión</label>
+                  <input type="text" class="form-control iris" id="mcpCvlac" maxlength="100" placeholder="Minciencias CVLAC" disabled/>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn-iris cancel small" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn-iris success small" onclick="GuardarNuevoContratista()">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextensioncontrolfinanciero.js"></script>
+
+  </body>
+
+
+</html>
+

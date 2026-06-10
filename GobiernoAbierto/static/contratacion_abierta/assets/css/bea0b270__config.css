@@ -1,0 +1,217 @@
+
+*{ 
+    font-family: 'Comfortaa', cursive; 
+}
+p{ 
+    font-size: 14px; 
+}
+rect{
+    stroke:#0000;
+}
+table th { 
+    font-size: 12px !important; 
+}
+input:focus{ 
+    outline: none; 
+}
+
+.p{ 
+    font-size: 12px; }
+.hero-section .hero-content-wrapper h1 { 
+    font-size: 4em; color: #fff; 
+}
+.hero-content-wrapper{ 
+    margin-top: 10%; 
+}
+.hero-section .hero-content-wrapper p { 
+    color: #fff; 
+}
+
+.modal-content{ 
+    background:#0160a2; 
+    color: #1b1c1f; 
+}
+.navbar-nav .nav-item a.active, .navbar-nav .nav-item a:hover{ 
+    color: #fdd900; 
+}
+.navbar-area { 
+    top: 1px;
+}
+.faq-item .faq-body .faq-btn i {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        color: #fff;
+        display: block;
+        font-size: 17px;
+        position: relative;
+        z-index: 1;
+        margin-right: 20px;
+        float: left;
+    }
+   
+.faq-item .faq-header .faq-btn{ 
+    padding: 0% 10% 0% 1%; 
+    border-radius: 5%; 
+    background: none;} 
+.faq-item .faq-header .faq-btn:hover{ 
+    color: #0d6efd; 
+}  
+.faq-item .faq-header .faq-btn:active{ 
+    color: #0d6efd; 
+} 
+.faq-item{ 
+    box-shadow: 0 0 0 #fff;  
+}
+.faq-item .faq-body { 
+    padding: 5px 25px 15px;
+     }
+.d3plus_rect{
+    border-radius: 5%; 
+} 
+.element{  
+}
+.action{ 
+    color: #333; 
+    font-size: 14px; 
+    margin-top: 2%; margin-left: 3%;
+}
+.action:active{ 
+    color: #F2A30F; 
+}
+.action:hover{ 
+    color: #F2A30F; 
+}
+.headmap #key{ 
+    display: none; 
+}
+
+.detalle{ 
+    overflow:auto; max-height:70vh; 
+} 
+.graficos{
+    min-height:45vh; 
+}
+.ghome {
+    height:80vh; 
+    width: 100%;
+}
+.hero-section{ 
+    padding-top: 5% !important; 
+    padding-bottom: 2% !important; 
+}
+#logo{
+    width:32px; color: #F2A30F;
+}
+#logou{
+    position: absolute; top: 50px; width: 40%; z-index: 0; opacity: .5;
+}            
+#home{ 
+    max-height: 100vh; 
+}
+#d3plus_graph_background{ 
+    fill:#ff000000;  
+} 
+
+.red-bg{ 
+    background: #F23E16; 
+}
+.red-color{color: #F23E16;}
+.yellow-bg{ background: #FFD900; color: #fff; }
+.yellow-color{ color: #FFD900; }
+.blue-gb{ background: #0d6efd; color: #fff; }
+.blue-color{color: #0d6efd;}
+.gray-bg { background: #eef1fb;}
+.blue-bg {
+    background: linear-gradient(-90deg, #0160a2,#0d6efd) ;
+    background-size: 200% 110%;
+    animation: gradient 50s ease infinite;
+}
+.green-bg{ background: #d8e1e2; }
+.greenlite-bg{ background: #f5f8ff; }
+
+.container-fluid{ padding: 1% 4%; }
+.pointer{ cursor: pointer; }
+
+
+.input {
+    width: 30%;
+    border-radius: 33px;
+    background: rgba(255, 255, 255,1);
+    color: #0160a2;
+    font-size: 16px;
+    margin-right: 15px;
+    height: 65px;
+    padding: 0 30px;
+    border: 1px solid transparent;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-out 0s;
+}
+.input:focus{ background: #fff; color: #0d6efd; }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #0160a277;
+  opacity: 1; /* Firefox */
+}
+
+.sticky{ position: absolute !important; }
+.navbar{background: rgba(255, 255, 255, 0);}
+.nav-vertical{width:10px; position:fixed; top: 35%; right: 1%; }
+.nav-vertical i{background: #0001; }
+.nav-vertical a{color: #0001;}
+tbody, td, tfoot, th, thead, tr{ border-style: none; border-bottom: 1px solid #ccc !important; }
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; } 50% { background-position: 100% 50%;}100% { background-position: 0% 50%; }
+}
+
+ @media only screen  and (max-width: 760px), (min-device-width: 768px)     and (max-device-width: 1024px)  {
+    body{max-width: 100%; overflow-x: hidden;}
+    img{ width: 100% !important; }
+    #inicio, .container-fluid{ width: 100%; }
+    .img-bg{ height: auto;  background:#0160a2 ;}
+    .input{ width: 90%; }
+    .hero-section .hero-content-wrapper h1 { font-size: 2em; }
+    .hero-content-wrapper{ margin-top: 35%; }
+    .detalle{ overflow:auto; height:auto; padding: 5% 2%;  max-height:none;}
+    .ghome {height:100vh; width: 100%; position: absolute; top:-5px; left: -5px; z-index: 2; display: none;}
+    .hide{ display: none; }
+    #detalle .faq-body { padding: 0px; }
+    .faq-item .faq-body{ padding: 5% 1%; }
+    #listContratos{ background: linear-gradient(to right bottom, #f5f5f5 0%, #e5e5e5 100%); padding: 0px; margin: 0px;}
+    #logo{width:15px !important;}
+    #logou{width: 60% !important; display: none;}
+    .nav-vertical{width:90%; position:fixed; top: 96%; left:80%; z-index: 10;}
+    .nav-vertical i {background: #0160a2;}
+
+
+    table, thead, tbody, th, td, tr {   display: block;    }
+    thead tr {    position: absolute;  top: -9999px;  left: -9999px;  }
+    tr {  margin: 0 0 1rem 0; }
+    tr:nth-child(odd) {  background: #fff;}
+
+    .displayC td { border: none;  border-bottom: 1px solid #eee;  position: relative;  padding-left: 45% !important; }
+    .displayC td:before { position: absolute; top: 0; left: 6px; width: 30%;  padding-right: 10px;  white-space: nowrap; }
+    .displayC td:nth-of-type(1):before { content: "No"; }
+    .displayC td:nth-of-type(2):before { content: "Inicio"; }
+    .displayC td:nth-of-type(3):before { content: "Terminacion"; }
+    .displayC td:nth-of-type(4):before { content: "Valor"; }
+    .displayC td:nth-of-type(5):before { content: "Secop"; }
+
+    .displayP td { border: none;  border-bottom: 1px solid #f5f5f5 !important;  position: relative;  padding-left: 40% !important; }
+    .displayP td:before { position: absolute; top: 0; left: 6px; width: 30%;  padding-right: 10px;  white-space: nowrap; }
+    .displayP td:nth-of-type(1):before { content: "UNSPSC"; }
+    .displayP td:nth-of-type(2):before { content: "Descripcion"; }
+    .displayP td:nth-of-type(3):before { content: "Fecha"; }
+    .displayP td:nth-of-type(4):before { content: "Duración"; }
+    .displayP td:nth-of-type(5):before { content: "Fuente"; }
+    .displayP td:nth-of-type(6):before { content: "Valor"; }
+    .displayP tr{border-bottom: 2px solid #1b1c1f; margin-bottom: 15%;}
+}
+/*!
+* AerWebCopy Engine [version 6.3.0]
+* Copyright Aeroson Systems & Co.
+* File mirrored from https://nostoca.org/gobiernoabierto/assets/css/config.css
+* At UTC time: 2022-04-19 12:46:01.357324
+*/

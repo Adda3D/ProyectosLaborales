@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>RADICADOR CORRESPONDENCIA</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">RADICADOR CORRESPONDENCIA</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formDecVie_RadicadorCorDetalle" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanIdDecVie_RadicadorCorForm" class="ocultar" ></span>  
+                    <input type="text" class="ocultar" id="txtid_radicadorcor_DecVie_RadicadorCor"/>                  
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="dtfecradicacion_DecVie_RadicadorCor">Fecha Recepción</label>                                
+                        <input type="date" class="form-control iris" id="dtfecradicacion_DecVie_RadicadorCor" data-span="spandtfecradicacion_DecVie_RadicadorCor" required/>
+                        <div class="invalid-feedback">
+                          Fecha Recepción es un campo obligatorio
+                        </div>
+                        <div id="spandtfecradicacion_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label-iris" for="txtogdchasqui_DecVie_RadicadorCor">OGD/CHASQUI</label>
+                        <input type="text" class="form-control iris" id="txtogdchasqui_DecVie_RadicadorCor" maxlength="250" placeholder="OGD/CHASQUI" data-span="spantxtogdchasqui_DecVie_RadicadorCor" required/>                                
+                        <div class="invalid-feedback">
+                            OGD/CHASQUI es un campo obligatorio
+                        </div>
+                        <div id="spantxtogdchasqui_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Origen Solicitud</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_origensolicitud_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                                Origen Solicitud es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Instancia</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_instancia_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                                Instancia es un campo obligatorio
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!--<div class="col-md-2">
+                        <label class="form-label-iris" for="txtidentificacionsolicitante_DecVie_RadicadorCor">Identificación Instancia Solicitante</label>
+                        <input type="text" class="form-control iris" id="txtidentificacionsolicitante_DecVie_RadicadorCor" maxlength="20" placeholder="Identificación" data-span="spantxtidentificacionsolicitante_DecVie_RadicadorCor"></input>
+                        <div id="spantxtidentificacionsolicitante_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div> 
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtsolicitante_DecVie_RadicadorCor">Nombre Responsable</label>                                
+                        <input type="text" class="form-control iris" id="txtsolicitante_DecVie_RadicadorCor" maxlength="128" placeholder="Responsable" data-span="spantxtsolicitante_DecVie_RadicadorCor"></input>
+                        <div id="spantxtsolicitante_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>                                       
+                </div>-->
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtnumerodocumento_DecVie_RadicadorCor">Consecutivo Solicitante</label>
+                        <input type="text" class="form-control iris" id="txtnumerodocumento_DecVie_RadicadorCor" maxlength="250" placeholder="Número" data-span="spantxtnumerodocumento_DecVie_RadicadorCor" required/>                                
+                        <div class="invalid-feedback">
+                            Número Documento es un campo obligatorio
+                        </div>
+                        <div id="spantxtnumerodocumento_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtfecdocumento_DecVie_RadicadorCor">Fecha Documento</label>                                
+                        <input type="date" class="form-control iris" id="dtfecdocumento_DecVie_RadicadorCor" data-span="spandtfecdocumento_DecVie_RadicadorCor" required/>
+                        <div class="invalid-feedback">
+                          Fecha Documento es un campo obligatorio
+                        </div>
+                        <div id="spandtfecdocumento_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                         <label class="form-label-iris">Alcance Solicitud</label>
+                        </div>
+                         <div class="col-md-12 font-size-iris">
+                          <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_alcancesolicitud_DecVie_RadicadorCor" required></select>    
+                           <div class="invalid-feedback">
+                           Alcance Solicitud es un campo obligatorio
+                           </div>
+                         </div>
+                       </div>                     
+                     <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Macroproceso</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decviemacroproceso_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                                Macroproceso es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Dependencia</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_depend_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                                Dependencia es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Unidad Productora</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cbounidadproductora_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                              Unidad Productora es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Estado Solicitud</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboid_decvieestado_DecVie_RadicadorCor" required></select>    
+                            <div class="invalid-feedback">
+                              Estado Solicitud es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtconsecutivorespuesta_DecVie_RadicadorCor">Consecutivo Respuesta</label>
+                        <input type="text" class="form-control iris" id="txtconsecutivorespuesta_DecVie_RadicadorCor" maxlength="128" placeholder="Consecutivo Respuesta" data-span="spantxtconsecutivorespuesta_DecVie_RadicadorCor"></input>
+                        <div id="spantxtconsecutivorespuesta_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtarchivorespuesta_DecVie_RadicadorCor">Archivo Respuesta</label>
+                        <input type="text" class="form-control iris" id="txtarchivorespuesta_DecVie_RadicadorCor" maxlength="128" placeholder="Archivo Respuesta" data-span="spantxtarchivorespuesta_DecVie_RadicadorCor"></input>
+                        <div id="spantxtarchivorespuesta_DecVie_RadicadorCor" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div> 
+                    <div class="col-md-4">
+                      <label class="form-label-iris" for="txtobservaciones_DecVie_RadicadorCor">Observaciones</label>
+                      <textarea class="form-control iris" id="txtobservaciones_DecVie_RadicadorCor" maxlength="250" rows="3" placeholder="Observaciones" data-span="spantxtobservaciones_DecVie_RadicadorCor"></textarea>
+                      <div id="spantxtobservaciones_DecVie_RadicadorCor" class="color-required ocultar">
+                        No se acepta el ingreso de caracteres especiales o palabras restringidas
+                      </div>
+                  </div> 
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="CerrarDecVie_RadicadorCorDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Radicado" onclick="ValidatePostUpdateDecVie_RadicadorCor('formDecVie_RadicadorCorDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Vie/DecVie_RadicadorCorDetalle.js"></script>    
+
+  </body>
+
+
+</html>

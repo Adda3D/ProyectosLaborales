@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="row">
+    <div class="row">
+      <div class="row">
+        <div class="col-md-6 titletab">RADICADOR</div>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form class="needs-validation" id="formDecVie_RadicadorTecDetalle" novalidate>
+            <div class="form-group row mb-3">
+              <span id="spanIdDecVie_RadicadorTecForm" class="ocultar"></span>
+              <input type="text" class="ocultar" id="txtid_decvieradicadortec_DecVie_RadicadorTec" />
+              <div class="col-md-2">
+                <label class="form-label-iris" for="dtfecha_DecVie_RadicadorTec">Fecha Solicitud</label>
+                <input type="datetime-local" class="form-control iris" id="dtfecha_DecVie_RadicadorTec"
+                  data-span="spandtFechaDecVie_RadicadorTec" required />
+                <div class="invalid-feedback">
+                  Fecha Solicitud es un campo obligatorio
+                </div>
+                <div id="spandtFechaDecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Dependencia Solicitante</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cboid_depend_DecVie_RadicadorTec"
+                    onchange="CargarPrefijosDependencia_RadicadorTecDtalle();"></select>
+                  <div class="invalid-feedback">
+                    Dependencia es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Prefijo</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                 <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cboid_prefijoconsecutivo_DecVie_RadicadorTec"></select>
+                  <div class="invalid-feedback">
+                    Prefijo es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtnumradicadortec_DecVie_RadicadorTec">Radicador</label>
+                <input type="text" class="form-control iris" id="txtnumradicadortec_DecVie_RadicadorTec" maxlength="250"
+                  placeholder="Radicador" data-span="spantxtnumradicadortec_DecVie_RadicadorTec" disabled />
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="cboid_decvieconcepto_DecVie_RadicadorTec">Concepto</label>
+                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                  id="cboid_decvieconcepto_DecVie_RadicadorTec" required>
+                </select>
+                <div class="invalid-feedback">
+                  Concepto es un campo obligatorio
+                </div>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="nmnfolios_DecVie_RadicadorTec">No. Folios</label>
+                <input type="number" class="form-control iris" id="nmnfolios_DecVie_RadicadorTec"
+                  placeholder="Ingrese el número de folios" min="0" required />
+                <div class="invalid-feedback">
+                  No. Folios es un campo obligatorio.
+                </div>
+              </div>
+              
+
+            </div>
+
+
+
+            <div class="form-group row mb-3">
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txttsersubserdocu_DecVie_RadicadorTec">Procedencia</label>
+                <textarea class="form-control iris" id="txttsersubserdocu_DecVie_RadicadorTec" maxlength="500" rows="2"
+                  placeholder="Procedencia" data-span="spantxttsersubserdocu_DecVie_RadicadorTec" required></textarea>
+                <div class="invalid-feedback">
+                  Procedencia es un campo obligatorio.
+                </div>
+                <div id="spantxttsersubserdocu_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas.
+                </div>
+              </div>
+              
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtasunto_DecVie_RadicadorTec">Asunto</label>
+                <textarea class="form-control iris" id="txtasunto_DecVie_RadicadorTec" maxlength="500" rows="3"
+                  placeholder="Asunto" data-span="spantxtasunto_DecVie_RadicadorTec" required></textarea>
+                <div class="invalid-feedback">
+                  Asunto es un campo obligatorio.
+                </div>
+                <div id="spantxtasunto_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales.
+                </div>
+              </div>
+              
+
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtotroasunto_DecVie_RadicadorTec">Otro Asunto</label>
+                <textarea class="form-control iris" id="txtotroasunto_DecVie_RadicadorTec" maxlength="500" rows="2"
+                  placeholder="Ingrese otro asunto" data-span="spantxtotroasunto_DecVie_RadicadorTec"></textarea>
+                <div id="spantxtotroasunto_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas.
+                </div>
+              </div>
+              
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtdni_DecVie_RadicadorTec">DNI</label>
+                <textarea class="form-control iris" id="txtdni_DecVie_RadicadorTec" maxlength="500" rows="2"
+                  placeholder="Ingrese DNI" data-span="spantxtdni_DecVie_RadicadorTec"></textarea>
+                <div id="spantxtdni_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas.
+                </div>
+              </div>
+              
+              <div class="col-md-2">
+                <label class="form-label-iris" for="txtpersonasrelacionadas_DecVie_RadicadorTec">Personas Relacionadas</label>
+                <textarea class="form-control iris" id="txtpersonasrelacionadas_DecVie_RadicadorTec" maxlength="500" rows="2"
+                  placeholder="Ingrese personas relacionadas" data-span="spantxtpersonasrelacionadas_DecVie_RadicadorTec"></textarea>
+                <div id="spantxtpersonasrelacionadas_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas.
+                </div>
+              </div>
+              
+
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Dependencia Destino</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                  <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cbodependenciadestino_DecVie_RadicadorTec" required></select>
+                  <div class="invalid-feedback">
+                    Dependencia Destino es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Funcionario Destino</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                  <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cbodirigidoa_DecVie_RadicadorTec" required></select>
+                  <div class="invalid-feedback">
+                    Dependencia Solicitante es un campo obligatorio
+                  </div>
+                </div>
+              </div> -->
+                <div class="col-md-2">
+                  <div class="col-md-12">
+                    <label class="form-label-iris">Estado</label>
+                  </div>
+                  <div class="col-md-12 font-size-iris">
+                    <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                      id="cboid_decviemacroproceso_DecVie_RadicadorTec" required></select>
+                    <div class="invalid-feedback">
+                      Macroproceso es un campo obligatorio
+                    </div>
+                  </div>
+                </div>
+              <div class="col-md-1">
+                <label class="form-label-iris" for="chkinterno_DecVie_RadicadorTec">TC</label>
+                <input type="checkbox" class="form-check-input iris-check" id="chkinterno_DecVie_RadicadorTec" />
+                <div id="spanchkinterno_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                </div>
+              </div>
+              <div class="col-md-1">
+                <label class="form-label-iris" for="chkexterno_DecVie_RadicadorTec">Derecho Petición</label>
+                <input type="checkbox" class="form-check-input iris-check" id="chkexterno_DecVie_RadicadorTec" />
+                <div id="spanchkexterno_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="col-md-12">
+                  <label class="form-label-iris">Responsable</label>
+                </div>
+                <div class="col-md-12 font-size-iris">
+                  <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;"
+                    id="cboidfuncionario_DecVie_RadicadorTec" required></select>
+                  <div class="invalid-feedback">
+                    Responsable Solicitud es un campo obligatorio
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-2">
+                <label class="form-label-iris" for="dtrecibido_dependencia_DecVie_RadicadorTec">Fecha de envio a Dependencia</label>
+                <input type="date" class="form-control iris" id="dtrecibido_dependencia_DecVie_RadicadorTec" />
+                <div class="invalid-feedback">
+                  Recibido de Dependencia es un campo obligatorio.
+                </div>
+              </div>
+
+    
+
+               <!-- Borrar estas dos fechas -->              
+               <div class="col-md-2">
+                <label class="form-label-iris" for="dtfecha_vencimiento_DecVie_RadicadorTec">Fecha de Vencimiento</label>
+                <input type="date" class="form-control iris" id="dtfecha_vencimiento_DecVie_RadicadorTec" />
+                <div class="invalid-feedback">
+                    Fecha de Vencimiento es un campo obligatorio.
+                </div>
+            </div>
+            
+            <div class="col-md-2" style="display: none;">
+                <label class="form-label-iris" for="dtfecha_respuesta_DecVie_RadicadorTec">Fecha de Respuesta</label>
+                <input type="date" class="form-control iris" id="dtfecha_respuesta_DecVie_RadicadorTec" />
+                <div class="invalid-feedback">
+                    Fecha de Respuesta es un campo obligatorio.
+                </div>
+            </div>
+            
+              
+
+              <div class="col-md-4">
+                <label class="form-label-iris" for="txtobservaciones_DecVie_RadicadorTec">Observaciones</label>
+                <textarea class="form-control iris" id="txtobservaciones_DecVie_RadicadorTec" maxlength="500" rows="2"
+                  placeholder="Deje aquí sus observaciones" data-span="spantxtobservaciones_DecVie_RadicadorTec"></textarea>
+                <div id="spantxtobservaciones_DecVie_RadicadorTec" class="color-required ocultar">
+                  No se acepta el ingreso de caracteres especiales o palabras restringidas
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+        </form>
+      </div>
+    </div>
+    <div class="container container-fluid">
+      <!-- <input type="button" value="Generar Radicador" onclick="GenerarRadicadorTecDctoDependencia('dtfecha_DecVie_RadicadorTec', 'cboid_prefijoradicadortec_DecVie_RadicadorTec', 'txtnumradicadortec_DecVie_RadicadorTec')" class="btn-iris cancel small"/>  -->
+      <!-- <input type="button" value="Generar Consecutivo"
+        onclick="GenerarConsecutivoDctoDependencia('dtfecha_DecVie_RadicadorTec', 'cboid_prefijoconsecutivo_DecVie_RadicadorTec', 'txtnumconsecutivo_DecVie_RadicadorTec')"
+        class="btn-iris cancel small" /> -->
+      <input type="button" value="Cancelar" onclick="CerrarDecVie_RadicadorTecDesdeEdicion()"
+        class="btn-iris cancel small" />
+      <input type="button" value="Guardar Datos Radicador"
+        onclick="ValidatePostUpdateDecVie_RadicadorTec('formDecVie_RadicadorTecDetalle')"
+        class="btn-iris success small" />
+    </div>
+
+
+        <div class="container container-fluid">  <h4>Historial de Cambios</h4>
+          <table id="tablaHistorialAuditoria" class="table table-bordered table-striped">
+              <thead>
+                  <tr>
+                      <th>Fecha</th>
+                      <th>Cambio</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Aquí va el historial dinámico -->
+              </tbody>
+          </table>
+        </div>  
+  </div>
+  </div>
+
+  <script src="../../js/iris/Vie/DecVie_RadicadorTecDetalle.js"></script>
+
+</body>
+
+
+</html>

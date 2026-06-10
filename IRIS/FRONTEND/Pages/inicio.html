@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Inicio</title>
+-->
+<!--
+    <link href="../lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../lib/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="../lib/dataTables/DataTables-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="../lib/dataTables/DataTables-1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+    <link href="../lib/dataTables/Buttons-2.2.3/css/buttons.dataTables.min.css" rel="stylesheet"/>
+    <link href="../lib/jquery-ui/jquery-ui.min.css" rel="stylesheet" >
+    <link href="../lib/select2-4.0.13/dist/css/select2.min.css" rel="stylesheet">
+
+    <link href="../lib/css/animate.css" rel="stylesheet" />
+    <link href="../lib/css/iris.css" rel="stylesheet" />    
+-->
+  </head>
+
+
+  <body>
+
+<!--
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divContratanteHTML">
+                <div class="row" id="dvContratanteTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">INICIO MUESTRA LOS PANELES DE TAREAS Y ACTIVIDADES DE CADA USUARIO</div>
+                    <div class="col-md-6 text-center">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  -->
+
+  <div class="row col-md-10 offset-md-1 scroll">
+    <div class="row">
+      <div class="col-md-6 titletab">MIS TAREAS ASIGNADAS</div>
+    </div>
+    <div class="row">      
+      <div class="col-md-4 text-center"></div>
+      <div class="col-md-3 text-center">     
+        <div class="col-md-4">
+          <label class="form-label-iris">Filtro Tareas:</label>
+        </div>  
+        <div class="col-md-6 font-size-iris">
+          <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboFiltroTareasUsuario" onchange="ActualizarFiltroTareasUsuario();"></select>          
+        </div>
+      </div>
+      <div class="col-md-1 text-center"></div>
+      <div class="col-md-3 text-center">
+        <button type="button" class="btn-iris success " onclick="RefreshDataTableTareasUsuario();">Refrescar</button>
+      </div>
+    </div>
+    <div class="row" id="tableTareasUsuario">
+      <div class="table-responsive col-md-12">
+        <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblTareasUsuario" >
+          <thead>
+            <tr> 
+                <th>Vencimiento</th>
+                <th>En Relación Con</th>
+                <th>Consecutivo</th>
+                <th>Tarea</th>
+                <th>Estado</th>
+                <th>% Avance</th>
+                <th>Días</th>
+                <th>Finalización</th>
+                <th>Asignado Por</th>
+                <th>Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+
+
+                <!-- Modal Seguimiento Tarea -->
+                <div class="modal fade" id="ModalSeguimientoTareaUsuario" tabindex="-1" role="dialog" aria-labelledby="ModalLabelSeguimientoTareaUsuario" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelSeguimientoTareaUsuario">Agregar Seguimiento Tarea</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formModalSeguimientoTareaUsuario" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalSeguimientoTareaUsuarioModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateModalSeguimientoTareaUsuarioForm('formModalSeguimientoTareaUsuario', 'btnCloseModalSeguimientoTareaUsuarioModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal Estado/Avance Tarea -->
+                <div class="modal fade" id="ModalEstadoAvanceTareaUsuario" tabindex="-1" role="dialog" aria-labelledby="ModalLabelEstadoAvanceTareaUsuario" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-md modal-fullscreen-md-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelEstadoAvanceTareaUsuario">Actualizar Estado - Avance Tarea</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                            <form class="needs-validation" id="formModalEstadoAvanceTareaUsuario" novalidate>
+
+                            </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalEstadoAvanceTareaUsuario" onclick="CerrarEstadoAvanceTareaUsuarioDesdeEdicion();" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateModalEstadoAvanceTareaUsuarioForm('formModalEstadoAvanceTareaUsuario', 'btnCloseModalEstadoAvanceTareaUsuario')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/inicio.js"></script>    
+    <script src="../js/iris/models/tareas/tareas_helper.js" ></script>
+    <script src="../js/iris/models/tareas/tareas_seguimientoModel.js"></script>
+    <script src="../js/iris/models/tareas/alertas_seguimientoModel.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="/lib/jquery/dist/jquery.slim.min.js"></script>    -->
+
+    <script src="/lib/dataTables/datatables.min.js"></script>
+    <script src="/lib/dataTables/DataTables-1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="/lib/dataTables/DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="/lib/dataTables/Buttons-2.2.3/js/dataTables.buttons.min.js"></script>
+    <script src="/lib/select2-4.0.13/dist/js/select2.min.js"></script>
+    <script src="/lib/select2-4.0.13/dist/js/i18n/es.js"></script>
+   <!-- <script src="/lib/pace-js/pace.min.js"></script>-->
+    <script src="/lib/js/validator.js"></script>
+    <script src="/lib/js/validator2.js"></script>
+    <script src="/lib/jquery-ui/jquery-ui.min.js"></script>
+
+  </body>
+
+
+</html>

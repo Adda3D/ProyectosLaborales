@@ -1,0 +1,65 @@
+/*================================================================================
+	Item Name: Gobierno Abierto de Cartagena de Indias
+	Version: 1.0
+	Author: ALCALDIA DE CARTAGENA DE INDIAS
+	Author URL: https://cartagea.gov.co
+================================================================================*/
+
+
+.red-bg{ background: #F23E16; }
+.red-color{color: #F23E16;}
+.yellow-bg{ 
+	background: #FFD900; 
+	color: #fff; 
+}
+.yellow-color{ color: #FFD900; }
+.blue-gb{ 
+	background: #0d6efd; 
+	color: #fff; 
+}
+.blue-color{ color: #0d6efd;}
+.gray-bg { background: #e9e9e9;}
+.blue-bg {
+    background: linear-gradient(-90deg, #0160a2,#0d6efd) ;
+    background-size: 200% 110%;
+    animation: gradient 50s ease infinite;
+}
+
+.green-bg{ background: #d8e1e2; }
+.greenlite-bg{ background: #f5f5f5; }
+
+.container-fluid{ padding: 1% 4%; }
+.pointer{ cursor: pointer; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  box-shadow: 0 0 0 #fff !important; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 0 #fff !important; 
+  border-radius: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc !important; 
+  box-shadow: 0 0 0 #fff !important;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #F23E16 !important; 
+}
+
+
+
+/*!
+* AerWebCopy Engine [version 6.3.0]
+* Copyright Aeroson Systems & Co.
+* File mirrored from http://www.nostoca.org/gobiernoabierto/app-assets/css/config.css
+* At UTC time: 2022-04-19 14:06:59.508890
+*/

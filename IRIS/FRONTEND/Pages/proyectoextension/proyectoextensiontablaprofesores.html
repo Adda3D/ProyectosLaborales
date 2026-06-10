@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Proyectos Extensión Profesores</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROYECTO EXTENSIÓN PROFESORES</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <span id="spanIdProyectoExtensionProfesores" class="ocultar" ></span>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtConsProyectoExtensionProfesor">Consecutivo</label>
+              <input type="text" class="form-control iris" id="txtConsProyectoExtensionProfesor" disabled/>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label-iris" for="txtContratoProyectoExtensionProfesor">Contrato/Convenio</label>
+              <input type="text" class="form-control iris" id="txtContratoProyectoExtensionProfesor" disabled/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label-iris" for="txtNombreProyectoExtensionProfesor">Nombre Proyecto</label>
+              <textarea class="form-control iris" id="txtNombreProyectoExtensionProfesor" rows="2" disabled></textarea>                                
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaProyectoExtensionDesdeProfesores()">Volver Listado Proyectos</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearProfesorProyectoExtension()" data-bs-toggle="modal" data-bs-target="#ModalProyectoExtensionProfesor" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Profesor</button>
+          </div>
+        </div>
+
+        <div class="row scroll" id="tableProyectoExtensionProfesores">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblProyectoExtensionProfesores" >
+              <thead>
+                <tr>                                              
+                  <th>Profesor</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalProyectoExtensionProfesor" tabindex="-1" role="dialog" aria-labelledby="ModalLabelProyectoExtensionProfesor" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelProyectoExtensionProfesor">Dato Profesor</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formProyectoExtensionProfesorDatos" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanProyectoExtensionIdProfesor" class="ocultar" ></span>
+                    <div class="col-md-8">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Profesor</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" aria-hidden="true" id="cboProfesorProyectoExtension" required></select>    
+                            <div class="invalid-feedback">
+                                Profesor es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>  
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalProyectoExtensionProfesor" class="btn-iris white small" onclick="CerrarModalProyectoExtensionProfesor()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateProyectoExtensionProfesor('formProyectoExtensionProfesorDatos', 'btnCloseModalProyectoExtensionProfesor')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/proyectoextension/proyectoextensionprofesores.js"></script>
+
+  </body>
+
+
+</html>
+

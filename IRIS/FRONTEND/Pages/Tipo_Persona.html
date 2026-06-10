@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Ciudades</title>
+-->
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divDecVie_EstadoHTML">
+                <div class="container" id="dvTipo_PersonaTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">Tipo Persona</div>
+                    <div class="col-md-6 text-center">                      
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearTipo_Persona()" data-bs-toggle="modal" data-bs-target="#ModalTipo_Persona" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Tipo</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicTipo_Persona">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" id="tblTipo_Persona" >
+                        <thead>
+                          <tr>
+                            <th>Tipo Persona</th>                            
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Documentos Contractuales -->
+                <div class="modal fade" id="ModalTipo_Persona" tabindex="-1" role="dialog" aria-labelledby="ModalLabelTipo_Persona" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog  modal-fullscreen-sm-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelTipo_Persona">Tipo Persona</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formTipo_Persona" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdTipo_Persona" class="ocultar" ></span>
+                              <div class="col-md-6">
+                                <label class="form-label-iris" for="txtCdTipoPersona">Nuevo Tipo</label>
+                                <input type="text" class="form-control iris" id="txtCdTipoPersona" maxlength="30"placeholder="Tipo" data-span="spanCdTipoPersona" required/>
+                                <div class="invalid-feedback">
+                                    Nuevo Tipo es un campo obligatorio
+                                </div>
+                                <div id="spanCdTipoPersona" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseTipo_PersonaModal" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateTipo_Persona('formTipo_Persona', 'btnCloseTipo_PersonaModal')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../JS/iris/Tipo_Persona.js"></script>
+
+
+  </body>
+
+
+</html>

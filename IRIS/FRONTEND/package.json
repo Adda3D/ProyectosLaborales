@@ -1,0 +1,28 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "IRIS FrontEnd",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "lite": "lite-server"
+  },
+  "author": "OUDOS IT GROUP",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "@sweetalert2/themes": "^5.0.11",
+    "bootstrap": "^5.1.3",
+    "bootstrap5-dialog": "^5.0.1",
+    "chart.js": "^4.0.1",
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "datatables.net-bs5": "^1.12.1",
+    "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.1",
+    "pace-js": "^1.2.4",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.24"
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Investigacion CrearGrupo</title>
+-->
+
+  </head>
+
+  <body>
+
+    <!--<div class="row ocultar col-md-12 scroll" id="dvProyectoExtensionDetalle">-->
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Datos Grupo Investigación</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formGrupoInvestigacionDetalle" novalidate>
+                  <div class="form-group row mb-3">
+                    <span id="spanIdGrupoInvestigacionForm" class="ocultar" ></span>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtcodigoHermesCrearGrupo">Código Grupo Hermes</label>
+                        <input type="text" class="form-control iris" id="txtcodigoHermesCrearGrupo" maxlength="12" placeholder="Código" data-span="spantxtcodigoHermesCrearGrupo" required/>
+                        <div class="invalid-feedback">
+                            Código Grupo Hermes es un campo obligatorio
+                        </div>
+                        <div id="spantxtcodigoHermesCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtMincienciasCrearGrupo">Código Minciencias</label>                                
+                        <input type="text" class="form-control iris" id="txtMincienciasCrearGrupo" maxlength="12" placeholder="Código" data-span="spandtxtMincienciasCrearGrupo" required/>
+                        <div class="invalid-feedback">
+                            Código Minciencias es un campo obligatorio
+                        </div>
+                        <div id="spandtxtMincienciasCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtfortalecimientoCrearGrupo">Hermes Fortalecimiento</label>
+                        <input type="text" class="form-control iris" id="txtfortalecimientoCrearGrupo" maxlength="12" placeholder="Código" data-span="spantxtfortalecimientoCrearGrupo" required></input>                                
+                        <div class="invalid-feedback">
+                            Hermes Fortalecimiento es un campo obligatorio
+                        </div>
+                        <div id="spantxtfortalecimientoCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Área</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboAreaCrearGrupo" required></select>    
+                            <div class="invalid-feedback">
+                                Área es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtClasificacionCrearGrupo">Clasificación Actual</label>
+                        <input type="text" class="form-control iris" id="txtClasificacionCrearGrupo" maxlength="12" placeholder="Clasificación" data-span="spantxtClasificacionCrearGrupo" required></input>                                
+                        <div class="invalid-feedback">
+                            Clasificación Actual es un campo obligatorio
+                        </div>
+                        <div id="spantxtClasificacionCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtTemaGeneralCrearGrupo">Tema General</label>
+                        <textarea class="form-control iris" id="txtTemaGeneralCrearGrupo" maxlength="1000" rows="3" placeholder="Tema" data-span="spantxtTemaGeneralCrearGrupo" required></textarea>                                
+                        <div class="invalid-feedback">
+                            Tema General es un campo obligatorio
+                        </div>
+                        <div id="spantxtTemaGeneralCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                    
+                  </div>
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmNumLineaCrearGrupo">Número Líneas</label>
+                        <input type="number" class="form-control iris" id="nmNumLineaCrearGrupo" maxlength="3" placeholder="Número" data-span="spannmNumLineaCrearGrupo"></input>
+                        <div id="spannmNumLineaCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2 form-check form-switch">  
+                        <div class="col-md-6 offset-md-3" >
+                            <input class="form-check-input" type="checkbox" value="" id="chkActualizadoGrupo">
+                            <label class="form-label-iris" for="chkActualizadoGrupo">Actualizado</label>    
+                        </div>                         
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtNombreGrupoCrearGrupo">Nombre Grupo</label>
+                        <input type="text" class="form-control iris" id="txtNombreGrupoCrearGrupo" maxlength="500" placeholder="Nombre" data-span="spantxtNombreGrupoCrearGrupo" required/>
+                        <div class="invalid-feedback">
+                            Nombre Grupo es un campo obligatorio
+                        </div>
+                        <div id="spantxtNombreGrupoCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtAbreviaturaCrearGrupo">Abreviatura</label>
+                        <input type="text" class="form-control iris" id="txtAbreviaturaCrearGrupo" maxlength="10" placeholder="Abreviatura" data-span="spantxtAbreviaturaCrearGrupo"/>                        
+                        <div id="spantxtAbreviaturaCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>     
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmPublicacionesUnijusCrearGrupo">Publicaciones UNIJUS</label>
+                        <input type="number" class="form-control iris" id="nmPublicacionesUnijusCrearGrupo" maxlength="3" placeholder="Número" data-span="spannmPublicacionesUnijusCrearGrupo"/>                        
+                        <div id="spannmPublicacionesUnijusCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                    
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="nmPoductosEntregadosCrearGrupo">Productos Entregados</label>
+                        <input type="number" class="form-control iris" id="nmPoductosEntregadosCrearGrupo" maxlength="3" placeholder="Número" data-span="spannmPoductosEntregadosCrearGrupo"/>                        
+                        <div id="spannmPoductosEntregadosCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div> 
+                  </div>
+                  
+                  <div class="form-group row mb-3">
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="dtCreacionMincienciasCrearGrupo">Creación Minciencias</label>                                
+                        <input type="date" class="form-control iris" id="dtCreacionMincienciasCrearGrupo" data-span="spandtCreacionMincienciasCrearGrupo"/>
+                        <div id="spandtCreacionMincienciasCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales
+                        </div>       
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Nombre Lider</label>
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboNombreLiderCrearGrupo" required></select>    
+                            <div class="invalid-feedback">
+                                Nombre Lider es un campo obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="col-md-12">
+                            <label class="form-label-iris">Coordinador</label>   
+                        </div>
+                        <div class="col-md-12 font-size-iris">
+                            <select class="form-combo iris input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboCoordinadorCrearGrupo" required></select>    
+                            <div class="invalid-feedback">
+                              Coordinador es un campo obligatorio
+                            </div>
+                        </div>
+                      </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtCorreoCrearGrupo">Correo Electrónico</label>
+                        <input type="text" class="form-control iris" id="txtCorreoCrearGrupo" maxlength="180" placeholder="Correo" data-span="spantxtCorreoCrearGrupo" required/>
+                        <div class="invalid-feedback">
+                            Correo es un campo obligatorio
+                        </div>
+                        <div id="spantxtCorreoCrearGrupo" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtCorreoAlternoCrearGrupo">Correo Alterno</label>
+                        <input type="text" class="form-control iris" id="txtCorreoAlternoCrearGrupo" maxlength="180" placeholder="Correo Alterno" data-span="spantxtCorreoAlternoCrearGrupo"></input>
+                        <div id="spantxtCorreoAlternoCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label-iris" for="txtlinkHermesCrearGrupo">Link Hermes</label>
+                        <input type="text" class="form-control iris" id="txtlinkHermesCrearGrupo" maxlength="180" placeholder="URL" data-span="spantxtlinkHermesCrearGrupo" required></input>
+                        <div class="invalid-feedback">
+                            Objeto Contrato es un campo obligatorio
+                        </div>
+                        <div id="spantxtlinkHermesCrearGrupo" class="color-required ocultar">
+                          No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                    </div>                    
+                  </div>
+                <div class="form-group row mb-3">
+                  <div class="col-md-2">
+                    <label class="form-label-iris" for="txtlinkMincienciasCrearGrupo">Link Minciencias</label>
+                    <input type="text" class="form-control iris" id="txtlinkMincienciasCrearGrupo" maxlength="500" placeholder="URL" data-span="spantxtlinkMincienciasCrearGrupo" required></input>
+                    <div class="invalid-feedback">
+                        Link Minciencias es un campo obligatorio
+                    </div>
+                    <div id="spantxtlinkMincienciasCrearGrupo" class="color-required ocultar">
+                      No se acepta el ingreso de caracteres especiales o palabras restringidas
+                    </div>
+                </div>
+               </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaGrupoInvestigacionDesdeEdicion()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Grupo" onclick="ValidatePostUpdateGrupoInvestigacion('formGrupoInvestigacionDetalle')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+    <!--</div>  -->
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/Investigacion/detalle_Investigacion_CrearGrupo.js"></script>    
+
+  </body>
+
+
+</html>

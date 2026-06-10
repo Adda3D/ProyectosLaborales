@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Acceso Por Rol Usuario</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Definición Accesos Rol</div>
+            </div>
+            <div class="row">
+                <div class="form-group row mb-2">                  
+                  <div class="col-md-2">
+                    <label class="form-label-iris" for="txtRolUsuarioNombre">Rol</label>
+                    <input type="text" class="form-control iris" id="txtRolUsuarioNombre" disabled/>
+                  </div>
+                  <div class="col-md-4 text-center">                     
+                    <button type="button" class="btn-iris success " onclick="VolverTablaRolesDesdeAccesos()">Volver Listado Roles</button>
+                    <button type="button" class="btn btn-primaryiris" onclick="ValidatePostUpdateRolUsuarioAccesosForm()">Grabar Datos Acceso</button>
+                  </div>
+              
+                </div>
+            </div>
+      
+            <div class="modal-body" style="height: 600px;">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formRolUsuarioAccesos" novalidate>
+
+                    <nav class="navbar navbar-expand-md navbar-dark lista-acceso">
+                        <div  class="row navbar-collapse">
+                            <ul class="navbar-nav" id="lista_accesos">
+                                <li class="nav-item">
+                                    <!--<a class="nav-acceso btnbar" href="#" role="button" >CONFIGURACIÓN</a>-->
+                                    <label class="nav-acceso btnbar" >CONFIGURACIÓN</label>
+                                    <ul>
+                                        <li><label for="a" class="acceso-item opcionbar" > <input type="checkbox" id="a" onchange="asignaracceso(this)"/>     Area chk</label></li>
+                                        <li><label for="d" class="acceso-item opcionbar" > <input type="checkbox" id="d" onchange="asignaracceso(this)"/>     Dependencia Responsable</label></li>
+                                        <li><label for="e" class="acceso-item opcionbar" > <input type="checkbox" id="e" onchange="asignaracceso(this)"/>     Funcionario</label></li>
+                                        <li class="dropdown-submenu navbar-collapse">
+                                            <label class="acceso-item  submenu opcionbar dropdown-toggle" >Seguridad</label>
+                                            <ul class="dropdown-menu">
+                                                <li><label for="r" class="acceso-item opcionbar" > <input type="checkbox" id="r" onchange="asignaracceso(this)"/>     Roles</label></li>
+                                                <li><label for="u" class="acceso-item opcionbar" > <input type="checkbox" id="u" onchange="asignaracceso(this)"/>     Usuarios</label></li>
+                                                <li class="dropdown-submenu navbar-collapse">
+                                                    <label class="acceso-item  submenu opcionbar dropdown-toggle" >Registro</label>
+                                                    <ul class="dropdown-menu">
+                                                        <li><label for="g" class="acceso-item opcionbar" > <input type="checkbox" id="g" onchange="asignaracceso(this)"/>     Complejidad</label></li>
+                                                        <li><label for="h" class="acceso-item opcionbar" > <input type="checkbox" id="h" onchange="asignaracceso(this)"/>     Alcance</label></li>
+
+                                                    </ul>
+
+                                                </li>
+                                            </ul>
+                                        </li>
+<!--
+                                        <li><a class="acceso-item opcionbar" id="acceso2" onclick="asignaracceso(2)">Area Academica</a></li>
+                                        <li><a class=" opcionbar" id="acceso3" role="button" onclick="asignaracceso(3)">Dependencia</a></li>
+                                        <li><a class=" opcionbar" id="acceso4" role="button" onclick="asignaracceso(4)">Funcionario</a></li>
+-->                                        
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <label class="nav-acceso btnbar" >EXTENSIÓN</label>
+                                    <ul>
+                                        <li><label for="f" class="acceso-item opcionbar" > <input type="checkbox" id="f"/>     Configuración</label></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-acceso btnbar" href="#" role="button" >INVESTIGACIÓN</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-acceso btnbar" href="#" role="button" >PUBLICACIÓN</a>
+                                </li>
+    
+                            
+                            </ul>
+                        </div>    
+                    </nav>
+
+
+                </form>
+              </div>
+            </div>
+<!--
+            <div class="container container-fluid">            
+              <input type="button" value="Guardar Datos Corrección" onclick="ValidatePostUpdateRolUsuarioAccesosForm('formRolUsuarioAccesos')" class="btn-iris success small"/>
+            </div>
+        -->        
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <!--<script src="../../js/iris/models/Publicaciones_TipoCorreccionModel.js"></script>-->
+    <script src="../../js/iris/seguridad/rolusuarioaccesos.js"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            // by default hide all child nodes
+            $('#nav>li>ul').hide();
+    
+            // find li with a class of current
+            $currentnode = $('#nav li.currentPage');
+    
+            if ($currentnode.length) {
+                // there is a node with the class of current so check to see if it has children
+                if ($currentnode.find('ul').length) {
+                    // the current node has children so show them
+                    $currentnode.find('ul').show();
+                }
+                else if (!$currentnode.parent().is('#nav')) {
+                    // the current node is a child so show siblings
+                    $currentnode.parent().show();
+                }
+            }
+    
+            // code to handle expanding on mouseover
+            $('#nav>li').bind('mouseover', function () {
+                // check that the menu is not currently animated
+                if ($('#nav ul:animated').length == 0) {
+                    // create a reference to the active element (this) so we don't have to keep creating a jQuery object
+                    $heading = $(this);
+                    // create a reference to visible sibling elements so we don't have to keep creating a jQuery object
+                    $expandedSiblings = $heading.siblings().find('ul:visible');
+                    if ($expandedSiblings.length != 0) {
+                        $expandedSiblings.slideUp(500, function () {
+                            $heading.find('ul').slideDown(500);
+                        });
+                    }
+                    else {
+                        $heading.find('ul').slideDown(1000);
+                    }
+                }
+            });
+        });
+    </script>    
+
+  </body>
+
+
+</html>

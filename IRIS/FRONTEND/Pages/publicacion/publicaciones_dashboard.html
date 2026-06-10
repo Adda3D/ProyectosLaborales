@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+  </head>
+  <body>
+    <style>
+      .apx-card {
+        max-width: 80%;
+        margin: 24px auto 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 20px 24px;
+      }
+      .apx-filter {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+      .apx-filter label {
+        font-size: 13px;
+        color: #555;
+        margin: 0;
+      }
+      .apx-filter input[type="number"] {
+        width: 110px;
+        padding: 4px 8px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+      .apx-filter button {
+        padding: 5px 16px;
+        border-radius: 4px;
+        font-size: 13px;
+        cursor: pointer;
+        background: #4f46e5;
+        color: #fff;
+        border: none;
+      }
+      .apx-filter button:hover { background: #4338ca; }
+      .apx-filter-hint {
+        font-size: 12px;
+        color: #999;
+        padding: 24px 0;
+        text-align: center;
+      }
+    </style>
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-12">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divPublicacionesDashBoardHTML">
+                <span id="spanIdPublicacionesDashBoard" class="ocultar"></span>
+
+                <div class="row">
+                  <div class="col-md-12 titletab">SEGUIMIENTO PUBLICACIONES</div>
+                </div>
+
+                <!-- 1. Manuscritos por Año (auto-carga, ordenado ASC) -->
+                <div class="apx-card">
+                  <div id="apx-manuscritos-anio"></div>
+                </div>
+
+                <!-- 2. Por Área Curricular (filtro rango años) -->
+                <div class="apx-card">
+                  <div class="apx-filter">
+                    <label>Rango de años:</label>
+                    <input id="apx-area-rango1" type="number" min="2000" max="2099" placeholder="Desde">
+                    <input id="apx-area-rango2" type="number" min="2000" max="2099" placeholder="Hasta">
+                    <button onclick="apxPub.cargarArea()">Ver gráfico</button>
+                  </div>
+                  <div id="apx-por-area">
+                    <p class="apx-filter-hint">Ingrese el rango de años y haga clic en "Ver gráfico".</p>
+                  </div>
+                </div>
+
+                <!-- 3. Por Colección (auto-carga) -->
+                <div class="apx-card">
+                  <div id="apx-por-coleccion"></div>
+                </div>
+
+                <!-- 4. Por Estado (auto-carga) -->
+                <div class="apx-card">
+                  <div id="apx-por-estado"></div>
+                </div>
+
+                <!-- 5. Reporte Presupuestal (auto-carga) -->
+                <div class="apx-card">
+                  <div id="apx-presupuestal"></div>
+                </div>
+
+                <!-- 6. Estado Evaluaciones (filtro año) -->
+                <div class="apx-card">
+                  <div class="apx-filter">
+                    <label>Año de evaluación:</label>
+                    <input id="apx-eval-anio" type="number" min="2000" max="2099" placeholder="Año">
+                    <button onclick="apxPub.cargarEvaluaciones()">Ver gráfico</button>
+                  </div>
+                  <div id="apx-evaluaciones">
+                    <p class="apx-filter-hint">Ingrese el año y haga clic en "Ver gráfico".</p>
+                  </div>
+                </div>
+
+                <!-- REPORTES -->
+                <div style="margin-top: 60px" id="reportesExcel" class="row">
+                  <div class="col-md-12 titletab">REPORTES</div>
+                  <div id="divButtonInputsReports" class="col">
+                    <label class="form-label-iris">Reportes</label>
+                    <select id="selectReportesExcel" name="reporteSeleccionado">
+                      <option value="">Seleccione</option>
+                      <option value="1">Reportes Contratación</option>
+                    </select>
+                    <button type="button" onclick="downloadRep()">Descargar Reporte</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ocultar col-md-12 scroll" id="dvManuscritosPublicadosDetalle"></div>
+
+    <!-- publicaciones_dashboard.js se mantiene solo por downloadRep() -->
+    <script src="../../js/iris/publicacion/publicaciones_dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.49.0/dist/apexcharts.min.js"></script>
+    <script src="../../js/iris/publicacion/publicaciones_apexcharts.js"></script>
+  </body>
+</html>

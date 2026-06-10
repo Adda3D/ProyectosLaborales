@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="loading" lang="es" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="author" content="ThemeSelect">
+    <title>Gobierno Abierto de Cartagena de Indias</title>
+    <link rel="apple-touch-icon" href="{% static 'gestion_abierta/app-assets/images/favicon/e9c89cf0__apple-touch-icon-152x152.png'%}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'gestion_abierta/app-assets/images/favicon/b73b1d37__favicon-32x32.png'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/vendors/9d872abe__vendors.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/fonts/fontawesome/css/fa633864__all.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/css/ddc6f3b1__materialize.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/css/8d0ed8a2__style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/css/pages/187b7070__extra-components-tour.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/css/8685670f__config.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gestion_abierta/app-assets/css/style_main.css'%}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body{ background: #eef1fb url('{% static 'gestion_abierta/app-assets/images/bg/d616e431__bg-gestionabierta.png'%}') no-repeat; background-size: 100% auto; }
+    </style>
+</head>
+<body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions" data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
+   <ul class="menu right" >
+    <li class=""><a class="waves-effect waves-block waves-light" href={% url 'gestion_abierta:index' %}><i class="material-icons">home</i></a></li>
+    <li><a href="{% url 'gestion_abierta:informacion_gestores' %}#informes" class="waves-effect waves-block waves-light" ><i class="material-icons">group</i></a></li>
+    <li id="btnFullscreen"><a class="waves-effect waves-block waves-light toggle-fullscreen"><i class="material-icons" id="btnFullscreen">settings_overscan</i></a></li>
+    <li <a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons" onclick="ocultar_boton_funcionarios()">format_indent_increase</i></a></li>
+    </ul>
+
+    <section id="main" class="container mt-10">
+        <div class="container banner mt-8">
+            <div class="center">
+                <p style="color:#eee">Gobierno Abierto de Cartagena de Indias</p>
+                <h1 class="white-text" style="margin-top: -1px; font-weight: 900;">GESTI&#211;N <br>ABIERTA</h1>
+                
+                <form id="form_busqueda" action="{% url 'gestion_abierta:busqueda_informe' %}" method="POST">
+                    <div class="input-field col s6" style="width: 75% ;max-width: 350px; margin: auto;">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    </div>
+                </form>
+                
+                <div class="input-field col s6" style="width: 75% ;max-width: 350px; margin: auto;">
+                </div>    
+                <p class="caption white-text" style="margin-top: 0px;"> 
+                    Conoce los Informes de Gestión realizados por el Gabinete del Distrito.
+                </p>
+            </div>
+            <aside id="right-sidebar-nav">
+                <div id="slide-out-right" class="slide-out-right-sidenav sidenav rightside-navigation right-aligned" style="transform: translateX(0%);">
+                    <div class="row">
+                        <div class="slide-out-right-title">
+                            <div class="col s12 border-bottom-1 pb-0 pt-1">
+                                <div class="row">
+                                    <div class="col s2 pr-0 center" onclick="ocultar_boton_funcionarios()">
+                                        <i class="material-icons vertical-text-middle"><a href="#" class="sidenav-close">clear</a></i>
+                                    </div>
+                                    <div class="col s10 pl-0">
+                                        <ul class="tabs">
+                                            <li class="tab col s4 p-0" onclick="mostrar_boton_funcionarios()">
+                                                <a class="active">
+                                                    <span>Funcionarios</span>
+                                                </a>
+                                            </li>
+                                            <li class="tab col s4 p-0" onclick="ocultar_ultimos_informes()">
+                                                <a href="#">
+                                                    <span>Ultimos</span>
+                                                </a>
+                                            </li>
+                                        <li class="indicator" style="left: 0px; right: 175px;"></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-out-right-body row pl-3 ps ps--active-y">
+                            <div id="messages" class="col s12 pb-0 active scroll">
+                                <div class="collection border-none mb-0">
+                                    <input class="header-search-input mt-4 mb-2" type="text" name="Search" placeholder="Buscar funcionario">
+                                        <ul class="collection right-sidebar-chat p-0 mb-0">
+                                            {%for aux in lista_secretarios%}
+                                            <a href="{% url 'gestion_abierta:informe_usuario_gestion' aux.id %}">
+                                            <li class=" collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-1 pb-1 " >
+                                                <span class="avatar-status avatar-5 mt-2">
+                                                    <img src="{{ MEDIA_URL }}/media/{{aux.foto}}" alt="avatar" style="height: 30px; object-fit: cover;">                                                   
+                                                </span>
+                                                <div class="user-content" style="margin-top:15px">
+                                                    <p class="line-height-0">{{aux.nombre|title}} {{aux.apellidos|title}}</p>
+                                                    <p class="mt-4 text-green">{{aux.perfil__nombre}}</p>
+                                                </div>
+                                                <!--<span class="secondary-content medium-small">09-26</span>-->
+                                            </li>
+                                            </a>
+                                            {%endfor%}                         
+                                        </ul>
+                                </div>
+                            </div>
+                            <div id="activity" class="col s12 scroll">
+                                <div class="activity">
+                                    <p class="mt-5 mb-0 ml-5 font-weight-900">ULTIMOS INFORMES</p>
+                                        <ul class="widget-timeline mb-0">
+                                            {%for aux in ultimos_informes%}
+                                            <a href={% url 'gestion_abierta:informe' id_informe=aux.id %}>
+                                            <li class="timeline-items timeline-icon-purple active cursor" >
+                                                <h6 class="timeline-title">{{aux.titulo}}</h6>
+                                                <p class="timeline-text">{{aux.usuario.nombre}} {{aux.usuario.apellidos}}</p>
+                                            </li>
+                                            </a>
+                                            {%endfor%}                                                                            
+                                        </ul>
+                                </div>
+                            </div>
+                        <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 150px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 9px;"></div></div></div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+       
+    </section>
+    <div id="separador"></div>
+    <section class="container" id="informes">
+        <article id="contenedor" class="mt-6 ">
+            <div id="card-panel-type1" class="section">
+    <div class="center">
+        <p>Este es el portal de consulta de la Alcaldía de Cartagena en el que podrás encontrar todas las actividades e informes de gestión de cada uno de los y las jefes de dependencia de la Alcaldía de Cartagena. </p>
+        <p>Selecciona el funcionario del que quieras conocer sus Informes de Gestión</p>
+    </div>
+
+    <article id="contenedor" class="mt-6 "><div id="card-panel-type1" class="section">    
+        <div class="row" id="">
+            <div class="col s12 m6 l4 card-width">
+                <div id="profile-card" class="card toc-wrapper scrollspy" style="overflow: visible; border: 1px solid #4caf50;">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ MEDIA_URL }}/media/{{informacion_secretario.foto}}" alt="user bg" style="height: 350px; width: 100%; filter: drop-shadow(0px 15px 5px #0002); object-fit: cover; ">
+                    </div>
+                    <div class="card-content">
+                        <a onclick="mostrar_informacion_funcionario()" class="btn-floating activator btn-move-up waves-effect waves-light gradient-45deg-cyan-light-green accent-2 z-depth-4 right" id="btnMostrarInformacion">
+                            <i class="material-icons">folder_shared</i>
+                        </a>
+                        <p>
+                            </p><h6 class="white-texts mb-1 cursor" >{{informacion_secretario.perfil__nombre}}</h6>
+                            <p class="card-title activator grey-text text-darken-4 mt-2s">{{informacion_secretario.nombre}} {{informacion_secretario.apellidos}}</p>
+                        <p></p>
+                        {% for key,value in anio_informes.items %}
+                        <h6>{{key}}</h6>
+                            {% for key2, value2 in value.items %}
+                                <ul class="section table-of-contents collection-item" style="position: relative;">
+                                    <a href={% url 'gestion_abierta:informe_usuario_gestion_month_year' usuario_gestion_id=informacion_secretario.id anio_informe=key mes_informe=key2 %} class="mt-2 mb-3" style="display: flex; align-items: center; justify-content: space-between;">
+                                        <li class="blue-text">Informe {{value2.0}}</li>
+                                        <li class="new badge gradient-45deg-cyan-light-green" data-badge-caption=" actividades" style="color: #fff; font-size: 10px; padding:0px 5px 0px 5px;"> {{value2.1}} Act</li>
+                                    </a>
+                                </ul>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{informacion_secretario.nombre}} {{informacion_secretario.apellidos}}<i class="material-icons right" onclick="ocultar_informacion_funcionario()">close</i>
+                        </span>
+                        <p>{{informacion_secretario.descripcion}}</p>
+                        <b class="purple-text">¿Qué realizaré por Cartagena?</b>
+                        <p>{{informacion_secretario.objetivos}}</p>
+                        <p><i class="material-icons">perm_phone_msg</i>+57{{informacion_secretario.telefono}}</p>
+                        <p><i class="material-icons">email</i>{{informacion_secretario.correo}}</p>
+                        <p></p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col s12 m6 l8 pt-2 section scrollspy">
+                {% for aux_informe in informes %}
+                <div id="informe">
+                <a href={% url 'gestion_abierta:informe' id_informe=aux_informe.id %} class="cursor " ><h5 class="blue-text">{{aux_informe.titulo}}</h5></a>
+                <p class="detalles">Informe realizado el {{aux_informe.fecha_informe}}, por {{aux_informe.usuario__nombre}} {{aux_informe.usuario__apellidos}}</p>
+                <p>{{ aux_informe.descripcion|slice:":255" }}...</p>
+                <div class="divider mt-2 mb-4"></div>    
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    </article>
+    
+    </div>        </article>
+        <div class="content-overlay"></div>
+    </section>
+    <section class="container mt-5 mb-5">
+        <div class="divider mt-2"></div>
+                <p>Gobierno Abierto</p>
+        <h3><b>CARTAGENA</b></h3>
+        <p>{{num_actividades}} Actividades en {{num_informes}} Informes mensuales</p>
+        <div class="mb-2">
+        {%for aux in frases_buscadas%}
+        <span style="font-size: 14px; color:{{aux.color}}" class="tooltipped" data-position="top" data-tooltip="{{aux.num_busqueda}} Busquedas" title="" data-original-title="{{aux.num_busqueda}} busquedas">
+            {{aux.frase}}
+        </span>
+        {%endfor%}
+        </div>    
+    </section>
+    <footer class="container page-footer footer footer-static footer-light navbar-border navbar-shadow">
+        <div class="footer-copyright">
+            <div class="container"><span>© 2021 <a href="http://cartagena.gov.co" target="_blank">Cartagena</a> <a href="https://gobiernoabirto.gov.co">Oficina Asesora de Informatica</a></div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> 
+    <script src="{% static 'gestion_abierta/app-assets/js/event_button.js'%}"></script> 
+</body>
+</html>

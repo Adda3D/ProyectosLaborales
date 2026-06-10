@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Evaluación Aprobación</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Publicación Evaluación Aprobación</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionEvaluacionAprobacion" novalidate>
+                    <div class="form-group row mb-2">
+                        <span id="spanPUBEVAL_AprobacionIdEvaluacion" class="ocultar" ></span>
+                        <div class="col-md-2">
+                            <div class="col-md-12">
+                                <label class="form-label-iris">Resultado Final Evaluación</label>
+                            </div>
+                            <div class="col-md-12 font-size-iris">
+                                <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionEvaluacionFinal" required></select>    
+                                <div class="invalid-feedback">
+                                    Resultado Evaluación es un campo obligatorio
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtPublicacionactaprocomifacultad">Número Acta Aprobación Comite</label>
+                          <input type="text" class="form-control iris" id="txtPublicacionactaprocomifacultad" maxlength="50" title="Número acta de aprobación Comite Publicaciones" placeholder="Número acta de aprobación" data-span="spantxtPublicacionactaprocomifacultad"/>
+                          <div class="invalid-feedback">
+                            Número Acta Aprobación es un campo obligatorio
+                          </div>
+                          <div id="spantxtPublicacionactaprocomifacultad" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                          </div>
+                        </div>  
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtPublicacionfechaactaprocomifacultad">Fecha Acta Aprobación Comite</label>                                
+                            <input type="date" class="form-control iris" id="dtPublicacionfechaactaprocomifacultad" title="Fecha Acta Aprobación Comite Publicaciones" data-span="spandtPublicacionfechaactaprocomifacultad" />
+                            <div class="invalid-feedback">
+                              Fecha Acta Aprobación es un campo obligatorio
+                            </div>
+                            <div id="spandtPublicacionfechaactaprocomifacultad" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="txtPublicacionnombreactaprocomifacultad">Nombre Acta Aprobación Comite</label>
+                          <input type="text" class="form-control iris" id="txtPublicacionnombreactaprocomifacultad" maxlength="100" title="Nombre acta de aprobación Comite Publicaciones" placeholder="Nombre acta de aprobación" data-span="spantxtPublicacionnombreactaprocomifacultad"/>
+                          <div class="invalid-feedback">
+                            Nombre Acta Aprobación es un campo obligatorio
+                          </div>
+                          <div id="spantxtPublicacionnombreactaprocomifacultad" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales o palabras restringidas
+                          </div>          
+                        </div>  
+                        <div class="col-md-2">
+                          <div class="col-md-12">
+                              <label class="form-label-iris">Tipo Publicación</label>
+                          </div>
+                          <div class="col-md-12 font-size-iris">
+                              <select class="form-combo iris input-sm w-100 font-size-iris" style="width: 100%;" id="cboPublicacionEvaltipopublicacion"></select>    
+                              <div class="invalid-feedback">
+                                Tipo Publicación es un campo obligatorio
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label-iris" for="nmPublicaciontirajetotal">Tiraje Total</label>
+                          <input type="number" class="form-control iris iris-number" id="nmPublicaciontirajetotal" title="Tiraje Total" min="1" data-span="spannmPublicaciontirajetotal" />
+                          <div class="invalid-feedback">
+                            Tiraje Total es un campo obligatorio
+                          </div>
+                          <div id="spannmPublicaciontirajetotal" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>  
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-2">
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txtPublicacionactaproconsfacultad">Número Acta Aprobación Facultad</label>
+                        <input type="text" class="form-control iris" id="txtPublicacionactaproconsfacultad" maxlength="50" title="Número Acta Aprobación Consejo Facultad" placeholder="Número acta de aprobación" data-span="spantxtPublicacionactaproconsfacultad"/>
+                        <div class="invalid-feedback">
+                          Número Acta Aprobación es un campo obligatorio
+                        </div>
+                        <div id="spantxtPublicacionactaproconsfacultad" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>
+                      </div>  
+                      <div class="col-md-2">
+                          <label class="form-label-iris" for="dtPublicacionfechaactaproconsfacultad">Fecha Acta Aprobación Facultad</label>                                
+                          <input type="date" class="form-control iris" id="dtPublicacionfechaactaproconsfacultad" title="Fecha Acta Aprobación Consejo Facultad" data-span="spandtPublicacionfechaactaproconsfacultad" />
+                          <div class="invalid-feedback">
+                            Fecha Acta Aprobación es un campo obligatorio
+                          </div>
+                          <div id="spandtPublicacionfechaactaproconsfacultad" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales
+                          </div>       
+                      </div>
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txtPublicacionnombreactaproconsfacultad">Nombre Acta Aprobación</label>
+                        <input type="text" class="form-control iris" id="txtPublicacionnombreactaproconsfacultad" maxlength="100" title="Nombre de acta de aprobación Consejo Facultad" placeholder="Nombre de acta de aprobación" data-span="spantxtPublicacionnombreactaproconsfacultad"/>
+                        <div class="invalid-feedback">
+                          Nombre Acta Aprobación es un campo obligatorio
+                        </div>
+                        <div id="spantxtPublicacionnombreactaproconsfacultad" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>          
+                      </div>  
+                      <div class="col-md-2">
+                        <label class="form-label-iris" for="txtPublicaciongestorevalunijus">Gestor UNIJUS</label>
+                        <input type="text" class="form-control iris" id="txtPublicaciongestorevalunijus" maxlength="100" title="Gestor Evaluación UNIJUS" placeholder="Gestor UNIJUS" data-span="spantxtPublicaciongestorevalunijus"/>
+                        <div class="invalid-feedback">
+                          Gestor UNIJUS Aprobación es un campo obligatorio
+                        </div>
+                        <div id="spantxtPublicaciongestorevalunijus" class="color-required ocultar">
+                            No se acepta el ingreso de caracteres especiales o palabras restringidas
+                        </div>          
+                      </div>  
+
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">              
+              <input type="button" value="Guardar Aprobación" onclick="ValidatePostUpdatePublicacionEvaluacionAprobacion('formPublicacionEvaluacionAprobacion')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicacionPUBEVAL_Aprobacion.js"></script>
+
+  </body>
+
+
+</html>

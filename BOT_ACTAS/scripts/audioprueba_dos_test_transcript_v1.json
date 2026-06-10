@@ -1,0 +1,566 @@
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "transcript": "Hola, esto es una prueba de audio 1. Hola, esto es una prueba de audio uno y ahora esta es una prueba de audio 2 hora esta es una prueba de audio 2 y yo soy la primera voz y yo soy la segunda voz.",
+          "confidence": 0.92343223,
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "0.500s",
+              "word": "Hola,"
+            },
+            {
+              "start_time": "0.500s",
+              "end_time": "0.700s",
+              "word": "esto"
+            },
+            {
+              "start_time": "0.700s",
+              "end_time": "0.800s",
+              "word": "es"
+            },
+            {
+              "start_time": "0.800s",
+              "end_time": "1s",
+              "word": "una"
+            },
+            {
+              "start_time": "1s",
+              "end_time": "1.100s",
+              "word": "prueba"
+            },
+            {
+              "start_time": "1.100s",
+              "end_time": "1.500s",
+              "word": "de"
+            },
+            {
+              "start_time": "1.500s",
+              "end_time": "1.900s",
+              "word": "audio"
+            },
+            {
+              "start_time": "1.900s",
+              "end_time": "2.300s",
+              "word": "1."
+            },
+            {
+              "start_time": "2.300s",
+              "end_time": "3.300s",
+              "word": "Hola,"
+            },
+            {
+              "start_time": "3.300s",
+              "end_time": "3.700s",
+              "word": "esto"
+            },
+            {
+              "start_time": "3.700s",
+              "end_time": "3.700s",
+              "word": "es"
+            },
+            {
+              "start_time": "3.700s",
+              "end_time": "4s",
+              "word": "una"
+            },
+            {
+              "start_time": "4s",
+              "end_time": "4.100s",
+              "word": "prueba"
+            },
+            {
+              "start_time": "4.100s",
+              "end_time": "4.400s",
+              "word": "de"
+            },
+            {
+              "start_time": "4.400s",
+              "end_time": "4.900s",
+              "word": "audio"
+            },
+            {
+              "start_time": "4.900s",
+              "end_time": "5.200s",
+              "word": "uno"
+            },
+            {
+              "start_time": "5.200s",
+              "end_time": "6.100s",
+              "word": "y"
+            },
+            {
+              "start_time": "6.100s",
+              "end_time": "6.500s",
+              "word": "ahora"
+            },
+            {
+              "start_time": "6.500s",
+              "end_time": "7.100s",
+              "word": "esta"
+            },
+            {
+              "start_time": "7.100s",
+              "end_time": "7.400s",
+              "word": "es"
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "7.600s",
+              "word": "una"
+            },
+            {
+              "start_time": "7.600s",
+              "end_time": "7.900s",
+              "word": "prueba"
+            },
+            {
+              "start_time": "7.900s",
+              "end_time": "9.300s",
+              "word": "de"
+            },
+            {
+              "start_time": "9.300s",
+              "end_time": "10.300s",
+              "word": "audio"
+            },
+            {
+              "start_time": "10.300s",
+              "end_time": "10.600s",
+              "word": "2"
+            },
+            {
+              "start_time": "10.600s",
+              "end_time": "12.300s",
+              "word": "hora"
+            },
+            {
+              "start_time": "12.300s",
+              "end_time": "12.600s",
+              "word": "esta"
+            },
+            {
+              "start_time": "12.600s",
+              "end_time": "12.800s",
+              "word": "es"
+            },
+            {
+              "start_time": "12.800s",
+              "end_time": "13s",
+              "word": "una"
+            },
+            {
+              "start_time": "13s",
+              "end_time": "13.200s",
+              "word": "prueba"
+            },
+            {
+              "start_time": "13.200s",
+              "end_time": "14.100s",
+              "word": "de"
+            },
+            {
+              "start_time": "14.100s",
+              "end_time": "14.400s",
+              "word": "audio"
+            },
+            {
+              "start_time": "14.400s",
+              "end_time": "14.700s",
+              "word": "2"
+            },
+            {
+              "start_time": "14.700s",
+              "end_time": "16.100s",
+              "word": "y"
+            },
+            {
+              "start_time": "16.100s",
+              "end_time": "16.400s",
+              "word": "yo"
+            },
+            {
+              "start_time": "16.400s",
+              "end_time": "16.600s",
+              "word": "soy"
+            },
+            {
+              "start_time": "16.600s",
+              "end_time": "16.700s",
+              "word": "la"
+            },
+            {
+              "start_time": "16.700s",
+              "end_time": "17.100s",
+              "word": "primera"
+            },
+            {
+              "start_time": "17.100s",
+              "end_time": "17.500s",
+              "word": "voz"
+            },
+            {
+              "start_time": "17.500s",
+              "end_time": "18.500s",
+              "word": "y"
+            },
+            {
+              "start_time": "18.500s",
+              "end_time": "19s",
+              "word": "yo"
+            },
+            {
+              "start_time": "19s",
+              "end_time": "19.300s",
+              "word": "soy"
+            },
+            {
+              "start_time": "19.300s",
+              "end_time": "19.400s",
+              "word": "la"
+            },
+            {
+              "start_time": "19.400s",
+              "end_time": "19.800s",
+              "word": "segunda"
+            },
+            {
+              "start_time": "19.800s",
+              "end_time": "20.300s",
+              "word": "voz."
+            }
+          ]
+        }
+      ],
+      "result_end_time": "21.480s",
+      "language_code": "es-es"
+    },
+    {
+      "alternatives": [
+        {
+          "words": [
+            {
+              "start_time": "0s",
+              "end_time": "0.500s",
+              "word": "Hola,",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "0.500s",
+              "end_time": "0.700s",
+              "word": "esto",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "0.700s",
+              "end_time": "0.800s",
+              "word": "es",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "0.800s",
+              "end_time": "1s",
+              "word": "una",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "1s",
+              "end_time": "1.100s",
+              "word": "prueba",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "1.100s",
+              "end_time": "1.500s",
+              "word": "de",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "1.500s",
+              "end_time": "1.900s",
+              "word": "audio",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "1.900s",
+              "end_time": "2.300s",
+              "word": "1.",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "2.300s",
+              "end_time": "3.300s",
+              "word": "Hola,",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "3.300s",
+              "end_time": "3.700s",
+              "word": "esto",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "3.700s",
+              "end_time": "3.700s",
+              "word": "es",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "3.700s",
+              "end_time": "4s",
+              "word": "una",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "4s",
+              "end_time": "4.100s",
+              "word": "prueba",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "4.100s",
+              "end_time": "4.400s",
+              "word": "de",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "4.400s",
+              "end_time": "4.900s",
+              "word": "audio",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "4.900s",
+              "end_time": "5.200s",
+              "word": "uno",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "5.200s",
+              "end_time": "6.100s",
+              "word": "y",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "6.100s",
+              "end_time": "6.500s",
+              "word": "ahora",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "6.500s",
+              "end_time": "7.100s",
+              "word": "esta",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "7.100s",
+              "end_time": "7.400s",
+              "word": "es",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "7.400s",
+              "end_time": "7.600s",
+              "word": "una",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "7.600s",
+              "end_time": "7.900s",
+              "word": "prueba",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "7.900s",
+              "end_time": "9.300s",
+              "word": "de",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "9.300s",
+              "end_time": "10.300s",
+              "word": "audio",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "10.300s",
+              "end_time": "10.600s",
+              "word": "2",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "10.600s",
+              "end_time": "12.300s",
+              "word": "hora",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "12.300s",
+              "end_time": "12.600s",
+              "word": "esta",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "12.600s",
+              "end_time": "12.800s",
+              "word": "es",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "12.800s",
+              "end_time": "13s",
+              "word": "una",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "13s",
+              "end_time": "13.200s",
+              "word": "prueba",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "13.200s",
+              "end_time": "14.100s",
+              "word": "de",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "14.100s",
+              "end_time": "14.400s",
+              "word": "audio",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "14.400s",
+              "end_time": "14.700s",
+              "word": "2",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "14.700s",
+              "end_time": "16.100s",
+              "word": "y",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "16.100s",
+              "end_time": "16.400s",
+              "word": "yo",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "16.400s",
+              "end_time": "16.600s",
+              "word": "soy",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "16.600s",
+              "end_time": "16.700s",
+              "word": "la",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "16.700s",
+              "end_time": "17.100s",
+              "word": "primera",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "17.100s",
+              "end_time": "17.500s",
+              "word": "voz",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "17.500s",
+              "end_time": "18.500s",
+              "word": "y",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "18.500s",
+              "end_time": "19s",
+              "word": "yo",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "19s",
+              "end_time": "19.300s",
+              "word": "soy",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "19.300s",
+              "end_time": "19.400s",
+              "word": "la",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "19.400s",
+              "end_time": "19.800s",
+              "word": "segunda",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            },
+            {
+              "start_time": "19.800s",
+              "end_time": "20.300s",
+              "word": "voz.",
+              "speaker_tag": 1,
+              "speaker_label": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total_billed_time": "22s",
+  "request_id": "4191146145644552294"
+}

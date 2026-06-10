@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Mi Biblioteca - MiniLibros{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Mi Biblioteca Digital</h1>
+
+    {% if items %}
+    <div class="library-grid">
+        {% for item in items %}
+        <div class="library-item">
+            <div class="item-cover">
+                {% if item.cover_image %}
+                <img src="{{ item.cover_image }}" alt="{{ item.title }}">
+                {% else %}
+                <div class="placeholder">📖</div>
+                {% endif %}
+            </div>
+            <h3>{{ item.title }}</h3>
+            {% if item.author %}
+            <p class="author">{{ item.author }}</p>
+            {% endif %}
+            {% if item.pdf_file %}
+            <a href="{% url 'library:pdf_reader' item.type item.id %}" class="btn btn-primary">Leer</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Aún no tienes libros en tu biblioteca.</p>
+    <a href="{% url 'core:home' %}" class="btn btn-primary">Explorar Libros</a>
+    {% endif %}
+</div>
+{% endblock %}

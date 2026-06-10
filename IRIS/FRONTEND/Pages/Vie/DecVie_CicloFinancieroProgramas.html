@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Programas</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6 titletab">PROGRAMAS</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtSemestreCicloFinancieroProgramas">Semestre Ciclo</label>
+              <input type="text" class="form-control iris" id="txtSemestreCicloFinancieroProgramas" disabled/>
+            </div>
+            <!-- <div class="col-md-3">
+              <label class="form-label-iris" for="txtNombreProgramaCicloFinancieroProgramas">Programa</label>
+              <input type="text" class="form-control iris" id="txtNombreProgramaCicloFinancieroProgramas" disabled/>
+            </div> -->
+            <div class="col-md-6 text-center">                     
+                <button type="button" class="btn-iris success " onclick="VolverCiclosDesdeProgramas()">Volver Ciclo</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearCicloFinancieroProgramas()" data-bs-toggle="modal" data-bs-target="#ModalCicloFinancieroProgramas" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Programa</button>
+              </div>    
+          </div>
+        </div>
+        <!--
+        <div class="row">
+          <div class="col-md-6 titletab"></div>
+          <div class="col-md-6 text-center">                     
+            <button type="button" class="btn-iris success " onclick="VolverTablaMatryoshkaDesdeEjes()">Volver Matryoshka</button>
+            <button type="button" class="btn btn-primaryiris" onclick="CrearMatryoshkaEjesEstrategicos()" data-bs-toggle="modal" data-bs-target="#ModalCicloFinancieroProgramas" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Eje</button>
+          </div>
+        </div>
+        -->
+
+        <div class="row scroll" id="tableModalCicloFinancieroProgramas">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblModalCicloFinancieroProgramas" >
+              <thead>
+                <tr>                                              
+                  <th>Tipo Programa</th>
+                  <th>Código Programa</th> 
+                  <th>Nombre Programa</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas">Programa</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramasDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas" class="btn-iris white small" onclick="CerrarModalCicloFinancieroProgramas()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramasForm('formCicloFinancieroProgramasDetalle', 'btnCloseModalCicloFinancieroProgramas')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas_Bogota" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_Bogota" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_Bogota">Datos del Programa</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_BogotaDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_Bogota" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_BogotaForm('formCicloFinancieroProgramas_BogotaDetalle', 'btnCloseModalCicloFinancieroProgramas_Bogota')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+<!-- 
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas_Bogota" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_Bogota" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_Bogota">Datos del programa</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_BogotaDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_Bogota" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_BogotaForm('formCicloFinancieroProgramas_BogotaDetalle', 'btnCloseModalCicloFinancieroProgramas_Bogota')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+      <!-- <div class="modal fade" id="ModalCicloFinancieroProgramas_Bogota" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_Bogota" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_Bogota">Programa</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_BogotaDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_Bogota" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_BogotaForm('formCicloFinancieroProgramas_BogotaDetalle', 'btnCloseModalCicloFinancieroProgramas_Bogota')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas_Convenio" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_Convenio" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_Convenio">Programa Convenio</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_ConvenioDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_Convenio" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_ConvenioForm('formCicloFinancieroProgramas_ConvenioDetalle', 'btnCloseModalCicloFinancieroProgramas_Convenio')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas_Facultad" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_Facultad" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-fullscreen-md-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_Facultad">Graduados</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_FacultadDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_Facultad" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_FacultadForm('formCicloFinancieroProgramas_FacultadDetalle', 'btnCloseModalCicloFinancieroProgramas_Facultad')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal fade" id="ModalCicloFinancieroProgramas_UAdministrativa" tabindex="-1" role="dialog" aria-labelledby="ModalLabelCicloFinancieroProgramas_UAdministrativa" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelCicloFinancieroProgramas_UAdministrativa">Unidad Administrativa</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formCicloFinancieroProgramas_UAdministrativaDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalCicloFinancieroProgramas_UAdministrativa" class="btn-iris white small" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateCicloFinancieroProgramas_UAdministrativaForm('formCicloFinancieroProgramas_UAdministrativaDetalle', 'btnCloseModalCicloFinancieroProgramas_UAdministrativa')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/DecVie_CicloFinancieroPostProgramModel.js" ></script>
+    <script src="../../js/iris/Vie/DecVie_CicloFinancieroProgramas.js"></script>
+
+  </body>
+
+
+</html>
+

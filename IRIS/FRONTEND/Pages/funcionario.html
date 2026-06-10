@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Funcionario</title>
+-->
+
+  </head>
+
+
+  <body>
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row col-md-10 offset-md-1">
+        <div class="col-md-12">
+          <div class="ibox">
+            <div class="ibox-content p-md">
+              <div id="divFuncionarioHTML">
+                <div class="row" id="dvFuncionarioTable">
+                  <div class="row">
+                    <div class="col-md-6 titletab">FUNCIONARIOS</div>
+                    <div class="col-md-6 text-center">
+                
+                      <button type="button" class="btn btn-primaryiris" onclick="CrearFuncionario()" data-bs-toggle="modal" data-bs-target="#ModalFuncionario" data-bs-keyboard="false" data-bs-backdrop="static">Nuevo Gestor</button>
+                    </div>
+                  </div>
+
+                  <div class="row scroll" id="tableDynamicFuncionario">
+                    <div class="table-responsive col-md-12">
+                      <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblFuncionario" >
+                        <thead>
+                          <tr>                                                        
+                            <th>Identificación</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>                            
+                            <th>Correo</th>
+                            <th>Dependencia</th>
+                            <th>Opciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                <!-- Modal Funcionarioes -->
+                <div class="modal fade" id="ModalFuncionario" tabindex="-1" role="dialog" aria-labelledby="ModalLabelFuncionario" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-fullscreen-lg-down modal-dialog-centered" >
+                    <div class="modal-content">
+                      <div class="modal-header iris-modal-header">
+                        <h6 class="modal-title" id="ModalLabelFuncionario">Datos Gestor</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <form class="needs-validation" id="formFuncionario" novalidate>
+                            <div class="form-group row mb-3">
+                              <span id="spanIdFuncionario" class="ocultar" ></span>
+                              <div class="col-md-3">
+                                <label class="form-label-iris" for="txtNroIdFuncionario">No. Identificación</label>
+                                <input type="text" class="form-control iris" id="txtNroIdFuncionario" maxlength="12" placeholder="No. Identificación" data-span="spanNroIdFuncionario" required/>
+                                <div class="invalid-feedback">
+                                    No. Identificación es un campo obligatorio
+                                </div>
+                                <div id="spanNroIdFuncionario" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label-iris" for="txtNombreFuncionario">Nombres</label>
+                                <input type="text" class="form-control iris" id="txtNombreFuncionario" maxlength="100" placeholder="Nombre Completo" data-span="spanNombreFuncionario" required/>                                
+                                <div class="invalid-feedback">
+                                    Nombre es un campo obligatorio
+                                </div>
+                                <div id="spanNombreFuncionario" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <label class="form-label-iris" for="txtApellidoFuncionario">Apellidos</label>
+                                <input type="text" class="form-control iris" id="txtApellidoFuncionario" maxlength="100" placeholder="Apellidos" data-span="spanApellidoFuncionario" required/>                                
+                                <div class="invalid-feedback">
+                                    Apellidos es un campo obligatorio
+                                </div>
+                                <div id="spanApellidoFuncionario" class="color-required ocultar">
+                                  No se acepta el ingreso de caracteres especiales
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-md-5">
+                                    <label class="form-label-iris" for="txtEmailFuncionario">Correo Electrónico</label>
+                                    <div class="input-group mb-3">
+                                      <input type="text" class="form-control iris" id="txtEmailFuncionario" maxlength="100" placeholder="E-mail" data-span="spanEmailFuncionario" required/>
+                                      <span class="input-group-text form-label-iris">@unal.edu.co</span>
+                                      <div class="invalid-feedback">
+                                        Correo Electrónico es un campo obligatorio
+                                      </div>
+                                      <div id="spanEmailFuncionario" class="color-required ocultar">
+                                        No se acepta el ingreso de caracteres especiales
+                                      </div>
+                                    </div>                                    
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-12">
+                                        <label class="form-label-iris">Dependencia</label>
+                                    </div>
+                                    <div class="col-md-12 font-size-iris">
+                                        <select class="cboDependenciaFuncionario-select2 input-sm w-100" style="width: 100%;" aria-hidden="true" id="cboDependenciaFuncionario" required></select>    
+                                        <div class="invalid-feedback">
+                                          Dependencia es un campo obligatorio
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer iris-modal-footer">
+                        <button type="button" id="btnCloseModalFuncionario" class="btn-iris white small" onclick="CerrarModalUpdateFuncionario()" data-bs-dismiss="modal">Cancelar</button>
+                        <input type="button" value="Guardar" onclick="ValidatePostUpdateFuncionario('formFuncionario', 'btnCloseModalFuncionario')" class="btn-iris success small"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+    <!-- Proyecto scripts -->
+    <script src="../js/iris/funcionario.js"></script>
+
+  </body>
+
+
+</html>

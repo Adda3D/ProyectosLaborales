@@ -1,0 +1,50 @@
+.dashBoard-fondo{
+    background-color: white;
+    background-size: 100%;
+    flex-direction: column;
+    position:absolute;
+    width: 100vh;
+    left: 0;
+    min-width: 100%;
+ }
+
+body {
+    background-image:none;
+}
+
+.img{
+    width: 20vh;
+    height: 10vh;
+}
+
+.dashBoard-sup{
+    position: relative;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 15vh;
+    min-width: 100%;
+    background-color: #4F350B;
+    padding-top: 3vh;
+}
+
+.dashBoard-content{
+    padding-top: 30px;
+    left: 0;
+}
+
+
+.inicio{
+    color: #F8BB18;
+    padding-left: 1rem;
+    font-size: 24px;
+}
+
+@media (max-width: 600px){
+    .inicio{
+        font-size: 16px;
+    }
+}
+
+

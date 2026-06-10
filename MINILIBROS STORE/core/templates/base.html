@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MiniLibros{% endblock %}</title>
+    <!-- Modern Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/main.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="{% url 'core:home' %}">MiniLibros</a>
+            </div>
+
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-menu" id="nav-links">
+
+                <!-- Libros dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                        📚 Libros <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="{% url 'books:list' %}" class="nav-dropdown-item">Catálogo</a>
+                        <a href="{% url 'products:upload_book' %}" class="nav-dropdown-item">Libro Personalizado</a>
+                    </div>
+                </div>
+
+                <!-- Música dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                        🎵 Música <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="{% url 'products:create_cd' %}" class="nav-dropdown-item">Mini CDs</a>
+                        <a href="{% url 'products:create_vinyl' %}" class="nav-dropdown-item">Vinilos</a>
+                    </div>
+                </div>
+
+                <!-- Usuario dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle" aria-expanded="false">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align:middle;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span class="dropdown-arrow">▾</span>
+                    </button>
+                    <div class="nav-dropdown-menu nav-dropdown-menu--right">
+                        <a href="{% url 'core:home' %}" class="nav-dropdown-item">Inicio</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'library:my_library' %}" class="nav-dropdown-item">Mi Biblioteca</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="{% url 'core:logout' %}" class="nav-dropdown-item nav-dropdown-item--danger">Salir</a>
+                        {% else %}
+                            <a href="{% url 'core:login' %}" class="nav-dropdown-item">Iniciar Sesión</a>
+                            <a href="{% url 'core:register' %}" class="nav-dropdown-item">Registrarse</a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <a href="{% url 'core:cart' %}" class="cart-link">
+                    🛒 <span class="cart-count">{{ cart_count }}</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>MiniLibros</h3>
+                <p>Tus recuerdos físicos con alma digital.</p>
+            </div>
+            <div class="footer-links">
+                <a href="{% url 'core:home' %}">Inicio</a>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MiniLibros. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile hamburger toggle
+            const menuToggle = document.querySelector('#mobile-menu');
+            const navLinks = document.querySelector('#nav-links');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    menuToggle.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Dropdown logic (hover on desktop, click on mobile)
+            document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+                const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+                const menu = dropdown.querySelector('.nav-dropdown-menu');
+
+                // Click toggle
+                toggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = dropdown.classList.contains('open');
+                    // Close all
+                    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+                    toggle.setAttribute('aria-expanded', 'false');
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+                        toggle.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Close on outside click
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.nav-dropdown').forEach(d => {
+                    d.classList.remove('open');
+                    d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+    {% block extra_js %}{% endblock %}
+
+    <!-- ── Botón flotante WhatsApp ── -->
+    <a href="https://wa.me/543107648781?text=Hola%2C+tengo+una+consulta+sobre+MiniLibros."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener"
+       aria-label="Contactar por WhatsApp"
+       title="¿Necesitas ayuda? Escríbenos">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="#fff">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.774L0 32l8.473-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.07 22.388c-.34.956-1.99 1.826-2.744 1.944-.703.111-1.592.158-2.566-.16-.592-.19-1.352-.445-2.317-.87-4.078-1.762-6.742-5.89-6.946-6.163-.204-.272-1.662-2.21-1.662-4.214s1.053-2.99 1.426-3.397c.373-.406.814-.508 1.086-.508.271 0 .543.003.78.014.25.012.584-.095.914.697.34.816 1.155 2.82 1.257 3.024.101.204.17.441.034.71-.136.27-.204.44-.407.678-.203.238-.427.532-.61.715-.203.203-.414.422-.178.827.236.406 1.05 1.732 2.254 2.806 1.549 1.381 2.854 1.808 3.26 2.011.406.204.643.17.88-.102.236-.272 1.015-1.185 1.287-1.59.271-.407.542-.34.914-.204.373.136 2.37 1.118 2.777 1.322.406.203.677.305.778.474.1.169.1.979-.24 1.935z"/>
+        </svg>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 9999;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s;
+            animation: whatsapp-pulse 2.5s infinite;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.65);
+        }
+        @keyframes whatsapp-pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+            50%       { box-shadow: 0 4px 30px rgba(37,211,102,0.8), 0 0 0 8px rgba(37,211,102,0.12); }
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 64px;
+            background: #1a202c;
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+        .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+    </style>
+</body>
+</html>

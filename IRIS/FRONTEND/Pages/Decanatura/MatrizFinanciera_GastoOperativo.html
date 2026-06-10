@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Gastos Apoyo</title>
+-->
+
+  </head>
+
+
+  <body>
+
+      <div class="row">
+        <div class="row" id="dvMatrizFinanciera_GastoOperativo">
+          <div class="col-md-6 titletab">Gastos Operativos</div>
+        </div>
+        <div class="row">
+          <div class="form-group row mb-3">
+            <div class="col-md-3">
+              <label class="form-label-iris" for="txtVigenciaMatrizFinanciera_GastoOperativo">Vigencia</label>
+              <input type="text" class="form-control iris" id="txtVigenciaMatrizFinanciera_GastoOperativo" disabled/>
+            </div>            
+            <div class="col-md-3 titletab"></div>          
+            <div class="col-md-6 text-center">                                  
+                <button type="button" class="btn-iris success " onclick="VolverMatrizFinancieraDesdeGastoOperativo()">Volver Matriz</button>
+                <button type="button" class="btn btn-primaryiris" onclick="CrearMatrizFinanciera_GastoOperativo()" data-bs-toggle="modal" data-bs-target="#ModalMatrizFinanciera_GastoOperativo" data-bs-keyboard="false" data-bs-backdrop="static">Agregar Gasto</button>
+              </div>    
+          </div>
+        </div>
+       
+        <div class="row scroll" id="tableMatrizFinanciera_GastoOperativo">
+          <div class="table-responsive col-md-12">
+            <table class="table table-bordered table-hover dataTables-example" width="100%" id="tblMatrizFinanciera_GastoOperativo" >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Dependencia</th>
+                  <th>Tipo Operativo</th>
+                  <th>Total Personas Contratadas</th>
+                  <th>Valor Total</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="ModalMatrizFinanciera_GastoOperativo" tabindex="-1" role="dialog" aria-labelledby="ModalLabelMatrizFinanciera_GastoOperativo" data-bs-keyboard="false" data-bs-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-fullscreen-xl-down modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header iris-modal-header">
+              <h6 class="modal-title" id="ModalLabelMatrizFinanciera_GastoOperativo">Gastos Operativos</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formMatrizFinanciera_GastoOperativoDetalle" novalidate>
+
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer iris-modal-footer">
+              <button type="button" id="btnCloseModalLabelMatrizFinanciera_GastoOperativo" class="btn-iris white small" onclick="CerrarModalMatrizFinanciera_GastoOperativo()" data-bs-dismiss="modal">Cancelar</button>
+              <input type="button" value="Guardar" onclick="ValidatePostUpdateMatrizFinanciera_GastoOperativoForm('formMatrizFinanciera_GastoOperativoDetalle', 'btnCloseModalLabelMatrizFinanciera_GastoOperativo')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/models/Decanatura/MatrizFinanciera_GastoOperativoModel.js" ></script>
+    <script src="../../js/iris/Decanatura/MatrizFinanciera_GastoOperativo.js"></script>
+
+  </body>
+
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <title>Publicación Evaluación Información Pago</title>
+-->
+
+  </head>
+
+  <body>
+    
+        <div class="row" >
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6 titletab">Información Pago Evaluador</div>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <form class="needs-validation" id="formPublicacionEvalInformacionPago" novalidate>
+                    <div class="form-group row mb-2">
+                        <span id="spanPublicacionEvalPagoIdPago" class="ocultar" ></span>
+
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtPublicacionEvalPagoQuipu">QUIPU</label>
+                            <input type="text" class="form-control iris" id="txtPublicacionEvalPagoQuipu" maxlength="30" placeholder="QUIPU" data-span="spantxtPublicacionEvalPagoQuipu" required/>
+                            <div class="invalid-feedback">
+                                QUIPU es un campo obligatorio
+                            </div>
+                            <div id="spantxtPublicacionEvalPagoQuipu" class="color-required ocultar">
+                                No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtPublicacionEvalPagoRag">RAG</label>
+                            <input type="text" class="form-control iris" id="txtPublicacionEvalPagoRag" maxlength="30" placeholder="RAG" data-span="spantxtPublicacionEvalPagoRag" />
+                            <div class="invalid-feedback">
+                                RAG es un campo obligatorio
+                            </div>
+                            <div id="spantxtPublicacionEvalPagoRag" class="color-required ocultar">
+                                No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtPublicacionEvalPagoOrpa">ORPA</label>
+                            <input type="text" class="form-control iris" id="txtPublicacionEvalPagoOrpa" maxlength="30" placeholder="ORPA" data-span="spantxtPublicacionEvalPagoOrpa" required/>
+                            <div class="invalid-feedback">
+                                ORPA es un campo obligatorio
+                            </div>
+                            <div id="spantxtPublicacionEvalPagoOrpa" class="color-required ocultar">
+                                No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="txtPublicacionEvalPagoCpeg">CPEG</label>
+                            <input type="text" class="form-control iris" id="txtPublicacionEvalPagoCpeg" maxlength="30" placeholder="CPEG" data-span="spantxtPublicacionEvalPagoCpeg" />
+                            <div class="invalid-feedback">
+                                CPEG es un campo obligatorio
+                            </div>
+                            <div id="spantxtPublicacionEvalPagoCpeg" class="color-required ocultar">
+                                No se acepta el ingreso de caracteres especiales o palabras restringidas
+                            </div>
+                        </div>    
+                    </div>
+
+                    <div class="form-group row mb-2">
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="dtPublicacionEvalfecpago">Fecha Pago</label>                                
+                            <input type="date" class="form-control iris" id="dtPublicacionEvalfecpago" data-span="spandtPublicacionEvalfecpago" required/>
+                            <div class="invalid-feedback">
+                                Fecha Pago es un campo obligatorio
+                            </div>
+                            <div id="spandtPublicacionEvalfecpago" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>       
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmPublicacionEvalPagoValor">Valor Pago</label>
+                            <input type="number" class="form-control iris iris-number" id="nmPublicacionEvalPagoValor" title="Valor Pagado" min="1" onchange="PublicacionEvaluacionTotalPago4xmil('nmPublicacionEvalPagoValor', 'nmPublicacionEvalPagoValor4Mil');" data-span="spannmPublicacionEvalPagoValor" required/>
+                            <div class="invalid-feedback">
+                                Valor Pago es un campo obligatorio
+                            </div>
+                            <div id="spannmPublicacionEvalPagoValor" class="color-required ocultar">
+                              No se acepta el ingreso de caracteres especiales
+                            </div>  
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label-iris" for="nmPublicacionEvalPagoValor4Mil">Valor Total 4xMil</label>
+                            <input type="text" class="form-control iris iris-number" id="nmPublicacionEvalPagoValor4Mil" disabled/>
+                        </div>
+                  
+                    </div>
+                </form>
+              </div>
+            </div>
+            <div class="container container-fluid">
+              <input type="button" value="Cancelar" onclick="VolverTablaPublicacionEvaluadoresDesdeInformacionPago()" class="btn-iris cancel small"/>
+              <input type="button" value="Guardar Datos Pago" onclick="ValidatePostUpdatePublicacionEvalInformacionPago('formPublicacionEvalInformacionPago')" class="btn-iris success small"/>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Proyecto scripts -->
+    <script src="../../js/iris/publicacion/publicacionPUBEVAL_InformacionPago.js"></script>
+
+  </body>
+
+
+</html>
